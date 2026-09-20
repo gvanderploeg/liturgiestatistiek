@@ -1,0 +1,35 @@
+datum: '2026-08-23'
+begeleiding: band
+kenmerken: []
+bron: 20260823 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Open the eyes of my heart Lord, 7 hills worship
+  moment: aanvang
+  lied: null
+  herkenning: onbekend
+- volgorde: 2
+  ruw: Opwekking 889 Dagelijks gebed
+  lied: opw-889
+  herkenning: automatisch
+- volgorde: 3
+  ruw: The psalm project, gebed om hulp, psalm 86.
+  lied: tpp-86-gebed-om-hulp
+  herkenning: automatisch
+- volgorde: 4
+  ruw: Opwekking 389, Create in me a clean heart.
+  lied: opw-389
+  herkenning: automatisch
+- volgorde: 5
+  ruw: Alles waard - Eline Bakker
+  lied: null
+  herkenning: onbekend
+- volgorde: 6
+  ruw: The blessing - Elevation Worship
+  lied: null
+  herkenning: onbekend
+- volgorde: 7
+  ruw: Jesus be the name (Elevation Worship)
+  moment: zegenlied
+  lied: null
+  herkenning: onbekend

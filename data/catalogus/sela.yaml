@@ -1,0 +1,675 @@
+- id: sela-doop
+  titel: Doop
+  referenties:
+  - bundel: hh
+    nummer: '502'
+  artiest: Sela
+- id: sela-aan-mijn-zij
+  titel: Aan mijn zij
+  artiest: Sela
+- id: sela-aan-uw-tafel
+  titel: Aan uw tafel
+  artiest: Sela
+- id: sela-agnus-dei
+  titel: Agnus Dei
+  artiest: Sela
+- id: sela-alfa-en-omega
+  titel: Alfa en omega
+  artiest: Sela
+- id: sela-alle-eer-aan-god
+  titel: Alle eer aan God
+  artiest: Sela
+- id: sela-alleen-met-god
+  titel: Alleen met God
+  artiest: Sela
+- id: sela-alles-voor-hem
+  titel: Alles voor Hem
+  artiest: Sela
+- id: sela-alles-wat-adem-heeft
+  titel: Alles wat adem heeft
+  artiest: Sela
+- id: sela-alles-wordt-nieuw
+  titel: Alles wordt nieuw
+  artiest: Sela
+- id: sela-als-alles-duister-is
+  titel: Als alles duister is
+  artiest: Sela
+- id: sela-als-een-vuur-van-binnen
+  titel: Als een vuur van binnen
+  artiest: Sela
+- id: sela-als-ik-naar-de-bergen-kijk
+  titel: Als ik naar de bergen kijk
+  artiest: Sela
+- id: sela-als-ik-u-ontmoet
+  titel: Als ik U ontmoet
+  artiest: Sela
+- id: sela-altijd-bij-u
+  titel: Altijd bij U
+  artiest: Sela
+- id: sela-altijd-dezelfde
+  titel: Altijd dezelfde
+  artiest: Sela
+- id: sela-avondlied
+  titel: Avondlied
+  artiest: Sela
+- id: sela-avondmaal
+  titel: Avondmaal
+  artiest: Sela
+- id: sela-belijdenis
+  titel: Belijdenis
+  artiest: Sela
+- id: sela-bid-met-mij
+  titel: Bid met mij
+  artiest: Sela
+- id: sela-bij-u-is-de-bron-psalm-36
+  titel: Bij U is de bron (Psalm 36)
+  artiest: Sela
+- id: sela-blijf-in-mij
+  titel: Blijf in mij
+  artiest: Sela
+- id: sela-breng-ons-samen
+  titel: Breng ons samen
+  artiest: Sela
+- id: sela-daar-juicht-een-toon
+  titel: Daar juicht een toon
+  artiest: Sela
+- id: sela-dageraad
+  titel: Dageraad
+  artiest: Sela
+- id: sela-dank-u-heer
+  titel: Dank U Heer
+  artiest: Sela
+- id: sela-danklied
+  titel: Danklied
+  artiest: Sela
+- id: sela-de-dag-van-de-heer
+  titel: De dag van de Heer
+  artiest: Sela
+- id: sela-de-gastheer-nodigt
+  titel: De Gastheer nodigt
+  artiest: Sela
+- id: sela-de-mensen-die-we-missen
+  titel: De mensen die we missen
+  artiest: Sela
+- id: sela-de-minsten-van-de-mensen
+  titel: De minsten van de mensen
+  artiest: Sela
+- id: sela-de-naam-van-onze-god
+  titel: De Naam van onze God
+  artiest: Sela
+- id: sela-de-wind-steekt-op
+  titel: De wind steekt op
+  artiest: Sela
+- id: sela-die-menschen-die-wir-vermissen
+  titel: Die Menschen, die wir vermissen
+  artiest: Sela
+- id: sela-dit-kind-is-onze-koning
+  titel: Dit kind is onze koning
+  artiest: Sela
+- id: sela-door-hem-volbracht
+  titel: Door Hem volbracht
+  artiest: Sela
+- id: sela-doxology
+  titel: Doxology
+  artiest: Sela
+- id: sela-een-kind-is-ons-geboren
+  titel: Een kind is ons geboren
+  artiest: Sela
+- id: sela-een-toekomst-vol-van-hoop
+  titel: Een toekomst vol van hoop
+  artiest: Sela
+- id: sela-een-weg-naar-u
+  titel: Een weg naar U
+  artiest: Sela
+- id: sela-eindelijk-hier
+  titel: Eindelijk hier
+  artiest: Sela
+- id: sela-emmaus
+  titel: Emmaüs
+  artiest: Sela
+- id: sela-er-is-een-roos-ontloken
+  titel: Er is een roos ontloken
+  artiest: Sela
+- id: sela-ere-zij-god
+  titel: Ere zij God
+  artiest: Sela
+- id: sela-een-woord-is-genoeg
+  titel: Eén woord is genoeg
+  artiest: Sela
+- id: sela-feestgedruis
+  titel: Feestgedruis
+  artiest: Sela
+- id: sela-gaudete-wij-verheugen-ons
+  titel: Gaudete (Wij verheugen ons)
+  artiest: Sela
+- id: sela-gebed-om-hulp
+  titel: Gebed om hulp
+  artiest: Sela
+- id: sela-gebed-om-vergeving
+  titel: Gebed om vergeving
+  artiest: Sela
+- id: sela-gebed-om-vrijheid
+  titel: Gebed om vrijheid
+  artiest: Sela
+- id: sela-gebed-om-zegen
+  titel: Gebed om zegen
+  artiest: Sela
+- id: sela-gebed-voor-de-werkdag
+  titel: Gebed voor de werkdag
+  artiest: Sela
+- id: sela-geef-ons-vrede
+  titel: Geef ons vrede
+  artiest: Sela
+- id: sela-geef-ons-vrede-dona-nobis
+  titel: Geef ons vrede (dona nobis)
+  artiest: Sela
+- id: sela-geef-vrede
+  titel: Geef vrede
+  artiest: Sela
+- id: sela-geen-plek-waar-u-niet-bent
+  titel: Geen plek waar U niet bent
+  artiest: Sela
+- id: sela-geen-zorgen
+  titel: Geen zorgen
+  artiest: Sela
+- id: sela-geest-van-waarheid-en-genade
+  titel: Geest van waarheid en genade
+  artiest: Sela
+- id: sela-gehuld-in-de-stilte
+  titel: Gehuld in de stilte
+  artiest: Sela
+- id: sela-getsemane
+  titel: Getsemane
+  artiest: Sela
+- id: sela-getuig
+  titel: Getuig
+  artiest: Sela
+- id: sela-gezegend-bent-u-heer
+  titel: Gezegend bent U, Heer
+  artiest: Sela
+- id: sela-gezegend-is-de-vader
+  titel: Gezegend is de Vader
+  artiest: Sela
+- id: sela-glorie-aan-god
+  titel: Glorie aan God
+  artiest: Sela
+- id: sela-glorie-heeft-een-naam
+  titel: Glorie heeft een Naam
+  artiest: Sela
+- id: sela-god-is-in-ons-midden
+  titel: God is in ons midden
+  artiest: Sela
+- id: sela-god-is-overal
+  titel: God is overal
+  artiest: Sela
+- id: sela-god-keert-alles-om
+  titel: God keert alles om
+  artiest: Sela
+- id: sela-god-roept-ons
+  titel: God roept ons
+  artiest: Sela
+- id: sela-god-u-bent-mijn-god
+  titel: God U bent mijn God
+  artiest: Sela
+- id: sela-god-van-leven
+  titel: God van leven
+  artiest: Sela
+- id: sela-god-zal-om-ons-juichen
+  titel: God zal om ons juichen
+  artiest: Sela
+- id: sela-god-zal-voor-ons-zorgen
+  titel: God zal voor ons zorgen
+  artiest: Sela
+- id: sela-gods-verhaal-gaat-door
+  titel: Gods verhaal gaat door
+  artiest: Sela
+- id: sela-gods-zegen-voor-jou
+  titel: Gods zegen voor jou
+  artiest: Sela
+- id: sela-goed-om-hier-te-zijn
+  titel: Goed om hier te zijn
+  artiest: Sela
+- id: sela-halleluja-eeuwig-dank-en-ere
+  titel: Halleluja eeuwig dank en ere
+  artiest: Sela
+- id: sela-halleluja-voor-de-eeuwige
+  titel: Halleluja voor de eeuwige
+  artiest: Sela
+- id: sela-hard-geslagen-vastgenageld
+  titel: Hard geslagen vastgenageld
+  artiest: Sela
+- id: sela-heel-mijn-hart
+  titel: Heel mijn hart
+  artiest: Sela
+- id: sela-heel-uw-koninkrijk
+  titel: Heel uw koninkrijk
+  artiest: Sela
+- id: sela-heer-ontferm-u-over-ons
+  titel: Heer ontferm U over ons
+  artiest: Sela
+- id: sela-heer-wees-om-mij-heen
+  titel: Heer wees om mij heen
+  artiest: Sela
+- id: sela-heer-wijs-mij-uw-weg
+  titel: Heer wijs mij uw weg
+  artiest: Sela
+- id: sela-heer-u-bent
+  titel: Heer, U bent
+  artiest: Sela
+- id: sela-heer-we-kijken-omhoog
+  titel: Heer, we kijken omhoog
+  artiest: Sela
+- id: sela-heilige-grond
+  titel: Heilige grond
+  artiest: Sela
+- id: sela-hemelse-gave
+  titel: Hemelse gave
+  artiest: Sela
+- id: sela-het-mooiste-lied
+  titel: Het mooiste lied
+  artiest: Sela
+- id: sela-het-woord-van-god
+  titel: Het Woord van God
+  artiest: Sela
+- id: sela-hier-ben-ik-heer
+  titel: Hier ben ik Heer
+  artiest: Sela
+- id: sela-hier-is-rust
+  titel: Hier is rust
+  artiest: Sela
+- id: sela-hij-is-koning
+  titel: Hij is Koning
+  artiest: Sela
+- id: sela-hoe-machtig-is-uw-naam
+  titel: Hoe machtig is uw naam
+  artiest: Sela
+- id: sela-hoor-de-engelen-zingen-d-eer
+  titel: Hoor de engelen zingen d'eer
+  artiest: Sela
+- id: sela-hoor-mijn-gebed
+  titel: Hoor mijn gebed
+  artiest: Sela
+- id: sela-houd-mij-vast
+  titel: Houd mij vast
+  artiest: Sela
+- id: sela-huis-van-vrede
+  titel: Huis van vrede
+  artiest: Sela
+- id: sela-i-will-be-there
+  titel: I will be there
+  artiest: Sela
+- id: sela-iedere-nacht
+  titel: Iedere nacht
+  artiest: Sela
+- id: sela-ik-ben
+  titel: Ik ben
+  artiest: Sela
+- id: sela-ik-leef
+  titel: Ik leef
+  artiest: Sela
+- id: sela-ik-wil-komen-en-knielen
+  titel: Ik wil komen en knielen
+  artiest: Sela
+- id: sela-ik-zal-er-zijn
+  titel: Ik zal er zijn
+  artiest: Sela
+- id: sela-in-alles
+  titel: In alles
+  artiest: Sela
+- id: sela-in-de-morgen
+  titel: In de morgen
+  artiest: Sela
+- id: sela-in-deze-stilte
+  titel: In deze stilte
+  artiest: Sela
+- id: sela-in-het-licht
+  titel: In het licht
+  artiest: Sela
+- id: sela-in-jezus-naam
+  titel: In Jezus naam
+  artiest: Sela
+- id: sela-in-ons-hart-geboren
+  titel: In ons hart geboren
+  artiest: Sela
+- id: sela-j
+  titel: J
+  artiest: Sela
+- id: sela-jezus-alleen-hij-is-de-rots
+  titel: Jezus alleen / Hij is de rots
+  artiest: Sela
+- id: sela-jezus-is-heer
+  titel: Jezus is Heer
+  artiest: Sela
+- id: sela-jezus-leidt-zijn-kerk
+  titel: Jezus leidt Zijn kerk
+  artiest: Sela
+- id: sela-jezus-liefde-voor-mij
+  titel: Jezus liefde voor mij
+  artiest: Sela
+- id: sela-jezus-u-bent-bij-ons
+  titel: Jezus, U bent bij ons
+  artiest: Sela
+- id: sela-juich-hosanna
+  titel: Juich, hosanna
+  artiest: Sela
+- id: sela-juicht-hij-is-verheerlijkt
+  titel: Juicht / Hij is verheerlijkt
+  artiest: Sela
+- id: sela-ken-mijn-hart
+  titel: Ken mijn hart
+  artiest: Sela
+- id: sela-kerstnacht-boven-bethlehem
+  titel: Kerstnacht boven Bethlehem
+  artiest: Sela
+- id: sela-klaaglied
+  titel: Klaaglied
+  artiest: Sela
+- id: sela-klein-gloria-gloria-patri
+  titel: Klein Gloria (Gloria Patri)
+  artiest: Sela
+- id: sela-kom-heilige-geest
+  titel: Kom Heilige Geest
+  artiest: Sela
+- id: sela-kom-met-vrede
+  titel: Kom met vrede
+  artiest: Sela
+- id: sela-kom-tot-hem
+  titel: Kom tot Hem
+  artiest: Sela
+- id: sela-kom-tot-ons-de-wereld-wacht
+  titel: Kom tot ons, de wereld wacht
+  artiest: Sela
+- id: sela-kom-tot-ons-heer-adventsgebed
+  titel: Kom tot ons, Heer (adventsgebed)
+  artiest: Sela
+- id: sela-kom-vier-het-feest-met-mij
+  titel: Kom, vier het feest met mij
+  artiest: Sela
+- id: sela-komt-allen-tezamen
+  titel: Komt allen tezamen
+  artiest: Sela
+- id: sela-kyrie
+  titel: Kyrie
+  artiest: Sela
+- id: sela-kyrie-eleison
+  titel: Kyrie Eleison
+  artiest: Sela
+- id: sela-laat-ons-samen-een-zijn
+  titel: Laat ons samen een zijn
+  artiest: Sela
+- id: sela-leer-mij-geven
+  titel: Leer mij geven
+  artiest: Sela
+- id: sela-leer-mij-o-heer-uw-lijden
+  titel: Leer mij, o Heer, uw lijden
+  artiest: Sela
+- id: sela-liefste-jezus
+  titel: Liefste Jezus
+  artiest: Sela
+- id: sela-lof-aanbidding
+  titel: Lof aanbidding
+  artiest: Sela
+- id: sela-machtig-strijder
+  titel: Machtig Strijder
+  artiest: Sela
+- id: sela-machtig-wonder
+  titel: Machtig wonder
+  artiest: Sela
+- id: sela-mag-ik-jou-tot-zegen-zijn
+  titel: Mag ik jou tot zegen zijn
+  artiest: Sela
+- id: sela-magnificat
+  titel: Magnificat
+  artiest: Sela
+- id: sela-man-van-smarten
+  titel: Man van smarten
+  artiest: Sela
+- id: sela-maranatha
+  titel: Maranatha
+  artiest: Sela
+- id: sela-maria-had-je-door
+  titel: Maria, had je door
+  artiest: Sela
+- id: sela-met-een-hart-en-stem
+  titel: Met een hart en stem
+  artiest: Sela
+- id: sela-met-u-alleen
+  titel: Met U alleen
+  artiest: Sela
+- id: sela-mijn-herder
+  titel: Mijn Herder
+  artiest: Sela
+- id: sela-mijn-toevlucht-psalm-91
+  titel: Mijn toevlucht (Psalm 91)
+  artiest: Sela
+- id: sela-moeders-van-bethlehem
+  titel: Moeders van Bethlehem
+  artiest: Sela
+- id: sela-naar-het-licht-toe
+  titel: Naar het licht toe
+  artiest: Sela
+- id: sela-nu-laat-u-mij-in-vrede-gaan
+  titel: Nu laat U mij in vrede gaan
+  artiest: Sela
+- id: sela-o-kindeke-klein
+  titel: O kindeke klein
+  artiest: Sela
+- id: sela-o-kom-nu-en-jubel
+  titel: O kom nu en jubel
+  artiest: Sela
+- id: sela-o-kom-o-kom-immanuel
+  titel: O kom, o kom, Immanuël
+  artiest: Sela
+- id: sela-o-mensen-kom
+  titel: O mensen, kom
+  artiest: Sela
+- id: sela-one-church
+  titel: One church
+  artiest: Sela
+- id: sela-op-u-mijn-heiland-blijf-ik-hopen
+  titel: Op U, mijn Heiland blijf ik hopen
+  artiest: Sela
+- id: sela-opgestaan
+  titel: Opgestaan
+  artiest: Sela
+- id: sela-ouverture-thuis
+  titel: Ouverture Thuis
+  artiest: Sela
+- id: sela-pad-van-de-liefde
+  titel: Pad van de liefde
+  artiest: Sela
+- id: sela-prelude
+  titel: Prelude
+  artiest: Sela
+- id: sela-preludium
+  titel: Preludium
+  artiest: Sela
+- id: sela-psalm-84
+  titel: Psalm 84
+  artiest: Sela
+- id: sela-psalm-96
+  titel: Psalm 96
+  artiest: Sela
+- id: sela-psalm-98
+  titel: Psalm 98
+  artiest: Sela
+- id: sela-raak-mijn-wonden-aan
+  titel: Raak mijn wonden aan
+  artiest: Sela
+- id: sela-ruimte-voor-u
+  titel: Ruimte voor U
+  artiest: Sela
+- id: sela-samen-eten-wij
+  titel: Samen eten wij
+  artiest: Sela
+- id: sela-sanctus
+  titel: Sanctus
+  artiest: Sela
+- id: sela-speel
+  titel: Speel
+  artiest: Sela
+- id: sela-stad-van-god
+  titel: Stad van God
+  artiest: Sela
+- id: sela-stille-nacht-heilige-nacht
+  titel: Stille nacht, heilige nacht
+  artiest: Sela
+- id: sela-thuis
+  titel: Thuis
+  artiest: Sela
+- id: sela-u
+  titel: U
+  artiest: Sela
+- id: sela-u-bent-aanwezig
+  titel: U bent aanwezig
+  artiest: Sela
+- id: sela-u-bent-hier
+  titel: U bent hier
+  artiest: Sela
+- id: sela-u-bent-mijn-schuilplaats-heer
+  titel: U bent mijn schuilplaats Heer
+  artiest: Sela
+- id: sela-u-maakt-ons-een
+  titel: U maakt ons één
+  artiest: Sela
+- id: sela-u-zij-de-glorie
+  titel: U zij de glorie
+  artiest: Sela
+- id: sela-ubi-caritas
+  titel: Ubi caritas
+  artiest: Sela
+- id: sela-uw-naam
+  titel: Uw naam
+  artiest: Sela
+- id: sela-vaders-huis
+  titel: Vaders huis
+  artiest: Sela
+- id: sela-veni-creator-spiritus
+  titel: Veni Creator Spiritus
+  artiest: Sela
+- id: sela-verborgen-rijkdom
+  titel: Verborgen rijkdom
+  artiest: Sela
+- id: sela-vergeef-ons
+  titel: Vergeef ons
+  artiest: Sela
+- id: sela-verlangen
+  titel: Verlangen
+  artiest: Sela
+- id: sela-verwachten
+  titel: Verwachten
+  artiest: Sela
+- id: sela-via-dolorosa
+  titel: Via Dolorosa
+  artiest: Sela
+- id: sela-volheid-van-genade
+  titel: Volheid van genade
+  artiest: Sela
+- id: sela-volheid-van-god
+  titel: Volheid van God
+  artiest: Sela
+- id: sela-voor-het-goede-van-het-land
+  titel: Voor het goede van het land
+  artiest: Sela
+- id: sela-voorbedelied
+  titel: Voorbedelied
+  artiest: Sela
+- id: sela-votum-en-groet
+  titel: Votum en Groet
+  artiest: Sela
+- id: sela-vrede-voor-wie-het-hoort
+  titel: Vrede voor wie het hoort
+  artiest: Sela
+- id: sela-vreugde-van-mijn-hart
+  titel: Vreugde van mijn hart
+  artiest: Sela
+- id: sela-vreugdevuur
+  titel: Vreugdevuur
+  artiest: Sela
+- id: sela-vul-ons-met-uw-liefde
+  titel: Vul ons met uw liefde
+  artiest: Sela
+- id: sela-waar-vriendschap-en-liefde-zijn
+  titel: Waar vriendschap en liefde zijn
+  artiest: Sela
+- id: sela-wacht-op-de-heer
+  titel: Wacht op de Heer
+  artiest: Sela
+- id: sela-wanneer-ik-u-niet-vind
+  titel: Wanneer ik U niet vind
+  artiest: Sela
+- id: sela-wanneer-wordt-het-waar
+  titel: Wanneer wordt het waar
+  artiest: Sela
+- id: sela-wat-een-grote-liefde
+  titel: Wat een grote liefde
+  artiest: Sela
+- id: sela-wees-bij-ons
+  titel: Wees bij ons
+  artiest: Sela
+- id: sela-wees-stil-voor-het-aangezicht-van-god
+  titel: Wees stil voor het aangezicht van God
+  artiest: Sela
+- id: sela-wees-verheugd
+  titel: Wees verheugd
+  artiest: Sela
+- id: sela-welkom-hier-bij-ons
+  titel: Welkom hier bij ons
+  artiest: Sela
+- id: sela-welzalig-de-man
+  titel: Welzalig de man
+  artiest: Sela
+- id: sela-wiegelied
+  titel: Wiegelied
+  artiest: Sela
+- id: sela-wij-gaan-niet-zonder-u
+  titel: Wij gaan niet zonder U
+  artiest: Sela
+- id: sela-wij-geloven
+  titel: Wij geloven
+  artiest: Sela
+- id: sela-wij-leven-van-de-wind
+  titel: Wij leven van de wind
+  artiest: Sela
+- id: sela-wij-trekken-in-een-lange-stoet
+  titel: Wij trekken in een lange stoet
+  artiest: Sela
+- id: sela-wij-verhogen-uw-naam
+  titel: Wij verhogen uw naam
+  artiest: Sela
+- id: sela-wij-volgen-u-heer
+  titel: Wij volgen U Heer
+  artiest: Sela
+- id: sela-wij-zijn-het-licht
+  titel: Wij zijn het licht
+  artiest: Sela
+- id: sela-wijs-mij-de-weg-naar-bethlehem
+  titel: Wijs mij de weg naar Bethlehem
+  artiest: Sela
+- id: sela-wonderlijk
+  titel: Wonderlijk
+  artiest: Sela
+- id: sela-wonderlijke-raad-van-god
+  titel: Wonderlijke raad van God
+  artiest: Sela
+- id: sela-zegen-komt-van-u
+  titel: Zegen komt van U
+  artiest: Sela
+- id: sela-zegen-voor-de-kinderen
+  titel: Zegen voor de kinderen
+  artiest: Sela
+- id: sela-zie-de-mens
+  titel: Zie de mens
+  artiest: Sela
+- id: sela-zie-hoe-jezus-lijdt-voor-mij
+  titel: Zie hoe Jezus lijdt voor mij
+  artiest: Sela
+- id: sela-zo-hoort-uw-liefde-bij-ons
+  titel: Zo hoort uw liefde bij ons
+  artiest: Sela
+- id: sela-zo-is-het-beloofd
+  titel: Zo is het beloofd
+  artiest: Sela
+- id: sela-zo-lief-had-god-de-vader-ons
+  titel: Zo lief had God de Vader ons
+  artiest: Sela

@@ -1,0 +1,49 @@
+# Liedbundels met hun schrijfwijzen zoals die in liturgieen voorkomen.
+# Aliassen worden hoofdletterongevoelig vergeleken. Bij bundels met
+# psalmen: true mag het nummer ook als "Psalm 24" elders in de regel staan.
+- code: opw
+  naam: Opwekking
+  aliassen: [opwekking, opw., opw, oth]
+- code: opwkids
+  naam: Opwekking Kids
+  aliassen: [opwekking kids, opw kids, opw. kids, ok4kids, opwekking voor kids]
+- code: nlb
+  naam: Liedboek 2013
+  aliassen: [nlb, lb, liedboek 2013, liedboek_2013, liedboek, nieuwe liedboek]
+- code: dnp
+  naam: De Nieuwe Psalmberijming
+  aliassen: [dnp, de nieuwe psalmberijming, nieuwe psalmberijming]
+  psalmen: true
+- code: pvn
+  naam: Psalmen voor Nu
+  aliassen: [pvn, psalmen voor nu]
+  psalmen: true
+- code: tpp
+  naam: The Psalm Project
+  aliassen: [tpp, the psalm project, psalm project]
+  psalmen: true
+- code: gkb
+  naam: Gereformeerd Kerkboek
+  aliassen: [gereformeerd kerkboek 2017, gereformeerd kerkboek 2006, gereformeerd kerkboek, gkv kerkboek 2017, gkv kerkboek, gkb]
+  psalmen: true
+- code: elb
+  naam: Evangelische Liedbundel
+  aliassen: [elb, evangelische liedbundel]
+- code: jdh
+  naam: Johannes de Heer
+  aliassen: [jdh, johannes de heer, joh. de heer]
+- code: er2
+  naam: Elly en Rikkert liedbundel 2
+  aliassen: [e&r2, e&r 2, e&r liedbundel 2, elly en rikkert 2, elly en rikkert liedbundel 2]
+- code: hh
+  naam: Hemelhoog
+  aliassen: [hemelhoog, hh]
+- code: svg
+  naam: Schrijvers voor Gerechtigheid
+  aliassen: [svg, schrijvers voor gerechtigheid]
+- code: zg
+  naam: Zingende Gezegend
+  aliassen: [zingende gezegend, zg]
+- code: ar
+  naam: Arabische liederen
+  aliassen: [ar]

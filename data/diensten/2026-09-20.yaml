@@ -1,0 +1,42 @@
+datum: '2026-09-20'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20260920 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: dit is een morgen als ooit de eerste (NLB 216)
+  moment: aanvang
+  lied: nlb-216
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Ik wens jou (trinity)
+  moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- volgorde: 3
+  ruw: Flowers (Luisterlied)
+  moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- volgorde: 4
+  ruw: Meer dan een wonder (Kinga Ban)
+  lied: null
+  herkenning: onbekend
+- volgorde: 5
+  ruw: Doop (sela, Hemelhoog 502))
+  lied: sela-doop
+  herkenning: automatisch
+- volgorde: 6
+  ruw: 'zingen: DNP 119, 3.5'
+  lied: dnp-119
+  herkenning: automatisch
+- volgorde: 7
+  ruw: 'zingen: Ga met God en Hij zal met je zijn (NLB)'
+  lied: null
+  herkenning: onbekend
+- volgorde: 8
+  ruw: zingen (als amen) Vervuld van uw zegen (NLB 425)
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

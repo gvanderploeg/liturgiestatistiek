@@ -1,0 +1,35 @@
+datum: '2026-08-02'
+begeleiding: orgel
+kenmerken: []
+bron: 20260802 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Liedboek 221 (Zo vriendelijke en veilig als het licht)
+  moment: aanvang
+  lied: nlb-221
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Opwekking 369 (Door uw genade, Vader)
+  lied: opw-369
+  herkenning: automatisch
+- volgorde: 3
+  ruw: 'Liedboek 152: 1 (allen), 2 (vrouwen), 5 (mannen) 6 (vrouwen), 9 (mannen) en 10 (allen)'
+  lied: nlb-152
+  herkenning: automatisch
+- volgorde: 4
+  ruw: 'De Nieuwe Psalmberijming, psalm 25: 2, 4, 8'
+  lied: dnp-25
+  herkenning: automatisch
+- volgorde: 5
+  ruw: 'Gereformeerd Kerkboek 249: 1 – 5 (God, die was en is en komt)'
+  lied: gkb-249-god-die-was-en-is
+  herkenning: automatisch
+- volgorde: 6
+  ruw: 'E&R liedbundel 2, 439: 4 coupletten (Wij blijven geloven dat onder miljoenen)'
+  lied: er2-439
+  herkenning: automatisch
+- volgorde: 7
+  ruw: Liedboek 425 (Vervuld van uw zegen)
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

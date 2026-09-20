@@ -1,0 +1,40 @@
+datum: '2026-09-06'
+begeleiding: band
+kenmerken:
+- doop
+- bevestiging
+bron: 20260906 Eredienst Westerkerk -.pdf
+liederen:
+- volgorde: 1
+  ruw: Opwekking 847 (Onze schuilplaats is God)
+  moment: aanvang
+  lied: opw-847
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Opwekking 797 (Sela – Breng ons samen)
+  lied: opw-797
+  herkenning: automatisch
+- volgorde: 3
+  ruw: We’ll all be free – William Matthews
+  lied: null
+  herkenning: onbekend
+- volgorde: 4
+  ruw: Sela - Gods zegen voor jou
+  lied: sela-gods-zegen-voor-jou
+  herkenning: automatisch
+- volgorde: 5
+  ruw: Opwekking 829 (Wij zoeken U)
+  lied: opw-829
+  herkenning: automatisch
+- volgorde: 6
+  ruw: Hillsong – Oceans
+  lied: null
+  herkenning: onbekend
+- volgorde: 7
+  ruw: Opwekking 58 (Vrede zij u)
+  lied: opw-58
+  herkenning: automatisch
+- volgorde: 8
+  ruw: Opwekking 734 (God, ik adem om van U te zingen)
+  lied: opw-734
+  herkenning: automatisch

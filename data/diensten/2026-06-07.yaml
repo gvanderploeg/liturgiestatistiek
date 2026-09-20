@@ -1,0 +1,40 @@
+datum: '2026-06-07'
+begeleiding: band
+kenmerken:
+- belijdenis
+bron: 20260607 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Met open armen – SvG
+  moment: aanvang
+  lied: svg-met-open-armen
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Opwekking 820 (Feest van genade)
+  lied: opw-820
+  herkenning: automatisch
+- volgorde: 3
+  ruw: Opwekking kids 233 (God heeft een plan met je leven)
+  moment: kindmoment
+  lied: opwkids-233
+  herkenning: automatisch
+- volgorde: 4
+  ruw: Thank you Jesus for the blood – Charity Gayle
+  lied: null
+  herkenning: onbekend
+- volgorde: 5
+  ruw: Lichtstad met uw paar’len poorten (o.a. Evangelische Liedbundel 413)
+  lied: elb-413
+  herkenning: automatisch
+- volgorde: 6
+  ruw: Come as you are – Crowder
+  lied: null
+  herkenning: onbekend
+- volgorde: 7
+  ruw: Opwekking 770 (Ik zal er zijn)
+  lied: opw-770
+  herkenning: automatisch
+- volgorde: 8
+  ruw: Opwekking 849 (De goedheid van God)
+  lied: opw-849
+  herkenning: automatisch

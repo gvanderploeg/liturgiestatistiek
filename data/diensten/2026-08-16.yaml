@@ -1,0 +1,26 @@
+datum: '2026-08-16'
+begeleiding: orgel
+kenmerken: []
+bron: 20260816 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Onze hulp en onze verwachting is van God, onze Heer (Hemelhoog 495)
+  moment: aanvang
+  lied: hh-495
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Lof aan de HEER, elk volk moet weten hoe groot Hij is, hoe Hij wil heten! (DNP Psalm 105:1,2,3)
+  lied: dnp-105-lof-aan-de-heer-elk
+  herkenning: automatisch
+- volgorde: 3
+  ruw: Spreek, o Heer, door uw heilig woord (Opwekking 689)
+  lied: opw-689
+  herkenning: automatisch
+- volgorde: 4
+  ruw: Lam van God, Lam van God, dat de zonde der wereld draagt (Hemelhoog 162)
+  lied: hh-162
+  herkenning: automatisch
+- volgorde: 5
+  ruw: We believe in God the Father (Opwekking 347 origineel)
+  lied: opw-347
+  herkenning: automatisch

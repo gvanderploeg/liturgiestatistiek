@@ -1,0 +1,36 @@
+datum: '2026-09-13'
+begeleiding: band
+kenmerken:
+- startzondag
+bron: 20260913 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Opwekking 286 (Hij kwam bij ons, heel gewoon), tweetalig
+  moment: aanvang
+  lied: opw-286
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Ar 124 Zidoel masieh tasbie (Geef lofprijzing aan de Messias)
+  lied: ar-124
+  herkenning: automatisch
+- volgorde: 3
+  ruw: Opwekking 698 (Nooit meer alleen)
+  lied: opw-698
+  herkenning: automatisch
+- volgorde: 4
+  ruw: Ar126 Ashwa lilbaraka (Verlangen naar de zegen)
+  lied: ar-126
+  herkenning: automatisch
+- volgorde: 5
+  ruw: Ik wil meer en meer gaan lijken op Jezus
+  moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- volgorde: 6
+  ruw: Ar19 Bahroe mahabbatiel (De zee van de liefde van de Verlosser is grenzeloos)
+  lied: ar-19
+  herkenning: automatisch
+- volgorde: 7
+  ruw: Wat een geschenk is Jezus mijn bevrijder
+  lied: null
+  herkenning: onbekend

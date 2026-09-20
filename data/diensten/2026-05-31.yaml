@@ -1,0 +1,35 @@
+datum: '2026-05-31'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20260531 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Opwekking 815 (Vul dit huis met glorie)
+  moment: aanvang
+  lied: opw-815
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Opwekking 595 (Licht van de wereld)
+  lied: opw-595
+  herkenning: automatisch
+- volgorde: 3
+  ruw: Meer dan een wonder – Kinga Ban
+  lied: null
+  herkenning: onbekend
+- volgorde: 4
+  ruw: Doop – Sela
+  lied: sela-doop
+  herkenning: automatisch
+- volgorde: 5
+  ruw: Gods zegen voor jou – Sela
+  lied: sela-gods-zegen-voor-jou
+  herkenning: automatisch
+- volgorde: 6
+  ruw: Opwekking 347 (Ik geloof in God de Vader)
+  lied: opw-347
+  herkenning: automatisch
+- volgorde: 7
+  ruw: I speak Jesus – Charity Gayle
+  lied: null
+  herkenning: onbekend

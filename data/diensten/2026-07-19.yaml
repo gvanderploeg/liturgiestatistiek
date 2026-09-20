@@ -1,0 +1,30 @@
+datum: '2026-07-19'
+begeleiding: orgel
+kenmerken: []
+bron: 20260719 Eredienst Westerkerk.pdf
+liederen:
+- volgorde: 1
+  ruw: Opwekking 245 – Hier in uw Heiligdom
+  moment: aanvang
+  lied: opw-245
+  herkenning: automatisch
+- volgorde: 2
+  ruw: Opwekking 277 – Machtig God, sterke rots
+  lied: opw-277
+  herkenning: automatisch
+- volgorde: 3
+  ruw: Opwekking 167 ‘Samen in de naam van Jezus
+  lied: opw-167
+  herkenning: automatisch
+- volgorde: 4
+  ruw: DNP psalm 133 vers 1 en 2 ‘Wat is het goed’
+  lied: dnp-133-wat-is-het-goed
+  herkenning: automatisch
+- volgorde: 5
+  ruw: LEV - De kerk van alle tijden
+  lied: null
+  herkenning: onbekend
+- volgorde: 6
+  ruw: NLB 413 vers 1,2 en 3 Grote God, wij loven U
+  lied: nlb-413
+  herkenning: automatisch

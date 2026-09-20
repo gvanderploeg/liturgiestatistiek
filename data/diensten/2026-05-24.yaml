@@ -1,0 +1,28 @@
+datum: '2026-05-24'
+begeleiding: band
+kenmerken:
+- pinksteren
+bron: Eredienst Westerkerk 24 mei 2026 -.pdf
+liederen:
+- volgorde: 1
+  ruw: Opwekking 623 -Laat het huis gevuld zijn..
+  moment: aanvang
+  lied: opw-623
+  herkenning: automatisch
+- volgorde: 2
+  ruw: LB 51b create in me
+  lied: nlb-51b
+  herkenning: automatisch
+- volgorde: 3
+  ruw: Kindlied - We are one
+  moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- volgorde: 4
+  ruw: Opwekking 575 (Jezus alleen)
+  lied: opw-575
+  herkenning: automatisch
+- volgorde: 5
+  ruw: Opwekking 334 (Heer, uw licht en uw liefde schijnen)
+  lied: opw-334
+  herkenning: automatisch

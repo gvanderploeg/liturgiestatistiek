@@ -1,0 +1,15 @@
+# Dienstkenmerken met de trefwoorden waarmee ze in het veld Bijzonderheden
+# herkend worden. Alleen deze codes komen in de publieke data; de ruwe tekst
+# van Bijzonderheden zelf wordt nooit opgeslagen.
+doop: [doop, doopzondag, doopdienst, dopen]
+avondmaal: [avondmaal, heilig avondmaal]
+belijdenis: [belijdenis, belijdenisdienst]
+bevestiging: [bevestiging]
+pinksteren: [pinksteren]
+pasen: [pasen, paaszondag, paasmorgen, eerste paasdag]
+goede-vrijdag: [goede vrijdag]
+kerst: [kerst, kerstfeest, kerstnacht, kerstmorgen, eerste kerstdag]
+advent: [advent]
+startzondag: [startzondag, startdienst]
+dankdag: [dankdag]
+biddag: [biddag]
