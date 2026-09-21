@@ -18,14 +18,14 @@ TPP_TITEL = re.compile(r"^ps\.?\s*(\d+)\s*[-–]\s*(.+)$", re.IGNORECASE)
 
 def importeer_sheet(xlsx: Path, catalogus: Catalogus) -> dict[str, int]:
     wb = openpyxl.load_workbook(xlsx, read_only=True, data_only=True)
-    toegevoegd = {"opwekking.yaml": 0, "sela.yaml": 0, "tpp.yaml": 0, "svg.yaml": 0}
+    toegevoegd = {"opw.yaml": 0, "sela.yaml": 0, "tpp.yaml": 0, "svg.yaml": 0}
 
     for nr, titel in _rijen(wb, "Bron Opwekking", (1, 2)):
         if not str(nr).strip().isdigit():
             continue
         delen = [d.strip() for d in str(titel).split("/") if d.strip()]
         lied = Lied(id=f"opw-{int(nr)}", titel=delen[0] if delen else f"Opwekking {nr}", referenties=[Referentie("opw", str(int(nr)))], aliassen=delen[1:])
-        toegevoegd["opwekking.yaml"] += _voeg_toe(catalogus, lied, "opwekking.yaml")
+        toegevoegd["opw.yaml"] += _voeg_toe(catalogus, lied, "opw.yaml")
 
     for (titel,) in _rijen(wb, "Bron Sela", (1,)):
         lied = Lied(id=f"sela-{slug(titel)}", titel=str(titel).strip(), artiest="Sela")

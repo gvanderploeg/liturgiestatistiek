@@ -72,7 +72,7 @@ def _toon(pdf: Path, omgeving: Omgeving, alles: bool) -> int:
             k = koppel(rij.inhoud, ontl, catalogus, aliassen, index)
             moment = bepaal_moment(rij.label, rij.inhoud, vorig, eerste and lied)
             refs = ", ".join(f"{r.bundel} {r.nummer}" for r in ontl.referenties) or "-"
-            print(f"       refs: {refs} | titels: {ontl.titels} | artiest: {ontl.artiest} | hints: {sorted(ontl.hints)} | moment: {moment}")
+            print(f"       refs: {refs} | titels: {ontl.titels} | bundels: {ontl.bundels} | hints: {sorted(ontl.hints)} | moment: {moment}")
             print(f"       -> {k.herkenning}: {k.lied or ''} ({k.reden})" + (f" kandidaten: {[(c.lied, c.score) for c in k.kandidaten]}" if k.kandidaten else ""))
             if lied:
                 eerste = False

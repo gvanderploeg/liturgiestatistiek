@@ -3,29 +3,23 @@ begeleiding: orgel piano
 kenmerken: []
 bron: 20260726 Eredienst Westerkerk.pdf
 liederen:
-- volgorde: 1
-  ruw: 'Opwekking 640: Ik hef mijn ogen op naar de bergen'
+- ruw: 'Opwekking 640: Ik hef mijn ogen op naar de bergen'
   moment: aanvang
   lied: opw-640
   herkenning: automatisch
-- volgorde: 2
-  ruw: Psalm 24:1 DNP De aarde is met al wat leeft
+- ruw: Psalm 24:1 DNP De aarde is met al wat leeft
   lied: dnp-24-de-aarde-is-met-al
   herkenning: automatisch
-- volgorde: 3
-  ruw: 'Opwekking 464: Wees stil voor het aangezicht van God'
+- ruw: 'Opwekking 464: Wees stil voor het aangezicht van God'
   lied: opw-464
   herkenning: automatisch
-- volgorde: 4
-  ruw: Liedboek_2013 lied 912 vers 1, 2, 4 en 6. Neem mijn leven, laat het Heer, toegewijd zijn aan Uw eer.
+- ruw: Liedboek_2013 lied 912 vers 1, 2, 4 en 6. Neem mijn leven, laat het Heer, toegewijd zijn aan Uw eer.
   lied: nlb-912
   herkenning: automatisch
-- volgorde: 5
-  ruw: Psalm 119:40 uit de berijming van het GKV Kerkboek 2017*
-  lied: gkb-119
+- ruw: Psalm 119:40 uit de berijming van het GKV Kerkboek 2017*
+  lied: gkb-119-uit-de-berijming-van-het
   herkenning: automatisch
-- volgorde: 6
-  ruw: 'Opwekking 710: Zegen mij (op de weg die ik moet gaan).'
+- ruw: 'Opwekking 710: Zegen mij (op de weg die ik moet gaan).'
   moment: zegenlied
   lied: opw-710
   herkenning: automatisch

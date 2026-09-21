@@ -1,0 +1,35 @@
+- id: nlb-152
+  titel: Liedboek 2013 152
+  referenties:
+  - bundel: nlb
+    nummer: '152'
+- id: nlb-216
+  titel: dit is een morgen als ooit de eerste
+  referenties:
+  - bundel: nlb
+    nummer: '216'
+- id: nlb-221
+  titel: Zo vriendelijke en veilig als het licht
+  referenties:
+  - bundel: nlb
+    nummer: '221'
+- id: nlb-413
+  titel: Grote God, wij loven U
+  referenties:
+  - bundel: nlb
+    nummer: '413'
+- id: nlb-425
+  titel: Vervuld van uw zegen
+  referenties:
+  - bundel: nlb
+    nummer: '425'
+- id: nlb-870
+  titel: Heilige God, geprezen zij
+  referenties:
+  - bundel: nlb
+    nummer: '870'
+- id: nlb-912
+  titel: Neem mijn leven, laat het Heer, toegewijd zijn aan Uw eer
+  referenties:
+  - bundel: nlb
+    nummer: '912'

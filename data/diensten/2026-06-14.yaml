@@ -3,37 +3,29 @@ begeleiding: band
 kenmerken: []
 bron: 20260614 Eredienst Westerkerk.pdf
 liederen:
-- volgorde: 1
-  ruw: 'Zingend: SELA, Votum en Groet'
+- ruw: 'Zingend: SELA, Votum en Groet'
   moment: aanvang
   lied: sela-votum-en-groet
   herkenning: automatisch
-- volgorde: 2
-  ruw: 'Sela: Breng ons samen'
+- ruw: 'Sela: Breng ons samen'
   lied: sela-breng-ons-samen
   herkenning: automatisch
-- volgorde: 3
-  ruw: Holy Forever
+- ruw: Holy Forever
   lied: null
   herkenning: onbekend
-- volgorde: 4
-  ruw: Run to the father
+- ruw: Run to the father
   lied: null
   herkenning: onbekend
-- volgorde: 5
-  ruw: Geen afstand- Eline Bakker
+- ruw: Geen afstand- Eline Bakker
   lied: null
   herkenning: onbekend
-- volgorde: 6
-  ruw: '1e > Stichting Present 2e > Kerk Burn the Ships:'
+- ruw: '1e > Stichting Present 2e > Kerk Burn the Ships:'
   lied: null
   herkenning: onbekend
-- volgorde: 7
-  ruw: Jezus Overwinnaar
+- ruw: Jezus Overwinnaar
   lied: opw-832
   herkenning: automatisch
-- volgorde: 8
-  ruw: 'Zegen uitspreken Zingen: Blessings'
+- ruw: 'Zegen uitspreken Zingen: Blessings'
   moment: zegenlied
   lied: null
   herkenning: onbekend

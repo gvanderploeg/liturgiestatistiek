@@ -1,3 +1,9 @@
+- id: sela-heer-u-bent
+  titel: Heer, U bent
+  referenties:
+  - bundel: er2
+    nummer: '423'
+  artiest: Sela
 - id: sela-doop
   titel: Doop
   referenties:
@@ -252,9 +258,6 @@
   artiest: Sela
 - id: sela-heer-wijs-mij-uw-weg
   titel: Heer wijs mij uw weg
-  artiest: Sela
-- id: sela-heer-u-bent
-  titel: Heer, U bent
   artiest: Sela
 - id: sela-heer-we-kijken-omhoog
   titel: Heer, we kijken omhoog

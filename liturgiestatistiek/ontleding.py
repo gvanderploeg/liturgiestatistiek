@@ -1,6 +1,12 @@
 """Ontleedt de tekst van liturgierijen: welke rijen zijn liederen, welke
-bundelverwijzingen, titels en artiesten staan erin, op welk moment in de
-dienst, en wat zeggen datum en bijzonderheden."""
+bundelverwijzingen en titelfragmenten staan erin, op welk moment in de
+dienst, en wat zeggen datum en bijzonderheden.
+
+De ontleding is bewust ruim: bundelverwijzingen worden precies herkend,
+de rest van de tekst wordt grof opgeknipt in fragmenten die de koppeling
+tolerant vergelijkt met de catalogus. Wat misgaat vangt de wachtrij op,
+en een besluit daar wordt een alias die het de volgende keer goed doet.
+"""
 
 from __future__ import annotations
 
@@ -14,6 +20,7 @@ from .tekst import eenvoudig, normaliseer
 
 LIED_LABEL = re.compile(r"lied\b", re.IGNORECASE)
 MEERDERE_LABEL = re.compile(r"\d+\s*(en|&|,)\s*\d+", re.IGNORECASE)
+LIEDWOORDEN = re.compile(r"lied\b|\bzingen\b|\bgezongen\b", re.IGNORECASE)
 
 RUIS_PREFIX = re.compile(r"^(zingen|zingend|zang|beginnen met)\s*(\([^)]*\))?\s*:?\s*", re.IGNORECASE)
 KINDLIED_PREFIX = re.compile(r"^(kindlied|kinderlied)\s*\d*\s*[-:]\s*", re.IGNORECASE)
@@ -21,23 +28,11 @@ URL = re.compile(r"\(\s*https?://[^)]*\)?|https?://\S+", re.IGNORECASE)
 HINTWOORDEN = {
     "luisterlied": re.compile(r"\bluisterlied\b", re.IGNORECASE),
     "refrein": re.compile(r"\brefrein\b", re.IGNORECASE),
-    "tweetalig": re.compile(r"\btweetalig\b", re.IGNORECASE),
-    "origineel": re.compile(r"\borigineel\b", re.IGNORECASE),
-    "facultatief": re.compile(r"\bfacultatief\b", re.IGNORECASE),
 }
-OVERIGE_RUIS = [
-    re.compile(r"\bmet tekst op powerpoint\b", re.IGNORECASE),
-    re.compile(r"\buit de berijming van( het| de)?\b", re.IGNORECASE),
-    re.compile(r"\bo\.a\.\s*", re.IGNORECASE),
-    re.compile(r"\book in\b", re.IGNORECASE),
-    re.compile(r"\b(vers|verzen|couplet|coupletten)\b[\s\d,.]*(\ben\b[\s\d,.]*)*", re.IGNORECASE),
-    re.compile(r"\(\s*(allen|vrouwen|mannen)\s*\)", re.IGNORECASE),
-    re.compile(r":\s*\d+(\s*,\s*\d+)*(\s*en\s*\d+)?"),
-    re.compile(r"\b\d{1,3}(\s*[.,:]\s*\d{1,3})*\b(?!\s*[a-z])", re.IGNORECASE),
-    re.compile(r"(?<=[a-z])\s*:\s*(?=[\d\s,.]+$)"),
-]
-SCHEIDERS = re.compile(r"\s+[-–:/]\s+|\s*[-–:]\s+|\s+[-–]\s*|\.{2,}|[()\[\]\"“”]|\s*[:;]\s+")
-TRAILING_WOORDEN = re.compile(r"\b(van|door|met|en|of)\s*$", re.IGNORECASE)
+GETALLEN = re.compile(r"\d+([.,:/]\s*\d+)*")
+VULWOORDEN = re.compile(r"\b(vers|verzen|couplet|coupletten|allen|vrouwen|mannen|o\.a\.|ook in|tweetalig|origineel|facultatief)\b", re.IGNORECASE)
+SCHEIDERS = re.compile(r"\s+[-–:/]\s+|\s*[-–:]\s+|\s+[-–]\s*|\.{2,}|[()\[\]\"“”;]")
+RANDWOORDEN = re.compile(r"^(van|door|met|en|of)\b\s*|\b(van|door|met|en|of)\s*$", re.IGNORECASE)
 PLACEHOLDER = " █ "
 
 NUMMER = r"(\d{1,4}[a-z]?)(?![0-9])"
@@ -49,7 +44,7 @@ PSALMNUMMER = re.compile(r"\b(?:psalm|ps\.?)\s*(\d{1,3})\b", re.IGNORECASE)
 class Ontleding:
     referenties: list[Referentie] = field(default_factory=list)
     titels: list[str] = field(default_factory=list)
-    artiest: str | None = None
+    bundels: list[str] = field(default_factory=list)
     hints: set[str] = field(default_factory=set)
 
 
@@ -62,7 +57,7 @@ def is_kandidaatrij(inhoud: str, catalogus: Catalogus) -> bool:
     if not inhoud.strip():
         return False
     ontl = ontleed(inhoud, catalogus)
-    return bool(ontl.referenties) or ontl.artiest is not None or bool(re.search(r"\b(lied|zingen|gezongen)\b", inhoud, re.IGNORECASE))
+    return bool(ontl.referenties) or bool(ontl.bundels) or bool(LIEDWOORDEN.search(inhoud))
 
 
 def bepaal_moment(label: str, inhoud: str, vorig_label: str, eerste: bool) -> str | None:
@@ -92,10 +87,8 @@ def ontleed(inhoud: str, catalogus: Catalogus) -> Ontleding:
             tekst = patroon.sub(" ", tekst)
 
     tekst = _vind_referenties(tekst, catalogus, ontl)
-    tekst = _vind_artiest(tekst, catalogus, ontl)
-
-    for patroon in OVERIGE_RUIS:
-        tekst = patroon.sub(" ", tekst)
+    tekst = GETALLEN.sub(" ", tekst)
+    tekst = VULWOORDEN.sub(" ", tekst)
 
     for deel in SCHEIDERS.split(tekst):
         deel = _schoon(deel)
@@ -109,12 +102,18 @@ def eenvoudig_behoud_hoofdletters(tekst: str) -> str:
     return " ".join((tekst or "").translate(vertaling).split())
 
 
+_patronen_cache: dict[int, list[tuple[str, str, re.Pattern]]] = {}
+
+
 def _alias_patronen(catalogus: Catalogus) -> list[tuple[str, str, re.Pattern]]:
-    patronen = []
-    for bundel in catalogus.bundels.values():
-        for alias in bundel.aliassen:
-            patronen.append((bundel.code, alias, re.compile(r"(?<![a-z0-9])" + re.escape(alias) + r"(?![a-z])(?:" + NA_ALIAS + NUMMER + ")?", re.IGNORECASE)))
-    patronen.sort(key=lambda p: -len(p[1]))
+    patronen = _patronen_cache.get(id(catalogus))
+    if patronen is None:
+        patronen = []
+        for bundel in catalogus.bundels.values():
+            for alias in bundel.aliassen:
+                patronen.append((bundel.code, alias, re.compile(r"(?<![a-z0-9])" + re.escape(alias) + r"(?![a-z])(?:" + NA_ALIAS + NUMMER + ")?", re.IGNORECASE)))
+        patronen.sort(key=lambda p: -len(p[1]))
+        _patronen_cache[id(catalogus)] = patronen
     return patronen
 
 
@@ -128,8 +127,7 @@ def _vind_referenties(tekst: str, catalogus: Catalogus, ontl: Ontleding) -> str:
             gevonden.append((m.start(), code, m.group(1)))
             tekst = tekst[: m.start()] + PLACEHOLDER + tekst[m.end():]
 
-    zonder_nummer = [(pos, code) for pos, code, nr in gevonden if nr is None]
-    for pos, code in zonder_nummer:
+    for pos, code in [(pos, code) for pos, code, nr in gevonden if nr is None]:
         if catalogus.bundels[code].psalmen:
             m = PSALMNUMMER.search(tekst)
             if m:
@@ -139,29 +137,19 @@ def _vind_referenties(tekst: str, catalogus: Catalogus, ontl: Ontleding) -> str:
     for _pos, code, nr in sorted(gevonden, key=lambda g: g[0]):
         if nr is not None:
             ontl.referenties.append(Referentie(code, nr.lower()))
-        elif not catalogus.bundels[code].psalmen:
-            ontl.hints.add(f"bundel:{code}")
-    return tekst
-
-
-def _vind_artiest(tekst: str, catalogus: Catalogus, ontl: Ontleding) -> str:
-    aliassen = sorted(
-        ((alias, artiest.naam) for artiest in catalogus.artiesten.values() for alias in artiest.aliassen),
-        key=lambda a: -len(a[0]),
-    )
-    for alias, naam in aliassen:
-        patroon = re.compile(r"(?<![a-z0-9])" + re.escape(alias) + r"(?![a-z0-9])", re.IGNORECASE)
-        if patroon.search(tekst):
-            if ontl.artiest is None:
-                ontl.artiest = naam
-            tekst = patroon.sub(PLACEHOLDER, tekst)
+        elif code not in ontl.bundels:
+            ontl.bundels.append(code)
     return tekst
 
 
 def _schoon(deel: str) -> str:
+    """Haalt leestekens en losse voegwoorden aan de randen weg, tot er niets meer verandert."""
     deel = deel.replace("█", " ")
-    deel = re.sub(r"^[\s'\".,;:!?*-]+|[\s'\".,;:!?*-]+$", "", deel)
-    deel = TRAILING_WOORDEN.sub("", deel).strip()
+    vorige = None
+    while deel != vorige:
+        vorige = deel
+        deel = re.sub(r"^[\s'\".,;:!?*-]+|[\s'\".,;:!?*-]+$", "", deel)
+        deel = RANDWOORDEN.sub("", deel).strip()
     return " ".join(deel.split())
 
 

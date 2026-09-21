@@ -8,10 +8,10 @@ Liedstatistiek uit de liturgieen van de Westerkerk, als hulpmiddel bij de liedke
 archief/            liturgie-PDF's (lokaal, niet in Git: bevatten namen)
 werk/wachtrij.yaml  twijfelgevallen voor de beheerder (lokaal, niet in Git)
 data/
-  bundels.yaml      liedbundels en hun schrijfwijzen
-  artiesten.yaml    artiesten en hun schrijfwijzen
+  bundels.yaml      liedbundels (en bronnen als Sela) met hun schrijfwijzen
   kenmerken.yaml    dienstkenmerken en de trefwoorden waarmee ze herkend worden
-  catalogus/        liederen, een YAML-bestand per bron; overig.yaml groeit via de wachtrij
+  catalogus/        liederen, een YAML-bestand per bundelcode (opw.yaml, nlb.yaml, ...);
+                    liederen zonder bundelverwijzing staan in overig.yaml
   aliassen.yaml     besluiten van de beheerder over liedregels en Bijzonderheden
   aanvullingen.yaml liederen die de beheerder aan een dienst toevoegt
   diensten/         een YAML-bestand per dienst: de publieke uitkomst
@@ -64,7 +64,9 @@ Om te zien wat de extractie en ontleding van een PDF maken:
 
 ## Catalogus onderhouden
 
-Elk lied in `data/catalogus/*.yaml` heeft een `id`, `titel`, en optioneel `referenties` (bundel en nummer), `artiest`, `eerste_regel`, `aliassen` (andere titels), `categorieen`, `taal`, `status` (`blacklist` of `favoriet`) en `opmerking`. Staat hetzelfde lied twee keer in de catalogus (bijvoorbeeld als Sela-lied en als Opwekkingsnummer), voeg dan de referenties en aliassen samen onder een id en verwijder de ander; de verwerking meldt aliassen die naar een verdwenen id wijzen.
+Elk lied in `data/catalogus/*.yaml` heeft een `id`, `titel`, en optioneel `referenties` (bundel en nummer), `artiest` (alleen informatief), `eerste_regel`, `aliassen` (andere titels), `categorieen`, `taal`, `status` (`blacklist` of `favoriet`) en `opmerking`. Een lied hoort in het bestand van de bundel van zijn eerste verwijzing; de verwerking zet nieuwe liederen daar zelf neer. Verhuizen tussen bestanden is knippen en plakken, het id blijft gelijk.
+
+De ontleding van liedregels is bewust ruim gehouden: bundel plus nummer wordt precies herkend, de rest van de regel wordt grof in fragmenten geknipt en tolerant met de catalogus vergeleken. Een enkele misser is acceptabel, want elk besluit in de wachtrij wordt een alias die het de volgende keer in een keer goed doet. Staat hetzelfde lied twee keer in de catalogus (bijvoorbeeld als Sela-lied en als Opwekkingsnummer), voeg dan de referenties en aliassen samen onder een id en verwijder de ander; de verwerking meldt aliassen die naar een verdwenen id wijzen.
 
 Wordt een lied via zijn titel herkend terwijl de liturgie er een bundelnummer bij noemt, dan leert de verwerking die verwijzing zelf bij. Voor psalmberijmingen gebeurt dat niet, omdat dezelfde psalm in verschillende berijmingen verschillende liederen zijn.
 

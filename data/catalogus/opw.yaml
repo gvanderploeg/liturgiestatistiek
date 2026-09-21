@@ -1955,6 +1955,8 @@
   referenties:
   - bundel: opw
     nummer: '389'
+  - bundel: nlb
+    nummer: 51b
 - id: opw-390
   titel: 'Ik belijd: ons land heeft gezondigd'
   referenties:

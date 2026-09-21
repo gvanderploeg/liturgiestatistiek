@@ -3,28 +3,22 @@ begeleiding: orgel
 kenmerken: []
 bron: 20260628 Eredienst Westerkerk.pdf
 liederen:
-- volgorde: 1
-  ruw: Opwekking 366 Kroon Hem met gouden kroon
+- ruw: Opwekking 366 Kroon Hem met gouden kroon
   moment: aanvang
   lied: opw-366
   herkenning: automatisch
-- volgorde: 2
-  ruw: ELB 302 Heer ik kom tot u, hoor naar mijn gebed
+- ruw: ELB 302 Heer ik kom tot u, hoor naar mijn gebed
   lied: opw-125
   herkenning: automatisch
-- volgorde: 3
-  ruw: LB 870:1, 3, 4, 8 Heilige God, geprezen zij
+- ruw: LB 870:1, 3, 4, 8 Heilige God, geprezen zij
   lied: nlb-870
   herkenning: automatisch
-- volgorde: 4
-  ruw: Opw. 220/JdH197 Volle verzeek’ring Jezus is mijn
+- ruw: Opw. 220/JdH197 Volle verzeek’ring Jezus is mijn
   lied: opw-220
   herkenning: automatisch
-- volgorde: 5
-  ruw: Opwekking 687 Heer, wijs mij uw weg (Sela)
+- ruw: Opwekking 687 Heer, wijs mij uw weg (Sela)
   lied: opw-687
   herkenning: automatisch
-- volgorde: 6
-  ruw: Opwekking 520 Wees mijn verlangen, o Heer van mijn hart (ook in ELB 167)
+- ruw: Opwekking 520 Wees mijn verlangen, o Heer van mijn hart (ook in ELB 167)
   lied: opw-520
   herkenning: automatisch

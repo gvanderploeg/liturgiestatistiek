@@ -1,5 +1,10 @@
 """Koppelt een ontlede liedregel aan een lied uit de catalogus, of levert
-een voorstel en kandidaten op voor de wachtrij."""
+een voorstel en kandidaten op voor de wachtrij.
+
+Bundelverwijzingen zijn een harde sleutel. Titels worden tolerant
+vergeleken: woordvolgorde en leestekens tellen niet, en een titel die
+letterlijk in een langere eerste regel voorkomt telt als gelijk. Een
+enkele misser is acceptabel; de wachtrij en de aliassen vangen die op."""
 
 from __future__ import annotations
 
@@ -13,8 +18,8 @@ from .ontleding import Ontleding
 from .opslag import Aliassen
 from .tekst import normaliseer, slug
 
-DREMPEL_AUTOMATISCH = 90
-DREMPEL_ZEKER = 96
+DREMPEL_AUTOMATISCH = 88
+DREMPEL_ZEKER = 95
 DREMPEL_KANDIDAAT = 60
 NEGEER = "negeer"
 
@@ -27,6 +32,7 @@ class Koppeling:
     kandidaten: list[Kandidaat] = field(default_factory=list)
     voorstel: dict = field(default_factory=dict)
     geleerde_referenties: list[Referentie] = field(default_factory=list)
+    titel_gebruikt: bool = False
 
     @property
     def genegeerd(self) -> bool:
@@ -34,14 +40,14 @@ class Koppeling:
 
 
 def titelscore(vraag: str, doel: str, **_: object) -> int:
-    """Vergelijkt twee genormaliseerde titels. Een titel van minstens drie
-    woorden die letterlijk in de andere voorkomt (titel tegenover eerste
-    regel) scoort hoog; verder telt alleen de gesorteerde woordvergelijking,
-    zodat korte catalogustitels niet overal 'in passen'."""
+    """Vergelijkt twee genormaliseerde titels."""
     score = int(fuzz.token_sort_ratio(vraag, doel))
     kort, lang = sorted((vraag, doel), key=len)
-    if len(kort.split()) >= 3 and kort in lang:
+    woorden_kort = set(kort.split())
+    if len(woorden_kort) >= 3 and kort in lang:
         score = max(score, 95)
+    elif len(woorden_kort) >= 3 and woorden_kort <= set(lang.split()):
+        score = max(score, 90)
     return score
 
 
@@ -52,7 +58,10 @@ class Zoekindex:
         self.teksten = [t for t, _ in termen]
         self.lied_ids = [i for _, i in termen]
 
-    def zoek(self, titel: str, artiest: str | None, limiet: int = 5) -> list[Kandidaat]:
+    def zoek(self, titel: str, voorkeur: list[str] = (), limiet: int = 5) -> list[Kandidaat]:
+        """Kandidaten voor een titelfragment. Noemt de regel een bundel zonder
+        nummer (voorkeur, bundelcodes), dan krijgen liederen buiten die bundel een
+        klein streepje tegen; zo wint bij gelijke titel de Sela-versie van de Opwekking-versie."""
         if not self.teksten:
             return []
         vraag = normaliseer(titel)
@@ -60,14 +69,19 @@ class Zoekindex:
         beste: dict[str, int] = {}
         for _tekst, score, index in treffers:
             lied_id = self.lied_ids[index]
-            lied = self.catalogus.liederen[lied_id]
             score = int(score)
-            if artiest and not (lied.artiest and normaliseer(lied.artiest) == normaliseer(artiest)):
-                score -= 3
+            if voorkeur and not self._uit_bundel(self.catalogus.liederen[lied_id], voorkeur):
+                score -= 2
             if score > beste.get(lied_id, 0):
                 beste[lied_id] = score
         gesorteerd = sorted(beste.items(), key=lambda kv: -kv[1])[:limiet]
         return [Kandidaat(lied_id, self.catalogus.liederen[lied_id].titel, score) for lied_id, score in gesorteerd if score >= DREMPEL_KANDIDAAT]
+
+    def _uit_bundel(self, lied: Lied, codes: list[str]) -> bool:
+        namen = {normaliseer(self.catalogus.bundels[c].naam) for c in codes if c in self.catalogus.bundels}
+        if lied.artiest and normaliseer(lied.artiest) in namen:
+            return True
+        return any(r.bundel in codes for r in lied.referenties)
 
 
 def koppel(ruw: str, ontl: Ontleding, catalogus: Catalogus, aliassen: Aliassen, index: Zoekindex) -> Koppeling:
@@ -92,31 +106,35 @@ def _via_referenties(ontl: Ontleding, catalogus: Catalogus, index: Zoekindex) ->
         if len(liederen) == 1:
             return Koppeling(liederen[0].id, "automatisch", f"referentie {ref.bundel} {ref.nummer}")
         if len(liederen) > 1:
-            kandidaten = [Kandidaat(l.id, l.titel, _titelscore(ontl, l)) for l in liederen]
-            kandidaten.sort(key=lambda k: -k.score)
+            kandidaten = sorted((Kandidaat(l.id, l.titel, _titelscore(ontl, l)) for l in liederen), key=lambda k: -k.score)
             if ontl.titels and kandidaten[0].score >= 70 and (len(kandidaten) == 1 or kandidaten[0].score - kandidaten[1].score >= 15):
-                return Koppeling(kandidaten[0].lied, "automatisch", f"referentie {ref.bundel} {ref.nummer} met titel")
+                return Koppeling(kandidaten[0].lied, "automatisch", f"referentie {ref.bundel} {ref.nummer} met titel", titel_gebruikt=True)
             return Koppeling(None, "onbekend", f"referentie {ref.bundel} {ref.nummer} past op meerdere liederen", kandidaten=kandidaten)
 
     kandidaten = _zoek_titels(ontl, index)
     psalmberijming = any(catalogus.bundels[r.bundel].psalmen for r in ontl.referenties)
-    if not psalmberijming and kandidaten and kandidaten[0].score >= DREMPEL_ZEKER and (len(kandidaten) == 1 or kandidaten[0].score > kandidaten[1].score):
+    if not psalmberijming and _duidelijke_winnaar(kandidaten, DREMPEL_ZEKER):
         lied = catalogus.liederen[kandidaten[0].lied]
         nieuw = [r for r in ontl.referenties if not any(b.bundel == r.bundel and b.nummer == r.nummer for b in lied.referenties)]
-        return Koppeling(lied.id, "automatisch", f"titel is {lied.titel}; referentie toegevoegd aan catalogus", kandidaten=kandidaten[:3], geleerde_referenties=nieuw)
-    return Koppeling(
-        None,
-        "onbekend",
-        "referentie niet in de catalogus",
-        kandidaten=kandidaten[:3],
-        voorstel=_voorstel_nieuw(ontl, catalogus),
-    )
+        return Koppeling(lied.id, "automatisch", f"titel is {lied.titel}; referentie toegevoegd aan catalogus", kandidaten=kandidaten[:3], geleerde_referenties=nieuw, titel_gebruikt=True)
+    return Koppeling(None, "onbekend", "referentie niet in de catalogus", kandidaten=kandidaten[:3], voorstel=_voorstel_nieuw(ontl, catalogus))
+
+
+def _via_titel(ontl: Ontleding, catalogus: Catalogus, index: Zoekindex) -> Koppeling:
+    kandidaten = _zoek_titels(ontl, index)
+    if _duidelijke_winnaar(kandidaten, DREMPEL_AUTOMATISCH):
+        return Koppeling(kandidaten[0].lied, "automatisch", f"titel lijkt op {kandidaten[0].titel} ({kandidaten[0].score})", kandidaten=kandidaten[:3])
+    return Koppeling(None, "onbekend", "geen lied met deze titel in de catalogus", kandidaten=kandidaten[:3], voorstel=_voorstel_nieuw(ontl, catalogus))
+
+
+def _duidelijke_winnaar(kandidaten: list[Kandidaat], drempel: int) -> bool:
+    return bool(kandidaten) and kandidaten[0].score >= drempel and (len(kandidaten) == 1 or kandidaten[0].score > kandidaten[1].score)
 
 
 def _zoek_titels(ontl: Ontleding, index: Zoekindex) -> list[Kandidaat]:
     alle: dict[str, Kandidaat] = {}
     for titel in ontl.titels:
-        for k in index.zoek(titel, ontl.artiest):
+        for k in index.zoek(titel, ontl.bundels):
             if k.lied not in alle or k.score > alle[k.lied].score:
                 alle[k.lied] = k
     return sorted(alle.values(), key=lambda k: -k.score)
@@ -127,13 +145,6 @@ def _titelscore(ontl: Ontleding, lied: Lied) -> int:
         return 0
     doelen = [normaliseer(t) for t in [lied.titel, lied.eerste_regel, *lied.aliassen] if t]
     return max(titelscore(normaliseer(titel), doel) for titel in ontl.titels for doel in doelen)
-
-
-def _via_titel(ontl: Ontleding, catalogus: Catalogus, index: Zoekindex) -> Koppeling:
-    kandidaten = _zoek_titels(ontl, index)
-    if kandidaten and kandidaten[0].score >= DREMPEL_AUTOMATISCH and (len(kandidaten) == 1 or kandidaten[0].score > kandidaten[1].score):
-        return Koppeling(kandidaten[0].lied, "automatisch", f"titel lijkt op {kandidaten[0].titel} ({kandidaten[0].score})", kandidaten=kandidaten[:3])
-    return Koppeling(None, "onbekend", "geen lied met deze titel in de catalogus", kandidaten=kandidaten[:3], voorstel=_voorstel_nieuw(ontl, catalogus))
 
 
 def _voorstel_nieuw(ontl: Ontleding, catalogus: Catalogus, ruw: str = "") -> dict:
@@ -148,9 +159,11 @@ def _voorstel_nieuw(ontl: Ontleding, catalogus: Catalogus, ruw: str = "") -> dic
             titel = f"{bundel.naam} {ref.nummer}"
         bron = "referentie"
     else:
-        basis = f"{ontl.artiest} {titel}" if ontl.artiest else (titel or ruw)
+        basis = titel or ruw
         bron = "titel"
-    nieuw = {"id": catalogus.vrij_id(basis), "titel": titel, "artiest": ontl.artiest}
+    nieuw: dict = {"id": catalogus.vrij_id(basis), "titel": titel}
+    if ontl.bundels:
+        nieuw["artiest"] = catalogus.bundels[ontl.bundels[0]].naam
     if ontl.referenties:
         nieuw["referenties"] = [r.as_dict() for r in ontl.referenties]
     return {"bron": bron, "nieuw": nieuw}

@@ -33,8 +33,11 @@
   naam: Johannes de Heer
   aliassen: [jdh, johannes de heer, joh. de heer]
 - code: er2
-  naam: Elly en Rikkert liedbundel 2
-  aliassen: [e&r2, e&r 2, e&r liedbundel 2, elly en rikkert 2, elly en rikkert liedbundel 2]
+  naam: E&R liedbundel 2
+  aliassen: [e&r2, e&r 2, e&r liedbundel 2, e&r bundel 2]
+- code: sela
+  naam: Sela
+  aliassen: [sela]
 - code: hh
   naam: Hemelhoog
   aliassen: [hemelhoog, hh]

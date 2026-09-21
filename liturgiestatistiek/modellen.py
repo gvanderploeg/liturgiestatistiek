@@ -65,14 +65,15 @@ class Lied:
 
 @dataclass
 class Vermelding:
-    volgorde: int
+    """Een liedregel uit een dienst. De volgorde in de dienst is de volgorde in de lijst."""
+
     ruw: str
     lied: str | None
     herkenning: str
     moment: str | None = None
 
     def as_dict(self) -> dict:
-        d: dict = {"volgorde": self.volgorde, "ruw": self.ruw}
+        d: dict = {"ruw": self.ruw}
         if self.moment:
             d["moment"] = self.moment
         d["lied"] = self.lied

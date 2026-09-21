@@ -4,45 +4,35 @@ kenmerken:
 - avondmaal
 bron: 20260621 Eredienst Westerkerk.pdf
 liederen:
-- volgorde: 1
-  ruw: Opwekking 640 (Mijn hulp is van U, Heer)
+- ruw: Opwekking 640 (Mijn hulp is van U, Heer)
   moment: aanvang
   lied: opw-640
   herkenning: automatisch
-- volgorde: 2
-  ruw: Opwekking 623 (Laat het huis gevuld zijn)
+- ruw: Opwekking 623 (Laat het huis gevuld zijn)
   lied: opw-623
   herkenning: automatisch
-- volgorde: 3
-  ruw: Jezus liefde voor mij - Sela
+- ruw: Jezus liefde voor mij - Sela
   lied: sela-jezus-liefde-voor-mij
   herkenning: automatisch
-- volgorde: 4
-  ruw: OK4kids 74 (Een wijs man bouwde zijn huis)
+- ruw: OK4kids 74 (Een wijs man bouwde zijn huis)
   moment: kindmoment
   lied: opwkids-74
   herkenning: automatisch
-- volgorde: 5
-  ruw: Opwekking 798 (Wij zijn het volk van God)
+- ruw: Opwekking 798 (Wij zijn het volk van God)
   lied: opw-798
   herkenning: automatisch
-- volgorde: 6
-  ruw: U nodigt mij aan tafel - Sela
+- ruw: U nodigt mij aan tafel - Sela
   lied: opw-737
   herkenning: automatisch
-- volgorde: 7
-  ruw: Opwekking 462 (Aan uw voeten, Heer)
+- ruw: Opwekking 462 (Aan uw voeten, Heer)
   lied: opw-462
   herkenning: automatisch
-- volgorde: 8
-  ruw: Heer, wijs mij uw weg - Sela
+- ruw: Heer, wijs mij uw weg - Sela
   lied: sela-heer-wijs-mij-uw-weg
   herkenning: automatisch
-- volgorde: 9
-  ruw: Psalm 103, The Psalm Project
+- ruw: Psalm 103, The Psalm Project
   lied: null
   herkenning: onbekend
-- volgorde: 10
-  ruw: E&R2, 423 (Heer, U bent mijn leven)
-  lied: er2-423
+- ruw: E&R2, 423 (Heer, U bent mijn leven)
+  lied: sela-heer-u-bent
   herkenning: automatisch

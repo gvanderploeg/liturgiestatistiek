@@ -3,25 +3,20 @@ begeleiding: band
 kenmerken: []
 bron: 20260712 Eredienst Westerkerk.pdf
 liederen:
-- volgorde: 1
-  ruw: Opwekking 798 Wij zijn het volk van God ... Sela Laat ons samen één zijn
+- ruw: Opwekking 798 Wij zijn het volk van God ... Sela Laat ons samen één zijn
   moment: aanvang
   lied: opw-798
   herkenning: automatisch
-- volgorde: 2
-  ruw: Opwekking 687 Heer wijs mij uw weg
+- ruw: Opwekking 687 Heer wijs mij uw weg
   lied: opw-687
   herkenning: automatisch
-- volgorde: 3
-  ruw: Opwekking 618 Jezus, hoop voor de volken
+- ruw: Opwekking 618 Jezus, hoop voor de volken
   lied: opw-618
   herkenning: automatisch
-- volgorde: 4
-  ruw: Opwekking 585 Er is een dag
+- ruw: Opwekking 585 Er is een dag
   lied: opw-585
   herkenning: automatisch
-- volgorde: 5
-  ruw: Holy forever van Chris Tomlin – met tekst op Powerpoint
+- ruw: Holy forever van Chris Tomlin – met tekst op Powerpoint
   moment: zegenlied
   lied: null
   herkenning: onbekend

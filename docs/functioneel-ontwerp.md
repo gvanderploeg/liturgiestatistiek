@@ -100,7 +100,7 @@ Lam van God, Lam van God, dat de zonde der wereld draagt
 
 Wat dit betekent voor het ontleden:
 
-- **Drie hoofdvormen.** Bundel-nummer-titel ("Opwekking 815 (Titel)"), titel-artiest in wisselende volgorde en met wisselend scheidingsteken ("Titel – Artiest", "Artiest: Titel", "Titel (artiest)"), en kale titel of eerste regel ("Holy Forever"). De eerste vorm is hard te koppelen, de tweede via aliassen, de derde via tolerante titelvergelijking.
+- **Drie hoofdvormen.** Bundel-nummer-titel ("Opwekking 815 (Titel)"), titel-artiest in wisselende volgorde en met wisselend scheidingsteken ("Titel – Artiest", "Artiest: Titel", "Titel (artiest)"), en kale titel of eerste regel ("Holy Forever"). De eerste vorm is hard te koppelen; de andere twee via tolerante titelvergelijking van de fragmenten waarin de regel uiteenvalt. Artiesten worden niet apart herkend of bijgehouden: er zijn er te veel en de meeste bundelliederen komen oorspronkelijk toch van een artiest. Een artiestnaam is gewoon een fragment dat nergens op matcht.
 - **Bundelaliassen** die al in achttien diensten voorkomen: Opwekking, Opw., Opw; Opwekking kids, OK4kids; LB, NLB, Liedboek, Liedboek_2013, Liedboek 2013; DNP, De Nieuwe Psalmberijming, "Psalm N DNP"; PvN; ELB, Evangelische Liedbundel; JdH; E&R, E&R2, E&R liedbundel 2; GKV Kerkboek 2017, Gereformeerd Kerkboek; TPP, The Psalm Project, Psalm Project; Hemelhoog; Ar (Arabische liederen op de startzondag). Hoofdletterongevoelig.
 - **Ruis** die weggehaald moet worden: "zingen:", "zingen (als amen)", couplet-aanduidingen (":1, 3, 4, 8", "vers 1 en 2", "3.5"), toevoegingen als "tweetalig", "met tekst op Powerpoint", "refrein", sterretjes en dubbele haakjes.
 - **Cellen lopen soms door** op een tweede regel. De extractie moet per cel werken, niet per tekstregel.
@@ -145,7 +145,6 @@ erDiagram
         string code
     }
     LIEDVERMELDING {
-        int volgorde
         string ruwe_tekst
         string moment
         string herkenning
@@ -189,13 +188,13 @@ erDiagram
 
 **Extraheren.** PDF naar tabellen met cellen, per blok. Uit ALGEMEEN alleen datum, bijzonderheden en begeleiding. Uit ORDE VAN DIENST alle rijen met label, inhoud, celkleur en sectiekopje.
 
-**Liedregels selecteren.** Label bevat "Lied" en de cel is niet leeg: liedvermelding. Rijen zonder liedlabel maar met een bundel- of artiestalias in de inhoud ("Geloofsbelijdenis gezongen: Opwekking 575", "beginnen met Votum en groet van Sela"): kandidaat voor de wachtrij. Alles anders wordt weggegooid. Hier verdwijnen de persoonsnamen.
+**Liedregels selecteren.** Label bevat "Lied" en de cel is niet leeg: liedvermelding. Rijen zonder liedlabel maar met een bundelnaam (Sela telt als bundel) of het woord lied, zingen of gezongen in de inhoud ("Geloofsbelijdenis gezongen: Opwekking 575", "beginnen met Votum en groet van Sela"): kandidaat voor de wachtrij. Alles anders wordt weggegooid. Hier verdwijnen de persoonsnamen.
 
 **Dienstkenmerken afleiden.** Bijzonderheden tegen de trefwoordenlijst; onbekende tekst naar de wachtrij. Datum uit het Datum-veld (Nederlandse maandnamen), gecontroleerd tegen de bestandsnaam.
 
-**Ontleden.** Per liedvermelding: ruis weghalen, bundelaliassen en nummers herkennen, artiest en titel scheiden op de scheidingstekens (streepje, dubbele punt, haakjes), coupletaanduidingen wegstrippen. Moment afleiden uit label en positie.
+**Ontleden.** Bewust ruim. Per liedvermelding: bundelaliassen en nummers precies herkennen (dat is de harde sleutel), daarna alle getallen en een handvol vulwoorden weghalen en de rest grof opknippen op scheidingstekens (streepje, dubbele punt, haakjes) tot titelfragmenten. Moment afleiden uit label en positie. Geen aparte herkenning van artiesten, coupletnotaties of andere bijzonderheden: wat niet klopt vangt de koppeling tolerant op, en anders de wachtrij.
 
-**Koppelen aan de catalogus.** Bundel-plus-nummer is een harde sleutel. Titels en artiest-titel-combinaties worden vergeleken met titels, eerste regels en aliassen in de catalogus, hoofdletter- en leestekenongevoelig, tolerant voor typefouten. Boven een drempel automatisch, daaronder wachtrij met de beste kandidaten erbij.
+**Koppelen aan de catalogus.** Bundel-plus-nummer is een harde sleutel. Titelfragmenten worden vergeleken met titels, eerste regels en aliassen in de catalogus: hoofdletters, leestekens en woordvolgorde tellen niet, een fragment van drie of meer woorden dat letterlijk in een langere eerste regel voorkomt telt als gelijk. Noemt de regel een bundel zonder nummer ("Sela: ..."), dan winnen liederen uit die bundel bij gelijke stand. Boven een drempel automatisch, daaronder wachtrij met de beste kandidaten erbij. Een enkele misser is aanvaardbaar: het alternatief is een steeds preciezere ontleding die toch achter de praktijk aanloopt, terwijl elk besluit in de wachtrij een alias oplevert die de fout blijvend herstelt.
 
 **Wachtrij voor de beheerder.** Eén lokaal bestand (`werk/wachtrij.yaml`, niet in Git) met alle twijfelgevallen, in vier soorten:
 
@@ -270,7 +269,7 @@ flowchart LR
 Alle publieke data staat als leesbare bestanden in de repository:
 
 - Elke dienst is één YAML-bestand (`data/diensten/2026-09-20.yaml`). Deze bestanden worden bij elke verwerking opnieuw opgebouwd uit de PDF's plus de besluiten van de beheerder; ze zijn de publieke uitkomst, geen invoer. Correcties gaan via `aliassen.yaml`, `aanvullingen.yaml` en de catalogus, en hun geschiedenis staat in Git.
-- Catalogus (een bestand per bron, `overig.yaml` groeit via de wachtrij), bundels, artiesten, kenmerken, aliassen en aanvullingen zijn losse YAML-bestanden die de beheerder bewerkt.
+- Catalogus (een bestand per bundelcode, zoals `opw.yaml` en `nlb.yaml`; nieuwe liederen met een bundelverwijzing komen automatisch in het bestand van hun bundel, liederen zonder verwijzing in `overig.yaml`), bundels, kenmerken, aliassen en aanvullingen zijn losse YAML-bestanden die de beheerder bewerkt.
 - `archief/` (PDF's), `werk/` (wachtrij) en `.tmp/` staan in `.gitignore`.
 
 Voorbeeld van een dienst-bestand voor 20 september 2026, zoals de verwerking dat oplevert na afwerken van de wachtrij:
@@ -281,39 +280,31 @@ begeleiding: band
 kenmerken: [doop]
 bron: 20260920 Eredienst Westerkerk.pdf
 liederen:
-  - volgorde: 1
-    ruw: dit is een morgen als ooit de eerste (NLB 216)
+  - ruw: dit is een morgen als ooit de eerste (NLB 216)
     moment: aanvang
     lied: nlb-216
     herkenning: automatisch
-  - volgorde: 2
-    ruw: Ik wens jou (trinity)
+  - ruw: Ik wens jou (trinity)
     moment: kindmoment
     lied: trinity-ik-wens-jou
     herkenning: automatisch
-  - volgorde: 3
-    ruw: Flowers (Luisterlied)
+  - ruw: Flowers (Luisterlied)
     moment: luisterlied
     lied: null
     herkenning: onbekend
-  - volgorde: 4
-    ruw: Meer dan een wonder (Kinga Ban)
+  - ruw: Meer dan een wonder (Kinga Ban)
     lied: kinga-ban-meer-dan-een-wonder
     herkenning: automatisch
-  - volgorde: 5
-    ruw: Doop (sela, Hemelhoog 502))
+  - ruw: Doop (sela, Hemelhoog 502))
     lied: sela-doop
     herkenning: automatisch
-  - volgorde: 6
-    ruw: "zingen: DNP 119, 3.5"
+  - ruw: "zingen: DNP 119, 3.5"
     lied: dnp-119
     herkenning: automatisch
-  - volgorde: 7
-    ruw: "zingen: Ga met God en Hij zal met je zijn (NLB)"
+  - ruw: "zingen: Ga met God en Hij zal met je zijn (NLB)"
     lied: nlb-416
     herkenning: handmatig
-  - volgorde: 8
-    ruw: zingen (als amen) Vervuld van uw zegen (NLB 425)
+  - ruw: zingen (als amen) Vervuld van uw zegen (NLB 425)
     moment: zegenlied
     lied: nlb-425
     herkenning: automatisch
@@ -356,7 +347,7 @@ Optie voor later: de dataset ook als SQLite aanbieden en in de browser bevraagba
 
 **Fase 0, inventarisatie.** Afgerond op de laatste open vragen na: achttien liturgieën en het stamgegevens-sheet staan in de projectmap en zijn geanalyseerd.
 
-**Fase 1, kern.** Gebouwd. Bestandsformaten, catalogus uit het sheet (Opwekking, Sela, The Psalm Project, SvG), extractie, ontleding, koppeling, wachtrij met vier soorten besluiten, en een testset van 66 tests, waaronder de privacycontrole die woorden en naamzinnen uit de persoonsvelden van alle PDF's tegen de publieke data houdt. Stand na de eerste verwerking van de achttien liturgieën, met de eenduidige bundelverwijzingen geaccepteerd: 124 liedvermeldingen, waarvan 96 automatisch herkend en 28 wachtend op een besluit van de beheerder (vooral liederen op titel en artiest die in geen enkele bundel staan). Wat rest is het afwerken van die wachtrij door de beheerder. Zie de README voor de routine.
+**Fase 1, kern.** Gebouwd. Bestandsformaten, catalogus uit het sheet (Opwekking, Sela, The Psalm Project, SvG), extractie, ontleding, koppeling, wachtrij met vier soorten besluiten, en een testset van 73 tests, waaronder de privacycontrole die woorden en naamzinnen uit de persoonsvelden van alle PDF's tegen de publieke data houdt. Stand na de eerste verwerking van de achttien liturgieën, met de eenduidige bundelverwijzingen geaccepteerd: 124 liedvermeldingen, waarvan 95 automatisch herkend en 29 wachtend op een besluit van de beheerder (vooral liederen van artiesten die in geen enkele bundel staan). Wat rest is het afwerken van die wachtrij door de beheerder. Zie de README voor de routine.
 
 **Fase 2, website.** Dataset publiceren. Dashboard met de vier prominente blokken, plus tijdlijn en dienst-overzicht. CSV-download. Live op GitHub Pages.
 
@@ -367,7 +358,7 @@ Optie voor later: de dataset ook als SQLite aanbieden en in de browser bevraagba
 ## Risico's en aandachtspunten
 
 - **Persoonsgegevens.** Twee lekpaden zijn nu bekend: de ALGEMEEN-tabel en het veld Bijzonderheden. De extractie laat alleen een vaste set velden door en Bijzonderheden gaat via een woordenlijst. Een geautomatiseerde test bewaakt dit vanaf de eerste versie.
-- **Variatie in liedregels.** Groter dan één voorbeeld suggereerde. Verwachting: bundel-nummer-vormen (ruim de helft van de vermeldingen) gaan direct automatisch; artiest-titel en kale titels vragen in het begin veel wachtrij. De catalogus uit het sheet en de alias-opbouw drukken dat snel.
+- **Variatie in liedregels.** Groter dan één voorbeeld suggereerde. Bundel-nummer-vormen (ruim de helft van de vermeldingen) gaan direct automatisch; titels van artiesten die in geen bundel staan vragen in het begin wachtrijwerk. De catalogus uit het sheet en de alias-opbouw drukken dat snel. De ontleding wordt bewust niet steeds verfijnd op nieuwe schrijfwijzen; de alias is het vangnet.
 - **Wekelijkse handeling.** Zonder automatisch ophalen hangt de actualiteit aan de beheerder. Het ritueel moet daarom klein zijn en mag achterstand tolereren: een stapel PDF's in één keer verwerken werkt net zo goed.
 - **Afwijkingen van het sjabloon.** Bijzondere diensten kunnen afwijken. De ontleding gokt dan niet en zet de hele dienst in de wachtrij.
 - **Zelfde lied, andere bundel.** De catalogus uit het sheet bevat al dubbelingen: veel Sela-liederen staan ook als Opwekkingsnummer in de lijst ("Breng ons samen" is Sela én Opwekking 797), en The Psalm Project 51 is Opwekking 811. Zolang ze niet samengevoegd zijn, tellen ze als twee liederen. Samenvoegen is handwerk in de catalogus (referenties en aliassen onder een id zetten, de ander verwijderen); de verwerking meldt aliassen die naar een verdwenen id wijzen. Een hulpmiddel dat waarschijnlijke dubbelingen opspoort is een logische volgende stap.

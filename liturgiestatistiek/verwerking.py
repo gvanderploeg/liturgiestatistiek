@@ -147,7 +147,7 @@ def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliasse
             if k.lied:
                 gezien.add(k.lied)
                 verslag.referenties_geleerd += _leer_referenties(catalogus, k.lied, k.geleerde_referenties)
-            dienst.liederen.append(Vermelding(len(dienst.liederen) + 1, rij.inhoud, k.lied, k.herkenning, moment))
+            dienst.liederen.append(Vermelding(rij.inhoud, k.lied, k.herkenning, moment))
             _tel(verslag, k.herkenning)
             if k.herkenning == "onbekend":
                 items.append(_item_lied(dienst_id, rij.label, rij.inhoud, k))
@@ -159,7 +159,7 @@ def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliasse
                     if tweede:
                         voorstel["lied"] = tweede
                     items.append(WachtrijItem(dienst_id, "kandidaat", rij.inhoud, "het label noemt meerdere liederen; het eerste is gekoppeld, voeg het tweede toe als aanvulling", label=rij.label, sleutel=sl, voorstel=voorstel))
-            elif k.herkenning == "automatisch" and ontl.referenties:
+            elif k.herkenning == "automatisch" and ontl.referenties and not k.titel_gebruikt:
                 ander = _ander_lied(ontl, k.lied, index)
                 if ander:
                     huidig = catalogus.liederen[k.lied]
@@ -185,7 +185,7 @@ def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliasse
                 verslag.meldingen.append(f"LET OP {dienst_id}: aanvulling verwijst naar onbekend lied {a.lied}")
                 continue
             gezien.add(a.lied)
-            dienst.liederen.append(Vermelding(len(dienst.liederen) + 1, a.ruw, a.lied, "handmatig", a.moment))
+            dienst.liederen.append(Vermelding(a.ruw, a.lied, "handmatig", a.moment))
             _tel(verslag, "handmatig")
 
     return dienst, items

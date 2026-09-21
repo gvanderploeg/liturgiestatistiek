@@ -4,33 +4,26 @@ kenmerken:
 - doop
 bron: 20260705 Eredienst Westerkerk.pdf
 liederen:
-- volgorde: 1
-  ruw: Opwekking 661 (De Koning in zijn pracht)
+- ruw: Opwekking 661 (De Koning in zijn pracht)
   moment: aanvang
   lied: opw-661
   herkenning: automatisch
-- volgorde: 2
-  ruw: Open the eyes of my heart, Lord - Michael W. Smith
+- ruw: Open the eyes of my heart, Lord - Michael W. Smith
   lied: null
   herkenning: onbekend
-- volgorde: 3
-  ruw: Ik wens jou - Trinity
+- ruw: Ik wens jou - Trinity
   lied: null
   herkenning: onbekend
-- volgorde: 4
-  ruw: Ik zal er zijn - Sela
+- ruw: Ik zal er zijn - Sela
   lied: sela-ik-zal-er-zijn
   herkenning: automatisch
-- volgorde: 5
-  ruw: Opwekking 542 (God van trouw)
+- ruw: Opwekking 542 (God van trouw)
   lied: opw-542
   herkenning: automatisch
-- volgorde: 6
-  ruw: Opwekking 461 (Juicht voor de Heer)
+- ruw: Opwekking 461 (Juicht voor de Heer)
   lied: opw-461
   herkenning: automatisch
-- volgorde: 7
-  ruw: No longer slaves
+- ruw: No longer slaves
   moment: luisterlied
   lied: opw-794
   herkenning: automatisch

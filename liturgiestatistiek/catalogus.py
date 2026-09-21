@@ -23,16 +23,9 @@ class Bundel:
 
 
 @dataclass
-class Artiest:
-    naam: str
-    aliassen: list[str]
-
-
-@dataclass
 class Catalogus:
     datamap: Path
     bundels: dict[str, Bundel] = field(default_factory=dict)
-    artiesten: dict[str, Artiest] = field(default_factory=dict)
     liederen: dict[str, Lied] = field(default_factory=dict)
     bestand_van_lied: dict[str, str] = field(default_factory=dict)
     _per_referentie: dict[tuple[str, str], list[str]] = field(default_factory=dict)
@@ -42,8 +35,6 @@ class Catalogus:
         cat = cls(datamap=datamap)
         for b in _lees_lijst(datamap / "bundels.yaml"):
             cat.bundels[b["code"]] = Bundel(b["code"], b["naam"], [a.lower() for a in b["aliassen"]], bool(b.get("psalmen")))
-        for a in _lees_lijst(datamap / "artiesten.yaml"):
-            cat.artiesten[a["naam"]] = Artiest(a["naam"], [x.lower() for x in a["aliassen"]])
         map_ = datamap / CATALOGUS_MAP
         map_.mkdir(parents=True, exist_ok=True)
         for bestand in sorted(map_.glob("*.yaml")):
@@ -60,9 +51,13 @@ class Catalogus:
         for r in lied.referenties:
             self._per_referentie.setdefault((r.bundel, r.nummer.lower()), []).append(lied.id)
 
-    def voeg_lied_toe(self, lied: Lied, bestand: str = OVERIG_BESTAND) -> None:
+    def voeg_lied_toe(self, lied: Lied, bestand: str | None = None) -> None:
+        """Voegt een lied toe. Zonder opgegeven bestand komt het in het bestand
+        van de bundel van zijn eerste verwijzing, of anders in overig.yaml."""
         if lied.id in self.liederen:
             raise ValueError(f"lied-id {lied.id} bestaat al")
+        if bestand is None:
+            bestand = f"{lied.referenties[0].bundel}.yaml" if lied.referenties else OVERIG_BESTAND
         self._voeg_toe(lied, bestand)
 
     def voeg_referentie_toe(self, lied_id: str, ref: Referentie) -> bool:
@@ -89,13 +84,6 @@ class Catalogus:
         for b in self.bundels.values():
             if alias in b.aliassen:
                 return b
-        return None
-
-    def artiest_van_alias(self, tekst: str) -> str | None:
-        genorm = normaliseer(tekst)
-        for a in self.artiesten.values():
-            if genorm in (normaliseer(x) for x in a.aliassen):
-                return a.naam
         return None
 
     def zoektermen(self) -> list[tuple[str, str]]:

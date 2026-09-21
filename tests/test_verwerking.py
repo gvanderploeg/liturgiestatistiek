@@ -10,9 +10,9 @@ import pytest
 import yaml
 
 from liturgiestatistiek.catalogus import Catalogus
-from liturgiestatistiek.extractie import ALGEMEEN_VELDEN
+from liturgiestatistiek.extractie import ALGEMEEN_VELDEN, lees_liturgie
 from liturgiestatistiek.koppeling import Zoekindex, koppel
-from liturgiestatistiek.ontleding import ontleed
+from liturgiestatistiek.ontleding import is_liedrij, ontleed
 from liturgiestatistiek.opslag import Aliassen, laad_wachtrij, schrijf_wachtrij
 from liturgiestatistiek.verwerking import Omgeving, verwerk
 
@@ -27,12 +27,11 @@ def omgeving(tmp_path_factory):
     project = tmp_path_factory.mktemp("project")
     data = project / "data"
     data.mkdir()
-    for naam in ("bundels.yaml", "artiesten.yaml", "kenmerken.yaml"):
+    for naam in ("bundels.yaml", "kenmerken.yaml"):
         shutil.copy(PROJECT / "data" / naam, data / naam)
-    shutil.copytree(PROJECT / "data" / "catalogus", data / "catalogus")
-    for pad in (data / "catalogus").glob("*.yaml"):
-        if pad.name == "overig.yaml":
-            pad.unlink()
+    (data / "catalogus").mkdir()
+    for naam in ("opw.yaml", "sela.yaml", "tpp.yaml", "svg.yaml"):
+        shutil.copy(PROJECT / "data" / "catalogus" / naam, data / "catalogus" / naam)
     (project / "archief").mkdir()
     for pdf in PDFS:
         shutil.copy(pdf, project / "archief" / pdf.name)
@@ -53,7 +52,7 @@ def test_elke_pdf_wordt_een_dienst(omgeving, eerste_run):
         assert set(d) == {"datum", "begeleiding", "kenmerken", "bron", "liederen"}
         assert d["liederen"], f"{pad.name} heeft geen liederen"
         for v in d["liederen"]:
-            assert set(v) <= {"volgorde", "ruw", "moment", "lied", "herkenning"}
+            assert set(v) <= {"ruw", "moment", "lied", "herkenning"}
             assert v["herkenning"] in ("automatisch", "handmatig", "onbekend")
             assert (v["lied"] is None) == (v["herkenning"] == "onbekend")
 
@@ -78,8 +77,12 @@ def _persoonsnamen() -> set[str]:
             for woord in re.findall(r"[A-Za-zÀ-ÿ]{4,}", waarde):
                 if woord[0].isupper():
                     namen.add(woord.lower())
-    artiesten = yaml.safe_load((PROJECT / "data" / "artiesten.yaml").open(encoding="utf-8"))
-    publiek = {w.lower() for a in artiesten for w in re.findall(r"[A-Za-zÀ-ÿ]{4,}", a["naam"])}
+    publiek: set[str] = set()
+    for pdf in PDFS:
+        liturgie = lees_liturgie(pdf)
+        for rij in liturgie.rijen:
+            if is_liedrij(rij.label, rij.inhoud):
+                publiek |= {w.lower() for w in re.findall(r"[A-Za-zÀ-ÿ]{4,}", rij.inhoud)}
     for pad in (PROJECT / "data" / "catalogus").glob("*.yaml"):
         if pad.name != "overig.yaml":
             for lied in yaml.safe_load(pad.open(encoding="utf-8")) or []:
