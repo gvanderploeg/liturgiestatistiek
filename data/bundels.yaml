@@ -1,52 +1,67 @@
-# Liedbundels met hun schrijfwijzen zoals die in liturgieen voorkomen.
-# Aliassen worden hoofdletterongevoelig vergeleken. Bij bundels met
+# Liedbundels en andere bronnen met hun schrijfwijzen zoals die in liturgieen
+# voorkomen. Aliassen worden hoofdletterongevoelig vergeleken. Bij bundels met
 # psalmen: true mag het nummer ook als "Psalm 24" elders in de regel staan.
+# De afkorting is voor weergave op de website.
 - code: opw
   naam: Opwekking
+  afkorting: Opw
   aliassen: [opwekking, opw., opw, oth]
 - code: opwkids
   naam: Opwekking Kids
+  afkorting: Opw kids
   aliassen: [opwekking kids, opw kids, opw. kids, ok4kids, opwekking voor kids]
 - code: nlb
   naam: Liedboek 2013
+  afkorting: NLB
   aliassen: [nlb, lb, liedboek 2013, liedboek_2013, liedboek, nieuwe liedboek]
 - code: dnp
   naam: De Nieuwe Psalmberijming
+  afkorting: DNP
   aliassen: [dnp, de nieuwe psalmberijming, nieuwe psalmberijming]
   psalmen: true
 - code: pvn
   naam: Psalmen voor Nu
+  afkorting: PvN
   aliassen: [pvn, psalmen voor nu]
   psalmen: true
 - code: tpp
   naam: The Psalm Project
+  afkorting: TPP
   aliassen: [tpp, the psalm project, psalm project]
   psalmen: true
 - code: gkb
   naam: Gereformeerd Kerkboek
+  afkorting: GKB
   aliassen: [gereformeerd kerkboek 2017, gereformeerd kerkboek 2006, gereformeerd kerkboek, gkv kerkboek 2017, gkv kerkboek, gkb]
   psalmen: true
 - code: elb
   naam: Evangelische Liedbundel
+  afkorting: ELB
   aliassen: [elb, evangelische liedbundel]
 - code: jdh
   naam: Johannes de Heer
+  afkorting: JdH
   aliassen: [jdh, johannes de heer, joh. de heer]
 - code: er2
   naam: E&R liedbundel 2
+  afkorting: E&R 2
   aliassen: [e&r2, e&r 2, e&r liedbundel 2, e&r bundel 2]
+- code: hh
+  naam: Hemelhoog
+  afkorting: HH
+  aliassen: [hemelhoog, hh]
 - code: sela
   naam: Sela
   aliassen: [sela]
-- code: hh
-  naam: Hemelhoog
-  aliassen: [hemelhoog, hh]
 - code: svg
   naam: Schrijvers voor Gerechtigheid
+  afkorting: SvG
   aliassen: [svg, schrijvers voor gerechtigheid]
 - code: zg
   naam: Zingende Gezegend
+  afkorting: ZG
   aliassen: [zingende gezegend, zg]
 - code: ar
   naam: Arabische liederen
+  afkorting: Ar
   aliassen: [ar]

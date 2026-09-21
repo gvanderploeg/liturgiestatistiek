@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liturgiestatistiek Westerkerk</title>
+  <link rel="stylesheet" href="stijl.css">
+</head>
+<body>
+  <header class="kop">
+    <div class="kop-binnen">
+      <a class="merk" href="#/">Liturgiestatistiek</a>
+      <nav class="tabs" id="tabs">
+        <a href="#/" data-route="dashboard">Dashboard</a>
+        <a href="#/diensten" data-route="diensten">Diensten</a>
+        <a href="#/over" data-route="over">Over</a>
+      </nav>
+      <span class="bijgewerkt" id="bijgewerkt"></span>
+    </div>
+  </header>
+
+  <main id="inhoud" class="inhoud">
+    <p class="laden">Gegevens laden…</p>
+  </main>
+
+  <footer class="voet" id="voet"></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -80,6 +80,10 @@ class Omgeving:
     def wachtrij(self) -> Path:
         return self.project / "werk" / WACHTRIJ_BESTAND
 
+    @property
+    def site_data(self) -> Path:
+        return self.project / "site" / "data"
+
 
 def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
     verslag = Verslag()

@@ -12,6 +12,7 @@ from .importeer import importeer_sheet
 from .koppeling import Zoekindex, koppel
 from .ontleding import bepaal_moment, is_kandidaatrij, is_liedrij, ontleed
 from .opslag import ALIASSEN_BESTAND, Aliassen
+from .publicatie import publiceer
 from .verwerking import Omgeving, verwerk
 
 
@@ -30,8 +31,15 @@ def main(argv: list[str] | None = None) -> int:
     p_toon.add_argument("pdf", type=Path)
     p_toon.add_argument("--alles", action="store_true", help="toon ook rijen die geen lied zijn")
 
+    sub.add_parser("publiceer", help="bouw site/data/dataset.json en de CSV uit data/")
+
     args = parser.parse_args(argv)
     omgeving = Omgeving(args.project)
+
+    if args.commando == "publiceer":
+        dataset = publiceer(omgeving.data, omgeving.site_data)
+        print(f"{len(dataset['diensten'])} diensten, {len(dataset['liederen'])} liederen -> {omgeving.site_data}")
+        return 0
 
     if args.commando == "importeer-catalogus":
         catalogus = Catalogus.laad(omgeving.data)

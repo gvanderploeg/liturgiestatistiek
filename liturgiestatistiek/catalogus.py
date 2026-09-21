@@ -20,6 +20,7 @@ class Bundel:
     naam: str
     aliassen: list[str]
     psalmen: bool = False
+    afkorting: str = ""
 
 
 @dataclass
@@ -34,7 +35,7 @@ class Catalogus:
     def laad(cls, datamap: Path) -> "Catalogus":
         cat = cls(datamap=datamap)
         for b in _lees_lijst(datamap / "bundels.yaml"):
-            cat.bundels[b["code"]] = Bundel(b["code"], b["naam"], [a.lower() for a in b["aliassen"]], bool(b.get("psalmen")))
+            cat.bundels[b["code"]] = Bundel(b["code"], b["naam"], [a.lower() for a in b["aliassen"]], bool(b.get("psalmen")), b.get("afkorting") or b["naam"])
         map_ = datamap / CATALOGUS_MAP
         map_.mkdir(parents=True, exist_ok=True)
         for bestand in sorted(map_.glob("*.yaml")):

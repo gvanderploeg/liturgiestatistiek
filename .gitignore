@@ -4,6 +4,9 @@ archief/
 # Wachtrij bevat ruwe tekst uit de PDF's, waaronder mogelijk namen
 werk/
 
+# Gegenereerd door 'liturgiestatistiek publiceer'; GitHub Actions bouwt dit bij elke push
+site/data/
+
 # Tijdelijke werkmappen en Python-omgeving
 .tmp/
 .venv/

@@ -15,8 +15,11 @@ data/
   aliassen.yaml     besluiten van de beheerder over liedregels en Bijzonderheden
   aanvullingen.yaml liederen die de beheerder aan een dienst toevoegt
   diensten/         een YAML-bestand per dienst: de publieke uitkomst
-liturgiestatistiek/ de verwerking (Python)
+site/               de website: index.html, app.js, stijl.css
+site/data/          dataset.json en liedvermeldingen.csv, gegenereerd (niet in Git)
+liturgiestatistiek/ de verwerking en publicatie (Python)
 tests/
+.github/workflows/  bouwt site/data en publiceert site/ naar GitHub Pages bij elke push
 ```
 
 De dienst-bestanden worden bij elke verwerking opnieuw opgebouwd uit de PDF's plus de besluiten in `aliassen.yaml`, `aanvullingen.yaml` en de catalogus. Correcties horen dus in die bestanden, niet in `data/diensten/`.
@@ -61,6 +64,22 @@ Om te zien wat de extractie en ontleding van een PDF maken:
 ```bash
 .venv/bin/liturgiestatistiek toon "archief/20260920 Eredienst Westerkerk.pdf"
 ```
+
+## Website
+
+De website leest `site/data/dataset.json` en doet alle tellingen in de browser. Lokaal bekijken:
+
+```bash
+.venv/bin/liturgiestatistiek publiceer
+```
+
+```bash
+python3 -m http.server 8765 --directory site
+```
+
+Daarna staat de site op http://localhost:8765. Op GitHub bouwt de workflow in `.github/workflows/publiceer.yml` de dataset bij elke push naar `main` en zet `site/` op GitHub Pages. Eenmalig instellen: in de repository onder Settings, Pages, de bron op "GitHub Actions" zetten.
+
+De dashboardblokken tonen hun criterium in de kopregel; wie de drempels aanpast, krijgt die in de eigen browser bewaard. De pagina "Over" legt de criteria uit en linkt naar de CSV. De voettekst noemt de begindatum van de gegevens, omdat "voor het eerst" en "nooit" altijd relatief zijn aan die datum.
 
 ## Catalogus onderhouden
 
