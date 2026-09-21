@@ -11,21 +11,25 @@ liederen:
   lied: sela-breng-ons-samen
   herkenning: automatisch
 - ruw: Holy Forever
-  lied: null
-  herkenning: onbekend
+  lied: holy-forever
+  herkenning: handmatig
 - ruw: Run to the father
-  lied: null
-  herkenning: onbekend
+  lied: run-to-the-father
+  herkenning: handmatig
 - ruw: Geen afstand- Eline Bakker
-  lied: null
-  herkenning: onbekend
+  lied: eline-bakker-geen-afstand
+  herkenning: handmatig
 - ruw: '1e > Stichting Present 2e > Kerk Burn the Ships:'
-  lied: null
-  herkenning: onbekend
+  lied: for-king-and-country-burn-the-ships
+  herkenning: handmatig
 - ruw: Jezus Overwinnaar
   lied: opw-832
   herkenning: automatisch
 - ruw: 'Zegen uitspreken Zingen: Blessings'
   moment: zegenlied
-  lied: null
-  herkenning: onbekend
+  lied: blessings
+  herkenning: handmatig
+- ruw: 'Jannie Meijer Kinderlied 4: Heel dichtbij, Elly en Rikkert'
+  moment: kindmoment
+  lied: heel-dichtbij-elly-en-rikkert
+  herkenning: handmatig

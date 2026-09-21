@@ -13,8 +13,8 @@ liederen:
   lied: opw-797
   herkenning: automatisch
 - ruw: We’ll all be free – William Matthews
-  lied: null
-  herkenning: onbekend
+  lied: william-matthews-we-ll-all-be-free
+  herkenning: handmatig
 - ruw: Sela - Gods zegen voor jou
   lied: sela-gods-zegen-voor-jou
   herkenning: automatisch
@@ -22,8 +22,8 @@ liederen:
   lied: opw-829
   herkenning: automatisch
 - ruw: Hillsong – Oceans
-  lied: null
-  herkenning: onbekend
+  lied: hillsong-oceans
+  herkenning: handmatig
 - ruw: Opwekking 58 (Vrede zij u)
   lied: opw-58
   herkenning: automatisch

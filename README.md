@@ -44,7 +44,7 @@ Zet de nieuwe liturgie-PDF in `archief/` en draai:
 De uitvoer meldt hoeveel liederen herkend zijn en hoeveel twijfelgevallen in `werk/wachtrij.yaml` staan. Open dat bestand en vul per item een besluit in:
 
 - `lied: <id>` koppelt de regel aan een bestaand lied uit `data/catalogus/`.
-- `accepteer: true` neemt het voorstel over: een nieuw lied (pas eventueel eerst `id`, `titel` en `artiest` aan) of de voorgestelde kenmerken.
+- `accepteer: true` neemt het voorstel over: een nieuw lied (pas eventueel eerst `id` en `titel` aan) of de voorgestelde kenmerken. Bij een lied zonder bundelnummer is de voorgestelde titel de hele regel inclusief artiest, in de volgorde van de liturgie ("Geen afstand - Eline Bakker"); de kale titel gaat mee als alias zodat een volgende vermelding zonder artiest ook herkend wordt.
 - `negeer: true` markeert de regel als geen lied, of het Bijzonderheden-veld als zonder kenmerk.
 - `kenmerken: [doop, avondmaal]` kiest bij soort `bijzonderheden` zelf de kenmerken.
 

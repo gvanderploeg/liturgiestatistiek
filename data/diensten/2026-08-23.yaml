@@ -5,8 +5,8 @@ bron: 20260823 Eredienst Westerkerk.pdf
 liederen:
 - ruw: Open the eyes of my heart Lord, 7 hills worship
   moment: aanvang
-  lied: null
-  herkenning: onbekend
+  lied: open-the-eyes-of-my-heart-lord
+  herkenning: handmatig
 - ruw: Opwekking 889 Dagelijks gebed
   lied: opw-889
   herkenning: automatisch
@@ -17,12 +17,12 @@ liederen:
   lied: opw-389
   herkenning: automatisch
 - ruw: Alles waard - Eline Bakker
-  lied: null
-  herkenning: onbekend
+  lied: eline-bakker-alles-waard
+  herkenning: handmatig
 - ruw: The blessing - Elevation Worship
-  lied: null
-  herkenning: onbekend
+  lied: elevation-worship-the-blessing
+  herkenning: handmatig
 - ruw: Jesus be the name (Elevation Worship)
   moment: zegenlied
-  lied: null
-  herkenning: onbekend
+  lied: elevation-worshop-jesus-be-the-name
+  herkenning: handmatig

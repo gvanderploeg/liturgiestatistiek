@@ -12,8 +12,8 @@ liederen:
   lied: opw-595
   herkenning: automatisch
 - ruw: Meer dan een wonder – Kinga Ban
-  lied: null
-  herkenning: onbekend
+  lied: kinga-ban-meer-dan-een-wonder
+  herkenning: handmatig
 - ruw: Doop – Sela
   lied: sela-doop
   herkenning: automatisch
@@ -24,5 +24,5 @@ liederen:
   lied: opw-347
   herkenning: automatisch
 - ruw: I speak Jesus – Charity Gayle
-  lied: null
-  herkenning: onbekend
+  lied: charity-gayle-i-speak-jesus
+  herkenning: handmatig

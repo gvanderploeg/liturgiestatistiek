@@ -6,8 +6,8 @@ bron: 20260607 Eredienst Westerkerk.pdf
 liederen:
 - ruw: Met open armen – SvG
   moment: aanvang
-  lied: null
-  herkenning: onbekend
+  lied: svg-met-open-armen
+  herkenning: handmatig
 - ruw: Opwekking 820 (Feest van genade)
   lied: opw-820
   herkenning: automatisch
@@ -16,14 +16,14 @@ liederen:
   lied: opwkids-233
   herkenning: automatisch
 - ruw: Thank you Jesus for the blood – Charity Gayle
-  lied: null
-  herkenning: onbekend
+  lied: charity-gayle-thank-you-jesus-for-the-blood
+  herkenning: handmatig
 - ruw: Lichtstad met uw paar’len poorten (o.a. Evangelische Liedbundel 413)
   lied: elb-413
   herkenning: automatisch
 - ruw: Come as you are – Crowder
-  lied: null
-  herkenning: onbekend
+  lied: crowder-come-as-you-are
+  herkenning: handmatig
 - ruw: Opwekking 770 (Ik zal er zijn)
   lied: opw-770
   herkenning: automatisch

@@ -148,10 +148,18 @@ def _titelscore(ontl: Ontleding, lied: Lied) -> int:
 
 
 def _voorstel_nieuw(ontl: Ontleding, catalogus: Catalogus, ruw: str = "") -> dict:
-    titel = max(ontl.titels, key=len) if ontl.titels else ""
+    """Voorstel voor een nieuw catalogus-lied.
+
+    Met bundelverwijzing is het langste fragment de titel (de rest is meestal
+    couplet- of bronvermelding). Zonder verwijzing wordt de hele opgeschoonde
+    regel de titel, in de volgorde van de liturgie, zodat de artiest erin blijft
+    ("Geen afstand - Eline Bakker"); het langste fragment gaat mee als alias."""
+    langste = max(ontl.titels, key=len) if ontl.titels else ""
+    aliassen: list[str] = []
     if ontl.referenties:
         ref = ontl.referenties[0]
         bundel = catalogus.bundels[ref.bundel]
+        titel = langste
         basis = f"{ref.bundel}-{ref.nummer}"
         if bundel.psalmen and titel:
             basis = f"{ref.bundel}-{ref.nummer}-{slug(' '.join(titel.split()[:5]))}"
@@ -159,9 +167,14 @@ def _voorstel_nieuw(ontl: Ontleding, catalogus: Catalogus, ruw: str = "") -> dic
             titel = f"{bundel.naam} {ref.nummer}"
         bron = "referentie"
     else:
-        basis = titel or ruw
+        titel = " - ".join(ontl.titels) if ontl.titels else ruw
+        if langste and langste != titel:
+            aliassen.append(langste)
+        basis = titel
         bron = "titel"
     nieuw: dict = {"id": catalogus.vrij_id(basis), "titel": titel}
+    if aliassen:
+        nieuw["aliassen"] = aliassen
     if ontl.bundels:
         nieuw["artiest"] = catalogus.bundels[ontl.bundels[0]].naam
     if ontl.referenties:

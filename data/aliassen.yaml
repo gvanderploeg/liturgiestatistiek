@@ -1,3 +1,36 @@
-vermeldingen: {}
-bijzonderheden: {}
-negeer_rijen: []
+vermeldingen:
+  1e stichting present 2e kerk burn the ships: for-king-and-country-burn-the-ships
+  alles waard eline bakker: eline-bakker-alles-waard
+  come as you are crowder: crowder-come-as-you-are
+  flowers luisterlied: samantha-ebert-flowers
+  geen afstand eline bakker: eline-bakker-geen-afstand
+  hillsong oceans: hillsong-oceans
+  holy forever: holy-forever
+  holy forever van chris tomlin met tekst op powerpoint: holy-forever
+  i speak jesus charity gayle: charity-gayle-i-speak-jesus
+  ik wens jou trinity: trinity-ik-wens-jou
+  ik wil meer en meer gaan lijken op jezus: ik-wil-meer-en-meer-gaan-lijken-op-jezus
+  jesus be the name elevation worship: elevation-worshop-jesus-be-the-name
+  jezus is de goede herder: elly-en-rikkert-jezus-is-de-goede-herder
+  kindlied we are one: we-are-one
+  lev de kerk van alle tijden: lev-de-kerk-van-alle-tijden
+  meer dan een wonder kinga ban: kinga-ban-meer-dan-een-wonder
+  met open armen svg: svg-met-open-armen
+  open the eyes of my heart lord 7 hills worship: open-the-eyes-of-my-heart-lord
+  open the eyes of my heart lord michael w smith: open-the-eyes-of-my-heart-lord
+  opwekking 286 hij kwam bij ons heel gewoon tweetalig: opw-268
+  psalm 103 the psalm project: tpp-103-loof-de-heer-mijn-ziel
+  run to the father: run-to-the-father
+  thank you jesus for the blood charity gayle: charity-gayle-thank-you-jesus-for-the-blood
+  the blessing elevation worship: elevation-worship-the-blessing
+  wat een geschenk is jezus mijn bevrijder: wat-een-geschenk-is-jezus-mijn-bevrijder
+  we ll all be free william matthews: william-matthews-we-ll-all-be-free
+  zegen uitspreken zingen blessings: blessings
+  zingen ga met god en hij zal met je zijn nlb: ga-met-god-en-hij-zal-met-je-zijn
+bijzonderheden:
+  452f7fce4587:
+  - doop
+  - bevestiging
+  5e919568317d: []
+negeer_rijen:
+- 05377c851ef0

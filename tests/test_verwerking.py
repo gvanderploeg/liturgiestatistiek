@@ -150,6 +150,12 @@ def test_koppeling_op_voorbeelden(omgeving, eerste_run):
     onbekend = k("Een lied dat echt niet bestaat")
     assert onbekend.herkenning == "onbekend"
     assert onbekend.voorstel["nieuw"]["titel"] == "Een lied dat echt niet bestaat"
+    assert "aliassen" not in onbekend.voorstel["nieuw"]
+    met_artiest = k("Geen afstand- Eline Bakker").voorstel["nieuw"]
+    assert met_artiest["titel"] == "Geen afstand - Eline Bakker"
+    assert met_artiest["id"] == "geen-afstand-eline-bakker"
+    assert met_artiest["aliassen"] == ["Geen afstand"]
+    assert k("Charity Gayle: I speak Jesus").voorstel["nieuw"]["titel"] == "Charity Gayle - I speak Jesus"
     psalm = k("God zegent ons (PvN 67)")
     assert psalm.herkenning == "onbekend", "een psalmberijming wordt niet op titel aan een ander lied gehangen"
 

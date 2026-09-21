@@ -10,15 +10,15 @@ liederen:
   herkenning: automatisch
 - ruw: Ik wens jou (trinity)
   moment: kindmoment
-  lied: null
-  herkenning: onbekend
+  lied: trinity-ik-wens-jou
+  herkenning: handmatig
 - ruw: Flowers (Luisterlied)
   moment: luisterlied
-  lied: null
-  herkenning: onbekend
+  lied: samantha-ebert-flowers
+  herkenning: handmatig
 - ruw: Meer dan een wonder (Kinga Ban)
-  lied: null
-  herkenning: onbekend
+  lied: kinga-ban-meer-dan-een-wonder
+  herkenning: handmatig
 - ruw: Doop (sela, Hemelhoog 502))
   lied: sela-doop
   herkenning: automatisch
@@ -26,9 +26,13 @@ liederen:
   lied: dnp-119
   herkenning: automatisch
 - ruw: 'zingen: Ga met God en Hij zal met je zijn (NLB)'
-  lied: null
-  herkenning: onbekend
+  lied: ga-met-god-en-hij-zal-met-je-zijn
+  herkenning: handmatig
 - ruw: zingen (als amen) Vervuld van uw zegen (NLB 425)
   moment: zegenlied
   lied: nlb-425
   herkenning: automatisch
+- ruw: beginnen met "Votum en groet" van Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: handmatig

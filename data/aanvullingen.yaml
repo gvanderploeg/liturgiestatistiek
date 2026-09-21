@@ -1,1 +1,19 @@
-[]
+- dienst: '2026-06-14'
+  sleutel: 38279f136dc1
+  ruw: 'Jannie Meijer Kinderlied 4: Heel dichtbij, Elly en Rikkert'
+  lied: heel-dichtbij-elly-en-rikkert
+  moment: kindmoment
+- dienst: '2026-06-28'
+  sleutel: ca7bbfccb642
+  ruw: Opwekking 575 Jezus alleen, ik bouw op Hem (HH 347a)
+  lied: opw-575
+- dienst: '2026-07-12'
+  sleutel: 975e3ffd342d
+  ruw: Opwekking 798 Wij zijn het volk van God ... Sela Laat ons samen één zijn
+  lied: sela-laat-ons-samen-een-zijn
+  moment: aanvang
+- dienst: '2026-09-20'
+  sleutel: f3ed2518752b
+  ruw: beginnen met "Votum en groet" van Sela
+  lied: sela-votum-en-groet
+  moment: aanvang

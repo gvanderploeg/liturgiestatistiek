@@ -6,8 +6,8 @@ bron: 20260913 Eredienst Westerkerk.pdf
 liederen:
 - ruw: Opwekking 286 (Hij kwam bij ons, heel gewoon), tweetalig
   moment: aanvang
-  lied: opw-286
-  herkenning: automatisch
+  lied: opw-268
+  herkenning: handmatig
 - ruw: Ar 124 Zidoel masieh tasbie (Geef lofprijzing aan de Messias)
   lied: ar-124
   herkenning: automatisch
@@ -19,11 +19,11 @@ liederen:
   herkenning: automatisch
 - ruw: Ik wil meer en meer gaan lijken op Jezus
   moment: kindmoment
-  lied: null
-  herkenning: onbekend
+  lied: ik-wil-meer-en-meer-gaan-lijken-op-jezus
+  herkenning: handmatig
 - ruw: Ar19 Bahroe mahabbatiel (De zee van de liefde van de Verlosser is grenzeloos)
   lied: ar-19
   herkenning: automatisch
 - ruw: Wat een geschenk is Jezus mijn bevrijder
-  lied: null
-  herkenning: onbekend
+  lied: wat-een-geschenk-is-jezus-mijn-bevrijder
+  herkenning: handmatig
