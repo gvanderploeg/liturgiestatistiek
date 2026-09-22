@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:socie.nl)",
+      "WebFetch(domain:resources.socie.nl)"
+    ]
+  }
+}

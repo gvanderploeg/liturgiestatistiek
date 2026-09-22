@@ -36,9 +36,27 @@ Eenmalig de catalogus vullen uit het stamgegevens-sheet:
 .venv/bin/liturgiestatistiek importeer-catalogus import/Liturgiestatistiek.xlsx
 ```
 
+## PDF's ophalen uit Scipio
+
+De liturgieen staan als bijlage bij de kerkdiensten in de agenda van de Scipio web-app (web.scipio-app.nl). Het commando `haal-op` logt in met je eigen account, loopt de agenda van de module pagina voor pagina terug in de tijd, neemt alleen de events van de kerkdienst-pagina, en downloadt elke liturgie-PDF die nog niet in `archief/` staat. Van de eventgegevens wordt niets bewaard.
+
+```bash
+SCIPIO_EMAIL=jij@voorbeeld.nl SCIPIO_WACHTWOORD=geheim .venv/bin/liturgiestatistiek haal-op --log
+```
+
+De eerste keer schrijft het commando een voorbeeldconfiguratie naar `werk/scipio.yaml` (buiten Git) met de ids van community, module en kerkdienst-pagina en een naamfilter voor de bijlagen; controleer die en draai opnieuw. Standaard kijkt het commando `terugkijk_dagen` (90) terug en een week vooruit, want de liturgie staat er al dagen voor de dienst. Voor het eenmalig inladen van de historie geef je een begindatum mee:
+
+```bash
+SCIPIO_EMAIL=jij@voorbeeld.nl SCIPIO_WACHTWOORD=geheim .venv/bin/liturgiestatistiek haal-op --vanaf 2024-09-01 --log
+```
+
+Wat al in `archief/` staat wordt nooit opnieuw gedownload, dus een tweede run over dezelfde periode kost alleen de paginaverzoeken. Met `--log` zie je elk verzoek met status, duur en omvang, zonder token. Bij een serverfout wacht het commando vijf seconden en probeert het een keer opnieuw; tussen pagina's zit een halve seconde pauze.
+
+Dit gebruikt de interne API van een web-app die de leverancier als "in ontwikkeling" aanmerkt. Werkt het ineens niet meer, dan is de handmatige route er nog: de PDF zelf in `archief/` zetten.
+
 ## Wekelijkse routine van de beheerder
 
-Zet de nieuwe liturgie-PDF in `archief/` en draai:
+Zet de nieuwe liturgie-PDF in `archief/`, of haal die op met `haal-op`, en draai:
 
 ```bash
 .venv/bin/liturgiestatistiek verwerk
