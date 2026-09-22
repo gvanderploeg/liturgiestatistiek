@@ -89,6 +89,7 @@ def test_ontleed_hints(catalogus):
         ("Zegen > Lied 7", "Vervuld van uw zegen", True),
         ("Geloofsbelijdenis = Lied 5", "We believe", True),
         ("Collecten Collectelied", "Burn the Ships", True),
+        ("Zingen", "Opwekking 331 (Breng dank aan de Eeuwige)", True),
         ("Lied 6", "", False),
         ("Kindmoment", "Iemand met kinderlied", False),
         ("Votum en groet (gesproken, gezongen of Sela/Psalm 121/…)", "Voorganger", False),
@@ -157,5 +158,8 @@ def test_herken_kenmerken():
 def test_normaliseer_begeleiding():
     assert normaliseer_begeleiding("Band") == "band"
     assert normaliseer_begeleiding("Orgel/Piano") == "orgel piano"
+    assert normaliseer_begeleiding("Orgel (Jan Jansen) en hobo (Piet Pietersen)") == "orgel hobo"
+    assert normaliseer_begeleiding("Liederen via YouTube") == "youtube"
+    assert normaliseer_begeleiding("Iets onbekends") == "overig"
     assert normaliseer_begeleiding("-") == "geen"
-    assert normaliseer_begeleiding("") == "geen"
+    assert normaliseer_begeleiding("") == "onbekend"

@@ -65,7 +65,9 @@ class Lied:
 
 @dataclass
 class Vermelding:
-    """Een liedregel uit een dienst. De volgorde in de dienst is de volgorde in de lijst."""
+    """Een liedregel uit een dienst. De volgorde in de dienst is de volgorde in de lijst.
+    De ruwe tekst gaat alleen mee als het lied herkend is; van een niet-herkende regel
+    staat de tekst in de lokale wachtrij, niet in de publieke data."""
 
     ruw: str
     lied: str | None
@@ -73,7 +75,7 @@ class Vermelding:
     moment: str | None = None
 
     def as_dict(self) -> dict:
-        d: dict = {"ruw": self.ruw}
+        d: dict = {"ruw": self.ruw} if self.lied else {}
         if self.moment:
             d["moment"] = self.moment
         d["lied"] = self.lied

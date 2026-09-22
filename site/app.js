@@ -258,7 +258,7 @@
         rijen.push(`<tr class="tussenkop"><td colspan="3">${dienstLink(d.dienst)} · ${esc(dienstOmschrijving(d.dienst))}</td></tr>`);
         for (const v of d.liederen) {
           if (!v.lied) {
-            rijen.push(`<tr><td class="stil">${esc(v.ruw)}</td><td class="bron">niet herkend</td><td></td></tr>`);
+            rijen.push(`<tr><td class="stil">nog niet herkend lied</td><td class="bron"></td><td></td></tr>`);
             continue;
           }
           const t = ooit.get(v.lied);
@@ -312,7 +312,7 @@
 
   function dienstBlok(dienst, ooit) {
     const rijen = dienst.liederen.map((v) => {
-      if (!v.lied) return `<tr><td class="moment"></td><td class="stil">${esc(v.ruw)}</td><td class="bron">niet herkend</td><td></td></tr>`;
+      if (!v.lied) return `<tr><td class="moment"></td><td class="stil">nog niet herkend lied</td><td class="bron"></td><td></td></tr>`;
       const t = ooit.get(v.lied);
       return `<tr><td class="moment">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}</td><td class="r stil">${aantalTekst(t.aantal)}</td></tr>`;
     }).join("");

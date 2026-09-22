@@ -78,5 +78,20 @@ def test_lidmaatschap_uit_memberships_available(monkeypatch):
     assert scipio.lidmaatschap("token", ScipioConfig("c", "m", "p", lidmaatschap="handmatig")) == "handmatig"
 
 
+def test_zoek_herhaling_op_id_of_datum():
+    from liturgiestatistiek.scipio import is_reeks, zoek_herhaling
+
+    lijst = [
+        {"_id": "a", "beginDate": "2025-04-06T08:00:00.000Z", "files": []},
+        {"_id": "b", "beginDate": "2025-04-13T08:00:00.000Z", "files": [{"_id": "f", "title": "20250413 Eredienst Westerkerk.pdf"}]},
+    ]
+    assert zoek_herhaling(lijst, {"_id": "b"})["files"][0]["_id"] == "f"
+    assert zoek_herhaling(lijst, {"_id": "x", "beginDate": "2025-04-13T08:00:00.000Z"})["_id"] == "b"
+    assert zoek_herhaling(lijst, {"_id": "x", "beginDate": "2025-05-01T08:00:00.000Z"}) is None
+    assert is_reeks({"repeat": {"type": "WEEKLY"}})
+    assert not is_reeks({"repeat": {"type": "NO_REPEAT"}})
+    assert not is_reeks({})
+
+
 def test_voorbeeldconfig_is_yaml():
     assert yaml.safe_load(VOORBEELD_CONFIG)["module"] == "5f0f325c00aa224c7bc5fd93"

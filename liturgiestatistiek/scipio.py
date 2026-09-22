@@ -176,6 +176,30 @@ def events_pagina(token: str, membership: str, config: ScipioConfig, skip: int, 
     return inhoud
 
 
+def herhalingen(token: str, membership: str, config: ScipioConfig, event_id: str) -> list[dict]:
+    """Alle herhalingen van de reeks waar dit event toe behoort, elk met eigen bijlagen.
+    De lijst op module-niveau laat bijlagen van herhalingen soms weg; hier staan ze wel."""
+    url = f"{API}/v2/app/communities/{config.community}/modules/{config.module}/pages/{config.pagina}/events/{event_id}/recurrences"
+    inhoud = json.loads(_verzoek(url, token, membership=membership))
+    return inhoud if isinstance(inhoud, list) else []
+
+
+def zoek_herhaling(lijst: list[dict], event: dict) -> dict | None:
+    """De herhaling die bij dit event hoort: zelfde id, of anders zelfde begindatum."""
+    for h in lijst:
+        if h.get("_id") == event.get("_id"):
+            return h
+    datum = begindatum(event)
+    for h in lijst:
+        if datum and begindatum(h) == datum:
+            return h
+    return None
+
+
+def is_reeks(event: dict) -> bool:
+    return (event.get("repeat") or {}).get("type", "NO_REPEAT") != "NO_REPEAT"
+
+
 def bestands_url(token: str, community: str, bestand_id: str) -> str:
     return f"{API}/v2/me/communities/{community}/files/{bestand_id}?Authorization=" + urllib.parse.quote(f"bearer {token}")
 
@@ -215,20 +239,25 @@ class OphaalVerslag:
     events: int = 0
     kerkdiensten: int = 0
     bijlagen: int = 0
+    reeksen: int = 0
     gedownload: list[str] = field(default_factory=list)
     al_aanwezig: int = 0
+    zonder_bijlage: list[str] = field(default_factory=list)
     fouten: list[str] = field(default_factory=list)
 
     def tekst(self) -> str:
         regels = [
             f"pagina's opgevraagd:    {self.paginas}",
+            f"reeksen nagevraagd:     {self.reeksen}",
             f"events bekeken:         {self.events}",
             f"  kerkdiensten:         {self.kerkdiensten}",
             f"  met liturgie-PDF:     {self.bijlagen}",
+            f"  zonder liturgie-PDF:  {len(self.zonder_bijlage)}",
             f"al in archief:          {self.al_aanwezig}",
             f"gedownload:             {len(self.gedownload)}",
         ]
         regels += [f"  + {naam}" for naam in self.gedownload]
+        regels += [f"  - {regel}" for regel in self.zonder_bijlage]
         regels += [f"FOUT {f}" for f in self.fouten]
         return "\n".join(regels)
 
@@ -247,6 +276,7 @@ def haal_op(config: ScipioConfig, email: str, wachtwoord: str, archief: Path, va
     tot = nu
     membership = lidmaatschap(token, config)
     log.info("kerkdiensten van %s tot %s", vanaf, tot.date())
+    reeksen: dict[str, list[dict]] = {}
     skip = 0
     while verslag.paginas < MAX_PAGINAS:
         events = events_pagina(token, membership, config, skip, tot)
@@ -263,7 +293,27 @@ def haal_op(config: ScipioConfig, email: str, wachtwoord: str, archief: Path, va
             if event.get("page_id") != config.pagina:
                 continue
             verslag.kerkdiensten += 1
-            for bijlage in liturgie_bijlagen(event, patroon):
+            bijlagen = liturgie_bijlagen(event, patroon)
+            if not bijlagen and is_reeks(event) and not (datum and datum < vanaf):
+                reeks = (event.get("repeat") or {}).get("_id") or event.get("_id")
+                if reeks not in reeksen:
+                    try:
+                        reeksen[reeks] = herhalingen(token, membership, config, event["_id"])
+                        verslag.reeksen += 1
+                        time.sleep(WACHT_NA_DOWNLOAD)
+                    except ScipioFout as fout:
+                        reeksen[reeks] = []
+                        verslag.fouten.append(f"herhalingen van reeks bij {datum}: {fout}")
+                herhaling = zoek_herhaling(reeksen[reeks], event)
+                if herhaling:
+                    bijlagen = liturgie_bijlagen(herhaling, patroon)
+                    if bijlagen:
+                        log.debug("kerkdienst %s: bijlage gevonden via de herhalingen van de reeks", datum)
+            if not bijlagen:
+                alle = [f.get("title", "?") for f in event.get("files", [])]
+                log.info("kerkdienst %s (%s) zonder liturgie-PDF; bijlagen: %s", datum, event.get("name", "?"), ", ".join(alle) if alle else "geen")
+                verslag.zonder_bijlage.append(f"{datum}: {', '.join(alle) if alle else 'geen bijlagen'}")
+            for bijlage in bijlagen:
                 verslag.bijlagen += 1
                 doel = archief / veilige_bestandsnaam(bijlage["title"])
                 if doel.exists():

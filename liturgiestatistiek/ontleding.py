@@ -18,7 +18,7 @@ from .catalogus import Catalogus
 from .modellen import Referentie
 from .tekst import eenvoudig, normaliseer
 
-LIED_LABEL = re.compile(r"lied\b", re.IGNORECASE)
+LIED_LABEL = re.compile(r"lied\b|^zingen\b", re.IGNORECASE)
 MEERDERE_LABEL = re.compile(r"\d+\s*(en|&|,)\s*\d+", re.IGNORECASE)
 LIEDWOORDEN = re.compile(r"lied\b|\bzingen\b|\bgezongen\b", re.IGNORECASE)
 
@@ -199,6 +199,17 @@ def herken_kenmerken(bijzonderheden: str, kenmerken: dict[str, list[str]]) -> tu
     return codes, rest
 
 
+BEGELEIDINGSVORMEN = ["band", "orgel", "piano", "gitaar", "cantorij", "koor", "hobo", "viool", "fluit", "cello", "trompet", "youtube", "beamer"]
+
+
 def normaliseer_begeleiding(tekst: str) -> str:
+    """Alleen herkende begeleidingsvormen blijven over, in vaste volgorde. Namen van
+    musici die opstellers hier soms bij zetten verdwijnen zo uit de publieke data."""
+    if (tekst or "").strip() in ("-", "geen"):
+        return "geen"
     t = normaliseer(tekst)
-    return t if t and t != "-" else "geen"
+    if not t:
+        return "onbekend"
+    woorden = set(t.split())
+    gevonden = [vorm for vorm in BEGELEIDINGSVORMEN if vorm in woorden]
+    return " ".join(gevonden) if gevonden else "overig"

@@ -102,8 +102,7 @@ def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
     index = Zoekindex(catalogus)
     nieuwe_wachtrij: list[WachtrijItem] = []
     geleerd_voor = verslag.referenties_geleerd
-    for pad in sorted(omgeving.archief.glob("*.pdf")):
-        liturgie = lees_liturgie(pad)
+    for liturgie in _liturgieen_per_datum(omgeving.archief, verslag):
         dienst, items = verwerk_liturgie(liturgie, catalogus, aliassen, aanvullingen, kenmerken, index, verslag)
         if dienst is None:
             continue
@@ -117,6 +116,29 @@ def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
     schrijf_wachtrij(omgeving.wachtrij, nieuwe_wachtrij)
     verslag.wachtrij = len(nieuwe_wachtrij)
     return verslag
+
+
+def _liturgieen_per_datum(archief: Path, verslag: Verslag) -> list[Liturgie]:
+    """Leest alle PDF's en voegt liturgieën van dezelfde datum samen tot één,
+    want er is één dienst per datum: de rijen worden achter elkaar gezet en
+    de dubbele liederen vallen later weg."""
+    per_datum: dict[str, Liturgie] = {}
+    for pad in sorted(archief.glob("*.pdf")):
+        liturgie = lees_liturgie(pad)
+        uit_document, uit_bestand = bepaal_datum(liturgie.datum_tekst, liturgie.bestand)
+        datum = uit_document or uit_bestand
+        sleutel_datum = datum.isoformat() if datum else liturgie.bestand
+        eerder = per_datum.get(sleutel_datum)
+        if eerder is None:
+            per_datum[sleutel_datum] = liturgie
+            continue
+        verslag.meldingen.append(f"SAMENGEVOEGD {sleutel_datum}: {eerder.bestand.split(' + ')[-1]} en {liturgie.bestand}")
+        eerder.bestand = f"{eerder.bestand} + {liturgie.bestand}"
+        eerder.datum_tekst = eerder.datum_tekst or liturgie.datum_tekst
+        eerder.bijzonderheden = ", ".join(b for b in (eerder.bijzonderheden, liturgie.bijzonderheden) if b and b != "-")
+        eerder.begeleiding = eerder.begeleiding or liturgie.begeleiding
+        eerder.rijen.extend(liturgie.rijen)
+    return list(per_datum.values())
 
 
 def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], kenmerken: dict[str, list[str]], index: Zoekindex, verslag: Verslag) -> tuple[Dienst | None, list[WachtrijItem]]:
@@ -182,6 +204,9 @@ def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliasse
                     voorstel.update(k.voorstel)
                 items.append(WachtrijItem(dienst_id, "kandidaat", rij.inhoud, "geen liedrij, maar lijkt naar een lied te verwijzen", label=rij.label, sleutel=sl, kandidaten=k.kandidaten, voorstel=voorstel))
         vorig_label = rij.label
+
+    if not dienst.liederen and not any(a.dienst == dienst_id for a in aanvullingen):
+        verslag.meldingen.append(f"LEEG {dienst_id} ({liturgie.bestand}): geen liedregels gevonden; afwijkende opmaak? Vul zo nodig aan via aanvullingen.yaml")
 
     for a in aanvullingen:
         if a.dienst == dienst_id and a.lied not in gezien:

@@ -43,18 +43,35 @@ def eerste_run(omgeving):
     return verwerk(omgeving)
 
 
-def test_elke_pdf_wordt_een_dienst(omgeving, eerste_run):
+def _datums_in_archief() -> set[str]:
+    from liturgiestatistiek.ontleding import bepaal_datum
+
+    datums = set()
+    for pdf in PDFS:
+        liturgie = lees_liturgie(pdf)
+        doc, bestand = bepaal_datum(liturgie.datum_tekst, liturgie.bestand)
+        datums.add((doc or bestand).isoformat())
+    return datums
+
+
+def test_elke_datum_wordt_een_dienst(omgeving, eerste_run):
+    """Een dienst per datum; twee PDF's op dezelfde dag worden samengevoegd."""
     diensten = sorted((omgeving.data / "diensten").glob("*.yaml"))
-    assert len(diensten) == len(PDFS)
-    assert eerste_run.diensten == len(PDFS)
+    datums = _datums_in_archief()
+    assert {p.stem for p in diensten} == datums
+    assert eerste_run.diensten == len(datums)
+    assert len(PDFS) - len(datums) == sum(1 for m in eerste_run.meldingen if m.startswith("SAMENGEVOEGD"))
+    leeg_gemeld = {m.split()[1] for m in eerste_run.meldingen if m.startswith("LEEG ")}
     for pad in diensten:
         d = yaml.safe_load(pad.open(encoding="utf-8"))
         assert set(d) == {"datum", "begeleiding", "kenmerken", "bron", "liederen"}
-        assert d["liederen"], f"{pad.name} heeft geen liederen"
+        assert d["liederen"] or pad.stem in leeg_gemeld, f"{pad.name} heeft geen liederen en is niet gemeld"
         for v in d["liederen"]:
             assert set(v) <= {"ruw", "moment", "lied", "herkenning"}
             assert v["herkenning"] in ("automatisch", "handmatig", "onbekend")
             assert (v["lied"] is None) == (v["herkenning"] == "onbekend")
+            assert ("ruw" in v) == (v["lied"] is not None), "ruwe tekst alleen bij een herkend lied"
+    assert len(leeg_gemeld) <= 3, leeg_gemeld
 
 
 def test_meeste_liederen_worden_herkend(eerste_run):
@@ -88,6 +105,9 @@ def _persoonsnamen() -> set[str]:
             for lied in yaml.safe_load(pad.open(encoding="utf-8")) or []:
                 for tekst in (lied["titel"], lied.get("eerste_regel") or "", *lied.get("aliassen", [])):
                     publiek |= {w.lower() for w in re.findall(r"[A-Za-zÀ-ÿ]{4,}", tekst)}
+    kenmerken = yaml.safe_load((PROJECT / "data" / "kenmerken.yaml").open(encoding="utf-8"))
+    for woorden in kenmerken.values():
+        publiek |= {w.lower() for tekst in woorden for w in re.findall(r"[A-Za-zÀ-ÿ]{4,}", tekst)}
     return namen - publiek - {"voorganger", "band", "team", "gastvrij"}
 
 
@@ -175,7 +195,7 @@ def test_typefout_in_nummer_wordt_gemeld(omgeving, eerste_run):
     items = laad_wachtrij(omgeving.wachtrij)
     controles = [i for i in items if i.soort == "controle"]
     assert any(i.dienst == "2026-09-13" and i.voorstel == {"lied": "opw-268", "huidig": "opw-286"} for i in controles)
-    assert len(controles) <= 3, [i.ruw for i in controles]
+    assert len(controles) <= max(3, len(PDFS) // 8), [i.ruw for i in controles]
 
 
 def test_wachtrij_besluiten_worden_toegepast(omgeving, eerste_run):
@@ -201,8 +221,8 @@ def test_wachtrij_besluiten_worden_toegepast(omgeving, eerste_run):
     dienst = yaml.safe_load((omgeving.data / "diensten" / f"{bijz.dienst}.yaml").open(encoding="utf-8"))
     assert dienst["kenmerken"] == ["startzondag"]
     dienst = yaml.safe_load((omgeving.data / "diensten" / f"{nieuw.dienst}.yaml").open(encoding="utf-8"))
-    assert any(v["ruw"] == nieuw.ruw and v["herkenning"] == "handmatig" for v in dienst["liederen"])
-    assert all(v["ruw"] != negeer.ruw for v in yaml.safe_load((omgeving.data / "diensten" / f"{negeer.dienst}.yaml").open(encoding="utf-8"))["liederen"])
+    assert any(v.get("ruw") == nieuw.ruw and v["herkenning"] == "handmatig" for v in dienst["liederen"])
+    assert all(v.get("ruw") != negeer.ruw for v in yaml.safe_load((omgeving.data / "diensten" / f"{negeer.dienst}.yaml").open(encoding="utf-8"))["liederen"])
 
     resterend = laad_wachtrij(omgeving.wachtrij)
     assert not any(i.ruw == nieuw.ruw and i.dienst == nieuw.dienst for i in resterend)

@@ -30,8 +30,6 @@ def bouw_dataset(datamap: Path) -> dict:
             item: dict = {"lied": v["lied"]}
             if v.get("moment"):
                 item["moment"] = v["moment"]
-            if v["lied"] is None:
-                item["ruw"] = v["ruw"]
             liederen.append(item)
         diensten.append(
             {

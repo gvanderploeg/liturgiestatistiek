@@ -35,8 +35,7 @@ def test_dataset_is_compact_en_naamloos(dataset):
     for d in ds["diensten"]:
         assert set(d) == {"datum", "begeleiding", "kenmerken", "liederen"}
         for v in d["liederen"]:
-            assert set(v) <= {"lied", "moment", "ruw"}
-            assert ("ruw" in v) == (v["lied"] is None), "ruwe tekst gaat alleen mee als het lied niet herkend is"
+            assert set(v) <= {"lied", "moment"}, "geen ruwe tekst in de dataset"
             if v["lied"]:
                 assert v["lied"] in ds["liederen"], f"{v['lied']} ontbreekt in de liederenlijst"
 

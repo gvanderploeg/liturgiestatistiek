@@ -64,6 +64,8 @@ def lees_liturgie(pad: Path) -> Liturgie:
                         liturgie.rijen.append(Rij(label=label, inhoud=inhoud, pagina=nummer))
                     else:
                         _neem_algemeen_veld(liturgie, label, inhoud)
+            if kop_top is not None:
+                orde_gestart = True
 
     return liturgie
 
