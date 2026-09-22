@@ -7,7 +7,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from .catalogus import Catalogus
-from .extractie import Liturgie, lees_liturgie
+from .extractie import Liturgie, lees_liturgie_gecached
 from .koppeling import DREMPEL_AUTOMATISCH, DREMPEL_ZEKER, Koppeling, Zoekindex, koppel
 from .modellen import Dienst, Lied, Referentie, Vermelding, WachtrijItem
 from .ontleding import (
@@ -84,6 +84,10 @@ class Omgeving:
     def site_data(self) -> Path:
         return self.project / "site" / "data"
 
+    @property
+    def cache(self) -> Path:
+        return self.project / "werk" / "cache"
+
 
 def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
     verslag = Verslag()
@@ -101,16 +105,13 @@ def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
 
     index = Zoekindex(catalogus)
     nieuwe_wachtrij: list[WachtrijItem] = []
-    geleerd_voor = verslag.referenties_geleerd
-    for liturgie in _liturgieen_per_datum(omgeving.archief, verslag):
+    for liturgie in _liturgieen_per_datum(omgeving.archief, omgeving.cache, verslag):
         dienst, items = verwerk_liturgie(liturgie, catalogus, aliassen, aanvullingen, kenmerken, index, verslag)
         if dienst is None:
             continue
         schrijf_dienst(omgeving.data / DIENSTEN_MAP, dienst)
         nieuwe_wachtrij.extend(items)
         verslag.diensten += 1
-    if verslag.referenties_geleerd > geleerd_voor:
-        catalogus.schrijf()
 
     _behoud_bewerkingen(oude_wachtrij, nieuwe_wachtrij)
     schrijf_wachtrij(omgeving.wachtrij, nieuwe_wachtrij)
@@ -118,13 +119,13 @@ def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
     return verslag
 
 
-def _liturgieen_per_datum(archief: Path, verslag: Verslag) -> list[Liturgie]:
-    """Leest alle PDF's en voegt liturgieën van dezelfde datum samen tot één,
-    want er is één dienst per datum: de rijen worden achter elkaar gezet en
-    de dubbele liederen vallen later weg."""
+def _liturgieen_per_datum(archief: Path, cache: Path, verslag: Verslag) -> list[Liturgie]:
+    """Leest alle PDF's (met cache) en voegt liturgieën van dezelfde datum samen
+    tot één, want er is één dienst per datum: de rijen worden achter elkaar
+    gezet en de dubbele liederen vallen later weg."""
     per_datum: dict[str, Liturgie] = {}
     for pad in sorted(archief.glob("*.pdf")):
-        liturgie = lees_liturgie(pad)
+        liturgie = lees_liturgie_gecached(pad, cache)
         uit_document, uit_bestand = bepaal_datum(liturgie.datum_tekst, liturgie.bestand)
         datum = uit_document or uit_bestand
         sleutel_datum = datum.isoformat() if datum else liturgie.bestand
@@ -172,7 +173,6 @@ def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliasse
                 continue
             if k.lied:
                 gezien.add(k.lied)
-                verslag.referenties_geleerd += _leer_referenties(catalogus, k.lied, k.geleerde_referenties)
             dienst.liederen.append(Vermelding(rij.inhoud, k.lied, k.herkenning, moment))
             _tel(verslag, k.herkenning)
             if k.herkenning == "onbekend":
@@ -263,7 +263,7 @@ def _tel(verslag: Verslag, herkenning: str) -> None:
 def _pas_besluiten_toe(wachtrij: list[WachtrijItem], catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], accepteer_referenties: bool, verslag: Verslag) -> int:
     aantal = 0
     for item in wachtrij:
-        if accepteer_referenties and not item.heeft_besluit and item.soort == "lied" and item.voorstel.get("bron") == "referentie":
+        if accepteer_referenties and not item.heeft_besluit and item.soort == "lied" and item.voorstel.get("bron") == "referentie" and "twijfel" not in item.voorstel:
             item.accepteer = True
         if not item.heeft_besluit:
             continue
@@ -275,7 +275,7 @@ def _pas_besluiten_toe(wachtrij: list[WachtrijItem], catalogus: Catalogus, alias
             elif item.soort == "controle":
                 _besluit_controle(item, catalogus, aliassen)
             else:
-                _besluit_lied(item, catalogus, aliassen)
+                verslag.referenties_geleerd += _besluit_lied(item, catalogus, aliassen)
             aantal += 1
         except ValueError as fout:
             verslag.meldingen.append(f"BESLUIT NIET TOEGEPAST ({item.dienst}, {item.ruw[:40]}): {fout}")
@@ -292,17 +292,22 @@ def _besluit_bijzonderheden(item: WachtrijItem, aliassen: Aliassen) -> None:
     aliassen.bijzonderheden[item.sleutel or sleutel(item.ruw)] = codes
 
 
-def _besluit_lied(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen) -> None:
+def _besluit_lied(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen) -> int:
+    """Past een besluit op een liedregel toe; geeft terug hoeveel bundelverwijzingen
+    de catalogus erbij leerde. Kiest de beheerder 'lied: X' voor een regel met een
+    onbekend bundelnummer, dan krijgt X dat nummer als verwijzing."""
     norm = normaliseer(item.ruw)
     if item.negeer:
         aliassen.vermeldingen[norm] = "negeer"
-        return
+        return 0
     lied_id = _lied_uit_besluit(item, catalogus)
+    geleerd = 0
     if item.lied:
         refs = [Referentie(str(r["bundel"]), str(r["nummer"])) for r in (item.voorstel.get("nieuw") or {}).get("referenties", [])]
-        _leer_referenties(catalogus, lied_id, refs)
+        geleerd = _leer_referenties(catalogus, lied_id, refs)
     if item.lied or item.voorstel.get("bron") != "referentie":
         aliassen.vermeldingen[norm] = lied_id
+    return geleerd
 
 
 def _leer_referenties(catalogus: Catalogus, lied_id: str, referenties: list[Referentie]) -> int:

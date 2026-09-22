@@ -1,10 +1,35 @@
+- id: opwkids-68
+  titel: Diep diep diep als de zee
+  referenties:
+  - bundel: opwkids
+    nummer: '68'
+- id: opwkids-70
+  titel: Liefde, blijdschap, vrede
+  referenties:
+  - bundel: opwkids
+    nummer: '70'
 - id: opwkids-74
   titel: Een wijs man bouwde zijn huis
   referenties:
   - bundel: opwkids
     nummer: '74'
+- id: opwkids-100
+  titel: Sta 's even op
+  referenties:
+  - bundel: opwkids
+    nummer: '100'
+- id: opwkids-118
+  titel: Meer en meer
+  referenties:
+  - bundel: opwkids
+    nummer: '118'
 - id: opwkids-233
   titel: God heeft een plan met je leven
   referenties:
   - bundel: opwkids
     nummer: '233'
+- id: opwkids-321
+  titel: Soms heb je verdriet
+  referenties:
+  - bundel: opwkids
+    nummer: '321'

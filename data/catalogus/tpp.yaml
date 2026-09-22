@@ -4,6 +4,11 @@
   - bundel: tpp
     nummer: '1'
   artiest: The Psalm Project
+- id: tpp-2-god-van-liefde-god-van
+  titel: God van liefde, God van trouw
+  referenties:
+  - bundel: tpp
+    nummer: '2'
 - id: tpp-22-mijn-god-waarom
   titel: Mijn God, Waarom?
   referenties:
@@ -272,6 +277,8 @@
   titel: Heer die mij ziet zoals ik ben
   referenties:
   - bundel: tpp
+    nummer: '139'
+  - bundel: nlb
     nummer: '139'
   artiest: The Psalm Project
 - id: tpp-142-ik-roep-tot-u

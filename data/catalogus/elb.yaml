@@ -1,5 +1,22 @@
+- id: elb-191
+  titel: Veilig in Jezus' armen
+  referenties:
+  - bundel: elb
+    nummer: '191'
+  - bundel: jdh
+    nummer: '523'
 - id: elb-413
   titel: Lichtstad met uw paar'len poorten
   referenties:
   - bundel: elb
     nummer: '413'
+- id: elb-466
+  titel: Elly en Rikkert
+  referenties:
+  - bundel: elb
+    nummer: '466'
+- id: elb-468
+  titel: Sta 's even op als je Jezus liefhebt
+  referenties:
+  - bundel: elb
+    nummer: '468'

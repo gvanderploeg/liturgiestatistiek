@@ -12,7 +12,9 @@ de tekst per rij gesplitst op de eerste kolomgrens.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+import json
+import re
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
 import pdfplumber
@@ -45,6 +47,32 @@ class Liturgie:
     bijzonderheden: str = ""
     begeleiding: str = ""
     rijen: list[Rij] = field(default_factory=list)
+
+
+def lees_liturgie_gecached(pad: Path, cachemap: Path) -> Liturgie:
+    """Als lees_liturgie, maar bewaart het resultaat per PDF in cachemap zodat
+    een volgende verwerking de PDF niet opnieuw hoeft te lezen. De cache is
+    gekoppeld aan naam, grootte en wijzigingstijd van het bestand."""
+    stat = pad.stat()
+    sleutel = f"{pad.name}|{stat.st_size}|{int(stat.st_mtime)}"
+    cachebestand = cachemap / (re.sub(r"[^\w.-]+", "_", pad.stem) + ".json")
+    if cachebestand.exists():
+        try:
+            d = json.loads(cachebestand.read_text(encoding="utf-8"))
+            if d.get("sleutel") == sleutel:
+                return Liturgie(
+                    bestand=d["bestand"],
+                    datum_tekst=d["datum_tekst"],
+                    bijzonderheden=d["bijzonderheden"],
+                    begeleiding=d["begeleiding"],
+                    rijen=[Rij(**r) for r in d["rijen"]],
+                )
+        except (ValueError, KeyError, TypeError):
+            pass
+    liturgie = lees_liturgie(pad)
+    cachemap.mkdir(parents=True, exist_ok=True)
+    cachebestand.write_text(json.dumps({"sleutel": sleutel, **asdict(liturgie)}, ensure_ascii=False), encoding="utf-8")
+    return liturgie
 
 
 def lees_liturgie(pad: Path) -> Liturgie:

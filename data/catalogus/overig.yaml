@@ -1,3 +1,19 @@
+- id: elly-en-rikkert-jezus-is-de-goede-herder
+  titel: Elly en Rikkert - Jezus is de Goede Herder
+  referenties:
+  - bundel: elb
+    nummer: '452'
+- id: ga-met-god-en-hij-zal-met-je-zijn
+  titel: Ga met God en Hij zal met je zijn
+  referenties:
+  - bundel: nlb
+    nummer: '416'
+  artiest: Liedboek 2013
+- id: ik-wil-meer-en-meer-gaan-lijken-op-jezus
+  titel: Ik wil meer en meer gaan lijken op Jezus
+  referenties:
+  - bundel: opwkids
+    nummer: '18'
 - id: blessings
   titel: Blessings
 - id: crowder-come-as-you-are
@@ -10,8 +26,6 @@
   titel: Eline Bakker - Alles Waard
 - id: eline-bakker-geen-afstand
   titel: Eline Bakker - Geen afstand
-- id: elly-en-rikkert-jezus-is-de-goede-herder
-  titel: Elly en Rikkert - Jezus is de Goede Herder
 - id: for-king-and-country-burn-the-ships
   titel: For King + Country - Burn the Ships
 - id: heel-dichtbij-elly-en-rikkert
@@ -22,8 +36,6 @@
   titel: Holy Forever
 - id: charity-gayle-i-speak-jesus
   titel: I speak Jesus
-- id: ik-wil-meer-en-meer-gaan-lijken-op-jezus
-  titel: Ik wil meer en meer gaan lijken op Jezus
 - id: lev-de-kerk-van-alle-tijden
   titel: LEV - De kerk van alle tijden
 - id: kinga-ban-meer-dan-een-wonder
@@ -44,6 +56,3 @@
   titel: We are one
 - id: william-matthews-we-ll-all-be-free
   titel: William Matthews - We'll all be free
-- id: ga-met-god-en-hij-zal-met-je-zijn
-  titel: Ga met God en Hij zal met je zijn
-  artiest: Liedboek 2013

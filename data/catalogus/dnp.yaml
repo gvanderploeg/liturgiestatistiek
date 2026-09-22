@@ -1,3 +1,35 @@
+- id: dnp-2-wat-willen-die-wereldleiders-toch
+  titel: Wat willen die wereldleiders toch
+  referenties:
+  - bundel: dnp
+    nummer: '2'
+- id: dnp-6-psalternatief
+  titel: Psalternatief
+  referenties:
+  - bundel: dnp
+    nummer: '6'
+  artiest: De Nieuwe Psalmberijming
+- id: dnp-8-heer-onze-heer-uw-naam
+  titel: Heer, onze Heer, uw naam is groot en machtig
+  referenties:
+  - bundel: dnp
+    nummer: '8'
+- id: dnp-16
+  titel: De Nieuwe Psalmberijming 16
+  referenties:
+  - bundel: dnp
+    nummer: '16'
+- id: dnp-19-psalternatief
+  titel: Psalternatief
+  referenties:
+  - bundel: dnp
+    nummer: '19'
+  artiest: De Nieuwe Psalmberijming
+- id: dnp-22
+  titel: De Nieuwe Psalmberijming 22
+  referenties:
+  - bundel: dnp
+    nummer: '22'
 - id: dnp-24-de-aarde-is-met-al
   titel: De aarde is met al wat leeft
   referenties:
@@ -9,18 +41,156 @@
   referenties:
   - bundel: dnp
     nummer: '25'
+- id: dnp-27-god-is-mijn-licht-de
+  titel: God is mijn licht, de Redder van mijn leven
+  referenties:
+  - bundel: dnp
+    nummer: '27'
+- id: dnp-30
+  titel: De Nieuwe Psalmberijming 30
+  referenties:
+  - bundel: dnp
+    nummer: '30'
+- id: dnp-34-in-die-volgorde
+  titel: in die volgorde
+  referenties:
+  - bundel: dnp
+    nummer: '34'
+- id: dnp-42-als-een-uitgeputte-hinde
+  titel: Als een uitgeputte hinde
+  referenties:
+  - bundel: dnp
+    nummer: '42'
+- id: dnp-43
+  titel: De Nieuwe Psalmberijming 43
+  referenties:
+  - bundel: dnp
+    nummer: '43'
+- id: dnp-51
+  titel: De Nieuwe Psalmberijming 51
+  referenties:
+  - bundel: dnp
+    nummer: '51'
+- id: dnp-62
+  titel: De Nieuwe Psalmberijming 62
+  referenties:
+  - bundel: dnp
+    nummer: '62'
+- id: dnp-63
+  titel: De Nieuwe Psalmberijming 63
+  referenties:
+  - bundel: dnp
+    nummer: '63'
+- id: dnp-65-wisselzang
+  titel: Wisselzang
+  referenties:
+  - bundel: dnp
+    nummer: '65'
+- id: dnp-68
+  titel: De Nieuwe Psalmberijming 68
+  referenties:
+  - bundel: dnp
+    nummer: '68'
+- id: dnp-73
+  titel: De Nieuwe Psalmberijming 73
+  referenties:
+  - bundel: dnp
+    nummer: '73'
+- id: dnp-80-laat-uw-geliefde-zoon-weer
+  titel: laat uw geliefde zoon weer leven
+  referenties:
+  - bundel: dnp
+    nummer: '80'
+- id: dnp-84-uit-op-de-website
+  titel: uit . Op de website van kan je de tekst in PP formaat downloaden
+  referenties:
+  - bundel: dnp
+    nummer: '84'
+  artiest: De Nieuwe Psalmberijming
+- id: dnp-85
+  titel: De Nieuwe Psalmberijming 85
+  referenties:
+  - bundel: dnp
+    nummer: '85'
+- id: dnp-88-waarom-toch-heer-verstoot-u
+  titel: Waarom toch, HEER, verstoot u mij
+  referenties:
+  - bundel: dnp
+    nummer: '88'
+- id: dnp-89
+  titel: De Nieuwe Psalmberijming 89
+  referenties:
+  - bundel: dnp
+    nummer: '89'
+- id: dnp-90-heer-u-bent-onze-schuilplaats
+  titel: Heer, U bent onze schuilplaats in gevaren
+  referenties:
+  - bundel: dnp
+    nummer: '90'
+- id: dnp-98
+  titel: De Nieuwe Psalmberijming 98
+  referenties:
+  - bundel: dnp
+    nummer: '98'
+- id: dnp-99
+  titel: De Nieuwe Psalmberijming 99
+  referenties:
+  - bundel: dnp
+    nummer: '99'
+- id: dnp-103-niet-uit-maar-uit
+  titel: NIET uit , maar uit klassieke berijming GKV
+  referenties:
+  - bundel: dnp
+    nummer: '103'
+  artiest: De Nieuwe Psalmberijming
 - id: dnp-105-lof-aan-de-heer-elk
   titel: Lof aan de HEER, elk volk moet weten hoe groot Hij is, hoe Hij wil heten
   referenties:
   - bundel: dnp
     nummer: '105'
+- id: dnp-107-gods-liefde-kent-geen-grenzen
+  titel: Gods liefde kent geen grenzen
+  referenties:
+  - bundel: dnp
+    nummer: '107'
 - id: dnp-119
   titel: De Nieuwe Psalmberijming 119
   referenties:
   - bundel: dnp
     nummer: '119'
+- id: dnp-121
+  titel: De Nieuwe Psalmberijming 121
+  referenties:
+  - bundel: dnp
+    nummer: '121'
+- id: dnp-130
+  titel: De Nieuwe Psalmberijming 130
+  referenties:
+  - bundel: dnp
+    nummer: '130'
 - id: dnp-133-wat-is-het-goed
   titel: Wat is het goed
   referenties:
   - bundel: dnp
     nummer: '133'
+- id: dnp-136
+  titel: De Nieuwe Psalmberijming 136
+  referenties:
+  - bundel: dnp
+    nummer: '136'
+- id: dnp-139
+  titel: De Nieuwe Psalmberijming 139
+  referenties:
+  - bundel: dnp
+    nummer: '139'
+- id: dnp-146
+  titel: De Nieuwe Psalmberijming 146
+  referenties:
+  - bundel: dnp
+    nummer: '146'
+  artiest: De Nieuwe Psalmberijming
+- id: dnp-147
+  titel: De Nieuwe Psalmberijming 147
+  referenties:
+  - bundel: dnp
+    nummer: '147'

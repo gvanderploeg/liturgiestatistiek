@@ -684,6 +684,8 @@
   referenties:
   - bundel: opw
     nummer: '136'
+  - bundel: nlb
+    nummer: '886'
 - id: opw-137
   titel: King of kings and Lord of lords
   referenties:
@@ -1610,6 +1612,8 @@
   referenties:
   - bundel: opw
     nummer: '320'
+  - bundel: nlb
+    nummer: '705'
 - id: opw-321
   titel: Jubel, jubel dochter Sions
   referenties:
@@ -1680,6 +1684,8 @@
   referenties:
   - bundel: opw
     nummer: '334'
+  - bundel: hh
+    nummer: '679'
 - id: opw-335
   titel: U bent waardig te ontvangen
   referenties:
@@ -1925,6 +1931,8 @@
   referenties:
   - bundel: opw
     nummer: '383'
+  - bundel: nlb
+    nummer: '675'
 - id: opw-384
   titel: De dag, door uwe gunst ontvangen
   referenties:
@@ -1940,6 +1948,8 @@
   referenties:
   - bundel: opw
     nummer: '386'
+  - bundel: nlb
+    nummer: '868'
 - id: opw-387
   titel: Groot en machtig is Hij
   referenties:
@@ -3823,6 +3833,8 @@
   referenties:
   - bundel: opw
     nummer: '715'
+  - bundel: nlb
+    nummer: 84a
 - id: opw-716
   titel: Wanneer?
   referenties:
@@ -5078,6 +5090,10 @@
   referenties:
   - bundel: opw
     nummer: '904'
+  - bundel: nlb
+    nummer: '405'
+  - bundel: nlb
+    nummer: '985'
   aliassen:
   - Heilig heilig heilig
 - id: opw-905

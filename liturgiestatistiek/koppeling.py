@@ -31,7 +31,6 @@ class Koppeling:
     reden: str = ""
     kandidaten: list[Kandidaat] = field(default_factory=list)
     voorstel: dict = field(default_factory=dict)
-    geleerde_referenties: list[Referentie] = field(default_factory=list)
     titel_gebruikt: bool = False
 
     @property
@@ -112,12 +111,14 @@ def _via_referenties(ontl: Ontleding, catalogus: Catalogus, index: Zoekindex) ->
             return Koppeling(None, "onbekend", f"referentie {ref.bundel} {ref.nummer} past op meerdere liederen", kandidaten=kandidaten)
 
     kandidaten = _zoek_titels(ontl, index)
-    psalmberijming = any(catalogus.bundels[r.bundel].psalmen for r in ontl.referenties)
-    if not psalmberijming and _duidelijke_winnaar(kandidaten, DREMPEL_ZEKER):
+    voorstel = _voorstel_nieuw(ontl, catalogus)
+    if kandidaten and kandidaten[0].score >= DREMPEL_ZEKER:
         lied = catalogus.liederen[kandidaten[0].lied]
-        nieuw = [r for r in ontl.referenties if not any(b.bundel == r.bundel and b.nummer == r.nummer for b in lied.referenties)]
-        return Koppeling(lied.id, "automatisch", f"titel is {lied.titel}; referentie toegevoegd aan catalogus", kandidaten=kandidaten[:3], geleerde_referenties=nieuw, titel_gebruikt=True)
-    return Koppeling(None, "onbekend", "referentie niet in de catalogus", kandidaten=kandidaten[:3], voorstel=_voorstel_nieuw(ontl, catalogus))
+        voorstel["twijfel"] = f"titel lijkt sterk op {lied.id} ({lied.titel}); zelfde lied in een andere bundel, of een ander lied met dezelfde titel? Kies 'lied: {lied.id}' of accepteer het nieuwe lied"
+        reden = "referentie niet in de catalogus; titel lijkt op een bestaand lied"
+    else:
+        reden = "referentie niet in de catalogus"
+    return Koppeling(None, "onbekend", reden, kandidaten=kandidaten[:3], voorstel=voorstel)
 
 
 def _via_titel(ontl: Ontleding, catalogus: Catalogus, index: Zoekindex) -> Koppeling:

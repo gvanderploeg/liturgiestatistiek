@@ -4,8 +4,38 @@
   - bundel: gkb
     nummer: '119'
   artiest: Gereformeerd Kerkboek
+- id: gkb-177-heer-u-bent-mijn-leven
+  titel: Heer, U bent mijn leven
+  referenties:
+  - bundel: gkb
+    nummer: '177'
+- id: gkb-184-heer-wij-komen-vol-verlangen
+  titel: Heer, wij komen vol verlangen
+  referenties:
+  - bundel: gkb
+    nummer: '184'
+- id: gkb-204-mijn-verlosser-hangt-aan-het
+  titel: Mijn Verlosser hangt aan het kruis
+  referenties:
+  - bundel: gkb
+    nummer: '204'
+- id: gkb-214-ik-heb-de-vaste-grond
+  titel: Ik heb de vaste grond gevonden
+  referenties:
+  - bundel: gkb
+    nummer: '214'
+- id: gkb-240-god-nooit-losgekomen
+  titel: God nooit losgekomen
+  referenties:
+  - bundel: gkb
+    nummer: '240'
 - id: gkb-249-god-die-was-en-is
   titel: God, die was en is en komt
   referenties:
   - bundel: gkb
     nummer: '249'
+- id: gkb-2017-k-geloof-in-god-die
+  titel: k Geloof in God die Vader die uit niets …
+  referenties:
+  - bundel: gkb
+    nummer: '2017'

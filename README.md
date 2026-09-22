@@ -71,6 +71,8 @@ De uitvoer meldt hoeveel liederen herkend zijn en hoeveel twijfelgevallen in `we
 
 Bij items van soort `kandidaat` (een rij zonder liedlabel die toch naar een lied verwijst) mag je `ruw` inkorten tot alleen de liedtekst; die tekst komt in de dienst. Items van soort `controle` melden dat een lied via zijn bundelnummer gekoppeld is terwijl de titel beter bij een ander lied past, meestal een typefout in het nummer: `negeer: true` bevestigt de huidige koppeling, `accepteer: true` kiest het andere lied. Draai daarna opnieuw `verwerk`: de besluiten landen in `aliassen.yaml`, `aanvullingen.yaml` en `data/catalogus/overig.yaml`, de diensten worden bijgewerkt en de wachtrij krimpt. Items zonder besluit blijven staan. Commit vervolgens `data/`.
 
+Elke `verwerk` bouwt alle diensten opnieuw op uit de PDF's plus je besluiten, zodat een alias of catalogus-correctie met terugwerkende kracht geldt. Het lezen van de PDF's wordt gecached in `werk/cache/` (buiten Git), dus een herhaalde run duurt seconden; de cache ververst zichzelf als een PDF verandert. Werk een grote wachtrij in porties af: een reeks besluiten invullen, `verwerk`, en verder met wat overblijft.
+
 Voorstellen die op een bundelverwijzing berusten (bijvoorbeeld "NLB 216" dat nog niet in de catalogus staat) zijn eenduidig en kun je in een keer overnemen:
 
 ```bash
@@ -105,7 +107,7 @@ Elk lied in `data/catalogus/*.yaml` heeft een `id`, `titel`, en optioneel `refer
 
 De ontleding van liedregels is bewust ruim gehouden: bundel plus nummer wordt precies herkend, de rest van de regel wordt grof in fragmenten geknipt en tolerant met de catalogus vergeleken. Een enkele misser is acceptabel, want elk besluit in de wachtrij wordt een alias die het de volgende keer in een keer goed doet. Staat hetzelfde lied twee keer in de catalogus (bijvoorbeeld als Sela-lied en als Opwekkingsnummer), voeg dan de referenties en aliassen samen onder een id en verwijder de ander; de verwerking meldt aliassen die naar een verdwenen id wijzen.
 
-Wordt een lied via zijn titel herkend terwijl de liturgie er een bundelnummer bij noemt, dan leert de verwerking die verwijzing zelf bij. Voor psalmberijmingen gebeurt dat niet, omdat dezelfde psalm in verschillende berijmingen verschillende liederen zijn.
+Noemt de liturgie een bundelnummer dat nog niet in de catalogus staat terwijl de titel sterk lijkt op een bestaand lied, dan wordt dat niet stilzwijgend samengevoegd: het wachtrij-item krijgt een `twijfel`-regel en `--accepteer-referenties` slaat het over. Jij kiest dan `lied: <bestaand id>` (zelfde lied in een andere bundel; het nummer wordt dan als verwijzing aan dat lied toegevoegd) of `accepteer: true` (een ander lied met dezelfde titel).
 
 ## Tests
 

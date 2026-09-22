@@ -1,3 +1,18 @@
+- id: nlb-23
+  titel: De Heer is mijn herder, 'k heb al wat mij lust
+  referenties:
+  - bundel: nlb
+    nummer: '23'
+- id: nlb-103c
+  titel: Liedboek 2013 103c
+  referenties:
+  - bundel: nlb
+    nummer: 103c
+- id: nlb-150a
+  titel: geprezen zij God
+  referenties:
+  - bundel: nlb
+    nummer: 150a
 - id: nlb-152
   titel: Liedboek 2013 152
   referenties:
@@ -8,28 +23,233 @@
   referenties:
   - bundel: nlb
     nummer: '216'
+- id: nlb-218
+  titel: Dank U voor deze nieuwe morgen
+  referenties:
+  - bundel: nlb
+    nummer: '218'
 - id: nlb-221
   titel: Zo vriendelijke en veilig als het licht
   referenties:
   - bundel: nlb
     nummer: '221'
+- id: nlb-245
+  titel: k Wil U, o God, mijn dank betalen
+  referenties:
+  - bundel: nlb
+    nummer: '245'
+- id: nlb-289
+  titel: Heer, het licht van uw liefde schittert
+  referenties:
+  - bundel: nlb
+    nummer: '289'
+- id: nlb-310
+  titel: Een is de Heer, de God der goden
+  referenties:
+  - bundel: nlb
+    nummer: '310'
+- id: nlb-314
+  titel: Here Jezus, om uw woord
+  referenties:
+  - bundel: nlb
+    nummer: '314'
+- id: nlb-354
+  titel: Jouw leven staat aan het begin
+  referenties:
+  - bundel: nlb
+    nummer: '354'
+- id: nlb-370
+  titel: Vader, die woont in hemels licht
+  referenties:
+  - bundel: nlb
+    nummer: '370'
+- id: nlb-381
+  titel: Genadig Heer, die al mijn zwakheid weet
+  referenties:
+  - bundel: nlb
+    nummer: '381'
 - id: nlb-413
   titel: Grote God, wij loven U
   referenties:
   - bundel: nlb
     nummer: '413'
+- id: nlb-415
+  titel: Zegen ons, Algoede
+  referenties:
+  - bundel: nlb
+    nummer: '415'
+- id: nlb-423
+  titel: Nu wij uiteengaan
+  referenties:
+  - bundel: nlb
+    nummer: '423'
 - id: nlb-425
   titel: Vervuld van uw zegen
   referenties:
   - bundel: nlb
     nummer: '425'
+- id: nlb-444
+  titel: Nu daagt het in het oosten
+  referenties:
+  - bundel: nlb
+    nummer: '444'
+- id: nlb-477
+  titel: Komt tezamen
+  referenties:
+  - bundel: nlb
+    nummer: '477'
+- id: nlb-482
+  titel: Liedboek 2013 482
+  referenties:
+  - bundel: nlb
+    nummer: '482'
+- id: nlb-484
+  titel: Go, tell it on the mountain
+  referenties:
+  - bundel: nlb
+    nummer: '484'
+- id: nlb-486
+  titel: Midden in de winternacht
+  referenties:
+  - bundel: nlb
+    nummer: '486'
+- id: nlb-488
+  titel: Lied van Jaap Zijlstra, op de wijs
+  referenties:
+  - bundel: nlb
+    nummer: '488'
+- id: nlb-552
+  titel: Dit is een dag van zingen
+  referenties:
+  - bundel: nlb
+    nummer: '552'
+- id: nlb-575
+  titel: Jezus leven van mijn leven
+  referenties:
+  - bundel: nlb
+    nummer: '575'
+- id: nlb-641
+  titel: Jezus leeft en ik met Hem
+  referenties:
+  - bundel: nlb
+    nummer: '641'
+- id: nlb-670
+  titel: Kom Schepper God, o heilige Geest
+  referenties:
+  - bundel: nlb
+    nummer: '670'
+- id: nlb-704
+  titel: Dankt, dankt nu God
+  referenties:
+  - bundel: nlb
+    nummer: '704'
+- id: nlb-713
+  titel: Wij moeten Gode zingen
+  referenties:
+  - bundel: nlb
+    nummer: '713'
+- id: nlb-717
+  titel: NPB Ps Het leek een droom, toch was het waar
+  referenties:
+  - bundel: nlb
+    nummer: '717'
+- id: nlb-791
+  titel: Liefde, eenmaal uitgesproken
+  referenties:
+  - bundel: nlb
+    nummer: '791'
+- id: nlb-793
+  titel: Bron van liefde, licht en leven
+  referenties:
+  - bundel: nlb
+    nummer: '793'
+- id: nlb-794
+  titel: Gods zegen bidden wij je toe
+  referenties:
+  - bundel: nlb
+    nummer: '794'
+- id: nlb-834
+  titel: Vernieuw Gij mij, o eeuwig licht
+  referenties:
+  - bundel: nlb
+    nummer: '834'
+- id: nlb-838
+  titel: O grote God die liefde zijt
+  referenties:
+  - bundel: nlb
+    nummer: '838'
+- id: nlb-840
+  titel: Lieve Heer, Gij zegt 'kom' en ik kom
+  referenties:
+  - bundel: nlb
+    nummer: '840'
+- id: nlb-841
+  titel: Liedboek 2013 841
+  referenties:
+  - bundel: nlb
+    nummer: '841'
 - id: nlb-870
   titel: Heilige God, geprezen zij
   referenties:
   - bundel: nlb
     nummer: '870'
+- id: nlb-902
+  titel: Is God de Heer maar voor mij
+  referenties:
+  - bundel: nlb
+    nummer: '902'
+- id: nlb-904
+  titel: Beveel gerust uw wegen Zegen
+  referenties:
+  - bundel: nlb
+    nummer: '904'
+- id: nlb-909
+  titel: Wat God doet, dat is welgedaan
+  referenties:
+  - bundel: nlb
+    nummer: '909'
+- id: nlb-910
+  titel: Soms groet een licht van vreugde
+  referenties:
+  - bundel: nlb
+    nummer: '910'
 - id: nlb-912
   titel: Neem mijn leven, laat het Heer, toegewijd zijn aan Uw eer
   referenties:
   - bundel: nlb
     nummer: '912'
+- id: nlb-939
+  titel: Op U alleen, mijn licht, mijn kracht
+  referenties:
+  - bundel: nlb
+    nummer: '939'
+- id: nlb-944
+  titel: Liedboek 2013 944
+  referenties:
+  - bundel: nlb
+    nummer: '944'
+- id: nlb-978
+  titel: Aan U behoort, o Heer der Heren
+  referenties:
+  - bundel: nlb
+    nummer: '978'
+- id: nlb-995
+  titel: O Vader, trek het lot U aan
+  referenties:
+  - bundel: nlb
+    nummer: '995'
+- id: nlb-1005
+  titel: Christus, ons licht
+  referenties:
+  - bundel: nlb
+    nummer: '1005'
+- id: nlb-1010
+  titel: Geef vrede, Heer, geef vrede
+  referenties:
+  - bundel: nlb
+    nummer: '1010'
+- id: nlb-2013
+  titel: gez
+  referenties:
+  - bundel: nlb
+    nummer: '2013'
