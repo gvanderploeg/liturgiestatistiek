@@ -108,11 +108,29 @@ def schrijf_wachtrij(pad: Path, items: list[WachtrijItem]) -> None:
         yaml.safe_dump([i.as_dict() for i in items], f, allow_unicode=True, sort_keys=False, width=120)
 
 
+class OngeldigeYaml(Exception):
+    """Een YAML-bestand dat de beheerder bewerkt is niet meer leesbaar."""
+
+
+def lees_yaml(pad: Path):
+    """Leest een YAML-bestand; None als het niet bestaat, OngeldigeYaml met regelnummer als het niet parseert."""
+    return _lees(pad)
+
+
 def _lees(pad: Path):
     if not pad.exists():
         return None
     with pad.open(encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        try:
+            return yaml.safe_load(f)
+        except yaml.YAMLError as fout:
+            plek = getattr(fout, "problem_mark", None)
+            waar = f" op regel {plek.line + 1}" if plek else ""
+            raise OngeldigeYaml(
+                f"{pad} is geen geldige YAML{waar}: {getattr(fout, 'problem', fout)}. "
+                "Tip: een waarde met een dubbele punt of een aanhalingsteken erin moet tussen dubbele aanhalingstekens, "
+                'bijvoorbeeld titel: "Psalm 90: Gij zijt geweest"'
+            ) from None
 
 
 def _schrijf(pad: Path, inhoud) -> None:

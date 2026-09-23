@@ -1,0 +1,28 @@
+datum: '2026-03-01'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20260301 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Votum en groet - Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: Zie hoe Jezus lijdt voor mij - Sela
+  lied: sela-zie-hoe-jezus-lijdt-voor-mij
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Liedboek 939 (Op U alleen, mijn licht, mijn kracht)
+  lied: nlb-939
+  herkenning: automatisch
+- ruw: OK4Kids 70 (Liefde, blijdschap, vrede)
+  moment: kindmoment
+  lied: opwkids-70
+  herkenning: automatisch
+- ruw: Opwekking 790 (God is mijn Herder, die mij weidt)
+  lied: opw-790
+  herkenning: automatisch
+- ruw: Thank you Jesus for the blood - Charity Gayle
+  lied: charity-gayle-thank-you-jesus-for-the-blood
+  herkenning: handmatig

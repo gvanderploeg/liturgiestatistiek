@@ -1,0 +1,23 @@
+datum: '2025-02-23'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250223 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'NPB Psalm 100 : 1, 2 en 3 (“Juich, heel de aarde, voor de HEER.”) NPB Psalm 101 : 2 en 5 (“Ik leef graag als een wijze,
+    goede koning.”) NPB Psalm 131 : 1 en 2 (“Mijn hart is niet hoogmoedig, HEER”)'
+  moment: aanvang
+  lied: opw-461
+  herkenning: automatisch
+- ruw: Opw.717 (“Stil mijn ziel wees stil”)
+  lied: opw-717
+  herkenning: automatisch
+- ruw: ELB Lied 452 (“Jezus is de Goede Herder”)
+  moment: kindmoment
+  lied: elly-en-rikkert-jezus-is-de-goede-herder
+  herkenning: automatisch
+- ruw: 'GK Gezang 167 : 1, 2 en 3 (“Samen in de naam van Jezus”)'
+  lied: opw-167
+  herkenning: automatisch
+- ruw: 'GK Gezang 177 : 1, 2, 3 en 4 (“Heer, U bent mijn leven”)'
+  lied: gkb-177-heer-u-bent-mijn-leven
+  herkenning: automatisch

@@ -1,0 +1,35 @@
+datum: '2025-02-16'
+begeleiding: band
+kenmerken:
+- avondmaal
+bron: 20250216 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Opwekking 797: Breng ons samen'
+  moment: aanvang
+  lied: opw-797
+  herkenning: automatisch
+- ruw: 'Opwekking 763: Ik heb u nodig'
+  lied: opw-763
+  herkenning: automatisch
+- ruw: 'Opwekking 428: Genade zo oneindig groot'
+  lied: opw-428
+  herkenning: automatisch
+- ruw: 'Opwekking 389: Create in me a clean heart'
+  lied: opw-389
+  herkenning: automatisch
+- ruw: Samen eten wij (Sela)
+  lied: sela-samen-eten-wij
+  herkenning: automatisch
+- ruw: 'Opwekking 737: Aan uw tafel'
+  lied: sela-aan-uw-tafel
+  herkenning: handmatig
+- ruw: 'Opwekking 464: Wees stil'
+  lied: opw-464
+  herkenning: automatisch
+- ruw: 'Opwekking 705: Toon mijn liefde'
+  lied: opw-705
+  herkenning: automatisch
+- ruw: 'Opwekking 710: Gebed om zegen'
+  moment: zegenlied
+  lied: opw-710
+  herkenning: handmatig

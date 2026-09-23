@@ -1,0 +1,32 @@
+datum: '2024-09-01'
+begeleiding: orgel
+kenmerken:
+- bevestiging
+bron: Eredienst 1 september 2024.pdf
+liederen:
+- ruw: 'Liedboek 314: 1, 2, 3 (Here Jezus, om uw woord)'
+  moment: aanvang
+  lied: nlb-314
+  herkenning: automatisch
+- ruw: Agnus Dei (Sela)
+  lied: sela-agnus-dei
+  herkenning: automatisch
+- ruw: Ok4Kids 74. (Een wijs man bouwde zijn huis op de rots)
+  moment: kindmoment
+  lied: opwkids-74
+  herkenning: automatisch
+- ruw: Opwekking 126 (Jezus vol liefde)
+  lied: opw-126
+  herkenning: automatisch
+- ruw: 'De nieuwe psalmberijming 147: 2, 3, 4'
+  lied: dnp-147
+  herkenning: automatisch
+- ruw: Opwekking 544 (Meer dan rijkdom)
+  lied: opw-544
+  herkenning: automatisch
+- ruw: Gods zegen voor jou (Sela)
+  lied: sela-gods-zegen-voor-jou
+  herkenning: automatisch
+- ruw: Opwekking 44 (Geprezen zij de Heer, die eeuwig leeft)
+  lied: opw-44
+  herkenning: automatisch

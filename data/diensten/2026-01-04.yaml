@@ -1,0 +1,32 @@
+datum: '2026-01-04'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20260104 Eredienst Westerkerk.pdf
+liederen:
+- ruw: The Psalm Project, psalm 103 (Looft de Heer, mijn ziel)
+  moment: aanvang
+  lied: tpp-103-loof-de-heer-mijn-ziel
+  herkenning: automatisch
+- ruw: Opwekking 573 (U bent welkom)
+  lied: opw-573
+  herkenning: automatisch
+- ruw: Opwekking 389 (Create in me a clean heart)
+  lied: opw-389
+  herkenning: automatisch
+- ruw: Opwekking 802 (Hier is mijn hart, Heer)
+  lied: opw-802
+  herkenning: automatisch
+- ruw: Ok4Kids 18 (Laat je licht maar schijnen)
+  moment: kindmoment
+  lied: ik-wil-meer-en-meer-gaan-lijken-op-jezus
+  herkenning: automatisch
+- ruw: 'Taizé: Jezus, U bent het licht in ons leven (4 x NL en Engels)*'
+  lied: sela-in-het-licht
+  herkenning: automatisch
+- ruw: Schrijvers voor Gerechtigheid - Licht aan
+  lied: svg-licht-aan
+  herkenning: automatisch
+- ruw: Opwekking 891 (Zend mij)
+  lied: opw-891
+  herkenning: automatisch

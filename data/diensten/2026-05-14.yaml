@@ -1,0 +1,19 @@
+datum: '2026-05-14'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst Westerkerk - 14 mei 2026 -.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Er gaat geen dag voorbij dat ik niet dankbaar voor God zing (DNP Psalm 34:1,2)
+  lied: dnp-34-in-die-volgorde
+  herkenning: automatisch
+- ruw: 'Heer, we kijken omhoog en denken aan U (Sela: hemelvaart)'
+  lied: sela-heer-we-kijken-omhoog
+  herkenning: automatisch
+- ruw: Glorie aan God (Opwekking 354)
+  lied: opw-354
+  herkenning: automatisch

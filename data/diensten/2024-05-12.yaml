@@ -1,0 +1,24 @@
+datum: '2024-05-12'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst Westerkerk 12 mei 2024.pdf
+liederen:
+- ruw: Opwekking 226 - Ik wil zingen van mijn Heiland
+  moment: aanvang
+  lied: opw-226
+  herkenning: automatisch
+- ruw: Opwekking 502 - Jezus ik wil heel dicht bij u komen
+  lied: opw-502
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Sela – Agnus Dei
+  lied: sela-agnus-dei
+  herkenning: automatisch
+- ruw: ⁠Opwekking 315 - Heer Uw bloed dat reinigt mij
+  lied: opw-315
+  herkenning: automatisch
+- ruw: ⁠Opwekking 446 - Daar is kracht
+  lied: opw-446
+  herkenning: automatisch

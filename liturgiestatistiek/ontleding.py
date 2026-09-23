@@ -30,7 +30,7 @@ HINTWOORDEN = {
     "refrein": re.compile(r"\brefrein\b", re.IGNORECASE),
 }
 GETALLEN = re.compile(r"\d+([.,:/]\s*\d+)*")
-VULWOORDEN = re.compile(r"\b(vers|verzen|couplet|coupletten|allen|vrouwen|mannen|o\.a\.|ook in|tweetalig|origineel|facultatief)\b", re.IGNORECASE)
+VULWOORDEN = re.compile(r"\b(vers|verzen|couplet|coupletten|allen|vrouwen|mannen|solo|samenzang|gemeente|koor|band|t/m|o\.a\.|ook in|tweetalig|origineel|facultatief)\b", re.IGNORECASE)
 SCHEIDERS = re.compile(r"\s+[-–:/]\s+|\s*[-–:]\s+|\s+[-–]\s*|\.{2,}|[()\[\]\"“”;]")
 RANDWOORDEN = re.compile(r"^(van|door|met|en|of)\b\s*|\b(van|door|met|en|of)\s*$", re.IGNORECASE)
 PLACEHOLDER = " █ "

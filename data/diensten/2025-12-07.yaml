@@ -1,0 +1,33 @@
+datum: '2025-12-07'
+begeleiding: band
+kenmerken:
+- doop
+- advent
+bron: 20251207 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 780 (Ik zie uit naar de Heer)
+  moment: aanvang
+  lied: opw-780
+  herkenning: automatisch
+- ruw: Votum en groet - Sela
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: Opwekking 589 (Ik wil juichen voor U, mijn Heer)
+  lied: opw-589
+  herkenning: automatisch
+- ruw: Opwekking 137 (King of kings and Lord of Lords)
+  moment: kindmoment
+  lied: opw-137
+  herkenning: automatisch
+- ruw: Sela – wonderlijk
+  lied: sela-wonderlijk
+  herkenning: automatisch
+- ruw: Sela – Heer wijs mij uw weg
+  lied: sela-heer-wijs-mij-uw-weg
+  herkenning: automatisch
+- ruw: Opwekking 891 (Zend mij)
+  lied: opw-891
+  herkenning: automatisch
+- ruw: Liedboek 413 (Grote God, wij loven U – versie Lev)
+  lied: nlb-413
+  herkenning: automatisch

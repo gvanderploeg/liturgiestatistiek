@@ -1,0 +1,30 @@
+datum: '2025-03-30'
+begeleiding: band
+kenmerken: []
+bron: 20250330 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 802 – Hier is mijn hart, Heer
+  moment: aanvang
+  lied: opw-802
+  herkenning: automatisch
+- ruw: 'PvN 16: Ik val niet uit Zijn hand'
+  lied: pvn-16-ik-val-niet-uit-zijn
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 629 – Als er vergeving is, kan er genezing zijn
+  lied: opw-629
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 618, Jezus hoop van de volken
+  lied: opw-618
+  herkenning: automatisch
+- ruw: Gezang "Heer U bent mijn leven, de grond waarop ik sta…", alle vier verzen
+  moment: zegenlied
+  lied: gkb-177-heer-u-bent-mijn-leven
+  herkenning: handmatig

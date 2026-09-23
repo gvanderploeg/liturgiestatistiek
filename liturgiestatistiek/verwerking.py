@@ -366,7 +366,7 @@ def _lied_uit_besluit(item: WachtrijItem, catalogus: Catalogus) -> str:
         titel=nieuw["titel"],
         referenties=referenties,
         artiest=nieuw.get("artiest") or None,
-        aliassen=list(nieuw.get("aliassen", [])),
+        aliassen=[a for a in nieuw.get("aliassen", []) if normaliseer(a) != normaliseer(nieuw["titel"])],
         categorieen=list(nieuw.get("categorieen", [])),
     )
     catalogus.voeg_lied_toe(lied)

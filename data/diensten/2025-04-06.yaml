@@ -1,0 +1,31 @@
+datum: '2025-04-06'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20250406 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalmen voor nu 121 (Ik kijk omhoog naar de hoge bergen)
+  moment: aanvang
+  lied: pvn-121-ik-kijk-omhoog-naar-de
+  herkenning: automatisch
+- ruw: Opwekking 849 (Goedheid van God)
+  lied: opw-849
+  herkenning: automatisch
+- ruw: Opwekking 671 (U schiep zon en maan en sterrenpracht – Sela)
+  lied: opw-671
+  herkenning: automatisch
+- ruw: Opwekking kids 68 (Diep diep diep als de zee)
+  moment: kindmoment
+  lied: opwkids-68
+  herkenning: automatisch
+- ruw: Opwekking 575 (Jezus alleen)
+  lied: opw-575
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 868 (Hoor ons bidden, hoogste Koning)
+  lied: opw-868
+  herkenning: automatisch
+- ruw: Opwekking 844 (De God van Abraham, Isaak en Jacob…, ontvang de zegen van de Vader)
+  lied: opw-844
+  herkenning: automatisch

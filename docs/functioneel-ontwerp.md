@@ -355,6 +355,14 @@ Optie voor later: de dataset ook als SQLite aanbieden en in de browser bevraagba
 
 **Fase 4, verrijking.** Categorieën toekennen en thema-weergave, seizoensblik, bundelverdeling, blacklist en opmerkingen in de weergave, instellingen per persoon in de browser. Eventueel SQLite in de browser en onderzoek naar automatisch ophalen.
 
+**Mogelijk, geen must: het datamodel begrijpelijker maken.** Bij het afwerken van de eerste grote wachtrij bleek het onderscheid tussen een bundel met nummer (`referenties`) en een bron zonder nummer (`artiest: Sela`) verwarrend, en het vooruitzicht om na maanden weer in de YAML te grasduinen niet aanlokkelijk. Een relationele database lost dat niet op: de lastigheid zit in het model, niet in de opslag, en Git-diffs, bewerken met een editor en de publieke data in de repository zouden verloren gaan. Drie stappen die de voordelen van een database nabootsen zonder die nadelen:
+
+- *Uniform model.* Elke bron (Opwekking, Sela, Liedboek, een artiest) wordt een bron met een optioneel nummer, in één lijstje per lied: `bronnen: [sela, hh 502]`. Het aparte veld `artiest` verdwijnt. Eén concept in plaats van twee; de bestaande data is met een script om te zetten.
+- *Een `controleer`-commando* als integriteitsbewaking: dubbele ids, twee liederen met dezelfde bundel-plus-nummer, aliassen en aanvullingen die naar een verdwenen id wijzen, diensten zonder liederen.
+- *Eén pagina uitleg* van het datamodel in de README, met per bestand een voorbeeldregel en het waarom, geschreven voor de beheerder over een half jaar.
+
+Daarnaast kan de publicatiestap een SQLite-bestand schrijven als afgeleide van de YAML, om met SQL te grasduinen zonder dat de bron van waarheid verandert.
+
 ## Risico's en aandachtspunten
 
 - **Persoonsgegevens.** Twee lekpaden zijn nu bekend: de ALGEMEEN-tabel en het veld Bijzonderheden. De extractie laat alleen een vaste set velden door en Bijzonderheden gaat via een woordenlijst. Een geautomatiseerde test bewaakt dit vanaf de eerste versie.

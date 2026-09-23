@@ -1,0 +1,29 @@
+datum: '2025-01-05'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20250105 Eredienst Westerkerk.pdf
+liederen:
+- ruw: “Kom verras ons” van Mozaïek Worship
+  moment: aanvang
+  lied: opw-833
+  herkenning: automatisch
+- ruw: “Huis van vrede” van Sela
+  lied: sela-huis-van-vrede
+  herkenning: automatisch
+- ruw: Opw.733 (“Tienduizend redenen”)
+  lied: opw-733
+  herkenning: automatisch
+- ruw: 'Psalm 134 : 3 en 2 (OB: “Dat ‘s HEEREN zegen op u daal’”)'
+  lied: gkb-134
+  herkenning: handmatig
+- ruw: ELB 191/JdH 523 (“Veilig in Jezus’ armen”)
+  moment: kindmoment
+  lied: elb-191
+  herkenning: automatisch
+- ruw: Opw.789 (“Lopen op het water”)
+  lied: opw-789
+  herkenning: automatisch
+- ruw: “Ik zal er zijn” van Sela
+  lied: sela-ik-zal-er-zijn
+  herkenning: automatisch

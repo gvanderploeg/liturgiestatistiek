@@ -1,0 +1,26 @@
+datum: '2024-01-21'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst 21 januari 2024.pdf
+liederen:
+- ruw: De Nieuwe Psalmberijming 121, 1 en 2
+  moment: aanvang
+  lied: dnp-121
+  herkenning: automatisch
+- ruw: 'Nieuwe liedboek 834: 1,2,3 (Vernieuw Gij mij, o eeuwig licht)'
+  lied: nlb-834
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 123 (Groot is uw trouw, o Heer)
+  lied: opw-123
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming 84: 1, 2, 4'
+  lied: dnp-84-uit-op-de-website
+  herkenning: automatisch
+- ruw: Liedboek 886 (Abba, Vader, U alleen). Eerst in Engels, dan in Nederlands.
+  lied: opw-136
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend

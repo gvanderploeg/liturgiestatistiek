@@ -14,7 +14,7 @@ from .extractie import lees_liturgie
 from .importeer import importeer_sheet
 from .koppeling import Zoekindex, koppel
 from .ontleding import bepaal_moment, is_kandidaatrij, is_liedrij, ontleed
-from .opslag import ALIASSEN_BESTAND, Aliassen
+from .opslag import ALIASSEN_BESTAND, Aliassen, OngeldigeYaml
 from .publicatie import publiceer
 from .scipio import CONFIG_BESTAND, VOORBEELD_CONFIG, ScipioConfig, ScipioFout, haal_op
 from .verwerking import Omgeving, verwerk
@@ -43,7 +43,14 @@ def main(argv: list[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
     omgeving = Omgeving(args.project)
+    try:
+        return _voer_uit(args, omgeving)
+    except OngeldigeYaml as fout:
+        print(fout, file=sys.stderr)
+        return 1
 
+
+def _voer_uit(args, omgeving: Omgeving) -> int:
     if args.commando == "haal-op":
         logging.basicConfig(level=logging.DEBUG if args.log else logging.INFO, format="%(levelname)s %(message)s", stream=sys.stderr)
         return _haal_op(omgeving, args.vanaf)

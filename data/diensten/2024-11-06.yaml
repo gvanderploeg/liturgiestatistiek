@@ -1,0 +1,25 @@
+datum: '2024-11-06'
+begeleiding: orgel
+kenmerken:
+- dankdag
+bron: Eredienst 6 november 2024.pdf
+liederen:
+- ruw: Opwekking 331 (Breng dank aan de Eeuwige)
+  moment: aanvang
+  lied: opw-331
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, Psalm 65: 1 – 5 (Wisselzang: vrouwen, mannen, vrouwen, mannen, allen).'
+  lied: dnp-65-wisselzang
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'Wij komen biddend voor U staan, 4 coupletten. (Lied van Jaap Zijlstra, op de wijs van Liedboek 488 – In den beginne
+    was het woord) (Voor tekst: zie onder)'
+  lied: nlb-488
+  herkenning: automatisch
+- ruw: 'Liedboek 218: 1 – 5 (Dank U voor deze nieuwe morgen)'
+  lied: nlb-218
+  herkenning: automatisch
+- ruw: 'Gereformeerd Kerkboek 177: 1 – 4 (Heer, U bent mijn leven)'
+  lied: gkb-177-heer-u-bent-mijn-leven
+  herkenning: automatisch

@@ -1,0 +1,28 @@
+datum: '2026-05-03'
+begeleiding: band
+kenmerken: []
+bron: 20260503 Eredienst Westerkerk -.pdf
+liederen:
+- ruw: Opwekking 780 (Verlangen)
+  moment: aanvang
+  lied: opw-780
+  herkenning: automatisch
+- ruw: Opwekking 832 (Jezus Overwinnaar)
+  lied: opw-832
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Ok4kids 68 (Diep, diep, diep als de zee)
+  moment: kindmoment
+  lied: opwkids-68
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 334 (Heer, uw licht en uw liefde schijnen)
+  lied: opw-334
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

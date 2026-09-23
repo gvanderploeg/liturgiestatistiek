@@ -1,0 +1,29 @@
+datum: '2024-01-07'
+begeleiding: band
+kenmerken:
+- doop
+bron: Eredienst 7 januari 2024 .pdf
+liederen:
+- ruw: Opw.717 (“Stil, mijn ziel, wees stil”)
+  moment: aanvang
+  lied: opw-717
+  herkenning: automatisch
+- ruw: GK Psalm 145a (“Adem om van U te zingen”)
+  lied: opw-734
+  herkenning: automatisch
+- ruw: 'LB Lied 354 : 1, 2, 3, 4 en 5 (“Jouw leven staat aan het begin”)'
+  lied: nlb-354
+  herkenning: automatisch
+- ruw: 1 “Groot is Uw trouw, o Heer, mijn God en Vader”
+  lied: opw-123
+  herkenning: automatisch
+- ruw: Opw.Kids 76 (“Vrede van God”) – gezongen door Juda
+  moment: kindmoment
+  lied: opw-602
+  herkenning: automatisch
+- ruw: “Ik wens jou” van Trinity
+  lied: trinity-ik-wens-jou
+  herkenning: automatisch
+- ruw: 2 “De kerk van alle tijden” (LEV-versie)
+  lied: lev-de-kerk-van-alle-tijden
+  herkenning: automatisch

@@ -1,0 +1,23 @@
+datum: '2026-02-08'
+begeleiding: band
+kenmerken: []
+bron: 20260208 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opw. 386 Lof zij de Heer
+  moment: aanvang
+  lied: opw-386
+  herkenning: automatisch
+- ruw: Opw. 727 Ik val niet uit zijn hand
+  lied: opw-727
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opw. 542 God van trouw
+  lied: opw-542
+  herkenning: automatisch
+- ruw: Opw. 849 De goedheid van God
+  lied: opw-849
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend

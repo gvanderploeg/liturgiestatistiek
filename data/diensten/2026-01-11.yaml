@@ -1,0 +1,23 @@
+datum: '2026-01-11'
+begeleiding: band
+kenmerken: []
+bron: 20260111 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 847 (‘Onze schuilplaats is God’) Opwekking 680 (‘Mijn Redder’)
+  moment: aanvang
+  lied: opw-847
+  herkenning: automatisch
+- ruw: ‘Ik wens jou’ (Trinity) via Jannie Meijer https://www.youtube.com/watch?v=QAjBYdGILes
+  lied: trinity-ik-wens-jou
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 661 (‘De Koning in zijn pracht’)
+  lied: opw-661
+  herkenning: automatisch
+- ruw: Opwekking 334 (‘Heer, uw licht en uw liefde schijnen’)
+  moment: zegenlied
+  lied: opw-334
+  herkenning: automatisch

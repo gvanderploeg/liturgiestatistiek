@@ -1,0 +1,23 @@
+datum: '2025-03-12'
+begeleiding: orgel piano
+kenmerken:
+- biddag
+bron: 20250312 Eredienst Westerkerk Biddag.pdf
+liederen:
+- ruw: Liedboek 705:1 (Ere zij aan God de Vader)
+  moment: aanvang
+  lied: opw-320
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'Liedboek 1010: 1,2,3,4 (Geef vrede, Heer, geef vrede)'
+  lied: nlb-1010
+  herkenning: automatisch
+- ruw: 'Liedboek 912: 1,2,4,6 (Neem mijn leven, laat het, Heer)'
+  lied: nlb-912
+  herkenning: automatisch
+- ruw: 'GK (2006) 119: 1,2 (De kerk van alle tijden)'
+  lied: lev-de-kerk-van-alle-tijden
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend

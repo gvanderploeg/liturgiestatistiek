@@ -1,0 +1,24 @@
+datum: '2025-04-27'
+begeleiding: band
+kenmerken: []
+bron: 20250427 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opw.32 (“Dit is de dag”), m.m.v. Jaap van den Berg
+  moment: aanvang
+  lied: opw-32
+  herkenning: automatisch
+- ruw: Psalm 139 – Opw.518 (“Heer U doorgrondt en kent mij”)
+  lied: opw-518
+  herkenning: automatisch
+- ruw: Medley van Opw.510 & Opw.520 (“Dit is mijn verlangen/Wees mijn verlangen”)
+  lied: opw-510
+  herkenning: automatisch
+- ruw: Opw.554 (“Ik weet, Hij heeft mij gered”)
+  lied: opw-554
+  herkenning: automatisch
+- ruw: Opw.71 (“Jezus leeft in eeuwigheid”)
+  lied: opw-71
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

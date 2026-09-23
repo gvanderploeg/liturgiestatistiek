@@ -1,0 +1,28 @@
+datum: '2025-08-03'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250803 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Opwekking 245: Hier in uw heiligdom'
+  moment: aanvang
+  lied: opw-245
+  herkenning: automatisch
+- ruw: 'Opwekking 292: Laat mijn leven tot eer zijn van uw Naam 2x'
+  lied: opw-292
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: 'De Nieuwe Psalmberijming, psalm 68: 2 en 9'
+  lied: dnp-68
+  herkenning: automatisch
+- ruw: 'Liedboek 1005: 1 – 5: Zoekend naar licht, hier in het duister'
+  lied: nlb-1005
+  herkenning: automatisch
+- ruw: 'Opwekking 710: Zegen mij, op de weg die ik moet gaan'
+  lied: opw-710
+  herkenning: automatisch
+- ruw: 'Nieuwe Liedboek 425: Vervuld van uw zegen'
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

@@ -1,0 +1,26 @@
+datum: '2024-08-11'
+begeleiding: gitaar
+kenmerken: []
+bron: Eredienst Westerkerk 11 augustus 2024.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- ruw: Opw 427 Maak mij rein voor u
+  lied: opw-427
+  herkenning: automatisch
+- ruw: Opw 136 Abba Vader
+  lied: opw-136
+  herkenning: automatisch
+- ruw: Opw 717 Stil mijn ziel, wees stil
+  lied: opw-717
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opw 147 Father, we love you
+  lied: opw-147
+  herkenning: automatisch
+- ruw: Lb 416 Ga met God
+  moment: zegenlied
+  lied: ga-met-god-en-hij-zal-met-je-zijn
+  herkenning: automatisch

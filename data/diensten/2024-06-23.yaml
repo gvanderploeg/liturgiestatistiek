@@ -1,0 +1,20 @@
+datum: '2024-06-23'
+begeleiding: orgel
+kenmerken:
+- avondmaal
+bron: Eredienst Westerkerk 23 juni 2024.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: 'LB Lied 216 : 1, 2 en 3 (“Dit is een morgen als ooit de eerste”)'
+  lied: nlb-216
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opw. 268 (“Hij kwam bij ons, heel gewoon”)
+  lied: opw-268
+  herkenning: automatisch

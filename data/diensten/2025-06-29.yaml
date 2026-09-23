@@ -1,0 +1,27 @@
+datum: '2025-06-29'
+begeleiding: band
+kenmerken: []
+bron: 20250629 Eredienst Westerkerk.pdf
+liederen:
+- ruw: ‘Miljoenen stemmen’ (Schrijvers voor Gerechtigheid)
+  moment: aanvang
+  lied: svg-miljoenen-stemmen
+  herkenning: automatisch
+- ruw: Opwekking 888 (‘Hij leeft’)
+  lied: opw-888
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: ‘Mag ik jou tot zegen zijn?’ (Sela)
+  lied: sela-mag-ik-jou-tot-zegen-zijn
+  herkenning: automatisch
+- ruw: Opwekking 769 (‘Bouw uw koninkrijk’)
+  lied: opw-769
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

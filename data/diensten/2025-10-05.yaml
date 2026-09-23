@@ -1,0 +1,32 @@
+datum: '2025-10-05'
+begeleiding: band
+kenmerken:
+- doop
+- bevestiging
+bron: 20251005 Eredienst Westerkerk.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- ruw: Meer dan een wonder – Kinga Ban
+  lied: kinga-ban-meer-dan-een-wonder
+  herkenning: handmatig
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 740 (Ik bid dat God jou zegent)
+  lied: opw-740
+  herkenning: automatisch
+- ruw: Opwekking 689 – Spreek, o Heer, door uw heilig woord
+  lied: opw-689
+  herkenning: automatisch
+- ruw: Liedboek 794 (Gods zegen bidden wij je toe)
+  moment: zegenlied
+  lied: nlb-794
+  herkenning: automatisch
+- ruw: Opwekking 586 (Hij is Heer)
+  lied: opw-586
+  herkenning: automatisch
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend

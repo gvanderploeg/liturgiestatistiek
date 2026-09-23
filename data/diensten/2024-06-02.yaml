@@ -1,0 +1,23 @@
+datum: '2024-06-02'
+begeleiding: band
+kenmerken: []
+bron: Eredienst Westerkerk 2 juni 2024.pdf
+liederen:
+- ruw: “Votum en groet” van Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: Psalm 146 (“Hoop op Hem”) van The Psalm Project
+  lied: tpp-146-hoop-op-hem
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opw.281 (“Als een hert dat verlangt naar water”)
+  lied: opw-281
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 1 “De kerk van alle tijden” (LEV-versie)
+  lied: lev-de-kerk-van-alle-tijden
+  herkenning: automatisch

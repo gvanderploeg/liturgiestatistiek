@@ -1,0 +1,29 @@
+datum: '2024-05-05'
+begeleiding: band
+kenmerken:
+- doop
+bron: Eredienst Westerkerk 5 mei 2024.pdf
+liederen:
+- ruw: “Votum en groet” van Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: “Miljoenen stemmen” van Schrijvers voor gerechtigheid
+  lied: svg-miljoenen-stemmen
+  herkenning: automatisch
+- ruw: Opw.687 (“Heer wijs mij Uw weg”)
+  lied: opw-687
+  herkenning: automatisch
+- ruw: Opw.736 (“Wij zegenen jou in Jezus’ naam”)
+  lied: opw-736
+  herkenning: automatisch
+- ruw: ELB Lied 468 (“Sta ‘es even op als je Jezus liefhebt”)
+  moment: kindmoment
+  lied: elb-468
+  herkenning: automatisch
+- ruw: Opw.347 (“Ik geloof in God de Vader”)
+  lied: opw-347
+  herkenning: automatisch
+- ruw: 1 “De kerk van alle tijden” (LEV-versie)
+  lied: lev-de-kerk-van-alle-tijden
+  herkenning: automatisch

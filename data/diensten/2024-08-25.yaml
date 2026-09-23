@@ -1,0 +1,31 @@
+datum: '2024-08-25'
+begeleiding: band
+kenmerken: []
+bron: Eredienst Westerkerk 25 augustus 2024.pdf
+liederen:
+- ruw: Opw.849 (“Goedheid van God”)
+  moment: aanvang
+  lied: opw-849
+  herkenning: automatisch
+- ruw: Psalm 139 (“Heer die mij ziet zoals ik ben”) van The Psalm Project
+  lied: tpp-139-heer-die-mij-ziet-zoals-ik-ben
+  herkenning: automatisch
+- ruw: 1 “Licht aan” van Schrijvers voor gerechtigheid
+  lied: svg-licht-aan
+  herkenning: automatisch
+- ruw: “Met open armen” van Schrijvers voor gerechtigheid
+  lied: svg-met-open-armen
+  herkenning: handmatig
+- ruw: Opw. 268 (“Hij kwam bij ons, heel gewoon”)
+  lied: opw-268
+  herkenning: automatisch
+- ruw: “Samen eten wij” van Sela
+  lied: sela-samen-eten-wij
+  herkenning: automatisch
+- ruw: E&R Lied 438 (“We are one in the Spirit”)
+  lied: we-are-one
+  herkenning: automatisch
+- ruw: 2 “Praise the Lord” van Revelation Worship (= Opw.885)
+  moment: zegenlied
+  lied: opw-885
+  herkenning: automatisch

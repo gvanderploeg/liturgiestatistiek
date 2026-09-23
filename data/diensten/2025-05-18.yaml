@@ -1,0 +1,27 @@
+datum: '2025-05-18'
+begeleiding: band
+kenmerken: []
+bron: 20250518 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opw. 454 Zegen, aanbidding
+  moment: aanvang
+  lied: opw-454
+  herkenning: automatisch
+- ruw: Opw. 815 Vul dit huis met uw glorie
+  lied: opw-815
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Opw. 488 Door de kracht van uw liefde
+  lied: opw-488
+  herkenning: automatisch
+- ruw: Opw. 767 Familie
+  lied: opw-767
+  herkenning: automatisch
+- ruw: Opw. 334 Heer, uw licht en uw liefde schijnen
+  moment: zegenlied
+  lied: opw-334
+  herkenning: automatisch

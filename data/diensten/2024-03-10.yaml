@@ -1,0 +1,24 @@
+datum: '2024-03-10'
+begeleiding: orgel piano
+kenmerken: []
+bron: Eredienst - 10 maart 2024.pdf
+liederen:
+- ruw: Gereformeerd Kerkboek 249:1,8 en 9 God, die was en is en komt.
+  moment: aanvang
+  lied: gkb-249-god-die-was-en-is
+  herkenning: automatisch
+- ruw: Opwekking 244 Welzalig de man die niet wandelt
+  lied: opw-244
+  herkenning: automatisch
+- ruw: Ik zegen jou in Jezus’ naam - Elly & Rikkert
+  moment: kindmoment
+  lied: sela-in-jezus-naam
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 832 Jezus Overwinnaar
+  lied: opw-832
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

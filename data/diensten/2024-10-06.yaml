@@ -1,0 +1,25 @@
+datum: '2024-10-06'
+begeleiding: band
+kenmerken:
+- doop
+bron: Eredienst 6 oktober 2024.pdf
+liederen:
+- ruw: “Votum en groet” van Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: 'LB Psalm 84a : 1, 2, 3, 4 en 5 (“Wat hou ik van uw huis”)'
+  lied: opw-715
+  herkenning: automatisch
+- ruw: 1 “Holy Forever” van Chris Tomlin – dooplied Joas
+  lied: holy-forever
+  herkenning: automatisch
+- ruw: “Zegenwens” van Elly en Rikkert – dooplied Abel
+  lied: elb-466
+  herkenning: automatisch
+- ruw: “Doop” van Sela
+  lied: sela-doop
+  herkenning: automatisch
+- ruw: 2 “De kerk van alle tijden” (LEV-versie)
+  lied: lev-de-kerk-van-alle-tijden
+  herkenning: automatisch

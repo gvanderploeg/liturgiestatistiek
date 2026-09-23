@@ -1,0 +1,26 @@
+datum: '2025-11-30'
+begeleiding: band
+kenmerken:
+- advent
+bron: 20251130 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 720 - God maakt vrij
+  moment: aanvang
+  lied: opw-720
+  herkenning: automatisch
+- ruw: Opwekking 320 – Ere Zij aan God de Vader (versie Kees Kraayenoord)
+  lied: opw-320
+  herkenning: automatisch
+- ruw: Opwekking 137 – Kings of Kings
+  moment: kindmoment
+  lied: opw-137
+  herkenning: automatisch
+- ruw: Chris Tomlin - Holy Forever
+  lied: holy-forever
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 636 - Prachtige God
+  moment: zegenlied
+  lied: opw-636
+  herkenning: automatisch

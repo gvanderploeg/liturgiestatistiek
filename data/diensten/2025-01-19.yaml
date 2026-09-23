@@ -1,0 +1,25 @@
+datum: '2025-01-19'
+begeleiding: band
+kenmerken: []
+bron: 20250119 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 1 Psalm 146 (“Hoop op Hem”)
+  moment: aanvang
+  lied: tpp-146-hoop-op-hem
+  herkenning: automatisch
+- ruw: Psalm 139 (“Heer die mij ziet zoals ik ben”) 2
+  lied: tpp-139-heer-die-mij-ziet-zoals-ik-ben
+  herkenning: automatisch
+- ruw: Psalm 8 (“Heer onze Heer hoe machtig is Uw naam op heel 3 de aarde”)
+  moment: kindmoment
+  lied: sela-hoe-machtig-is-uw-naam
+  herkenning: automatisch
+- ruw: 4 “Licht aan” van Schrijvers voor gerechtigheid
+  lied: svg-licht-aan
+  herkenning: automatisch
+- ruw: 5 “Gebed voor de werkdag” van Sela
+  lied: sela-gebed-voor-de-werkdag
+  herkenning: automatisch
+- ruw: “Met open armen” van Schrijvers voor gerechtigheid
+  lied: svg-met-open-armen
+  herkenning: handmatig

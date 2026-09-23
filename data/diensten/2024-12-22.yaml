@@ -1,0 +1,24 @@
+datum: '2024-12-22'
+begeleiding: orgel
+kenmerken: []
+bron: 20241222 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 573 “Heer u bent welkom”
+  moment: aanvang
+  lied: opw-573
+  herkenning: automatisch
+- ruw: 'DNP 130: 1 en 2'
+  lied: dnp-130
+  herkenning: automatisch
+- ruw: 'Psalm 103: 1, 5 (NIET uit DNP, maar uit klassieke berijming GKV)'
+  lied: dnp-103-niet-uit-maar-uit
+  herkenning: automatisch
+- ruw: 'LUISTERLIED “Magnificat” van Sela, graag met tekst op de beamer Mijn sterke voorkeur is om het Spotify lied te gebruiken,
+    aangezien we dan echt alleen maar de tekst zien (bovendien een iets mooiere uitvoeren ) Spotify: https://open.spotify.com/track/5CVTU84r0ptlIRS41w51PU?si=550012b4a
+    2b547b2 Youtube: https://www.youtube.com/watch?v=rN6HRrcDri8'
+  moment: luisterlied
+  lied: sela-magnificat
+  herkenning: automatisch
+- ruw: Gezang "Heer U bent mijn leven, de grond waarop ik sta…", alle vier verzen
+  lied: gkb-177-heer-u-bent-mijn-leven
+  herkenning: handmatig

@@ -1,0 +1,32 @@
+datum: '2025-11-16'
+begeleiding: band
+kenmerken:
+- belijdenis
+bron: 20251116 Eredienst Westerkerk.pdf
+liederen:
+- ruw: PvN 84 (Wat hou ik van uw huis) Opgegeven door Maaike
+  moment: aanvang
+  lied: pvn-84-wat-hou-ik-van-uw
+  herkenning: automatisch
+- ruw: Opwekking 574 (Groot is Hij) Opgegeven door Matteo
+  lied: opw-574
+  herkenning: automatisch
+- ruw: Ok4Kids 18 (Ik wil meer en meer gaan lijken op Jezus)
+  moment: kindmoment
+  lied: ik-wil-meer-en-meer-gaan-lijken-op-jezus
+  herkenning: automatisch
+- ruw: Opwekking 488 (De kracht van uw liefde) Opgegeven door Timo
+  lied: opw-488
+  herkenning: automatisch
+- ruw: Opwekking 687 (Heer, wijs mij uw weg) Opgegeven door Corine
+  lied: opw-687
+  herkenning: automatisch
+- ruw: Thank you Jesus for the Blood, Charity Gayle Opgegeven door Arno
+  lied: charity-gayle-thank-you-jesus-for-the-blood
+  herkenning: automatisch
+- ruw: Opwekking 832 (Jezus Overwinnaar) Opgegeven door Rick
+  lied: opw-832
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

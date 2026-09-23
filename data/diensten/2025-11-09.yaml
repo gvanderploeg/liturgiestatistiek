@@ -1,0 +1,27 @@
+datum: '2025-11-09'
+begeleiding: band
+kenmerken: []
+bron: 20251109 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opw. 753 Symfonie / Nu ik bij U kom in Uw heiligdom
+  moment: aanvang
+  lied: opw-753
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opw. 698 Nooit meer alleen
+  lied: opw-698
+  herkenning: automatisch
+- ruw: Psalmen voor Nu 145 – Adem om van u te zingen
+  lied: pvn-145
+  herkenning: automatisch
+- ruw: Opw. 244 / Sela - Welzalig de man die niet wandelt
+  lied: opw-244
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Miljoenen stemmen – Schrijvers voor gerechtigheid
+  moment: zegenlied
+  lied: svg-miljoenen-stemmen
+  herkenning: automatisch

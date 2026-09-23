@@ -1,0 +1,30 @@
+datum: '2026-04-05'
+begeleiding: band
+kenmerken:
+- pasen
+bron: 20260405 Eredienst Westerkerk -.pdf
+liederen:
+- ruw: Opwekking 213 (U zij de glorie)
+  moment: aanvang
+  lied: opw-213
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 369 (Door uw genade, Vader)
+  lied: opw-369
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: De leeuw van Juda (Elly en Rikkert)
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- ruw: Opwekking 828 (Waardig is uw naam)
+  lied: opw-828
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 832 (Jezus Overwinnaar)
+  lied: opw-832
+  herkenning: automatisch

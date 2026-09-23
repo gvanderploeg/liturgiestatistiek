@@ -1,0 +1,30 @@
+datum: '2026-01-18'
+begeleiding: orgel
+kenmerken: []
+bron: 20260118 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 167 (Samen in de naam van Jezus)
+  moment: aanvang
+  lied: opw-167
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'GK2017, lied 238: 1 - 3 (Ik bouw op U)'
+  lied: opw-124
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: 'De Nieuwe Psalmberijming, psalm 68: 1 en 8 (God richt zich op met majesteit)'
+  lied: dnp-68
+  herkenning: automatisch
+- ruw: Opwekking 805 (Maak ons hart onrustig, God)
+  lied: opw-805
+  herkenning: automatisch
+- ruw: Opwekking 44 (Geprezen zij de Heer die eeuwig leeft)
+  lied: opw-44
+  herkenning: automatisch
+- ruw: Liedboek 425 (Vervuld van uw zegen)
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

@@ -1,0 +1,28 @@
+datum: '2025-01-12'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250112 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Liedboek 23 b: 1,2,5 (De Heer is mijn herder, ‘k heb al wat mij lust) *'
+  moment: aanvang
+  lied: nlb-23
+  herkenning: automatisch
+- ruw: 'Opwekking 464: 1,2,3 (Wees stil voor het aangezicht van God)'
+  lied: opw-464
+  herkenning: automatisch
+- ruw: 'Liedboek 912: 1,2,5,6 (Neem mijn leven, laat het Heer)'
+  lied: nlb-912
+  herkenning: automatisch
+- ruw: 'DNP 99: 1 - 5'
+  lied: dnp-99
+  herkenning: automatisch
+- ruw: 'Liedboek 405: 1,3,4 (Heilig, heilig, heilig)'
+  lied: opw-904
+  herkenning: automatisch
+- ruw: Opwekking 407 (O, Heer, mijn God, wanneer ik in verwondering)
+  lied: opw-407
+  herkenning: automatisch
+- ruw: Liedboek 425 (Vervuld van uw zegen)
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

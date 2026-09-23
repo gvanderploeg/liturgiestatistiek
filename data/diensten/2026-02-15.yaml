@@ -1,0 +1,37 @@
+datum: '2026-02-15'
+begeleiding: orgel
+kenmerken:
+- avondmaal
+bron: 20260215 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 464 (Wees stil voor het aangezicht van God)
+  moment: aanvang
+  lied: opw-464
+  herkenning: automatisch
+- ruw: Opwekking 436 (Onze Vader, in de hemel)
+  lied: opw-436
+  herkenning: automatisch
+- ruw: Opwekking 281 (Als een hert dat verlangt naar water)
+  moment: kindmoment
+  lied: opw-281
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 139: 1 en 8'
+  lied: dnp-139
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 34: 1, 3, 2 (in die volgorde!)'
+  lied: dnp-34-in-die-volgorde
+  herkenning: automatisch
+- ruw: Opwekking 389 (Create in me a clean heart.) 2x
+  lied: opw-389
+  herkenning: automatisch
+- ruw: Opwekking 315 (Heer, uw bloed dat reinigt mij) 3 x
+  lied: opw-315
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'Liedboek 704: 1, 2, 3 (Dank, dank nu allen God)'
+  lied: nlb-704
+  herkenning: automatisch
+- ruw: Opwekking 520 (Wees mijn verlangen)
+  lied: opw-520
+  herkenning: automatisch

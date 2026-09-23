@@ -1,0 +1,33 @@
+datum: '2024-01-14'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst 14 januari 2024.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- ruw: 'GK Psalm 150 : 1 en 2 (“Loof de Heer uw God alom”)'
+  lied: tpp-136-loof-de-heer
+  herkenning: automatisch
+- ruw: Opw.386 (“Lof zij de Heer, de almachtige koning der ere”)
+  lied: opw-386
+  herkenning: automatisch
+- ruw: 2 “Heerlijk spelen, eerlijk delen” van Elly en Rikkert
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- ruw: 'LB Lied 675 : 1 en 2 (“Geest van hierboven”)'
+  lied: opw-383
+  herkenning: automatisch
+- ruw: 'GK06 Gezang 142 : 1, 2, 3 en 4 (“Een vaste burcht is onze God”)'
+  lied: opw-370
+  herkenning: automatisch
+- ruw: 'GK Gezang 176 : 1 (“‘k geloof in God de Vader…”)'
+  lied: opw-347
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'LB Lied 416 : 1, 2, 3, 4 (“Ga met God en Hij zal met je zijn”)'
+  moment: zegenlied
+  lied: ga-met-god-en-hij-zal-met-je-zijn
+  herkenning: automatisch

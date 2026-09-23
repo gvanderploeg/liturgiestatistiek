@@ -8,6 +8,7 @@ from pathlib import Path
 import yaml
 
 from .modellen import Lied, Referentie
+from .opslag import lees_yaml
 from .tekst import normaliseer, slug
 
 CATALOGUS_MAP = "catalogus"
@@ -115,10 +116,7 @@ def _sorteersleutel(lied: Lied):
 
 
 def _lees_lijst(pad: Path) -> list[dict]:
-    if not pad.exists():
-        return []
-    with pad.open(encoding="utf-8") as f:
-        return yaml.safe_load(f) or []
+    return lees_yaml(pad) or []
 
 
 def _schrijf_lijst(pad: Path, items: list[dict]) -> None:

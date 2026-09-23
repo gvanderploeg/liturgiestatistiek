@@ -1,0 +1,31 @@
+datum: '2026-01-25'
+begeleiding: band
+kenmerken: []
+bron: 20260125 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalmen voor Nu 121 - Ik kijk omhoog naar de hoge bergen
+  moment: aanvang
+  lied: pvn-121-ik-kijk-omhoog-naar-de
+  herkenning: automatisch
+- ruw: Opwekking 573 – We zijn hier bij elkaar
+  lied: opw-573
+  herkenning: automatisch
+- ruw: Opwekking 589 - Ik wil juichen voor U
+  lied: opw-589
+  herkenning: automatisch
+- ruw: Opwekking Kids 233 - God heeft een plan met je leven
+  lied: opwkids-233
+  herkenning: automatisch
+- ruw: Opwekking 689 - Spreek o Heer door Uw heilig Woord
+  lied: opw-689
+  herkenning: automatisch
+- ruw: Opwekking 687 - Heer wijs mij Uw weg
+  lied: opw-687
+  herkenning: automatisch
+- ruw: Opwekking 802 - Hier Is Mijn Hart, Heer
+  lied: opw-802
+  herkenning: automatisch
+- ruw: Opwekking 807 - God Van Licht
+  moment: zegenlied
+  lied: opw-807
+  herkenning: automatisch

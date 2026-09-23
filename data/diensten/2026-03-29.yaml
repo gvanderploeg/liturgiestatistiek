@@ -1,0 +1,25 @@
+datum: '2026-03-29'
+begeleiding: band
+kenmerken: []
+bron: 20260329 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Lof, aanbidding (Opwekking 671)
+  moment: aanvang
+  lied: opw-671
+  herkenning: automatisch
+- ruw: PvN 130
+  lied: pvn-130-uit-de-diepten-roep-ik
+  herkenning: automatisch
+- ruw: Hosanna hosanna (kinderkoor De Vuurpijl)
+  lied: opw-681
+  herkenning: automatisch
+- ruw: Opwekking 298 – Hosanna in Hoge
+  lied: opw-298
+  herkenning: automatisch
+- ruw: Agnus Dei (Sela)
+  lied: sela-agnus-dei
+  herkenning: automatisch
+- ruw: Koning tot in eeuwigheid (King of Kings)
+  moment: zegenlied
+  lied: opw-137
+  herkenning: automatisch

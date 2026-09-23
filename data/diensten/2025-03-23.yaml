@@ -1,0 +1,28 @@
+datum: '2025-03-23'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250323 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 123 - Groot is Uw trouw, O Heer
+  moment: aanvang
+  lied: opw-123
+  herkenning: automatisch
+- ruw: Opwekking 354 - Glorie aan God
+  lied: opw-354
+  herkenning: automatisch
+- ruw: Opwekking 40 - Zoekt eerst het koninkrijk van God
+  moment: kindmoment
+  lied: opw-40
+  herkenning: automatisch
+- ruw: Opwekking 464 - Wees stil voor het aangezicht van God
+  lied: opw-464
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Charity Gayle - I Speak Jesus
+  lied: charity-gayle-i-speak-jesus
+  herkenning: automatisch
+- ruw: Sela - Een toekomst vol van hoop
+  moment: zegenlied
+  lied: sela-een-toekomst-vol-van-hoop
+  herkenning: automatisch

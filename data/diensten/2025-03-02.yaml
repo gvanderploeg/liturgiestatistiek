@@ -1,0 +1,26 @@
+datum: '2025-03-02'
+begeleiding: band
+kenmerken: []
+bron: 20250302 Eredienst Westerkerk.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Psalm 51 (“Witter dan sneeuw”) van The Psalm Project (=Opw.811)
+  lied: tpp-51-witter-dan-sneeuw
+  herkenning: automatisch
+- ruw: 'Opw.733 (“Tienduizend redenen”) – refrein: kinderen'
+  moment: kindmoment
+  lied: opw-733
+  herkenning: automatisch
+- ruw: Opw.874 (“Uw trouw”)
+  lied: opw-874
+  herkenning: automatisch
+- ruw: Opw.586 (“Hij is Heer”)
+  lied: opw-586
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

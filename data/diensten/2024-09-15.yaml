@@ -1,0 +1,23 @@
+datum: '2024-09-15'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst 15 september 2024.pdf
+liederen:
+- ruw: Opw 544 Meer dan rijkdom
+  moment: aanvang
+  lied: opw-544
+  herkenning: automatisch
+- ruw: NLB 838:1-2 O grote God, die liefde zijt
+  lied: nlb-838
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: DNP Ps 107:1,2,12 Gods liefde kent geen grenzen
+  lied: dnp-107-gods-liefde-kent-geen-grenzen
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'zingen: NLB 904:1,4,5 Beveel gerust uw wegen Zegen'
+  moment: zegenlied
+  lied: nlb-904
+  herkenning: automatisch

@@ -1,0 +1,28 @@
+datum: '2026-03-11'
+begeleiding: piano
+kenmerken:
+- biddag
+bron: 20260311 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 125 (Heer, ik kom tot U)
+  moment: aanvang
+  lied: opw-125
+  herkenning: automatisch
+- ruw: 'Liedboek 978: 1 - 4 (Aan U behoort, o Heer der Heren)'
+  lied: nlb-978
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 8: 1 - 6 (Heer, onze Heer, uw naam is groot en machtig)'
+  lied: dnp-8-heer-onze-heer-uw-naam
+  herkenning: automatisch
+- ruw: Opwekking 355 (U die mij geschapen hebt)
+  lied: opw-355
+  herkenning: automatisch
+- ruw: 'Liedboek 995: 1 en 2 (O Vader, trek het lot U aan)'
+  lied: nlb-995
+  herkenning: automatisch
+- ruw: Opwekking 292 (Laat mijn leven tot eer zijn van uw naam) 3 x
+  lied: opw-292
+  herkenning: automatisch
+- ruw: 'Liedboek 415: 1 en 2 (Zegen ons, Algoede)'
+  lied: nlb-415
+  herkenning: automatisch

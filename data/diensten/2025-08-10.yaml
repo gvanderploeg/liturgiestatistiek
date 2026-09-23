@@ -1,0 +1,22 @@
+datum: '2025-08-10'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250810 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalm 84 uit de nieuwe Psalmberijming DNP. Op de website van DNP kan je de tekst in PP formaat downloaden.
+  moment: aanvang
+  lied: dnp-84-uit-op-de-website
+  herkenning: automatisch
+- ruw: Opwekking 350 – Vader vol van vrees en schaamte
+  lied: opw-350
+  herkenning: automatisch
+- ruw: Jezus liefde voor mij van Sela
+  lied: sela-jezus-liefde-voor-mij
+  herkenning: automatisch
+- ruw: Opwekking 347 – Ik geloof in God de Vader / Jezus, Hij is Heer
+  lied: opw-347
+  herkenning: automatisch
+- ruw: Gods zegen voor jou van Sela
+  moment: zegenlied
+  lied: sela-gods-zegen-voor-jou
+  herkenning: automatisch

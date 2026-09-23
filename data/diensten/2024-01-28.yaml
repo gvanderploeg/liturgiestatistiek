@@ -1,0 +1,24 @@
+datum: '2024-01-28'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst 28 januari 2024.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- ruw: '’’Zo vriendelijk en veilig als het licht’’ - NLB 221: 1,2,3.'
+  lied: nlb-221
+  herkenning: automatisch
+- ruw: “Hier in uw Heiligdom” – Opwekking 245
+  lied: opw-245
+  herkenning: automatisch
+- ruw: ‘Als een uitgeputte hinde’ – DNP Psalm 42, 1,2, 5 en 6.
+  lied: dnp-42-als-een-uitgeputte-hinde
+  herkenning: automatisch
+- ruw: “Wat God doet, dat is welgedaan’’ NLB 909, 1,2,3.
+  lied: nlb-909
+  herkenning: automatisch
+- ruw: Ga met God en Hij zal met je zijn – NLB 416
+  moment: zegenlied
+  lied: ga-met-god-en-hij-zal-met-je-zijn
+  herkenning: automatisch

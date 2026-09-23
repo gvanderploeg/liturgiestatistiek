@@ -1,0 +1,32 @@
+datum: '2026-02-22'
+begeleiding: band
+kenmerken: []
+bron: 20260222 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Sela – Breng ons Samen
+  moment: aanvang
+  lied: sela-breng-ons-samen
+  herkenning: automatisch
+- ruw: Psalmen voor Nu - Psalm 145
+  lied: pvn-145
+  herkenning: automatisch
+- ruw: Elly en Rikkert - Kinderen Van De Vader
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- ruw: Opwekking 599 – Kom tot de vader
+  lied: opw-599
+  herkenning: automatisch
+- ruw: Schrijvers voor gerechtigheid – Licht aan
+  lied: svg-licht-aan
+  herkenning: automatisch
+- ruw: Liedboek voor de kerken Gezang 473 - Neem mijn leven laat het Heer
+  lied: nlb-912
+  herkenning: automatisch
+- ruw: Opwekking 769 – Bouw uw koninkrijk
+  lied: opw-769
+  herkenning: automatisch
+- ruw: Reyer – Zegen
+  moment: zegenlied
+  lied: opw-844
+  herkenning: automatisch

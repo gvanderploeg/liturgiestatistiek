@@ -1,0 +1,34 @@
+datum: '2025-03-09'
+begeleiding: band
+kenmerken: []
+bron: 20250309 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 464:1 (Wees stil voor het aangezicht van God)
+  moment: aanvang
+  lied: opw-464
+  herkenning: automatisch
+- ruw: 'Psalternatief, psalm 19: 1, 3, 5 (tekst: De Nieuwe Psalmberijming)'
+  lied: dnp-19-psalternatief
+  herkenning: automatisch
+- ruw: Opwekking 510 (Dit is mijn verlangen)
+  lied: opw-510
+  herkenning: automatisch
+- ruw: Familie – Marcel en Lydia Zimmer
+  moment: kindmoment
+  lied: opw-767
+  herkenning: automatisch
+- ruw: Opwekking 753 (Symfonie)
+  lied: opw-753
+  herkenning: automatisch
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: Jezus’ liefde voor mij – Sela.
+  lied: sela-jezus-liefde-voor-mij
+  herkenning: automatisch
+- ruw: I speak Jesus (Opwekking 867, Engelse versie)
+  lied: opw-867
+  herkenning: automatisch
+- ruw: Opwekking 720 (God maakt vrij)
+  lied: opw-720
+  herkenning: automatisch

@@ -1,0 +1,22 @@
+datum: '2025-06-01'
+begeleiding: band
+kenmerken: []
+bron: 20250601 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'NLB 675: 1, 2 ''Geest van hierboven'''
+  moment: aanvang
+  lied: opw-383
+  herkenning: automatisch
+- ruw: Opw. 281 'Als een hert dat verlangt naar water'
+  lied: opw-281
+  herkenning: automatisch
+- ruw: Opw. 488 'Heer ik kom tot U'
+  lied: opw-488
+  herkenning: automatisch
+- ruw: Opw. 874 'God van Abraham'
+  lied: opw-874
+  herkenning: automatisch
+- ruw: Opw. 687 'Heer, wijs mij uw weg'
+  moment: zegenlied
+  lied: opw-687
+  herkenning: automatisch

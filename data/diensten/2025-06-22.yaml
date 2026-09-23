@@ -1,0 +1,36 @@
+datum: '2025-06-22'
+begeleiding: orgel piano
+kenmerken:
+- avondmaal
+bron: 20250622 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Liedboek 216: 1,2,3 (Dit is een morgen als ooit de eerste)'
+  moment: aanvang
+  lied: nlb-216
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 19: 1 en 3 (De hemel prijst de Heer)'
+  lied: dnp-19-psalternatief
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 126 (Jezus vol liefde) 2x
+  lied: opw-126
+  herkenning: automatisch
+- ruw: 'Liedboek 221: 1,2,3 (Zo vriendelijk en veilig als het licht)'
+  moment: kindmoment
+  lied: nlb-221
+  herkenning: automatisch
+- ruw: Opwekking 737 (U nodigt mij aan tafel)
+  lied: opw-737
+  herkenning: automatisch
+- ruw: 'Zingende Gezegend 199: 1 – 6 (In Christus brengt God ons terecht) – wisselzang: allen, vrouwen, mannen, vrouwen, mannen,
+    allen.'
+  lied: dnp-65-wisselzang
+  herkenning: automatisch
+- ruw: Liedboek 1005 (Christus, ons licht)
+  lied: nlb-1005
+  herkenning: automatisch
+- ruw: Liedboek 985 (Heilig, heilig, heilig)
+  lied: opw-904
+  herkenning: automatisch

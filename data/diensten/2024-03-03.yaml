@@ -1,0 +1,32 @@
+datum: '2024-03-03'
+begeleiding: band
+kenmerken:
+- doop
+bron: Eredienst - 3 maart 2024.pdf
+liederen:
+- ruw: Opw.765 (“Uw vrede vult dit huis”)
+  moment: aanvang
+  lied: opw-765
+  herkenning: automatisch
+- ruw: Opw.553 (“Hoor ons loflied”)
+  lied: opw-553
+  herkenning: automatisch
+- ruw: “Meer dan een wonder” van Kinga Bán
+  lied: kinga-ban-meer-dan-een-wonder
+  herkenning: automatisch
+- ruw: Opw.849 (“De goedheid van God”)
+  lied: opw-849
+  herkenning: automatisch
+- ruw: “Ik wens jou” van Trinity
+  lied: trinity-ik-wens-jou
+  herkenning: automatisch
+- ruw: Opw.769 (“Bouw Uw Koninkrijk”)
+  lied: opw-769
+  herkenning: automatisch
+- ruw: Opw. 669 (“Adonai”)
+  lied: opw-669
+  herkenning: automatisch
+- ruw: Opw.602 (“Vrede van God”)
+  moment: zegenlied
+  lied: opw-602
+  herkenning: automatisch

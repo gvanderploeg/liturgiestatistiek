@@ -1,0 +1,36 @@
+datum: '2024-12-15'
+begeleiding: orgel
+kenmerken:
+- avondmaal
+- advent
+bron: 20241215 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'LB Lied 444 : 1, 2, 3, 4 en 5 (“Nu daagt het in het oosten”)'
+  moment: aanvang
+  lied: nlb-444
+  herkenning: automatisch
+- ruw: Opw.32 (“Dit is de dag”)
+  lied: opw-32
+  herkenning: automatisch
+- ruw: 'NPB Psalm 27 : 1 en 2 (“God is mijn licht, de redder van mijn leven”)'
+  lied: dnp-27-god-is-mijn-licht-de
+  herkenning: automatisch
+- ruw: '“Een lichtje aan de horizon” (via YouTube: https://youtu.be/2WSi-lz6G0E)'
+  moment: kindmoment
+  lied: een-lichtje-aan-de-horizon
+  herkenning: handmatig
+- ruw: 'NPB Psalm 43 : 2 en 3 (“Heer, zend uw licht, laat mij ervaren”)'
+  lied: dnp-43-2
+  herkenning: handmatig
+- ruw: Opw.464 (“Weest stil voor het aangezicht van God”)
+  lied: opw-464
+  herkenning: automatisch
+- ruw: 'LB Lied 840 : 1, 2 en 3 (“Lieve Heer, Gij zegt ‘kom’ en ik kom”)'
+  lied: nlb-840
+  herkenning: automatisch
+- ruw: 'GK Gezang 228 : 1 en 2 (“Jezus leeft in eeuwigheid”)'
+  lied: opw-71
+  herkenning: automatisch
+- ruw: E&R 439 (“Wij blijven geloven”)
+  lied: er2-439
+  herkenning: automatisch

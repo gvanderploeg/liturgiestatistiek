@@ -1,0 +1,27 @@
+datum: '2024-05-26'
+begeleiding: band
+kenmerken:
+- belijdenis
+bron: Eredienst Westerkerk 26 mei 2024.pdf
+liederen:
+- ruw: Opwekking 573 – ‘We zijn hier bij elkaar of een ander’ feestelijk nummer
+  moment: aanvang
+  lied: opw-573
+  herkenning: automatisch
+- ruw: Opwekking 553 – ‘Hoor ons loflied’.
+  lied: opw-553
+  herkenning: automatisch
+- ruw: Opwekking 32 – ‘Dit is de dag’.
+  moment: kindmoment
+  lied: opw-32
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: 'Opwekking 599: ‘Nog voor dat je bestond’'
+  lied: opw-599
+  herkenning: automatisch
+- ruw: Opwekking 807 – ‘God van Licht’
+  lied: opw-807
+  herkenning: automatisch

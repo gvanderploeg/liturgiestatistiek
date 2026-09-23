@@ -1,0 +1,27 @@
+datum: '2025-05-04'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20250504 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 430 (Heer, ik prijs uw grote naam)
+  moment: aanvang
+  lied: opw-430
+  herkenning: automatisch
+- ruw: Psalmen voor Nu 117 (Met ons / Zing mee voor God)
+  lied: pvn-117-zing-mee-voor-god
+  herkenning: automatisch
+- ruw: Zegenlied Trinity (Ik wens jou)
+  lied: trinity-ik-wens-jou
+  herkenning: automatisch
+- ruw: Sela – Gebed om zegen, aangepaste tekst *
+  lied: sela-gebed-om-zegen
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 24: 1, 2, 3'
+  lied: dnp-24-de-aarde-is-met-al
+  herkenning: automatisch
+- ruw: Opwekking 249 (Heer, wat een voorrecht)
+  lied: opw-249
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend

@@ -1,0 +1,27 @@
+datum: '2025-05-11'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250511 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 601 – Tienduizend redenen
+  moment: aanvang
+  lied: opw-601
+  herkenning: automatisch
+- ruw: Opwekking 42 – Groot is Uw trouw, o Heer
+  lied: opw-42
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 136 - Abba, Vader, U alleen
+  lied: opw-136
+  herkenning: automatisch
+- ruw: Opwekking 123 - Heer U doorgrondt en kent mij
+  lied: opw-123
+  herkenning: automatisch
+- ruw: Opwekking 599 – Kom tot de Vader
+  lied: opw-599
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

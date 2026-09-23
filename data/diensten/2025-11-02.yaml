@@ -1,0 +1,31 @@
+datum: '2025-11-02'
+begeleiding: band
+kenmerken: []
+bron: 20251102 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 733 (De zon komt op, maakt de morgen wakker)
+  moment: aanvang
+  lied: opw-733
+  herkenning: automatisch
+- ruw: PvN 130 (Uit de diepten roep ik U)
+  lied: pvn-130-uit-de-diepten-roep-ik
+  herkenning: automatisch
+- ruw: Opwekking 671 (Lof, aanbidding)
+  lied: opw-671
+  herkenning: automatisch
+- ruw: OK4kids 321 (Soms heb je verdriet)
+  moment: kindmoment
+  lied: opwkids-321
+  herkenning: automatisch
+- ruw: 'Psalternatief, psalm 6: 1,2,3 (De Nieuwe Psalmberijming)'
+  lied: dnp-6-psalternatief
+  herkenning: automatisch
+- ruw: Opwekking 687 (Heer, wijs mij uw weg)
+  lied: opw-687
+  herkenning: automatisch
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 248 (God is getrouw, zijn plannen falen niet)
+  lied: opw-248
+  herkenning: automatisch

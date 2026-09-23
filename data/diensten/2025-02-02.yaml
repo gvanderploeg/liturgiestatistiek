@@ -1,0 +1,28 @@
+datum: '2025-02-02'
+begeleiding: band
+kenmerken: []
+bron: 20250202 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 640 (Ik hef mijn ogen op naar de bergen)
+  moment: aanvang
+  lied: opw-640
+  herkenning: automatisch
+- ruw: Opwekking 510 (Dit is mijn verlangen)
+  lied: opw-510
+  herkenning: automatisch
+- ruw: The Psalm Project 51 (Witter dan sneeuw)
+  lied: tpp-51-witter-dan-sneeuw
+  herkenning: automatisch
+- ruw: Kinderopwekking 70 (Liefde, blijdschap, vrede)
+  moment: kindmoment
+  lied: opwkids-70
+  herkenning: automatisch
+- ruw: Opwekking 192 (Ik kom in uw heiligdom binnen)
+  lied: opw-192
+  herkenning: automatisch
+- ruw: Opwekking 623 (Laat het huis gevuld zijn)
+  lied: opw-623
+  herkenning: automatisch
+- ruw: Opwekking 620 (Voor eeuwig)
+  lied: opw-620
+  herkenning: automatisch

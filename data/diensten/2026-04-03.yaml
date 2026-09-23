@@ -1,0 +1,22 @@
+datum: '2026-04-03'
+begeleiding: piano
+kenmerken:
+- goede-vrijdag
+bron: 20260403 Eredienst Westerkerk -.pdf
+liederen:
+- ruw: 'Weerklank 153: 1, 2, 6, 7 (Leer mij, o Heer, uw lijden recht betrachten)*'
+  moment: aanvang
+  lied: sela-leer-mij-o-heer-uw-lijden
+  herkenning: automatisch
+- ruw: Opwekking 268 (Hij kwam bij ons heel gewoon)
+  lied: opw-268
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming 22: 1, 3, 7'
+  lied: dnp-22
+  herkenning: automatisch
+- ruw: 'Liedboek 575: 1, 2, 6 (Jezus leven van mijn leven)'
+  lied: nlb-575
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 16: 1, 2, 3'
+  lied: dnp-16
+  herkenning: automatisch

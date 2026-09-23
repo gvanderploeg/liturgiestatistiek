@@ -1,0 +1,32 @@
+datum: '2024-12-01'
+begeleiding: band
+kenmerken:
+- advent
+bron: 20241201 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 780 (Ik zie uit naar de Heer)
+  moment: aanvang
+  lied: opw-780
+  herkenning: automatisch
+- ruw: Schrijvers voor Gerechtigheid (Miljoenen stemmen)
+  lied: svg-miljoenen-stemmen
+  herkenning: automatisch
+- ruw: Opwekking 874 (Uw trouw)
+  lied: opw-874
+  herkenning: automatisch
+- ruw: Opwekking 786 (Met hart en handen)
+  lied: opw-786
+  herkenning: automatisch
+- ruw: Een lichtje aan de horizon (Band, tekst via deze link)
+  moment: kindmoment
+  lied: een-lichtje-aan-de-horizon
+  herkenning: handmatig
+- ruw: Opwekking 609 (Ik wil volgen, ik wil luisteren)
+  lied: opw-609
+  herkenning: automatisch
+- ruw: Collectelied Sela (Kom tot ons, Heer)
+  lied: sela-kom-tot-ons-heer-adventsgebed
+  herkenning: automatisch
+- ruw: Opwekking 585 (Er is een dag)
+  lied: opw-585
+  herkenning: automatisch

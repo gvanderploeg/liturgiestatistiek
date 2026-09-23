@@ -1,0 +1,30 @@
+datum: '2025-05-25'
+begeleiding: band
+kenmerken: []
+bron: 20250525 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 815 (Vul dit huis met uw glorie)
+  moment: aanvang
+  lied: opw-815
+  herkenning: automatisch
+- ruw: OK4Kids 233 (God heeft een plan met je leven)
+  moment: kindmoment
+  lied: opwkids-233
+  herkenning: automatisch
+- ruw: Opwekking 672 (Heerser over alle dingen)
+  lied: opw-672
+  herkenning: automatisch
+- ruw: Opwekking 510 (Dit is mijn verlangen)
+  lied: opw-510
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: Toekomst vol van hoop
+  moment: zegenlied
+  lied: sela-een-toekomst-vol-van-hoop
+  herkenning: automatisch

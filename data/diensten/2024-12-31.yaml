@@ -1,0 +1,19 @@
+datum: '2024-12-31'
+begeleiding: orgel
+kenmerken: []
+bron: 20241231 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opw.640 (“Mijn hulp is van U, Heer”)
+  moment: aanvang
+  lied: opw-640
+  herkenning: automatisch
+- ruw: 'LB Lied 793 : 1, 2 en 3 (“Bron van liefde, licht en leven”)'
+  lied: nlb-793
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: 'NPB Psalm 139 : 1 en 8 (“HEER, U doorgrondt mij, U ontwart al de geheimen van mijn hart.”)'
+  lied: dnp-139-heer-u-doorgrondt-mij
+  herkenning: handmatig

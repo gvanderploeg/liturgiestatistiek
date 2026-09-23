@@ -1,0 +1,20 @@
+datum: '2025-04-13'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250413 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'LB Psalm 84a : 1, 2, 3, 4 en 5 (“Wat hou ik van uw huis”)'
+  moment: aanvang
+  lied: opw-715
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opw.298 (“Hosanna, hosanna”)
+  moment: kindmoment
+  lied: opw-298
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'LB Lied 868 : 1, 2 en 5 (“Lof zij de Heer, de almachtige 4 Koning der ere”)'
+  lied: opw-386
+  herkenning: automatisch

@@ -1,0 +1,28 @@
+datum: '2026-04-12'
+begeleiding: gitaar
+kenmerken: []
+bron: 20260412 eredienst Westerkerk -.pdf
+liederen:
+- ruw: Opwekking 281 (Als een hert dat verlangt naar water)
+  moment: aanvang
+  lied: opw-281
+  herkenning: automatisch
+- ruw: Opwekking 136 (Abba, Vader, U alleen)
+  lied: opw-136
+  herkenning: automatisch
+- ruw: Opwekking 70 (Heer, onze God, hoe heerlijk is uw naam)
+  lied: opw-70
+  herkenning: automatisch
+- ruw: Opwekking 263 (Er is een Verlosser)
+  lied: opw-263
+  herkenning: automatisch
+- ruw: Opwekking 411 (Geprezen zij de Here)
+  lied: opw-411
+  herkenning: automatisch
+- ruw: Opwekking 347 (Ik geloof in God de Vader)
+  lied: opw-347
+  herkenning: automatisch
+- ruw: Opwekking 320 (Ere zij aan God de Vader)
+  moment: zegenlied
+  lied: opw-320
+  herkenning: automatisch

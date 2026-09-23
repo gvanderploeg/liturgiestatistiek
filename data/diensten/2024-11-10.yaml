@@ -1,0 +1,25 @@
+datum: '2024-11-10'
+begeleiding: band
+kenmerken: []
+bron: Eredienst 10 november 2024.pdf
+liederen:
+- ruw: Opwekking 833 (‘Kom verras ons’) Opwekking 671 (‘Lof, aanbidding’)
+  moment: aanvang
+  lied: opw-833
+  herkenning: automatisch
+- ruw: Opwekking Kids 100 (‘Sta ’s even op’)
+  moment: kindmoment
+  lied: opwkids-100
+  herkenning: automatisch
+- ruw: Opwekking 461 (‘Mijn Jezus, mijn redder’)
+  lied: opw-461
+  herkenning: automatisch
+- ruw: Opwekking 347 (‘Ik geloof in God de Vader’)
+  lied: opw-347
+  herkenning: automatisch
+- ruw: ‘Mag ik jou tot zegen zijn?’ (Sela)
+  lied: sela-mag-ik-jou-tot-zegen-zijn
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

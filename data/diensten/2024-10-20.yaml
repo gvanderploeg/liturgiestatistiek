@@ -1,0 +1,33 @@
+datum: '2024-10-20'
+begeleiding: orgel hobo
+kenmerken:
+- avondmaal
+bron: Eredienst 20 oktober 2024.pdf
+liederen:
+- ruw: Opwekking 245 (Hier in uw heiligdom)
+  moment: aanvang
+  lied: opw-245
+  herkenning: automatisch
+- ruw: 'Liedboek 834: 1,2,3 (Vernieuw Gij mij, o eeuwig licht)'
+  lied: nlb-834
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: 'De nieuwe psalmberijming, psalm 30: 1 en 5'
+  lied: dnp-30
+  herkenning: automatisch
+- ruw: Opwekking 389 (Create in me a clean heart), 2x.
+  lied: opw-389
+  herkenning: automatisch
+- ruw: 'Liedboek 381: 1 – 6 (Genadig Heer, die al mijn zwakheid weet)'
+  lied: nlb-381
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'De nieuwe psalmberijming, psalm 98: 1 en 2'
+  lied: dnp-98
+  herkenning: automatisch
+- ruw: 'Liedboek 413: 1,2,3 (Grote God, wij loven U)'
+  lied: nlb-413
+  herkenning: automatisch

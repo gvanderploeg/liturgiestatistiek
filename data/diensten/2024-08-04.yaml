@@ -1,0 +1,26 @@
+datum: '2024-08-04'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst Westerkerk 4 augustus 2024.pdf
+liederen:
+- ruw: Opwekking 121 (De Here is mijn herder)
+  moment: aanvang
+  lied: opw-121
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 192 (Ik kom in uw heiligdom binnen).
+  lied: opw-192
+  herkenning: automatisch
+- ruw: Opwekking 136 (Abba, Vader, U alleen)
+  lied: opw-136
+  herkenning: automatisch
+- ruw: Opwekking 355, 2 x (U, die mij geschapen hebt)
+  lied: opw-355
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Liedboek 425 (Vervuld van uw zegen)
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

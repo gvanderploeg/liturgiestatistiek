@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import csv
 import json
+import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -17,6 +18,8 @@ from .opslag import DIENSTEN_MAP
 
 DATASET_BESTAND = "dataset.json"
 CSV_BESTAND = "liedvermeldingen.csv"
+
+log = logging.getLogger("liturgiestatistiek.publicatie")
 
 
 def bouw_dataset(datamap: Path) -> dict:
@@ -42,6 +45,9 @@ def bouw_dataset(datamap: Path) -> dict:
 
     gebruikt = {v["lied"] for d in diensten for v in d["liederen"] if v["lied"]}
     liederen_uit = {}
+    for lied_id in sorted(gebruikt - set(catalogus.liederen)):
+        log.warning("dienst verwijst naar lied %s dat niet in de catalogus staat; draai 'verwerk' om de diensten bij te werken", lied_id)
+        liederen_uit[lied_id] = {"titel": lied_id, "ontbreekt": True}
     for lied_id, lied in sorted(catalogus.liederen.items()):
         if lied_id not in gebruikt and not lied.categorieen and lied.status == "normaal":
             continue

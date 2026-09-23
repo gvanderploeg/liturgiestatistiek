@@ -1,0 +1,31 @@
+datum: '2025-04-20'
+begeleiding: band
+kenmerken:
+- pasen
+bron: 20250420 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Opwekking 213: 1 - 3 (U zei de Glorie)'
+  moment: aanvang
+  lied: opw-213
+  herkenning: automatisch
+- ruw: 'Weerklank 167: 1 – 4 (Daar juicht een toon, Wegwijzer- versie)'
+  lied: sela-daar-juicht-een-toon
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 799 (In eeuwigheid)
+  lied: opw-799
+  herkenning: automatisch
+- ruw: Opwekking 331 (Breng dank aan de eeuwige)
+  lied: opw-331
+  herkenning: automatisch
+- ruw: Hij leeft – Elly en Rikkert (Maria kwam bij het graf)
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- ruw: Juicht/Hij is verheerlijkt, Sela
+  lied: sela-juicht-hij-is-verheerlijkt
+  herkenning: automatisch
+- ruw: Opwekking 832 (Jezus overwinnaar)
+  lied: opw-832
+  herkenning: automatisch

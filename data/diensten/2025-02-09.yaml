@@ -1,0 +1,28 @@
+datum: '2025-02-09'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250209 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 194 (U maakt ons één)
+  moment: aanvang
+  lied: opw-194
+  herkenning: automatisch
+- ruw: 'Liedboek 912: 1, 3, 5, 6 (Neem mijn leven, laat het, Heer)'
+  lied: nlb-912
+  herkenning: automatisch
+- ruw: Psalm 118:1 (NPB) (Laat iedereen Gods goedheid prijzen)
+  lied: dnp-118-laat-iedereen-gods-goedheid-prijzen
+  herkenning: handmatig
+- ruw: 'Liedboek 838: 1, 4 (O grote God die liefde zijt)'
+  lied: nlb-838
+  herkenning: automatisch
+- ruw: Liedboek 568a (Ubi caritas) (3x herhalen)
+  lied: sela-ubi-caritas
+  herkenning: automatisch
+- ruw: 'Liedboek 791: 1-4, 6 (Liefde, eenmaal uitgesproken)'
+  lied: nlb-791
+  herkenning: automatisch
+- ruw: '- Kinderlied: Uw liefde raakt nooit op // Songtekst // Make Some Noise Kids - YouTube'
+  moment: kindmoment
+  lied: msnk-uw-liefde-raakt-nooit-op
+  herkenning: handmatig

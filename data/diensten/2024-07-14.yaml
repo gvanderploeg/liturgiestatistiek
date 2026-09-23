@@ -1,0 +1,21 @@
+datum: '2024-07-14'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst Westerkerk 14 juli 2024.pdf
+liederen:
+- ruw: Opw 640 Ik hef mijn ogen op naar de bergen
+  moment: aanvang
+  lied: opw-640
+  herkenning: automatisch
+- ruw: DNP Ps 24:1-2 De aarde is, met al wat leeft
+  lied: dnp-24-de-aarde-is-met-al
+  herkenning: automatisch
+- ruw: DNP Ps 8:1,3,4 Heer, onze Heer, uw naam is groot en machtig
+  lied: dnp-8-heer-onze-heer-uw-naam
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opw 407 O Heer mijn God, wanneer ik in verwondering
+  moment: zegenlied
+  lied: opw-407
+  herkenning: automatisch

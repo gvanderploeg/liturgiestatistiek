@@ -1,0 +1,29 @@
+datum: '2025-09-14'
+begeleiding: band
+kenmerken:
+- startzondag
+bron: 20250914 Eredienst Westerkerk.pdf
+liederen:
+- ruw: OPW 481 - Ik aanbid U
+  moment: aanvang
+  lied: opw-481
+  herkenning: automatisch
+- ruw: OPW 719 - Onbeschrijfelijk
+  lied: opw-719
+  herkenning: automatisch
+- ruw: OPW 454 - Zegen aanbidding
+  lied: opw-454
+  herkenning: automatisch
+- ruw: OPW 687 - Heer wijs mij Uw weg
+  lied: opw-687
+  herkenning: automatisch
+- ruw: Sela - Ik leef
+  lied: sela-ik-leef
+  herkenning: automatisch
+- ruw: TOV - Wat de toekomst brenge moge
+  lied: opw-377
+  herkenning: automatisch
+- ruw: OPW 609 - U bent heilig
+  moment: zegenlied
+  lied: opw-609
+  herkenning: automatisch

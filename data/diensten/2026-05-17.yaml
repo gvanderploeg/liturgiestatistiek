@@ -1,0 +1,30 @@
+datum: '2026-05-17'
+begeleiding: orgel
+kenmerken: []
+bron: 20260517 eredienst Westerkerk -.pdf
+liederen:
+- ruw: 'De Nieuwe Psalmberijming, psalm 147: 1, 3, 4'
+  moment: aanvang
+  lied: dnp-147
+  herkenning: automatisch
+- ruw: Opwekking 797 (U roept ons samen)
+  lied: opw-797
+  herkenning: automatisch
+- ruw: Opwekking 70 (Heer, onze God, hoe heerlijk is uw naam)
+  lied: opw-70
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 689 (Spreek, o Heer, door uw heilig woord)
+  lied: opw-689
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 84: 1 en 4'
+  lied: dnp-84-uit-op-de-website
+  herkenning: automatisch
+- ruw: Opwekking 40 (Zoek eerst het koninkrijk van God) *
+  lied: opw-40
+  herkenning: automatisch
+- ruw: Opwekking 383 (Geest van hierboven)
+  lied: opw-383
+  herkenning: automatisch

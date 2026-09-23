@@ -1,0 +1,24 @@
+datum: '2025-12-31'
+begeleiding: band
+kenmerken: []
+bron: 20251231 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalmen voor Nu 121 (Waar komt mijn hulp vandaag?)
+  moment: aanvang
+  lied: pvn-121-ik-kijk-omhoog-naar-de
+  herkenning: automatisch
+- ruw: Opwekking 136 (Abba, Vader, U alleen)
+  lied: opw-136
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 90: 1, 2, 6 (Heer, U bent onze schuilplaats in gevaren)'
+  lied: dnp-90-heer-u-bent-onze-schuilplaats
+  herkenning: automatisch
+- ruw: 'Opwekking 377: 1 - 4 (Wat de toekomst brengen moge) *'
+  lied: opw-377
+  herkenning: automatisch
+- ruw: Opwekking 770 (Ik zal er zijn)
+  lied: opw-770
+  herkenning: automatisch
+- ruw: Opwekking 58 (Vrede zij u)
+  lied: opw-58
+  herkenning: automatisch

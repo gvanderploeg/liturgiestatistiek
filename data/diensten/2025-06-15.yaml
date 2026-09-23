@@ -1,0 +1,27 @@
+datum: '2025-06-15'
+begeleiding: band
+kenmerken:
+- belijdenis
+bron: 20250615 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Cody Carnes - Run to the Father
+  moment: aanvang
+  lied: run-to-the-father
+  herkenning: automatisch
+- ruw: Opwekking 488 – Kracht van uw liefde
+  lied: opw-488
+  herkenning: automatisch
+- ruw: Chris Tomlin - Holy forever
+  lied: holy-forever
+  herkenning: automatisch
+- ruw: Opwekking 599 - Kom tot de Vader
+  lied: opw-599
+  herkenning: automatisch
+- ruw: Opwekking 185 - De Here zegent jou
+  moment: zegenlied
+  lied: opw-185
+  herkenning: automatisch
+- ruw: Opwekking 136 - Abba vader U alleen
+  moment: zegenlied
+  lied: opw-136
+  herkenning: automatisch

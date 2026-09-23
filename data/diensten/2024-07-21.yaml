@@ -1,0 +1,26 @@
+datum: '2024-07-21'
+begeleiding: band
+kenmerken: []
+bron: Eredienst Westerkerk 21 juli 2024.pdf
+liederen:
+- ruw: Breng ons samen (Opwekking 797)
+  moment: aanvang
+  lied: opw-797
+  herkenning: automatisch
+- ruw: Vader, vol van vrees en schaamte (Opwekking 350)
+  lied: opw-350
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Mijn Heer, ik red het niet alleen (PvN 140)
+  lied: pvn-140-mijn-heer-ik-red-het
+  herkenning: automatisch
+- ruw: Magnificat (Sela)
+  lied: sela-magnificat
+  herkenning: automatisch
+- ruw: Ik geloof in God de Vader (Opwekking 347)
+  lied: opw-347
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

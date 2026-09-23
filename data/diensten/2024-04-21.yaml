@@ -1,0 +1,31 @@
+datum: '2024-04-21'
+begeleiding: orgel
+kenmerken:
+- avondmaal
+bron: Eredienst 21 april 2024.pdf
+liederen:
+- ruw: NLB 978, 1-4 (Aan U behoort, O Heer der Heren)
+  moment: aanvang
+  lied: nlb-978
+  herkenning: automatisch
+- ruw: NLB 841, 1.2.
+  lied: nlb-841
+  herkenning: automatisch
+- ruw: Opwekking 689 (spreek, o Heer)
+  lied: opw-689
+  herkenning: automatisch
+- ruw: HH 679 (Heer, uw licht en uw liefde schijnen)
+  lied: opw-334
+  herkenning: automatisch
+- ruw: DNP 34, 2.3
+  lied: dnp-34-in-die-volgorde
+  herkenning: automatisch
+- ruw: NLB 103c
+  lied: nlb-103c
+  herkenning: automatisch
+- ruw: DNP 89, 1.2.4.5
+  lied: dnp-89
+  herkenning: automatisch
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

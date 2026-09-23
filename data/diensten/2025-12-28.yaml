@@ -1,0 +1,19 @@
+datum: '2025-12-28'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20251228 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'NLB 486 : 1 2 4'
+  moment: aanvang
+  lied: nlb-486
+  herkenning: automatisch
+- ruw: '‘Vader vol van vrees en schaamte’ Gereformeerd Kerkboek 2017, gezang 168 : 1 2 3 4)'
+  lied: opw-350
+  herkenning: automatisch
+- ruw: 'voorganger – daarna “Een koning is geboren” (Elly en Rikkert), begeleid op de piano en anders via deze link: https://youtu.be/tefD8SgZ46Q'
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- ruw: 'NLB 482 : 1 2 3'
+  lied: nlb-482
+  herkenning: automatisch

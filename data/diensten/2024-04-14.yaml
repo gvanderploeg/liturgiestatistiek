@@ -1,0 +1,24 @@
+datum: '2024-04-14'
+begeleiding: band
+kenmerken: []
+bron: Eredienst 14 april 2024.pdf
+liederen:
+- ruw: “Met open armen” van Schrijvers voor Gerechtigheid
+  moment: aanvang
+  lied: svg-met-open-armen
+  herkenning: handmatig
+- ruw: Opw.640 (“Mijn hulp is van U Heer”)
+  lied: opw-640
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opw.Kids 185 (“De here zegent jou”)
+  moment: kindmoment
+  lied: opw-908
+  herkenning: automatisch
+- ruw: Opw.625 (“Wat een liefde”)
+  lied: opw-625
+  herkenning: automatisch
+- ruw: “God van liefde, God van trouw” van The Psalm Project 2
+  lied: tpp-2-god-van-liefde-god-van
+  herkenning: automatisch

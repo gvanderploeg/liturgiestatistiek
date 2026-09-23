@@ -1,0 +1,38 @@
+datum: '2025-12-21'
+begeleiding: band
+kenmerken:
+- avondmaal
+- advent
+bron: 20251221 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalmen voor Nu 16 (Ik val niet uit zijn hand)
+  moment: aanvang
+  lied: pvn-16-ik-val-niet-uit-zijn
+  herkenning: automatisch
+- ruw: Sela - Kom tot ons, de wereld wacht
+  lied: sela-kom-tot-ons-de-wereld-wacht
+  herkenning: automatisch
+- ruw: Sela - Geef ons vrede
+  lied: sela-geef-ons-vrede
+  herkenning: automatisch
+- ruw: God zal met ons zijn, God is Immanuel. *
+  lied: svg-god-met-ons
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Miljoenen stemmen - Schrijvers voor Gerechtigheid
+  lied: svg-miljoenen-stemmen
+  herkenning: automatisch
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 369 (Door uw genade, Vader)
+  lied: opw-369
+  herkenning: automatisch
+- ruw: Opwekking 705 (Toon mijn liefde)
+  lied: opw-705
+  herkenning: automatisch
+- ruw: Sela - Gods zegen voor jou
+  lied: sela-gods-zegen-voor-jou
+  herkenning: automatisch

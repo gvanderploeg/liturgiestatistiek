@@ -1,0 +1,24 @@
+datum: '2025-08-24'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20250824 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 281 - 'Als een hert dat verlangt naar water'
+  moment: aanvang
+  lied: opw-281
+  herkenning: automatisch
+- ruw: Opwekking 518 - 'Heer, U doorgrondt en kent mij'
+  lied: opw-518
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'Liedboek 902: 1, 5 en 6 - ''Is God de Heer maar voor mij'''
+  lied: nlb-902
+  herkenning: automatisch
+- ruw: Opwekking 407 - 'O Heer, mijn God'
+  lied: opw-407
+  herkenning: automatisch
+- ruw: 'Liedboek 416: 1, 2, 3 en 4 - ''Ga met God en Hij zal met je zijn'''
+  moment: zegenlied
+  lied: ga-met-god-en-hij-zal-met-je-zijn
+  herkenning: automatisch

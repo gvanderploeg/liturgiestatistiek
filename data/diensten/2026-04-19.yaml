@@ -1,0 +1,25 @@
+datum: '2026-04-19'
+begeleiding: band
+kenmerken: []
+bron: Eredienst Westerkerk 19 april 2026 -.pdf
+liederen:
+- ruw: Opw 815 Vul dit huis met uw glorie
+  moment: aanvang
+  lied: opw-815
+  herkenning: automatisch
+- ruw: Opw 88 Een rivier vol van vrede (= OpwK 144)
+  moment: kindmoment
+  lied: opw-88
+  herkenning: automatisch
+- ruw: PvN 30 U hebt mij bevrijd
+  lied: pvn-30-u-hebt-mij-bevrijd
+  herkenning: automatisch
+- ruw: Opw 794 No longer slaves
+  lied: opw-794
+  herkenning: automatisch
+- ruw: Opw 461 Mijn Jezus, mijn Redder
+  lied: opw-461
+  herkenning: automatisch
+- ruw: Opw 554 Mijn verlosser leeft
+  lied: opw-554
+  herkenning: automatisch

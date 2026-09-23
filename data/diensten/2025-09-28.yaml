@@ -1,0 +1,31 @@
+datum: '2025-09-28'
+begeleiding: band
+kenmerken: []
+bron: 20250928 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 626 – Prachtige God
+  moment: aanvang
+  lied: opw-626
+  herkenning: automatisch
+- ruw: 'Opwekking 553: Hoor ons loflied, laat het feest zijn in de huizen.'
+  lied: opw-553
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 510 – Dit is mijn verlangen
+  lied: opw-510
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Sela – Wij volgen U Heer
+  lied: sela-wij-volgen-u-heer
+  herkenning: automatisch
+- ruw: King and Country - Burn the Ships
+  moment: luisterlied
+  lied: for-king-and-country-burn-the-ships
+  herkenning: automatisch
+- ruw: Opwekking 844 – Zegen
+  moment: zegenlied
+  lied: opw-844
+  herkenning: automatisch

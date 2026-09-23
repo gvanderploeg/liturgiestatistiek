@@ -1,0 +1,21 @@
+datum: '2026-05-10'
+begeleiding: band
+kenmerken: []
+bron: Eredienst Westerkerk 10 mei 2026 -.pdf
+liederen:
+- ruw: Opwekking 569 (Over al wat leeft, bent U de hoogste Heer)
+  moment: aanvang
+  lied: opw-569
+  herkenning: automatisch
+- ruw: Psalm 146:1,5,6 (DNP)
+  lied: dnp-146
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 609 (U bent heilig)
+  lied: opw-609
+  herkenning: automatisch
+- ruw: Opwekking 586 (Hij is Heer)
+  lied: opw-586
+  herkenning: automatisch

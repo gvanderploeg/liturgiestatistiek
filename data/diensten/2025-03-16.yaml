@@ -1,0 +1,22 @@
+datum: '2025-03-16'
+begeleiding: band
+kenmerken: []
+bron: 20250316 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Intredelied Opwekking 847 Onze schuilplaats is God
+  moment: aanvang
+  lied: opw-847
+  herkenning: automatisch
+- ruw: Opwekking 849 De goedheid van God
+  lied: opw-849
+  herkenning: automatisch
+- ruw: Opwekking 794 NL versie – Ik ben niet langer een slaaf
+  lied: opw-794
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend

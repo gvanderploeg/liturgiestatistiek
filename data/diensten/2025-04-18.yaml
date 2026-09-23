@@ -1,0 +1,22 @@
+datum: '2025-04-18'
+begeleiding: orgel hobo
+kenmerken:
+- goede-vrijdag
+bron: 20250418 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'DNP Psalm 2 : 1 en 2 (“Wat willen die wereldleiders toch?”)'
+  moment: aanvang
+  lied: dnp-2-wat-willen-die-wereldleiders-toch
+  herkenning: automatisch
+- ruw: 'DNP Psalm 88 : 5 en 6 ("Waarom toch, HEER, verstoot u mij?")'
+  lied: dnp-88-waarom-toch-heer-verstoot-u
+  herkenning: automatisch
+- ruw: 'GK Gezang 204 : 1, 2, 3 en 4 (“Mijn verlosser hangt aan het kruis”)'
+  lied: gkb-204-mijn-verlosser-hangt-aan-het
+  herkenning: automatisch
+- ruw: 'GK06 Gezang 89 : 1, 2, 3 en 4 ("Jezus, leven van mijn leven”)'
+  lied: nlb-575
+  herkenning: automatisch
+- ruw: 'DNP Psalm 80 : 6 (“Kom aan uw volk uw vrede geven: laat uw geliefde zoon weer leven.”)'
+  lied: dnp-80-laat-uw-geliefde-zoon-weer
+  herkenning: automatisch

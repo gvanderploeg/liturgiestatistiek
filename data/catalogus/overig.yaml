@@ -14,10 +14,30 @@
   referenties:
   - bundel: opwkids
     nummer: '18'
+- id: nlb-162
+  titel: Barmhartig Vader op uw troon
 - id: blessings
   titel: Blessings
 - id: crowder-come-as-you-are
   titel: Come as you are
+- id: nlb-50
+  titel: De Heer die leeft, de God der goden spreekt
+- id: dnp-118-laat-iedereen-gods-goedheid-prijzen
+  titel: DNP 118 Laat iedereen Gods goedheid prijzen
+  aliassen:
+  - Laat iedereen Gods goedheid prijzen
+- id: dnp-139-heer-u-doorgrondt-mij
+  titel: DNP Psalm 139 - HEER, U doorgrondt mij
+  aliassen:
+  - HEER, U doorgrondt mij, U ontwart al de geheimen van mijn hart
+- id: dnp-43-2
+  titel: DNP Psalm 43 - Heer, zend uw licht, laat mij ervaren
+  aliassen:
+  - Heer, zend uw licht, laat mij ervaren
+- id: een-lichtje-aan-de-horizon
+  titel: Een lichtje aan de horizon
+  aliassen:
+  - Een lichtje aan de horizon
 - id: elevation-worshop-jesus-be-the-name
   titel: Elevation Worship - Jesus be the name
 - id: elevation-worship-the-blessing
@@ -36,16 +56,32 @@
   titel: Holy Forever
 - id: charity-gayle-i-speak-jesus
   titel: I speak Jesus
+- id: nlb-4
+  titel: Ik hoor hoe velen angstig vragen
 - id: lev-de-kerk-van-alle-tijden
   titel: LEV - De kerk van alle tijden
+- id: msnk-uw-liefde-raakt-nooit-op
+  titel: Make Some Noise Kids - Uw liefde raakt nooit op
+  aliassen:
+  - Uw liefde raakt nooit op
 - id: kinga-ban-meer-dan-een-wonder
   titel: Meer dan een wonder
+- id: once-in-royal-david-s-city
+  titel: Once in royal David's city
 - id: open-the-eyes-of-my-heart-lord
   titel: Open the eyes of my heart, Lord
+- id: gkb-134
+  titel: Psalm 134
+  aliassen:
+  - Dat 's HEEREN zegen op u daal
 - id: run-to-the-father
   titel: Run to the father
 - id: samantha-ebert-flowers
   titel: Samantha Ebert - Flowers
+- id: sandra-mccracken-ik-schaam-mij-diep
+  titel: Sandra McCracken - Ik schaam mij diep
+  aliassen:
+  - Ik schaam mij diep
 - id: charity-gayle-thank-you-jesus-for-the-blood
   titel: Thank you Jesus for the blood
 - id: trinity-ik-wens-jou

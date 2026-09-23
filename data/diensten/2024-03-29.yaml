@@ -1,0 +1,33 @@
+datum: '2024-03-29'
+begeleiding: orgel
+kenmerken:
+- avondmaal
+- goede-vrijdag
+bron: Eredienst 29 maart 2024 - Goede Vrijdag.pdf
+liederen:
+- ruw: 'Opwekking 70: 1 – 4 (Heer, onze Heer, hoe heerlijk is uw naam)'
+  moment: aanvang
+  lied: opw-70
+  herkenning: automatisch
+- ruw: 'Liedboek 575: 1 en 6 (Jezus leven van mijn leven)'
+  lied: nlb-575
+  herkenning: automatisch
+- ruw: 'De nieuwe psalmberijming 22: 1 en 7'
+  lied: dnp-22
+  herkenning: automatisch
+- ruw: 'Gereformeerd Kerkboek 204: 1 - 4 (Mijn Verlosser hangt aan het kruis)'
+  lied: gkb-204-mijn-verlosser-hangt-aan-het
+  herkenning: automatisch
+- ruw: 'Gereformeerd Kerkboek 184: 1 en 2 (Heer, wij komen vol verlangen)'
+  lied: gkb-184-heer-wij-komen-vol-verlangen
+  herkenning: automatisch
+- ruw: 'Instrumentaal: Als alles duister is (Taizé)'
+  lied: sela-als-alles-duister-is
+  herkenning: automatisch
+- ruw: 'Instrumentaal: Opwekking 215 (De Heer is mijn Herder)'
+  lied: opw-215
+  herkenning: automatisch
+- ruw: 'Gereformeerd Kerkboek 214: 1,2,4 (Ik heb de vaste grond gevonden)'
+  moment: zegenlied
+  lied: gkb-214-ik-heb-de-vaste-grond
+  herkenning: automatisch

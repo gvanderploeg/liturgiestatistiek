@@ -1,0 +1,28 @@
+datum: '2024-12-29'
+begeleiding: orgel piano
+kenmerken: []
+bron: 20241229 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Onze hulp en onze verwachting is van God, onze Heer (Sela: Votum en groet)'
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: De Heer die leeft, de God der goden spreekt (Kerkboek 50:1)
+  lied: nlb-50
+  herkenning: handmatig
+- ruw: Breng dank aan de Eeuwige die ons Jezus zond (Opwekking 331)
+  lied: opw-331
+  herkenning: automatisch
+- ruw: 'Ik hoor hoe velen angstig vragen: ‘Wie zal het goede ons doen zien?’ (Kerkboek 4:3)'
+  lied: nlb-4
+  herkenning: handmatig
+- ruw: Loof, loof verheugd de Heer der heren (Kerkboek 105:1,5,21)
+  lied: tpp-136-loof-de-heer
+  herkenning: automatisch
+- ruw: Barmhartig Vader op uw troon (Kerkboek 162:1)
+  lied: nlb-162
+  herkenning: handmatig
+- ruw: Heer, het licht van uw liefde schittert (Liedboek 289)
+  moment: zegenlied
+  lied: nlb-289
+  herkenning: automatisch

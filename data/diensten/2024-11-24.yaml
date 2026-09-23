@@ -1,0 +1,31 @@
+datum: '2024-11-24'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst 24 november 2024.pdf
+liederen:
+- ruw: Opwekking 281 (Als een hert dat verlangt naar water). We zingen het twee keer.
+  moment: aanvang
+  lied: opw-281
+  herkenning: automatisch
+- ruw: Opwekking 369 (Door uw genade, Vader), couplet, refrein, couplet
+  lied: opw-369
+  herkenning: automatisch
+- moment: luisterlied
+  lied: null
+  herkenning: onbekend
+- ruw: Als alles duister is, Taizé (4 x)
+  lied: sela-als-alles-duister-is
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: 'De Nieuwe Psalmberijming, psalm 43: 1,2,3'
+  lied: dnp-43
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming, psalm 73: 7 en 8'
+  lied: dnp-73
+  herkenning: automatisch
+- ruw: Opwekking 520 (Wees mijn verlangen, o Heer van mijn hart)
+  lied: opw-520
+  herkenning: automatisch

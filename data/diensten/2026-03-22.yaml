@@ -1,0 +1,29 @@
+datum: '2026-03-22'
+begeleiding: band
+kenmerken: []
+bron: 20260322 Eredienst Westerkerk.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- ruw: Opwekking 889 - Dagelijks gebed (Het licht breekt door, de dag ontwaakt)
+  lied: opw-889
+  herkenning: automatisch
+- ruw: Opwekking 580 (Jezus, Hij kwam om ons leven te geven)
+  lied: opw-580
+  herkenning: automatisch
+- ruw: Als je bidt, zal Hij je geven (Elly en Rikkert)
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 769 (Bouw uw koninkrijk)
+  lied: opw-769
+  herkenning: automatisch
+- ruw: Opwekking 436 (Onze Vader, versie Marcel en Lydia Zimmer)
+  lied: opw-436
+  herkenning: automatisch
+- ruw: Maranatha – Sela (Wanneer komt de dag? Wanneer, o God)
+  lied: sela-maranatha
+  herkenning: automatisch

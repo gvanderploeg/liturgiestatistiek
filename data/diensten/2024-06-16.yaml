@@ -1,0 +1,31 @@
+datum: '2024-06-16'
+begeleiding: band
+kenmerken:
+- avondmaal
+bron: Eredienst Westerkerk 16 juni 2024.pdf
+liederen:
+- ruw: Opw.717 (“Stil, mijn ziel, wees stil”)
+  moment: aanvang
+  lied: opw-717
+  herkenning: automatisch
+- ruw: E&R Lied 438 (“We are one in the Spirit”)
+  lied: we-are-one
+  herkenning: automatisch
+- ruw: “Vertel het aan de mensen” van Elly en Rikkert
+  moment: kindmoment
+  lied: elb-466
+  herkenning: automatisch
+- ruw: Opw.334 (“Heer, Uw licht en Uw liefde schijnen”)
+  lied: opw-334
+  herkenning: automatisch
+- ruw: “Jezus liefde voor mij” van Sela
+  lied: sela-jezus-liefde-voor-mij
+  herkenning: automatisch
+- ruw: “Een weg naar U” van Sela
+  lied: sela-een-weg-naar-u
+  herkenning: automatisch
+- ruw: Opw.705 (“Toon mijn liefde”)
+  lied: opw-705
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend

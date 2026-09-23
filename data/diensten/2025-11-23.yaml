@@ -1,0 +1,35 @@
+datum: '2025-11-23'
+begeleiding: piano
+kenmerken: []
+bron: 20251123 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 464 (Wees stil voor het aangezicht van God)
+  moment: aanvang
+  lied: opw-464
+  herkenning: automatisch
+- ruw: 'Opwekking 27: 1 en 3 (Leid mij Heer, o machtig Heiland)'
+  lied: opw-27
+  herkenning: automatisch
+- ruw: Opwekking kids 321 (God is altijd bij je). Via YouTube. https://www.youtube.com/watch?v=zuMj1z9-PW
+  moment: kindmoment
+  lied: opwkids-321
+  herkenning: automatisch
+- ruw: Opwekking 790 (God is mijn herder, die mij weidt)
+  lied: opw-790
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: 'De nieuwe psalmberijming, psalm 27: 1 en 2 (God is mijn licht, de Redder van mijn leven)'
+  lied: dnp-27-god-is-mijn-licht-de
+  herkenning: automatisch
+- ruw: 'Liedboek 995: 1 en 2 (O Vader, trek het lot U aan)'
+  lied: nlb-995
+  herkenning: automatisch
+- ruw: Opwekking 770 (Hoe wonderlijk mooi is uw eeuwige naam)
+  lied: opw-770
+  herkenning: automatisch
+- ruw: 'Liedboek 675: 1 en 2 (Geest van hierboven)'
+  lied: opw-383
+  herkenning: automatisch

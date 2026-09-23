@@ -1,0 +1,14 @@
+datum: '2025-12-25'
+begeleiding: band
+kenmerken:
+- kerst
+bron: 20251225 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Wegwijzer - Go Tell it on the Mountain
+  moment: aanvang
+  lied: nlb-484
+  herkenning: automatisch
+- ruw: Ere zij God (orgel)
+  moment: zegenlied
+  lied: sela-ere-zij-god
+  herkenning: automatisch

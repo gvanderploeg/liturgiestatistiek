@@ -1,0 +1,24 @@
+datum: '2025-05-29'
+begeleiding: orgel
+kenmerken: []
+bron: 20250529 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 4 (Zijn naam is wonderbaar) 2x
+  moment: aanvang
+  lied: opw-4
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: 'De Nieuwe Psalmberijming, Psalm 89: 2, 4, 5'
+  lied: dnp-89
+  herkenning: automatisch
+- ruw: Opwekking 181 (Majesteit)
+  lied: opw-181
+  herkenning: automatisch
+- ruw: Opwekking 248 (God is getrouw, zijn plannen falen niet)
+  lied: opw-248
+  herkenning: automatisch
+- ruw: Liedboek 425 (Vervuld van uw zegen)
+  moment: zegenlied
+  lied: nlb-425
+  herkenning: automatisch

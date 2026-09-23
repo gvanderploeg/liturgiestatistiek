@@ -1,0 +1,24 @@
+datum: '2025-07-27'
+begeleiding: orgel
+kenmerken: []
+bron: 20250727 Eredienst Westerkerk.pdf
+liederen:
+- moment: aanvang
+  lied: null
+  herkenning: onbekend
+- ruw: 'DNP 121: 1, 2'
+  lied: dnp-121
+  herkenning: automatisch
+- ruw: 'DNP 133: 1, 2'
+  lied: dnp-133-wat-is-het-goed
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: 'DNP 139: 1, 4, 8'
+  lied: dnp-139
+  herkenning: automatisch
+- ruw: GKB2017, Lied 176:1 “‘k Geloof in God die Vader die uit niets …”
+  lied: gkb-2017
+  herkenning: automatisch

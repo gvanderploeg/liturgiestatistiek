@@ -1,0 +1,27 @@
+datum: '2025-10-12'
+begeleiding: band
+kenmerken: []
+bron: 20251012 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 797 - Breng ons samen
+  moment: aanvang
+  lied: opw-797
+  herkenning: automatisch
+- ruw: Psalmen voor Nu - Psalm 145
+  lied: pvn-145
+  herkenning: automatisch
+- ruw: Opwekking kids 118 – Meer en meer
+  moment: kindmoment
+  lied: opwkids-118
+  herkenning: automatisch
+- ruw: Opwekking 599 – Kracht van uw liefde
+  lied: opw-599
+  herkenning: automatisch
+- ruw: Opwekking 488 - De kracht van uw liefde
+  lied: opw-488
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- moment: zegenlied
+  lied: null
+  herkenning: onbekend

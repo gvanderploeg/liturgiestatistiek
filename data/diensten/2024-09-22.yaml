@@ -1,0 +1,25 @@
+datum: '2024-09-22'
+begeleiding: band
+kenmerken:
+- startzondag
+bron: Eredienst 22 september 2024.pdf
+liederen:
+- ruw: Opw.832 (“Jezus overwinnaar”)
+  moment: aanvang
+  lied: opw-832
+  herkenning: automatisch
+- ruw: Opw.764 (“Zegekroon”)
+  lied: opw-764
+  herkenning: automatisch
+- ruw: Opw.Kids 118 (“Meer en meer lijken op Jezus”)
+  moment: kindmoment
+  lied: ik-wil-meer-en-meer-gaan-lijken-op-jezus
+  herkenning: automatisch
+- ruw: Opw.520 (“Wees mijn verlangen”)
+  lied: opw-520
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opw.767 (“Hoe mooi en hoe heerlijk/Familie”) – Psalm 133
+  lied: opw-767
+  herkenning: automatisch

@@ -1,0 +1,24 @@
+datum: '2025-10-26'
+begeleiding: band
+kenmerken: []
+bron: 20251026 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 753
+  moment: aanvang
+  lied: opw-753
+  herkenning: automatisch
+- ruw: Ik zal er zijn (Sela) * *= verzoek doopouders
+  lied: sela-ik-zal-er-zijn
+  herkenning: automatisch
+- ruw: Opwekking 518 (Heer, U bent altijd bij mij)
+  lied: opw-518
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opwekking 789
+  lied: opw-789
+  herkenning: automatisch
+- ruw: Trinity ‘Ik wens jou’
+  moment: zegenlied
+  lied: trinity-ik-wens-jou
+  herkenning: automatisch

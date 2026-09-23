@@ -1,0 +1,28 @@
+datum: '2025-06-08'
+begeleiding: orgel piano
+kenmerken:
+- pinksteren
+bron: 20250608 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 383 (Geest van hierboven)
+  moment: aanvang
+  lied: opw-383
+  herkenning: automatisch
+- ruw: Opwekking 343 (Heilige Geest van God, vul opnieuw mijn hart) 2 x
+  lied: opw-343
+  herkenning: automatisch
+- ruw: Opwekking 389 (Create in me a clean heart)
+  lied: opw-389
+  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
+- ruw: 'Liedboek 670: 1, 3, 6, 7 (Kom Schepper God, o heilige Geest)'
+  lied: nlb-670
+  herkenning: automatisch
+- ruw: Opwekking 167 (Samen in de naam van Jezus)
+  lied: opw-167
+  herkenning: automatisch
+- ruw: 'GK17 177: 1 – 4 (Heer, U bent mijn leven)'
+  lied: gkb-177-heer-u-bent-mijn-leven
+  herkenning: automatisch

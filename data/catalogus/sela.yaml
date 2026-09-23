@@ -16,12 +16,6 @@
   - bundel: nlb
     nummer: 568a
   artiest: Sela
-- id: sela-hoe-machtig-is-uw-naam
-  titel: Hoe machtig is uw naam
-  referenties:
-  - bundel: opwkids
-    nummer: '13'
-  artiest: Sela
 - id: sela-aan-mijn-zij
   titel: Aan mijn zij
   artiest: Sela
@@ -294,6 +288,9 @@
   artiest: Sela
 - id: sela-hij-is-koning
   titel: Hij is Koning
+  artiest: Sela
+- id: sela-hoe-machtig-is-uw-naam
+  titel: Hoe machtig is uw naam
   artiest: Sela
 - id: sela-hoor-de-engelen-zingen-d-eer
   titel: Hoor de engelen zingen d'eer

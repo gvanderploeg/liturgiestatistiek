@@ -1,0 +1,26 @@
+datum: '2024-11-17'
+begeleiding: band
+kenmerken:
+- belijdenis
+bron: Eredienst 17 november 2024.pdf
+liederen:
+- ruw: Opw.717 (“Stil mijn ziel wees stil”)
+  moment: aanvang
+  lied: opw-717
+  herkenning: automatisch
+- ruw: “Votum en groet” van Sela
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: Opw.825 (“Reckless Love”)
+  moment: kindmoment
+  lied: opw-825
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Opw.599 (“Kom tot de Vader”) [vers 1 + refrein]
+  lied: opw-599
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend

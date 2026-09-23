@@ -1,0 +1,24 @@
+datum: '2026-03-15'
+begeleiding: band
+kenmerken: []
+bron: 20260315 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Sela Huis van Vrede
+  moment: aanvang
+  lied: sela-huis-van-vrede
+  herkenning: automatisch
+- ruw: Opwekking 695/599
+  lied: opw-695
+  herkenning: automatisch
+- ruw: Opwekking 874
+  lied: opw-874
+  herkenning: automatisch
+- ruw: Opwekking 849 goedheid van God
+  lied: opw-849
+  herkenning: automatisch
+- ruw: Sela God zal voor ons zorgen
+  lied: sela-god-zal-voor-ons-zorgen
+  herkenning: automatisch
+- ruw: De zegen opwekking 845
+  lied: opw-845
+  herkenning: automatisch

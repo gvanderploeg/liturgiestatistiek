@@ -1,0 +1,28 @@
+datum: '2026-02-01'
+begeleiding: band
+kenmerken: []
+bron: 20260201 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalmen voor Nu 117 (Met ons)
+  moment: aanvang
+  lied: pvn-117-zing-mee-voor-god
+  herkenning: automatisch
+- ruw: Opwekking 753 (Symfonie)
+  lied: opw-753
+  herkenning: automatisch
+- ruw: Opwekking 461 (Mijn Jezus, mijn Redder)
+  lied: opw-461
+  herkenning: automatisch
+- ruw: Ok4kids 68 (Diep, diep, diep als de zee)
+  moment: kindmoment
+  lied: opwkids-68
+  herkenning: automatisch
+- ruw: Opwekking 350 (Vader, vol van vrees en schaamte)
+  lied: opw-350
+  herkenning: automatisch
+- ruw: Opwekking 849 (Goedheid van God)
+  lied: opw-849
+  herkenning: automatisch
+- ruw: Opwekking 661 (De Koning in zijn pracht)
+  lied: opw-661
+  herkenning: automatisch

@@ -1,0 +1,27 @@
+datum: '2024-02-25'
+begeleiding: orgel
+kenmerken: []
+bron: Eredienst 25 februari 2024.pdf
+liederen:
+- ruw: 'Opwekking 464: 1 – 3 (Wees stil voor het aangezicht van God)'
+  moment: aanvang
+  lied: opw-464
+  herkenning: automatisch
+- ruw: 'Nieuwe liedboek 310: 1 - 5 (Een is de Heer, de God der goden)'
+  lied: nlb-310
+  herkenning: automatisch
+- ruw: 'Nieuwe liedboek 552: 1 – 3 (Dit is een dag van zingen).'
+  lied: nlb-552
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming 34: 1, 5, 6'
+  lied: dnp-34-in-die-volgorde
+  herkenning: automatisch
+- ruw: 'Gereformeerd Kerkboek, lied 240: 1, 2, 3, 5 (Van God nooit losgekomen)'
+  lied: gkb-240-god-nooit-losgekomen
+  herkenning: automatisch
+- ruw: 'Nieuwe Liedboek 370: 1 - 3 (Vader, die woont in hemels licht)'
+  lied: nlb-370
+  herkenning: automatisch
+- ruw: 'Opwekking 366: 1 - 3 (Kroon Hem met gouden kroon)'
+  lied: opw-366
+  herkenning: automatisch

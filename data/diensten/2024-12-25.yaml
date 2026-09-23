@@ -1,0 +1,33 @@
+datum: '2024-12-25'
+begeleiding: band
+kenmerken:
+- kerst
+bron: 20241225 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Once in royal David's city (solo vers 1 t/m 3, vers 4 samenzang)
+  moment: aanvang
+  lied: once-in-royal-david-s-city
+  herkenning: handmatig
+- ruw: Sela - Kom vier het feest met mij
+  lied: sela-kom-vier-het-feest-met-mij
+  herkenning: automatisch
+- ruw: Opwekking 527 - Licht in de nacht (oh holy night)
+  lied: opw-527
+  herkenning: automatisch
+- ruw: Een lichtje aan de horizon, vers 1, 4, 5
+  moment: kindmoment
+  lied: een-lichtje-aan-de-horizon
+  herkenning: automatisch
+- ruw: 'Liedboek 486: 1,2,3,4 (Midden in de winternacht)'
+  lied: nlb-486
+  herkenning: automatisch
+- ruw: 'Liedboek 477: 1,2,3,4,5 (Komt allen tezamen)'
+  lied: nlb-477
+  herkenning: automatisch
+- ruw: 'Liedboek 484: 1,2,3 (Go, tell it on the mountain)'
+  lied: nlb-484
+  herkenning: automatisch
+- ruw: Ere zij God (Kees Kraaijenoord)
+  moment: zegenlied
+  lied: sela-ere-zij-god
+  herkenning: automatisch

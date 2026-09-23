@@ -1,0 +1,29 @@
+datum: '2025-07-06'
+begeleiding: band
+kenmerken:
+- doop
+bron: 20250706 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 720 (God maakt vrij)
+  moment: aanvang
+  lied: opw-720
+  herkenning: automatisch
+- ruw: Psalm Project, Psalm 103 (Loof de Heer, mijn ziel)
+  lied: tpp-103-loof-de-heer-mijn-ziel
+  herkenning: automatisch
+- ruw: Zie de zon, zie de maan (Elly en Rikkert)
+  lied: elb-466
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- lied: null
+  herkenning: onbekend
+- ruw: Zegenlied – Sela (Gods zegen voor jou)
+  lied: sela-gods-zegen-voor-jou
+  herkenning: automatisch
+- ruw: Opwekking 868 (Hoor ons bidden, hoogste koning)
+  lied: opw-868
+  herkenning: automatisch
+- ruw: Wat de toekomst brengen moge (TOV-versie)
+  lied: opw-377
+  herkenning: automatisch

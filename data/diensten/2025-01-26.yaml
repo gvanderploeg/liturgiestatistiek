@@ -1,0 +1,25 @@
+datum: '2025-01-26'
+begeleiding: band
+kenmerken: []
+bron: 20250126 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Psalm Project – Psalm 103 + Psalmen voor Nu 13
+  moment: aanvang
+  lied: tpp-103-bless-the-lord-my-soul
+  herkenning: handmatig
+- ruw: Sandra McCracken – Ik schaam mij diep
+  lied: sandra-mccracken-ik-schaam-mij-diep
+  herkenning: handmatig
+- ruw: Marcel en Lydia Zimmer – Hier ben ik Heer
+  lied: sela-hier-ben-ik-heer
+  herkenning: automatisch
+- ruw: Sela – Gebed voor de werkdag
+  lied: sela-gebed-voor-de-werkdag
+  herkenning: automatisch
+- ruw: Opwekking 802 (Hier is mijn hart Heer)
+  lied: opw-802
+  herkenning: automatisch
+- ruw: Psalmen voor Nu 121
+  moment: aanvang
+  lied: pvn-121-ik-kijk-omhoog-naar-de
+  herkenning: handmatig

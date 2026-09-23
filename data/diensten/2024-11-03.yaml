@@ -1,0 +1,29 @@
+datum: '2024-11-03'
+begeleiding: band
+kenmerken:
+- doop
+bron: Eredienst 3 november 2024.pdf
+liederen:
+- ruw: Opw.585 (“Er is een dag”)
+  moment: aanvang
+  lied: opw-585
+  herkenning: automatisch
+- ruw: “Votum en groet” van Sela
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: 1 Psalm 103 (“Loof de Heer mijn ziel”), The Psalm Project
+  lied: tpp-103-loof-de-heer-mijn-ziel
+  herkenning: automatisch
+- ruw: 2 “Holy Forever” van Chris Tomlin
+  lied: holy-forever
+  herkenning: automatisch
+- ruw: Opw.Kids 185 (“De Here zegent jou”)
+  moment: kindmoment
+  lied: opw-908
+  herkenning: automatisch
+- ruw: Opw.733 (“Tienduizend redenen”)
+  lied: opw-733
+  herkenning: automatisch
+- ruw: “De kerk van alle tijden” (LEV-versie) 3
+  lied: lev-de-kerk-van-alle-tijden
+  herkenning: automatisch
