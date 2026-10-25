@@ -15,8 +15,9 @@ liederen:
 - ruw: OPW 167 – Samen in de naam van Jezus
   lied: opw-167
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: OPWvKids 205 - Ik moet weggaan
+  lied: opwvkids-ik-moet-weggaan
+  herkenning: handmatig
 - ruw: Sela - De wind steekt op
   lied: sela-de-wind-steekt-op
   herkenning: automatisch

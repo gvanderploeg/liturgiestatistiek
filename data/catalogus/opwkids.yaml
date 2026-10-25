@@ -23,11 +23,21 @@
   referenties:
   - bundel: opwkids
     nummer: '118'
+- id: opwkids-150
+  titel: Vertrouw maar op God
+  referenties:
+  - bundel: opwkids
+    nummer: '150'
 - id: opwkids-233
   titel: God heeft een plan met je leven
   referenties:
   - bundel: opwkids
     nummer: '233'
+- id: opwkids-312
+  titel: Niet zonder Hem
+  referenties:
+  - bundel: opwkids
+    nummer: '312'
 - id: opwkids-321
   titel: Soms heb je verdriet
   referenties:

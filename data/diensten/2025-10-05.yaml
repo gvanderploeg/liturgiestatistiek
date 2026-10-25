@@ -27,6 +27,7 @@ liederen:
 - ruw: Opwekking 586 (Hij is Heer)
   lied: opw-586
   herkenning: automatisch
-- moment: luisterlied
-  lied: null
-  herkenning: onbekend
+- ruw: Living Hope – Bethel Music
+  moment: luisterlied
+  lied: bethel-living-hope
+  herkenning: automatisch

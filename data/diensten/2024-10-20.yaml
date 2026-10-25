@@ -11,9 +11,10 @@ liederen:
 - ruw: 'Liedboek 834: 1,2,3 (Vernieuw Gij mij, o eeuwig licht)'
   lied: nlb-834
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: 'Niet zonder Hem (Via YouTube: https://www.youtube.com/watch?v=OqqCyUmrrQY)'
+  moment: kindmoment
+  lied: opwkids-312
+  herkenning: automatisch
 - ruw: 'De nieuwe psalmberijming, psalm 30: 1 en 5'
   lied: dnp-30
   herkenning: automatisch

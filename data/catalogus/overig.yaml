@@ -38,6 +38,10 @@
   titel: Een lichtje aan de horizon
   aliassen:
   - Een lichtje aan de horizon
+- id: tov-een-nieuw-begin
+  titel: Een nieuw begin - TOV
+  aliassen:
+  - Een nieuw begin
 - id: elevation-worshop-jesus-be-the-name
   titel: Elevation Worship - Jesus be the name
 - id: elevation-worship-the-blessing
@@ -60,6 +64,10 @@
   titel: Ik hoor hoe velen angstig vragen
 - id: lev-de-kerk-van-alle-tijden
   titel: LEV - De kerk van alle tijden
+- id: bethel-living-hope
+  titel: Living Hope - Bethel
+  aliassen:
+  - Living Hope
 - id: msnk-uw-liefde-raakt-nooit-op
   titel: Make Some Noise Kids - Uw liefde raakt nooit op
   aliassen:
@@ -70,10 +78,22 @@
   titel: Once in royal David's city
 - id: open-the-eyes-of-my-heart-lord
   titel: Open the eyes of my heart, Lord
+- id: opwvkids-ik-moet-weggaan
+  titel: OPWvKids - Ik moet weggaan
+  aliassen:
+  - Ik moet weggaan
 - id: gkb-134
   titel: Psalm 134
   aliassen:
   - Dat 's HEEREN zegen op u daal
+- id: psalm-8-zimmer
+  titel: Psalm 8 - Zimmer
+  aliassen:
+  - Psalm 8
+- id: rivers-en-robots-brighter-than-the-sun
+  titel: Rivers & Robots - Brighter than the sun
+  aliassen:
+  - Brighter than the sun
 - id: run-to-the-father
   titel: Run to the father
 - id: samantha-ebert-flowers
@@ -92,3 +112,9 @@
   titel: We are one
 - id: william-matthews-we-ll-all-be-free
   titel: William Matthews - We'll all be free
+- id: zegen-de-kind-ren
+  titel: Zegen de kind'ren
+- id: gk-149-zie-ik-sterren-aan-de-hemel-staan
+  titel: Zie ik sterren aan de hemel staan - GK 149
+  aliassen:
+  - Zie ik sterren aan de hemel staan

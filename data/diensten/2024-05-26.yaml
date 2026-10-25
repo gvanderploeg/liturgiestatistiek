@@ -15,8 +15,9 @@ liederen:
   moment: kindmoment
   lied: opw-32
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Rivers & Robots – ‘Brighter than the sun’.
+  lied: rivers-en-robots-brighter-than-the-sun
+  herkenning: handmatig
 - lied: null
   herkenning: onbekend
 - ruw: 'Opwekking 599: ‘Nog voor dat je bestond’'
@@ -25,3 +26,7 @@ liederen:
 - ruw: Opwekking 807 – ‘God van Licht’
   lied: opw-807
   herkenning: automatisch
+- ruw: Sela – ‘Gods zegen voor jou’
+  moment: zegenlied
+  lied: sela-gods-zegen-voor-jou
+  herkenning: handmatig

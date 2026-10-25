@@ -19,5 +19,9 @@ liederen:
   lied: opw-790
   herkenning: automatisch
 - ruw: Opwekking 651 (Maak groot, onze God)
-  lied: opw-651
-  herkenning: automatisch
+  lied: opw-661
+  herkenning: handmatig
+- ruw: Votum en groet, Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: handmatig

@@ -10,6 +10,7 @@ vermeldingen:
   geef dat ons nieuwe leven is een lichtpunt in de duisternis kerkboek 162 9: nlb-162
   geen afstand eline bakker: eline-bakker-geen-afstand
   gezang heer u bent mijn leven de grond waarop ik sta alle vier verzen: gkb-177-heer-u-bent-mijn-leven
+  gk 06 149 zie ik sterren aan de hemel staan: gk-149-zie-ik-sterren-aan-de-hemel-staan
   hillsong oceans: hillsong-oceans
   holy forever: holy-forever
   holy forever van chris tomlin met tekst op powerpoint: holy-forever
@@ -21,28 +22,45 @@ vermeldingen:
   jezus is de goede herder: elly-en-rikkert-jezus-is-de-goede-herder
   kindlied we are one: we-are-one
   lev de kerk van alle tijden: lev-de-kerk-van-alle-tijden
+  lied 3 een nieuw begin tov: tov-een-nieuw-begin
+  living hope bethel: bethel-living-hope
   meer dan een wonder kinga ban: kinga-ban-meer-dan-een-wonder
   met open armen svg: svg-met-open-armen
   met open armen van schrijvers voor gerechtigheid: svg-met-open-armen
+  npb ps 84 wat hou ik van uw huis: pvn-84-wat-hou-ik-van-uw
   npb psalm 139 1 en 8 heer u doorgrondt mij u ontwart al de geheimen van mijn hart: dnp-139-heer-u-doorgrondt-mij
   npb psalm 43 2 en 3 heer zend uw licht laat mij ervaren: dnp-43-2
   once in royal david s city solo vers 1 t m 3 vers 4 samenzang: once-in-royal-david-s-city
   open the eyes of my heart lord 7 hills worship: open-the-eyes-of-my-heart-lord
   open the eyes of my heart lord michael w smith: open-the-eyes-of-my-heart-lord
   optioneel na kindmoment op voordracht kindmoment team: negeer
+  opw 136 abba vader: opw-136
+  opw kids312 niet zonder hem: opwkids-312
   opwekking 286 hij kwam bij ons heel gewoon tweetalig: opw-268
+  opwekking 298 ik kom in uw heiligdom binnen: opw-192
+  opwekking 651 maak groot onze god: opw-661
+  opwekking 70 liefde blijdschap vrede: opwkids-70
   opwekking 737 aan uw tafel: sela-aan-uw-tafel
+  opwvkids 205 ik moet weggaan: opwvkids-ik-moet-weggaan
+  psalm 103 1 en 3: negeer
   psalm 103 the psalm project: tpp-103-loof-de-heer-mijn-ziel
   psalm 118 1 npb laat iedereen gods goedheid prijzen: dnp-118-laat-iedereen-gods-goedheid-prijzen
   psalm 134 3 en 2 ob dat s heeren zegen op u daal: gkb-134
+  psalm 8 zimmer: psalm-8-zimmer
   psalm project psalm 103 psalmen voor nu 13: tpp-103-bless-the-lord-my-soul
+  rivers & robots brighter than the sun: rivers-en-robots-brighter-than-the-sun
   run to the father: run-to-the-father
   sandra mccracken ik schaam mij diep: sandra-mccracken-ik-schaam-mij-diep
+  sela mijn toevlucht: sela-mijn-toevlucht-psalm-91
+  sela votum: sela-votum-en-groet
+  stranden 1 joh deheer lied 960a 1 6 roep uit aan alle: negeer
   thank you jesus for the blood charity gayle: charity-gayle-thank-you-jesus-for-the-blood
   the blessing elevation worship: elevation-worship-the-blessing
   thijs petter: negeer
   wat een geschenk is jezus mijn bevrijder: wat-een-geschenk-is-jezus-mijn-bevrijder
+  wat hou ik van uw huis sela: pvn-84-wat-hou-ik-van-uw
   we ll all be free william matthews: william-matthews-we-ll-all-be-free
+  zegen de kind ren https youtu be tpsxofl9tmy si rerkli0rg 92dazc: zegen-de-kind-ren
   zegen uitspreken zingen blessings: blessings
   zingen ga met god en hij zal met je zijn nlb: ga-met-god-en-hij-zal-met-je-zijn
   zo spreekt de heer kerkboek 50 11: nlb-50
@@ -52,13 +70,17 @@ bijzonderheden:
   452f7fce4587:
   - doop
   - bevestiging
+  4dba131388e1: []
   5e919568317d: []
   606317e6323f: []
   86a97a154abf: []
+  89e984614b1e: []
   9553888c2d43: []
   f8ac10066219: []
 negeer_rijen:
 - 05377c851ef0
 - 22cd3a3360cf
+- 55e709e920b1
 - 7194c53164c5
 - 7cc39f0486ea
+- da1f8924544a

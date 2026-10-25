@@ -1,7 +1,6 @@
 datum: '2024-06-16'
 begeleiding: band
-kenmerken:
-- avondmaal
+kenmerken: []
 bron: Eredienst Westerkerk 16 juni 2024.pdf
 liederen:
 - ruw: Opw.717 (“Stil, mijn ziel, wees stil”)
@@ -27,5 +26,3 @@ liederen:
 - ruw: Opw.705 (“Toon mijn liefde”)
   lied: opw-705
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend

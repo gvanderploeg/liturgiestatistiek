@@ -1,0 +1,25 @@
+datum: '2026-10-04'
+begeleiding: orgel
+kenmerken: []
+bron: 20261004 Eredienst Westerkerk.pdf
+liederen:
+- ruw: GK 8a (Heer, onze God, hoe heerlijk is uw naam)
+  moment: aanvang
+  lied: opw-70
+  herkenning: automatisch
+- ruw: 'Opw. 369: Door uw genade, Vader'
+  lied: opw-369
+  herkenning: automatisch
+- ruw: Zegen de kind’ren https://youtu.be/TPSxOfL9tMY?si=RErKLI0rG_92dAZC
+  lied: zegen-de-kind-ren
+  herkenning: handmatig
+- ruw: 'DNP 51: 4, 5'
+  lied: dnp-51
+  herkenning: automatisch
+- ruw: 'GK 168: Vader, vol van vrees en schaamte'
+  lied: opw-350
+  herkenning: automatisch
+- ruw: 'DNP 147: 1,2,3'
+  moment: zegenlied
+  lied: dnp-147
+  herkenning: automatisch

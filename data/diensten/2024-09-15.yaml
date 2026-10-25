@@ -21,3 +21,7 @@ liederen:
   moment: zegenlied
   lied: nlb-904
   herkenning: automatisch
+- ruw: 'Zingen: Votum en groet (Sela)'
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: handmatig

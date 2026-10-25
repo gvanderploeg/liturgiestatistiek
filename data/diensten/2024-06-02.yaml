@@ -10,14 +10,16 @@ liederen:
 - ruw: Psalm 146 (“Hoop op Hem”) van The Psalm Project
   lied: tpp-146-hoop-op-hem
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Opw.Kids312 (“Niet zonder Hem”)
+  moment: kindmoment
+  lied: opwkids-312
+  herkenning: handmatig
 - ruw: Opw.281 (“Als een hert dat verlangt naar water”)
   lied: opw-281
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: “Living Hope” van Bethel Music (Sebastiaan van de Burcht op piano)
+  lied: bethel-living-hope
+  herkenning: automatisch
 - ruw: 1 “De kerk van alle tijden” (LEV-versie)
   lied: lev-de-kerk-van-alle-tijden
   herkenning: automatisch

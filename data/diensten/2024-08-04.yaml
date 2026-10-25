@@ -7,8 +7,6 @@ liederen:
   moment: aanvang
   lied: opw-121
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
 - ruw: Opwekking 192 (Ik kom in uw heiligdom binnen).
   lied: opw-192
   herkenning: automatisch

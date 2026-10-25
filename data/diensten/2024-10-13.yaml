@@ -3,9 +3,10 @@ begeleiding: band
 kenmerken: []
 bron: Eredienst 13 oktober 2024.pdf
 liederen:
-- moment: aanvang
-  lied: null
-  herkenning: onbekend
+- ruw: Sela ‘Votum’
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: handmatig
 - ruw: Opwekking 575 Jezus alleen
   lied: opw-575
   herkenning: automatisch

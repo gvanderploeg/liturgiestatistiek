@@ -3,9 +3,10 @@ begeleiding: orgel
 kenmerken: []
 bron: Eredienst 28 januari 2024.pdf
 liederen:
-- moment: aanvang
-  lied: null
-  herkenning: onbekend
+- ruw: ‘’Wat hou ik van uw huis’’ – Sela
+  moment: aanvang
+  lied: pvn-84-wat-hou-ik-van-uw
+  herkenning: handmatig
 - ruw: '’’Zo vriendelijk en veilig als het licht’’ - NLB 221: 1,2,3.'
   lied: nlb-221
   herkenning: automatisch

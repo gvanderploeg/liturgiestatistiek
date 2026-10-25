@@ -22,3 +22,7 @@ liederen:
 - moment: zegenlied
   lied: null
   herkenning: onbekend
+- ruw: We belijden onze afhankelijkheid met Votum en groet van Sela
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: handmatig

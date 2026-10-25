@@ -10,9 +10,10 @@ liederen:
 - ruw: Psalm 146:1,5,6 (DNP)
   lied: dnp-146
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Psalm 8 (Zimmer)
+  moment: kindmoment
+  lied: psalm-8-zimmer
+  herkenning: handmatig
 - ruw: Opwekking 609 (U bent heilig)
   lied: opw-609
   herkenning: automatisch

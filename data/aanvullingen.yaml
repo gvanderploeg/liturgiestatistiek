@@ -1,3 +1,36 @@
+- dienst: '2024-03-10'
+  sleutel: f2e96316eee6
+  ruw: We belijden onze afhankelijkheid met Votum en groet van Sela
+  lied: sela-votum-en-groet
+  moment: aanvang
+- dienst: '2024-05-12'
+  sleutel: 5220325ced5a
+  ruw: Opwekking 347 – Ik geloof in God de Vader
+  lied: opw-347
+- dienst: '2024-05-12'
+  sleutel: 6f6ba045af84
+  ruw: Opwekking 281 – Als een hert wat verlangt
+  lied: opw-281
+- dienst: '2024-05-26'
+  sleutel: 710c74e47d27
+  ruw: Sela – ‘Gods zegen voor jou’
+  lied: sela-gods-zegen-voor-jou
+  moment: zegenlied
+- dienst: '2024-06-30'
+  sleutel: be733c34c659
+  ruw: Votum en groet, Sela
+  lied: sela-votum-en-groet
+  moment: aanvang
+- dienst: '2024-09-15'
+  sleutel: 695dd8be42e8
+  ruw: 'Zingen: Votum en groet (Sela)'
+  lied: sela-votum-en-groet
+  moment: aanvang
+- dienst: '2024-10-27'
+  sleutel: c1aca617ffb4
+  ruw: 'Votum: als een hart dat verlangt naar water (opw 281, twee keer zingen)'
+  lied: opw-281
+  moment: aanvang
 - dienst: '2025-01-26'
   sleutel: b5914938eca4
   ruw: Psalmen voor Nu 121
@@ -13,6 +46,11 @@
   ruw: 'Opwekking 710: Gebed om zegen'
   lied: opw-710
   moment: zegenlied
+- dienst: '2026-04-26'
+  sleutel: 7749fa135eb4
+  ruw: Votum en groet (Sela)
+  lied: sela-votum-en-groet
+  moment: aanvang
 - dienst: '2026-06-14'
   sleutel: 38279f136dc1
   ruw: 'Jannie Meijer Kinderlied 4: Heel dichtbij, Elly en Rikkert'

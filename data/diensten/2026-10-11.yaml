@@ -1,0 +1,28 @@
+datum: '2026-10-11'
+begeleiding: band
+kenmerken: []
+bron: 20261011 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Opwekking 847 (Onze schuilplaats is God)
+  moment: aanvang
+  lied: opw-847
+  herkenning: automatisch
+- ruw: Opwekking 407 (Hoe groot zijt gij)
+  lied: opw-407
+  herkenning: automatisch
+- ruw: 'Lied 3: Een nieuw begin (Tov)'
+  lied: tov-een-nieuw-begin
+  herkenning: handmatig
+- ruw: E&R 167 (‘k Stel mijn vertrouwen op de Heer mijn God)
+  moment: kindmoment
+  lied: opw-42
+  herkenning: automatisch
+- ruw: Opwekking 244 (Welzalig de man) 2 x
+  lied: opw-244
+  herkenning: automatisch
+- ruw: Living Hope (Bethel)
+  lied: bethel-living-hope
+  herkenning: handmatig
+- ruw: Opwekking 383 (Geest van hierboven)
+  lied: opw-383
+  herkenning: automatisch
