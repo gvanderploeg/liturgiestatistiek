@@ -1,19 +1,19 @@
 datum: '2025-10-05'
 begeleiding: band
-kenmerken:
-- doop
-- bevestiging
+kenmerken: []
 bron: 20251005 Eredienst Westerkerk.pdf
 liederen:
-- moment: aanvang
-  lied: null
-  herkenning: onbekend
+- ruw: Met open armen – Schrijvers voor Gerechtigheid
+  moment: aanvang
+  lied: svg-met-open-armen
+  herkenning: handmatig
 - ruw: Meer dan een wonder – Kinga Ban
   lied: kinga-ban-meer-dan-een-wonder
   herkenning: handmatig
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Ik ben Gods kind – schoollied van GBS De Regenboog
+  moment: kindmoment
+  lied: ik-ben-gods-kind-schoollied-van-gbs-de-regenboog
+  herkenning: handmatig
 - ruw: Opwekking 740 (Ik bid dat God jou zegent)
   lied: opw-740
   herkenning: automatisch

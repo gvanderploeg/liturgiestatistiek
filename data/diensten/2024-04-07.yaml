@@ -17,14 +17,16 @@ liederen:
 - ruw: ELB Lied 466 (“Onze Vader” van Elly en Rikkert)
   lied: elb-466
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Met open armen (Schrijvers voor Gerechtigheid)
+  lied: svg-met-open-armen
+  herkenning: handmatig
 - ruw: Ik kijk omhoog naar de hoge bergen (Psalmen voor Nu 121)
   lied: pvn-121-ik-kijk-omhoog-naar-de
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Heer onze Heer, psalm 8 (Marcel en Lydia Zimmer)
+  moment: kindmoment
+  lied: a-tot-z-marcel-en-lydia-zimmer
+  herkenning: automatisch
 - ruw: Dit is mijn verlangen (Opwekking 510)
   lied: opw-510
   herkenning: automatisch

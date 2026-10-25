@@ -10,8 +10,9 @@ liederen:
 - ruw: Opwekking 518 - 'Heer, U doorgrondt en kent mij'
   lied: opw-518
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: 'Liedboek 139: 1, 2, 4 en 14 - ''Heer, die mij ziet zoals ik ben'''
+  lied: nlb-139
+  herkenning: automatisch
 - ruw: 'Liedboek 902: 1, 5 en 6 - ''Is God de Heer maar voor mij'''
   lied: nlb-902
   herkenning: automatisch

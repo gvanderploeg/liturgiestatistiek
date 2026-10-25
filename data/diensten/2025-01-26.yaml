@@ -10,9 +10,8 @@ liederen:
 - ruw: Sandra McCracken – Ik schaam mij diep
   lied: sandra-mccracken-ik-schaam-mij-diep
   herkenning: handmatig
-- ruw: Marcel en Lydia Zimmer – Hier ben ik Heer
-  lied: sela-hier-ben-ik-heer
-  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
 - ruw: Sela – Gebed voor de werkdag
   lied: sela-gebed-voor-de-werkdag
   herkenning: automatisch

@@ -20,8 +20,10 @@ liederen:
 - ruw: Opwekking 488 - De kracht van uw liefde
   lied: opw-488
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Charity Gale – New Name Written Down in Glory
+  lied: charity-gale-new-name-written-down-in-glory
+  herkenning: handmatig
+- ruw: The Psalm Project - God van liefde, God van trouw
+  moment: zegenlied
+  lied: tpp-2-god-van-liefde-god-van
+  herkenning: handmatig

@@ -18,8 +18,9 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: Bij God ben ik geborgen, Taizé, 4x, gevolgd door instrumentale muziek.
+  lied: bij-god-ben-ik-geborgen-taize
+  herkenning: automatisch
 - ruw: 'De Nieuwe Psalmberijming, psalm 43: 1,2,3'
   lied: dnp-43
   herkenning: automatisch

@@ -23,9 +23,10 @@ liederen:
 - ruw: Opwekking 687 (Heer, wijs mij uw weg)
   lied: opw-687
   herkenning: automatisch
-- moment: luisterlied
-  lied: null
-  herkenning: onbekend
+- ruw: Getaway, Taya
+  moment: luisterlied
+  lied: getaway-taya
+  herkenning: handmatig
 - ruw: Opwekking 248 (God is getrouw, zijn plannen falen niet)
   lied: opw-248
   herkenning: automatisch

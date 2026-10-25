@@ -10,9 +10,10 @@ liederen:
 - ruw: Opwekking 888 (‘Hij leeft’)
   lied: opw-888
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: ‘De Heer is mijn herder’ (Marcel en Lydia Zimmer)
+  moment: kindmoment
+  lied: a-tot-z-marcel-en-lydia-zimmer
+  herkenning: automatisch
 - moment: luisterlied
   lied: null
   herkenning: onbekend

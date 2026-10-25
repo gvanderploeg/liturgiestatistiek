@@ -13,10 +13,9 @@ liederen:
 - ruw: Opwekking 510 (Dit is mijn verlangen)
   lied: opw-510
   herkenning: automatisch
-- ruw: Familie – Marcel en Lydia Zimmer
-  moment: kindmoment
-  lied: opw-767
-  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
 - ruw: Opwekking 753 (Symfonie)
   lied: opw-753
   herkenning: automatisch

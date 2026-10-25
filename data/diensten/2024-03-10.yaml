@@ -10,10 +10,9 @@ liederen:
 - ruw: Opwekking 244 Welzalig de man die niet wandelt
   lied: opw-244
   herkenning: automatisch
-- ruw: Ik zegen jou in Jezus’ naam - Elly & Rikkert
-  moment: kindmoment
-  lied: sela-in-jezus-naam
-  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
 - lied: null
   herkenning: onbekend
 - ruw: Opwekking 832 Jezus Overwinnaar

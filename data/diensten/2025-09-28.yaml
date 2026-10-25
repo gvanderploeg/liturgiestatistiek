@@ -10,14 +10,16 @@ liederen:
 - ruw: 'Opwekking 553: Hoor ons loflied, laat het feest zijn in de huizen.'
   lied: opw-553
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Song4kids – Simon en Andreas
+  moment: kindmoment
+  lied: oke4kids-simon-en-andreas
+  herkenning: handmatig
 - ruw: Opwekking 510 – Dit is mijn verlangen
   lied: opw-510
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Hillsong United – Oceans
+  lied: hillsong-oceans
+  herkenning: handmatig
 - ruw: Sela – Wij volgen U Heer
   lied: sela-wij-volgen-u-heer
   herkenning: automatisch

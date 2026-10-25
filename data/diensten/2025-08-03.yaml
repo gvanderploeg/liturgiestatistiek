@@ -10,9 +10,11 @@ liederen:
 - ruw: 'Opwekking 292: Laat mijn leven tot eer zijn van uw Naam 2x'
   lied: opw-292
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: 'Weet je waar het hemels koninkrijk op lijkt – Elly & Rikkert. Via YouTube: https://www.youtube.com/watch?v=gb4Hgzuglos&list=RDgb4Hgzuglos&start_radi
+    o=1'
+  moment: kindmoment
+  lied: weet-je-waar-het-hemels-koninkrijk-op-lijkt-elly-en-rikkert
+  herkenning: handmatig
 - ruw: 'De Nieuwe Psalmberijming, psalm 68: 2 en 9'
   lied: dnp-68
   herkenning: automatisch

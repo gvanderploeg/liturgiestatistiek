@@ -8,6 +8,11 @@
   referenties:
   - bundel: nlb
     nummer: 103c
+- id: nlb-139
+  titel: Heer, die mij ziet zoals ik ben
+  referenties:
+  - bundel: nlb
+    nummer: '139'
 - id: nlb-150a
   titel: geprezen zij God
   referenties:

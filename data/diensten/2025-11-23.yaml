@@ -17,10 +17,12 @@ liederen:
 - ruw: Opwekking 790 (God is mijn herder, die mij weidt)
   lied: opw-790
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: Bij God ben ik geborgen – Taizé
+  lied: bij-god-ben-ik-geborgen-taize
+  herkenning: handmatig
+- ruw: In de Heer vind ik heel mijn sterkte – Taizé
+  lied: in-de-heer-vind-ik-heel-mijn-sterkte-taize
+  herkenning: handmatig
 - ruw: 'De nieuwe psalmberijming, psalm 27: 1 en 2 (God is mijn licht, de Redder van mijn leven)'
   lied: dnp-27-god-is-mijn-licht-de
   herkenning: automatisch

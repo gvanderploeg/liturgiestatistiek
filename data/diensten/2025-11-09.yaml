@@ -7,20 +7,22 @@ liederen:
   moment: aanvang
   lied: opw-753
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Van A tot Z – Marcel en Lydia Zimmer
+  moment: kindmoment
+  lied: a-tot-z-marcel-en-lydia-zimmer
+  herkenning: handmatig
 - ruw: Opw. 698 Nooit meer alleen
   lied: opw-698
   herkenning: automatisch
 - ruw: Psalmen voor Nu 145 – Adem om van u te zingen
   lied: pvn-145
-  herkenning: automatisch
+  herkenning: handmatig
 - ruw: Opw. 244 / Sela - Welzalig de man die niet wandelt
   lied: opw-244
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: God regeert in dit huis – InSalvation / Charlotte Jordaan
+  lied: god-regeert-in-dit-huis-insalvation
+  herkenning: handmatig
 - ruw: Miljoenen stemmen – Schrijvers voor gerechtigheid
   moment: zegenlied
   lied: svg-miljoenen-stemmen

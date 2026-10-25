@@ -14,8 +14,9 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: 'Psalm 51: 6 (klassieke berijming – “Schep in mij, God, een hart dat leeft in ’t licht”)'
+  lied: gkb-51
+  herkenning: handmatig
 - ruw: 'DNP 139: 1, 4, 8'
   lied: dnp-139
   herkenning: automatisch

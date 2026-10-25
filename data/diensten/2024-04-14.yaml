@@ -10,8 +10,9 @@ liederen:
 - ruw: Opw.640 (“Mijn hulp is van U Heer”)
   lied: opw-640
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Psalm 23, "De Heer is mijn herder" van Marcel en Lydia Zimmer 1
+  lied: a-tot-z-marcel-en-lydia-zimmer
+  herkenning: automatisch
 - ruw: Opw.Kids 185 (“De here zegent jou”)
   moment: kindmoment
   lied: opw-908

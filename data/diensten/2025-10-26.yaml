@@ -13,8 +13,9 @@ liederen:
 - ruw: Opwekking 518 (Heer, U bent altijd bij mij)
   lied: opw-518
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: 'Gebed voor mijn kinderen (Remco Hakkertversie, zie: https://www.youtube.com/watch?v=1GH9kRgWnHg)'
+  lied: gebed-voor-mijn-kinderen-remco-hakkert
+  herkenning: handmatig
 - ruw: Opwekking 789
   lied: opw-789
   herkenning: automatisch

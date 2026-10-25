@@ -27,6 +27,7 @@ liederen:
 - ruw: Opwekking 832 (Jezus Overwinnaar) Opgegeven door Rick
   lied: opw-832
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Holy forever, CeCe Winans Opgegeven door Hester
+  moment: zegenlied
+  lied: holy-forever
+  herkenning: handmatig
