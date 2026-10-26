@@ -23,8 +23,9 @@ liederen:
 - ruw: Opwekking 828 (Waardig is uw naam)
   lied: opw-828
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: U leeft - Living waters
+  lied: u-leeft-living-waters
+  herkenning: handmatig
 - ruw: Opwekking 832 (Jezus Overwinnaar)
   lied: opw-832
   herkenning: automatisch

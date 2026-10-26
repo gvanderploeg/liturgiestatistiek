@@ -1,0 +1,28 @@
+datum: '2026-10-25'
+begeleiding: band
+kenmerken: []
+bron: 20261025 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Sela – Goed om hier te zijn
+  moment: aanvang
+  lied: sela-goed-om-hier-te-zijn
+  herkenning: automatisch
+- ruw: Opwekking 720 – God maakt vrij
+  lied: opw-720
+  herkenning: automatisch
+- ruw: Marcel en Lydia Zimmer – Laat je licht maar schijnen
+  moment: kindmoment
+  lied: a-tot-z-marcel-en-lydia-zimmer
+  herkenning: automatisch
+- ruw: Schrijvers voor gerechtigheid - Licht aan
+  lied: svg-licht-aan
+  herkenning: automatisch
+- ruw: Trinity – Brood van het leven
+  lied: trinity-brood-van-het-leven
+  herkenning: handmatig
+- ruw: Opwekking 685 – Hosanna
+  lied: opw-685
+  herkenning: automatisch
+- ruw: Schrijvers voor gerechtigheid – Maak ons hart onrustig
+  lied: svg-maak-ons-hart-onrustig
+  herkenning: automatisch

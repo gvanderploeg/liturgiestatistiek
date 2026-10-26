@@ -20,6 +20,8 @@
   - Marcel en Lydia Zimmer
 - id: abraham-abraham-verlaat-je-land-verlaat-je-stam
   titel: Abraham, Abraham, verlaat je land, verlaat je stam
+- id: al-je-haren-zijn-geteld
+  titel: Al je haren zijn geteld
 - id: nlb-162
   titel: Barmhartig Vader op uw troon
 - id: bij-god-ben-ik-geborgen-taize
@@ -112,6 +114,10 @@
   titel: Niemand zoals de Heer - De Stadskerk
   aliassen:
   - Niemand zoals de Heer
+- id: nieuw-leven-mozaiek
+  titel: Nieuw leven - Mozaïek
+  aliassen:
+  - Nieuw leven
 - id: nieuwe-moed-ria-borkent
   titel: Nieuwe moed - Ria Borkent
   aliassen:
@@ -154,8 +160,16 @@
   - Ik schaam mij diep
 - id: charity-gayle-thank-you-jesus-for-the-blood
   titel: Thank you Jesus for the blood
+- id: trinity-brood-van-het-leven
+  titel: Trinity - Brood van het leven
+  aliassen:
+  - Brood van het leven
 - id: trinity-ik-wens-jou
   titel: Trinity - Ik wens jou
+- id: u-leeft-living-waters
+  titel: U leeft - Living Waters
+  aliassen:
+  - Living Waters
 - id: voor-willem-van-nassaue-sytze-de-vries
   titel: Voor Willem van Nassaue - Sytze de Vries
   aliassen:

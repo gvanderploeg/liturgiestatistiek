@@ -16,10 +16,12 @@ liederen:
   moment: kindmoment
   lied: opwkids-68
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: U leeft (Living Waters)
+  lied: u-leeft-living-waters
+  herkenning: handmatig
+- ruw: Nieuw leven (Mozaïek)
+  lied: nieuw-leven-mozaiek
+  herkenning: handmatig
 - ruw: Opwekking 334 (Heer, uw licht en uw liefde schijnen)
   lied: opw-334
   herkenning: automatisch
