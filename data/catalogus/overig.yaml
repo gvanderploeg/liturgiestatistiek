@@ -96,6 +96,8 @@
   - In de Heer vind ik heel mijn sterkte
 - id: lev-de-kerk-van-alle-tijden
   titel: LEV - De kerk van alle tijden
+- id: lied-van-herodes
+  titel: Lied van Herodes
 - id: bethel-living-hope
   titel: Living Hope - Bethel
   aliassen:
@@ -106,6 +108,18 @@
   - Uw liefde raakt nooit op
 - id: kinga-ban-meer-dan-een-wonder
   titel: Meer dan een wonder
+- id: niemand-zoals-de-heer-de-stadskerk
+  titel: Niemand zoals de Heer - De Stadskerk
+  aliassen:
+  - Niemand zoals de Heer
+- id: nieuwe-moed-ria-borkent
+  titel: Nieuwe moed - Ria Borkent
+  aliassen:
+  - psalm . Uit de bundel 'Een vogel is er thuis', Ria Borkent
+- id: o-lord-hear-my-prayer-taize
+  titel: O Lord, hear my prayer - Taizé
+  aliassen:
+  - O Lord, hear my prayer
 - id: oke4kids-simon-en-andreas
   titel: Oke 4 kids - Simon en Andreas
   aliassen:
@@ -142,14 +156,24 @@
   titel: Thank you Jesus for the blood
 - id: trinity-ik-wens-jou
   titel: Trinity - Ik wens jou
+- id: voor-willem-van-nassaue-sytze-de-vries
+  titel: Voor Willem van Nassaue - Sytze de Vries
+  aliassen:
+  - Voor Willem van Nassaue
 - id: wat-een-geschenk-is-jezus-mijn-bevrijder
   titel: Wat een geschenk is Jezus mijn bevrijder
+- id: way-maker-leeland
+  titel: Way maker - Leeland
+  aliassen:
+  - Way maker
 - id: we-are-one
   titel: We are one
 - id: weet-je-waar-het-hemels-koninkrijk-op-lijkt-elly-en-rikkert
   titel: Weet je waar het hemels koninkrijk op lijkt - Elly & Rikkert
   aliassen:
   - Weet je waar het hemels koninkrijk op lijkt
+- id: wilhelmus
+  titel: Wilhelmus
 - id: william-matthews-we-ll-all-be-free
   titel: William Matthews - We'll all be free
 - id: zegen-de-kind-ren

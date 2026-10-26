@@ -8,6 +8,18 @@
   --accent: #1f6feb;
   --accent-vlak: #ddf4ff;
   --accent-tekst: #0a3069;
+  --band: #f6f8fa;
+  --nieuw-vlak: #fff1e0;
+  --nieuw-tekst: #8a4600;
+  --tel2-vlak: #ddf4ff;
+  --tel3-vlak: #b6e3ff;
+  --tel4-vlak: #54aeff;
+  --tel-tekst: #0a3069;
+  --tel4-tekst: #00254d;
+  --sacrament-vlak: #dafbe1;
+  --sacrament-tekst: #116329;
+  --feest-vlak: #fbefff;
+  --feest-tekst: #6639ba;
   --radius: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -51,13 +63,28 @@ button:hover { background: var(--vlak); }
 .blok-kop h2 { margin: 0; font-size: 16px; font-weight: 600; }
 .criterium { color: var(--tekst-2); font-size: 13px; }
 .criterium select { font-size: 13px; padding: 1px 2px; }
-.tussenkop td { padding-top: 10px; color: var(--tekst-3); font-size: 13px; border-bottom: 1px solid var(--rand); }
+.tussenkop td { padding: 5px 8px; margin-top: 8px; color: var(--tekst-2); font-size: 13px; background: var(--vlak); border-radius: 6px; }
+.tussenkop:not(:first-child) td { border-top: 8px solid var(--wit); }
+.banden tr:nth-child(even) td { background: var(--band); }
+.banden td:first-child { border-radius: 6px 0 0 6px; padding-left: 6px; }
+.banden td:last-child { border-radius: 0 6px 6px 0; padding-right: 6px; }
+.banden td.r:last-child { padding-right: 6px; }
 .bron { color: var(--tekst-3); font-size: 13px; white-space: nowrap; }
 .stil { color: var(--tekst-3); }
 .leeg { color: var(--tekst-3); text-align: center; padding: 18px 8px; border: 1px dashed var(--rand); border-radius: 8px; }
 .meer { display: inline-block; margin-top: 8px; font-size: 14px; }
 .balk { display: inline-block; height: 8px; background: var(--accent); border-radius: 2px; vertical-align: middle; margin-right: 6px; }
-.label-tag { display: inline-block; background: var(--accent-vlak); color: var(--accent-tekst); border-radius: 12px; padding: 0 8px; font-size: 12px; margin-right: 4px; }
+.label, .label-tag { display: inline-block; border-radius: 12px; padding: 0 9px; font-size: 12px; line-height: 1.7; vertical-align: 1px; white-space: nowrap; }
+.label-tag, .label-overig { background: var(--vlak); color: var(--tekst-2); border: 1px solid var(--rand); }
+.label-sacrament { background: var(--sacrament-vlak); color: var(--sacrament-tekst); }
+.label-feest { background: var(--feest-vlak); color: var(--feest-tekst); }
+
+.tel { display: inline-block; min-width: 3.4em; text-align: center; border-radius: 12px; padding: 0 8px; font-size: 13px; line-height: 1.6; white-space: nowrap; }
+.tel-0 { color: var(--tekst-3); border: 1px solid var(--rand); }
+.tel-1 { background: var(--nieuw-vlak); color: var(--nieuw-tekst); }
+.tel-2 { background: var(--tel2-vlak); color: var(--tel-tekst); }
+.tel-3 { background: var(--tel3-vlak); color: var(--tel-tekst); }
+.tel-4 { background: var(--tel4-vlak); color: var(--tel4-tekst); }
 .moment { color: var(--tekst-3); font-size: 13px; white-space: nowrap; width: 100px; }
 
 .dienst { border: 1px solid var(--rand); border-radius: var(--radius); padding: 10px 16px; margin-bottom: 12px; }
@@ -74,7 +101,33 @@ button:hover { background: var(--vlak); }
 
 .voet { border-top: 1px solid var(--rand); padding-top: 12px; padding-bottom: 24px; color: var(--tekst-2); font-size: 13px; }
 
-@media (max-width: 760px) {
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tekst: #e6edf3;
+    --tekst-2: #9da7b1;
+    --tekst-3: #7d8590;
+    --rand: #30363d;
+    --vlak: #161b22;
+    --wit: #0d1117;
+    --accent: #58a6ff;
+    --accent-vlak: #122a45;
+    --accent-tekst: #cae8ff;
+    --band: #161b22;
+    --nieuw-vlak: #3d2300;
+    --nieuw-tekst: #ffb86b;
+    --tel2-vlak: #122a45;
+    --tel3-vlak: #0c3d7a;
+    --tel4-vlak: #1f6feb;
+    --tel-tekst: #cae8ff;
+    --tel4-tekst: #ffffff;
+    --sacrament-vlak: #0f3d1f;
+    --sacrament-tekst: #7ee787;
+    --feest-vlak: #2b1b4d;
+    --feest-tekst: #d2a8ff;
+  }
+}
+
+@media (max-width: 900px) {
   .kop-binnen { height: auto; flex-wrap: wrap; padding-top: 8px; padding-bottom: 4px; gap: 8px 16px; }
   .tabs a { padding: 8px 0; }
   .bijgewerkt { width: 100%; margin-left: 0; margin-bottom: 4px; }

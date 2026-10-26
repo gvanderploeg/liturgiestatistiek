@@ -1,7 +1,6 @@
 datum: '2025-04-06'
 begeleiding: band
-kenmerken:
-- doop
+kenmerken: []
 bron: 20250406 Eredienst Westerkerk.pdf
 liederen:
 - ruw: Psalmen voor nu 121 (Ik kijk omhoog naar de hoge bergen)
@@ -28,4 +27,4 @@ liederen:
   herkenning: automatisch
 - ruw: Opwekking 844 (De God van Abraham, Isaak en Jacob…, ontvang de zegen van de Vader)
   lied: opw-844
-  herkenning: automatisch
+  herkenning: handmatig

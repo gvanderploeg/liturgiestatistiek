@@ -10,14 +10,12 @@ liederen:
 - ruw: Opw. 727 Ik val niet uit zijn hand
   lied: opw-727
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
 - ruw: Opw. 542 God van trouw
   lied: opw-542
   herkenning: automatisch
 - ruw: Opw. 849 De goedheid van God
   lied: opw-849
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Heer, U bent mijn leven, de grond waarop ik sta
+  lied: gkb-177-heer-u-bent-mijn-leven
+  herkenning: handmatig

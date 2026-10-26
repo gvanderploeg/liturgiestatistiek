@@ -22,5 +22,7 @@ liederen:
 - ruw: Liedboek 886 (Abba, Vader, U alleen). Eerst in Engels, dan in Nederlands.
   lied: opw-136
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: ‘Wat in mijn leven geeft me nieuwe moed’ Lied van Ria Borkent, 2 coupletten op de wijs van psalm 56. Voor tekst, zie
+    volgende pagina.
+  lied: nieuwe-moed-ria-borkent
+  herkenning: automatisch

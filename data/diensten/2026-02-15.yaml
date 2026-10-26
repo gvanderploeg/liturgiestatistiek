@@ -27,8 +27,9 @@ liederen:
 - ruw: Opwekking 315 (Heer, uw bloed dat reinigt mij) 3 x
   lied: opw-315
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: 'Nieuwe moed, vers 1 en 2. Melodie: psalm 56. Uit de bundel ‘Een vogel is er thuis’, Ria Borkent.'
+  lied: nieuwe-moed-ria-borkent
+  herkenning: handmatig
 - ruw: 'Liedboek 704: 1, 2, 3 (Dank, dank nu allen God)'
   lied: nlb-704
   herkenning: automatisch

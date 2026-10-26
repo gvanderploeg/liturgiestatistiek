@@ -14,6 +14,7 @@ liederen:
 - moment: zegenlied
   lied: null
   herkenning: onbekend
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Wilhelmus vers 1 en 6
+  moment: zegenlied
+  lied: wilhelmus
+  herkenning: handmatig

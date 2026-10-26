@@ -200,19 +200,32 @@
     return `<a href="#/diensten/${dienst.datum}">${esc(metDag(d))}</a>`;
   }
 
+  const KENMERKFAMILIE = {
+    doop: "sacrament", avondmaal: "sacrament", belijdenis: "sacrament", bevestiging: "sacrament",
+    advent: "feest", kerst: "feest", pasen: "feest", pinksteren: "feest", "goede-vrijdag": "feest",
+  };
+
+  function kenmerkLabel(k) {
+    return `<span class="label label-${KENMERKFAMILIE[k] || "overig"}">${esc(KENMERKNAMEN[k] || k)}</span>`;
+  }
+
   function dienstOmschrijving(dienst) {
-    const delen = [dienst.begeleiding === "geen" ? "geen begeleiding" : dienst.begeleiding];
-    for (const k of dienst.kenmerken) delen.push(KENMERKNAMEN[k] || k);
-    return delen.join(" · ");
+    const beg = dienst.begeleiding === "geen" ? "geen begeleiding" : dienst.begeleiding;
+    return esc(beg) + dienst.kenmerken.map((k) => " " + kenmerkLabel(k)).join("");
+  }
+
+  function telKlasse(n) {
+    return n === 0 ? "tel-0" : n === 1 ? "tel-1" : n <= 3 ? "tel-2" : n <= 6 ? "tel-3" : "tel-4";
+  }
+
+  function telBadge(n) {
+    const tekst = n === 0 ? "nooit" : n === 1 ? "1e keer" : `${n}x`;
+    return `<span class="tel ${telKlasse(n)}" title="${n === 1 ? "voor het eerst gezongen sinds het begin van de data" : `${n}x gezongen sinds het begin van de data`}">${tekst}</span>`;
   }
 
   function keuze(naam, waarden, huidig, suffix) {
     const opties = waarden.map((w) => `<option value="${w}"${w === huidig ? " selected" : ""}>${w}</option>`).join("");
     return `<select data-instelling="${naam}">${opties}</select>${suffix ? " " + suffix : ""}`;
-  }
-
-  function aantalTekst(n) {
-    return n === 1 ? "1e keer" : `${n}x`;
   }
 
   /* ---------- weergave: dashboard ---------- */
@@ -255,14 +268,14 @@
     } else {
       const rijen = [];
       for (const d of diensten) {
-        rijen.push(`<tr class="tussenkop"><td colspan="3">${dienstLink(d.dienst)} · ${esc(dienstOmschrijving(d.dienst))}</td></tr>`);
+        rijen.push(`<tr class="tussenkop"><td colspan="3">${dienstLink(d.dienst)} · ${dienstOmschrijving(d.dienst)}</td></tr>`);
         for (const v of d.liederen) {
           if (!v.lied) {
             rijen.push(`<tr><td class="stil">nog niet herkend lied</td><td class="bron"></td><td></td></tr>`);
             continue;
           }
           const t = ooit.get(v.lied);
-          rijen.push(`<tr><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}${v.moment ? ` · ${MOMENTNAMEN[v.moment]}` : ""}</td><td class="r stil">${aantalTekst(t.aantal)}</td></tr>`);
+          rijen.push(`<tr><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}${v.moment ? ` · ${MOMENTNAMEN[v.moment]}` : ""}</td><td class="r">${telBadge(t.aantal)}</td></tr>`);
         }
       }
       inhoud = `<table>${rijen.join("")}</table><a class="meer" href="#/diensten">alle diensten…</a>`;
@@ -314,9 +327,9 @@
     const rijen = dienst.liederen.map((v) => {
       if (!v.lied) return `<tr><td class="moment"></td><td class="stil">nog niet herkend lied</td><td class="bron"></td><td></td></tr>`;
       const t = ooit.get(v.lied);
-      return `<tr><td class="moment">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}</td><td class="r stil">${aantalTekst(t.aantal)}</td></tr>`;
+      return `<tr><td class="moment">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}</td><td class="r">${telBadge(t.aantal)}</td></tr>`;
     }).join("");
-    return `<section class="dienst" id="dienst-${dienst.datum}"><h2>${esc(metDag(datum(dienst.datum)))}</h2><div class="sub">${esc(dienstOmschrijving(dienst))}</div><table>${rijen}</table></section>`;
+    return `<section class="dienst" id="dienst-${dienst.datum}"><h2>${esc(metDag(datum(dienst.datum)))}</h2><div class="sub">${dienstOmschrijving(dienst)}</div><table class="banden">${rijen}</table></section>`;
   }
 
   function diensten(geselecteerd) {
@@ -338,7 +351,7 @@
     const bronnen = (l.referenties || []).map((r) => `${data.bundels[r.bundel] ? data.bundels[r.bundel].naam : r.bundel} ${r.nummer}`);
     if (l.artiest) bronnen.push(l.artiest);
     const tags = (l.categorieen || []).map((c) => `<span class="label-tag">${esc(c)}</span>`).join("");
-    const rijen = eigen.map((v) => `<tr><td>${dienstLink(v.dienst)}</td><td class="bron">${esc(dienstOmschrijving(v.dienst))}</td><td class="bron">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td></tr>`).join("");
+    const rijen = eigen.map((v) => `<tr><td>${dienstLink(v.dienst)}</td><td class="bron">${dienstOmschrijving(v.dienst)}</td><td class="bron">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td></tr>`).join("");
     const zoek = encodeURIComponent(`${l.titel} ${l.artiest || (bronnen[0] || "")}`.trim());
     const links = [
       `<a href="https://kerkliedwiki.nl/index.php?search=${encodeURIComponent(l.titel)}" target="_blank" rel="noopener">Kerkliedwiki</a>`,
@@ -350,7 +363,7 @@
       ${l.opmerking ? `<p>${esc(l.opmerking)}</p>` : ""}
       <p>${eigen.length ? `${eigen.length}x gezongen sinds ${esc(lang(datum(data.eerste_dienst)))}, laatst op ${esc(metDag(eigen[0].datum))}.` : `Nog niet gezongen sinds ${esc(lang(datum(data.eerste_dienst)))}.`}</p>
       ${tijdlijn(eigen)}
-      ${eigen.length ? `<table>${rijen}</table>` : ""}
+      ${eigen.length ? `<table class="banden">${rijen}</table>` : ""}
       <h2>Elders</h2><p>${links.join(" · ")}</p>
     </div>`;
   }
@@ -396,6 +409,10 @@
         <li><strong>Vergeten bekenden</strong>: minstens ${STANDAARD.vergetenMinimaal} keer gezongen sinds het begin van de data, maar niet in de afgelopen ${STANDAARD.vergetenMaanden} maanden.</li>
       </ul>
       <p>Aangepaste criteria worden in je eigen browser bewaard. <button data-reset>Terug naar standaardwaarden</button></p>
+      <h2>Kleuren</h2>
+      <p>Het getal achter een lied is hoe vaak het sinds het begin van de data gezongen is, inclusief de dienst waar je naar kijkt. De tint loopt op met het aantal; een eerste keer is apart gemarkeerd:</p>
+      <p>${[1, 2, 5, 9].map(telBadge).join(" ")} ${telBadge(0)}</p>
+      <p>Dienstkenmerken in twee families: ${["doop", "avondmaal", "belijdenis", "bevestiging"].map(kenmerkLabel).join(" ")} en ${["advent", "kerst", "pasen", "pinksteren", "goede-vrijdag"].map(kenmerkLabel).join(" ")}; de overige ${["startzondag", "dankdag", "biddag"].map(kenmerkLabel).join(" ")} zijn neutraal.</p>
       <h2>Zelf rekenen</h2>
       <p>Alle liedvermeldingen zijn te downloaden als <a href="data/liedvermeldingen.csv">CSV</a> (te openen in Excel of Google Sheets) en als <a href="data/dataset.json">JSON</a>.</p>
       <h2>Hoe het werkt</h2>

@@ -46,6 +46,15 @@
   ruw: 'Opwekking 710: Gebed om zegen'
   lied: opw-710
   moment: zegenlied
+- dienst: '2025-03-16'
+  sleutel: 4ed867a2cd5d
+  ruw: Opwekking 795 – Ik geloof in de Zoon ... Amen
+  lied: opw-795
+- dienst: '2025-12-25'
+  sleutel: 8c0bc6752bcf
+  ruw: 'Kinderlied 1 / Lied 4 Lied van Herodes: https://m.youtube.com/watch?v=OgExVkvW8eY'
+  lied: lied-van-herodes
+  moment: kindmoment
 - dienst: '2026-04-26'
   sleutel: 7749fa135eb4
   ruw: Votum en groet (Sela)

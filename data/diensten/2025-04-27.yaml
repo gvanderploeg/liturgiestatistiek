@@ -19,6 +19,7 @@ liederen:
 - ruw: Opw.71 (“Jezus leeft in eeuwigheid”)
   lied: opw-71
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: “Voor Willem van Nassaue” van Sytze de Vries
+  moment: zegenlied
+  lied: voor-willem-van-nassaue-sytze-de-vries
+  herkenning: handmatig

@@ -3,9 +3,10 @@ begeleiding: band
 kenmerken: []
 bron: 20260322 Eredienst Westerkerk.pdf
 liederen:
-- moment: aanvang
-  lied: null
-  herkenning: onbekend
+- ruw: O Lord, hear my prayer (Taizé) 3 x
+  moment: aanvang
+  lied: o-lord-hear-my-prayer-taize
+  herkenning: handmatig
 - ruw: Opwekking 889 - Dagelijks gebed (Het licht breekt door, de dag ontwaakt)
   lied: opw-889
   herkenning: automatisch
@@ -16,8 +17,9 @@ liederen:
   moment: kindmoment
   lied: elb-466
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Way maker - Leeland
+  lied: way-maker-leeland
+  herkenning: handmatig
 - ruw: Opwekking 769 (Bouw uw koninkrijk)
   lied: opw-769
   herkenning: automatisch

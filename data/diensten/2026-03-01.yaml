@@ -1,7 +1,6 @@
 datum: '2026-03-01'
 begeleiding: band
-kenmerken:
-- doop
+kenmerken: []
 bron: 20260301 Eredienst Westerkerk.pdf
 liederen:
 - ruw: Votum en groet - Sela
@@ -11,8 +10,9 @@ liederen:
 - ruw: Zie hoe Jezus lijdt voor mij - Sela
   lied: sela-zie-hoe-jezus-lijdt-voor-mij
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Niemand zoals de Heer - De Stadskerk
+  lied: niemand-zoals-de-heer-de-stadskerk
+  herkenning: handmatig
 - ruw: Liedboek 939 (Op U alleen, mijn licht, mijn kracht)
   lied: nlb-939
   herkenning: automatisch

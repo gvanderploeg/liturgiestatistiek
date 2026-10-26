@@ -12,3 +12,7 @@ liederen:
   moment: zegenlied
   lied: sela-ere-zij-god
   herkenning: automatisch
+- ruw: 'Kinderlied 1 / Lied 4 Lied van Herodes: https://m.youtube.com/watch?v=OgExVkvW8eY'
+  moment: kindmoment
+  lied: lied-van-herodes
+  herkenning: handmatig

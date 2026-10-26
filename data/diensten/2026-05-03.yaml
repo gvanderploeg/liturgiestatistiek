@@ -23,6 +23,7 @@ liederen:
 - ruw: Opwekking 334 (Heer, uw licht en uw liefde schijnen)
   lied: opw-334
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Wilhelmus, vers 1 en 6
+  moment: zegenlied
+  lied: wilhelmus
+  herkenning: handmatig
