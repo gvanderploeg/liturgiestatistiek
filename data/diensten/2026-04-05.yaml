@@ -13,9 +13,10 @@ liederen:
 - ruw: Opwekking 369 (Door uw genade, Vader)
   lied: opw-369
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: OpwekkingKids 232 (Wij vieren feest)
+  moment: kindmoment
+  lied: opwkids-232
+  herkenning: handmatig
 - ruw: De leeuw van Juda (Elly en Rikkert)
   moment: kindmoment
   lied: elb-466

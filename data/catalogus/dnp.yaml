@@ -56,6 +56,11 @@
   referenties:
   - bundel: dnp
     nummer: '34'
+- id: dnp-36
+  titel: De Nieuwe Psalmberijming 36
+  referenties:
+  - bundel: dnp
+    nummer: '36'
 - id: dnp-42-als-een-uitgeputte-hinde
   titel: Als een uitgeputte hinde
   referenties:
@@ -183,6 +188,12 @@
   referenties:
   - bundel: dnp
     nummer: '139'
+- id: dnp-145
+  titel: De Nieuwe Psalmberijming 145
+  referenties:
+  - bundel: dnp
+    nummer: '145'
+  artiest: De Nieuwe Psalmberijming
 - id: dnp-146
   titel: De Nieuwe Psalmberijming 146
   referenties:

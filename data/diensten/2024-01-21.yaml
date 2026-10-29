@@ -10,9 +10,10 @@ liederen:
 - ruw: 'Nieuwe liedboek 834: 1,2,3 (Vernieuw Gij mij, o eeuwig licht)'
   lied: nlb-834
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Je hoeft niet bang te zijn.
+  moment: kindmoment
+  lied: je-hoeft-niet-bang-te-zijn
+  herkenning: handmatig
 - ruw: Opwekking 123 (Groot is uw trouw, o Heer)
   lied: opw-123
   herkenning: automatisch

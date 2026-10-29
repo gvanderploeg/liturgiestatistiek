@@ -7,11 +7,15 @@ liederen:
   moment: aanvang
   lied: opw-464
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: 'NPB Psalm 80 : 1 en 6 (“Hoor naar ons bidden”)'
+  lied: dnp-80-laat-uw-geliefde-zoon-weer
+  herkenning: handmatig
+- ruw: 'NPB Psalm 36 : 3 (“Laat zien (…) dat U een God van liefde bent”)'
+  lied: dnp-36
+  herkenning: handmatig
+- ruw: '1 “Nieuwe Moed” : 1 en 2 (melodie psalm 56)'
+  lied: nieuwe-moed-ria-borkent
+  herkenning: handmatig
+- ruw: 'GK Psalm 67 : 1, 2 en 3 (“De here God zij ons genadig”)'
+  lied: gkb-67
+  herkenning: handmatig

@@ -22,6 +22,8 @@
   titel: Abraham, Abraham, verlaat je land, verlaat je stam
 - id: al-je-haren-zijn-geteld
   titel: Al je haren zijn geteld
+- id: amazing-grace
+  titel: Amazing Grace
 - id: nlb-162
   titel: Barmhartig Vader op uw troon
 - id: bij-god-ben-ik-geborgen-taize
@@ -60,6 +62,10 @@
   - Een nieuw begin
 - id: elevation-worshop-jesus-be-the-name
   titel: Elevation Worship - Jesus be the name
+- id: elevation-worship-jireh
+  titel: Elevation Worship - Jireh
+  aliassen:
+  - Elevation Worship
 - id: elevation-worship-the-blessing
   titel: Elevation Worship - The Blessing
 - id: eline-bakker-alles-waard
@@ -74,6 +80,10 @@
   - Gebed voor mijn kinderen
 - id: getaway-taya
   titel: Getaway, Taya
+- id: god-of-the-moon-and-stars-kees-kraayenoord
+  titel: God of the moon and stars - Kees Kraayenoord
+  aliassen:
+  - God of the moon and stars
 - id: god-regeert-in-dit-huis-insalvation
   titel: God regeert in dit huis - InSalvation
   aliassen:
@@ -86,18 +96,34 @@
   titel: Holy Forever
 - id: charity-gayle-i-speak-jesus
   titel: I speak Jesus
+- id: i-thank-god-housefire
+  titel: I thank God - Housefire
+  aliassen:
+  - I thank God
 - id: ik-ben-gods-kind-schoollied-van-gbs-de-regenboog
   titel: Ik ben Gods kind - schoollied van GBS De Regenboog
   aliassen:
   - schoollied van GBS De Regenboog
 - id: nlb-4
   titel: Ik hoor hoe velen angstig vragen
+- id: ik-zegen-jou-in-jezus-naam-elly-en-rikkert
+  titel: Ik zegen jou in Jezus' naam - Elly & Rikkert
+  aliassen:
+  - Ik zegen jou in Jezus' naam
 - id: in-de-heer-vind-ik-heel-mijn-sterkte-taize
   titel: In de Heer vind ik heel mijn sterkte - Taizé
   aliassen:
   - In de Heer vind ik heel mijn sterkte
+- id: in-jesus-name-god-of-possible-katy-nichole
+  titel: In Jesus Name - God of Possible - Katy Nichole
+  aliassen:
+  - God of Possible
+- id: je-hoeft-niet-bang-te-zijn
+  titel: Je hoeft niet bang te zijn
 - id: lev-de-kerk-van-alle-tijden
   titel: LEV - De kerk van alle tijden
+- id: geest-van-hierboven
+  titel: Lied Geest van hierboven
 - id: lied-van-herodes
   titel: Lied van Herodes
 - id: bethel-living-hope
@@ -158,6 +184,8 @@
   titel: Sandra McCracken - Ik schaam mij diep
   aliassen:
   - Ik schaam mij diep
+- id: wait-for-the-lord-taize
+  titel: Taizé - Wait for the Lord
 - id: charity-gayle-thank-you-jesus-for-the-blood
   titel: Thank you Jesus for the blood
 - id: trinity-brood-van-het-leven
@@ -196,3 +224,8 @@
   titel: Zie ik sterren aan de hemel staan - GK 149
   aliassen:
   - Zie ik sterren aan de hemel staan
+- id: east-to-west-casting-crowns
+  titel: East to West
+  artiest: Casting Crowns
+  aliassen:
+  - Casting Crowns

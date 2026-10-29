@@ -20,6 +20,7 @@ liederen:
 - ruw: ‘Mag ik jou tot zegen zijn?’ (Sela)
   lied: sela-mag-ik-jou-tot-zegen-zijn
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Opwekking 833 (‘Kom verras ons’) Opwekking 671 (‘Lof, aanbidding’)
+  moment: aanvang
+  lied: opw-671
+  herkenning: handmatig

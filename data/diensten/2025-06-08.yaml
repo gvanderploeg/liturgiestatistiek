@@ -14,10 +14,9 @@ liederen:
 - ruw: Opwekking 389 (Create in me a clean heart)
   lied: opw-389
   herkenning: automatisch
-- ruw: Door de kracht van de Heilige Geest (Elly & Rikkert) - via YouTube. (https://www.youtube.com/watch?v=yeVb_KMQ_ic)
-  moment: kindmoment
-  lied: weet-je-waar-het-hemels-koninkrijk-op-lijkt-elly-en-rikkert
-  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
 - ruw: 'Liedboek 670: 1, 3, 6, 7 (Kom Schepper God, o heilige Geest)'
   lied: nlb-670
   herkenning: automatisch

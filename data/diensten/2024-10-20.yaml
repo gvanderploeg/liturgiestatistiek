@@ -24,8 +24,9 @@ liederen:
 - ruw: 'Liedboek 381: 1 – 6 (Genadig Heer, die al mijn zwakheid weet)'
   lied: nlb-381
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: 'Nieuwe moed, vers 1 en 2 (uit: Een vogel is er thuis, nr. 198, Ria Borkent)'
+  lied: nieuwe-moed-ria-borkent
+  herkenning: handmatig
 - ruw: 'De nieuwe psalmberijming, psalm 98: 1 en 2'
   lied: dnp-98
   herkenning: automatisch

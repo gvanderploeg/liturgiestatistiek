@@ -19,6 +19,7 @@ liederen:
 - ruw: Opwekking 428 – Genade, zo oneindig groot
   lied: opw-428
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Holy forever van Chris Tomlin
+  moment: zegenlied
+  lied: holy-forever
+  herkenning: handmatig

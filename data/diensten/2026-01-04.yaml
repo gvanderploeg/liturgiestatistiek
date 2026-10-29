@@ -17,10 +17,9 @@ liederen:
 - ruw: Opwekking 802 (Hier is mijn hart, Heer)
   lied: opw-802
   herkenning: automatisch
-- ruw: Ok4Kids 18 (Laat je licht maar schijnen)
-  moment: kindmoment
-  lied: ik-wil-meer-en-meer-gaan-lijken-op-jezus
-  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
 - ruw: 'Taizé: Jezus, U bent het licht in ons leven (4 x NL en Engels)*'
   lied: sela-in-het-licht
   herkenning: automatisch

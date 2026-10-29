@@ -10,17 +10,20 @@ liederen:
 - ruw: Opwekking 244 Welzalig de man die niet wandelt
   lied: opw-244
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: Ik zegen jou in Jezus’ naam - Elly & Rikkert
+  moment: kindmoment
+  lied: ik-zegen-jou-in-jezus-naam-elly-en-rikkert
+  herkenning: handmatig
+- ruw: Psalm 95:1
+  lied: gkb-95
+  herkenning: handmatig
 - ruw: Opwekking 832 Jezus Overwinnaar
   lied: opw-832
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: Op Toonhoogte 193/Opwekking 347 Ik geloof in God de Vader …
+  moment: geloofsbelijdenis
+  lied: opw-347
+  herkenning: handmatig
 - ruw: We belijden onze afhankelijkheid met Votum en groet van Sela
   moment: aanvang
   lied: sela-votum-en-groet

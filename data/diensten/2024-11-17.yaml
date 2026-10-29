@@ -15,12 +15,15 @@ liederen:
   moment: kindmoment
   lied: opw-825
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: “East to West” van Casting Crowns
+  lied: east-to-west-casting-crowns
+  herkenning: handmatig
+- ruw: “Amazing Grace”
+  lied: amazing-grace
+  herkenning: handmatig
 - ruw: Opw.599 (“Kom tot de Vader”) [vers 1 + refrein]
   lied: opw-599
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: “I thank God” van Housefire
+  lied: i-thank-god-housefire
+  herkenning: handmatig

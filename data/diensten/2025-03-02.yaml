@@ -22,6 +22,7 @@ liederen:
 - ruw: Opw.586 (“Hij is Heer”)
   lied: opw-586
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: “I thank God” van Maverick City
+  moment: zegenlied
+  lied: i-thank-god-housefire
+  herkenning: automatisch

@@ -1,8 +1,31 @@
 - dienst: '2024-03-10'
+  sleutel: 37fa379963a1
+  ruw: Op Toonhoogte 193/Opwekking 347 Ik geloof in God de Vader …
+  lied: opw-347
+  moment: geloofsbelijdenis
+- dienst: '2024-03-10'
   sleutel: f2e96316eee6
   ruw: We belijden onze afhankelijkheid met Votum en groet van Sela
   lied: sela-votum-en-groet
   moment: aanvang
+- dienst: '2024-03-17'
+  sleutel: 17124a7b2ceb
+  ruw: Lied 5 Opw.672 (“Heerser over alle dingen”)
+  lied: opw-672
+- dienst: '2024-03-17'
+  sleutel: 81249e595f40
+  ruw: Lied 3 LB Psalm 84a (“Wat houd ik van Uw huis”)
+  lied: opw-715
+- dienst: '2024-03-17'
+  sleutel: aea491a3714e
+  ruw: Kinderlied Trinity – ‘Ik wens jou’
+  lied: trinity-ik-wens-jou
+  moment: kindmoment
+- dienst: '2024-03-17'
+  sleutel: f9378f43fc50
+  ruw: Lied 4 (zegenlied) Sela – ‘Gods zegen voor jou’
+  lied: sela-gods-zegen-voor-jou
+  moment: zegen
 - dienst: '2024-05-12'
   sleutel: 5220325ced5a
   ruw: Opwekking 347 – Ik geloof in God de Vader
@@ -26,10 +49,20 @@
   ruw: 'Zingen: Votum en groet (Sela)'
   lied: sela-votum-en-groet
   moment: aanvang
+- dienst: '2024-09-15'
+  sleutel: 9b1f5719b934
+  ruw: 'Door Therese vd Leest lezen: Mar. 7:24-30 (NBV21) zingen: DNP 34:1 Er gaat geen dag voorbij lezen: Efeze 2:11-22 (NBV21)
+    zingen: DNP 34:2 Wie opzien naar de HEER'
+  lied: dnp-34-in-die-volgorde
 - dienst: '2024-10-27'
   sleutel: c1aca617ffb4
   ruw: 'Votum: als een hart dat verlangt naar water (opw 281, twee keer zingen)'
   lied: opw-281
+  moment: aanvang
+- dienst: '2024-11-10'
+  sleutel: ae343fcf07bb
+  ruw: Opwekking 833 (‘Kom verras ons’) Opwekking 671 (‘Lof, aanbidding’)
+  lied: opw-671
   moment: aanvang
 - dienst: '2025-01-26'
   sleutel: b5914938eca4
@@ -55,6 +88,15 @@
   ruw: 'Kinderlied 1 / Lied 4 Lied van Herodes: https://m.youtube.com/watch?v=OgExVkvW8eY'
   lied: lied-van-herodes
   moment: kindmoment
+- dienst: '2026-01-11'
+  sleutel: 342dbd4c74be
+  ruw: Opwekking 874 (‘Uw trouw’)
+  lied: opw-874
+- dienst: '2026-03-29'
+  sleutel: c57400152f5c
+  ruw: Opwekking 574 – Groot is Hij (in canon)
+  lied: opw-574
+  moment: geloofsbelijdenis
 - dienst: '2026-04-26'
   sleutel: 7749fa135eb4
   ruw: Votum en groet (Sela)

@@ -18,8 +18,9 @@ liederen:
 - ruw: Opw.520 (“Wees mijn verlangen”)
   lied: opw-520
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: 1 “In Jesus Name (God of Possible)” van Katy Nichole
+  lied: in-jesus-name-god-of-possible-katy-nichole
+  herkenning: handmatig
 - ruw: Opw.767 (“Hoe mooi en hoe heerlijk/Familie”) – Psalm 133
   lied: opw-767
   herkenning: automatisch

@@ -1,3 +1,14 @@
+- id: opwkids-13
+  titel: Heer, onze Heer, hoe machtig is uw naam op heel de aarde
+  referenties:
+  - bundel: opwkids
+    nummer: '13'
+  artiest: Sela
+- id: opwkids-18
+  titel: Ben je groot of ben je klein
+  referenties:
+  - bundel: opwkids
+    nummer: '18'
 - id: opwkids-68
   titel: Diep diep diep als de zee
   referenties:
@@ -28,6 +39,11 @@
   referenties:
   - bundel: opwkids
     nummer: '150'
+- id: opwkids-232
+  titel: Wij vieren feest
+  referenties:
+  - bundel: opwkids
+    nummer: '232'
 - id: opwkids-233
   titel: God heeft een plan met je leven
   referenties:

@@ -3,6 +3,16 @@
   referenties:
   - bundel: gkb
     nummer: '51'
+- id: gkb-67
+  titel: GKB 67
+  referenties:
+  - bundel: gkb
+    nummer: '67'
+- id: gkb-95
+  titel: Komt, laat ons juichen voor de Heer
+  referenties:
+  - bundel: gkb
+    nummer: '95'
 - id: gkb-119
   titel: Psalm 119
   referenties:

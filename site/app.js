@@ -7,7 +7,7 @@
 
   const MAANDNAMEN = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
   const DAGNAMEN = ["zo", "ma", "di", "wo", "do", "vr", "za"];
-  const MOMENTNAMEN = { aanvang: "aanvang", kindmoment: "kindmoment", luisterlied: "luisterlied", zegenlied: "zegenlied" };
+  const MOMENTNAMEN = { aanvang: "aanvang", kindmoment: "kindmoment", luisterlied: "luisterlied", geloofsbelijdenis: "geloofsbelijdenis", zegenlied: "zegenlied" };
   const KENMERKNAMEN = {
     doop: "doop", avondmaal: "avondmaal", belijdenis: "belijdenis", bevestiging: "bevestiging",
     pinksteren: "Pinksteren", pasen: "Pasen", "goede-vrijdag": "Goede Vrijdag", kerst: "Kerst",

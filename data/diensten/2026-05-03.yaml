@@ -5,13 +5,14 @@ bron: 20260503 Eredienst Westerkerk -.pdf
 liederen:
 - ruw: Opwekking 780 (Verlangen)
   moment: aanvang
-  lied: opw-780
-  herkenning: automatisch
+  lied: sela-verlangen
+  herkenning: handmatig
 - ruw: Opwekking 832 (Jezus Overwinnaar)
   lied: opw-832
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: God of the moon and stars (Kees Kraayenoord)
+  lied: god-of-the-moon-and-stars-kees-kraayenoord
+  herkenning: handmatig
 - ruw: Ok4kids 68 (Diep, diep, diep als de zee)
   moment: kindmoment
   lied: opwkids-68

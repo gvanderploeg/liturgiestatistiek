@@ -10,14 +10,12 @@ liederen:
 - ruw: Opwekking 369 (Door uw genade, Vader), couplet, refrein, couplet
   lied: opw-369
   herkenning: automatisch
-- moment: luisterlied
-  lied: null
-  herkenning: onbekend
 - ruw: Als alles duister is, Taizé (4 x)
   lied: sela-als-alles-duister-is
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Wait for the Lord, Taizé. 4 x, gevolgd door instrumentale muziek.
+  lied: wait-for-the-lord-taize
+  herkenning: handmatig
 - ruw: Bij God ben ik geborgen, Taizé, 4x, gevolgd door instrumentale muziek.
   lied: bij-god-ben-ik-geborgen-taize
   herkenning: automatisch

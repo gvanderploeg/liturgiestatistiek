@@ -7,10 +7,10 @@ liederen:
     with thanksgiving…”'
   moment: aanvang
   lied: opw-17
-  herkenning: automatisch
+  herkenning: handmatig
 - ruw: 'Opw.589 (“Ik wil juichen voor U mijn Heer”) Opw.554 (“Ik weet: Hij heeft mij gered”)'
   lied: opw-589
-  herkenning: automatisch
+  herkenning: handmatig
 - ruw: Opw.281 (“Als een hert dat verlangt naar water”)
   lied: opw-281
   herkenning: automatisch

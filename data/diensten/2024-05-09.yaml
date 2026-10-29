@@ -7,8 +7,9 @@ liederen:
   moment: aanvang
   lied: opw-352
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Lied 477 Geest van hierboven
+  lied: geest-van-hierboven
+  herkenning: handmatig
 - lied: null
   herkenning: onbekend
 - lied: null

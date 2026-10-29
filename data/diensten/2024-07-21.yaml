@@ -10,8 +10,9 @@ liederen:
 - ruw: Vader, vol van vrees en schaamte (Opwekking 350)
   lied: opw-350
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Heer, onze Heer, hoe machtig is uw naam op heel de aarde (Opwekking Kids 13; Sela)
+  lied: opwkids-13
+  herkenning: automatisch
 - ruw: Mijn Heer, ik red het niet alleen (PvN 140)
   lied: pvn-140-mijn-heer-ik-red-het
   herkenning: automatisch
@@ -21,6 +22,7 @@ liederen:
 - ruw: Ik geloof in God de Vader (Opwekking 347)
   lied: opw-347
   herkenning: automatisch
-- moment: zegenlied
-  lied: null
-  herkenning: onbekend
+- ruw: God van liefde, God van trouw
+  moment: zegenlied
+  lied: tpp-god-van-liefde-god-van-trouw
+  herkenning: handmatig
