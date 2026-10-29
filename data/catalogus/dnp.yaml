@@ -3,8 +3,8 @@
   referenties:
   - bundel: dnp
     nummer: '2'
-- id: dnp-6-psalternatief
-  titel: Psalternatief
+- id: dnp-6
+  titel: Psalm 6
   referenties:
   - bundel: dnp
     nummer: '6'
@@ -19,8 +19,8 @@
   referenties:
   - bundel: dnp
     nummer: '16'
-- id: dnp-19-psalternatief
-  titel: Psalternatief
+- id: dnp-19
+  titel: De Nieuwe Psalmberijming 19
   referenties:
   - bundel: dnp
     nummer: '19'
@@ -149,7 +149,7 @@
     nummer: '103'
   artiest: De Nieuwe Psalmberijming
 - id: dnp-105-lof-aan-de-heer-elk
-  titel: Lof aan de HEER, elk volk moet weten hoe groot Hij is, hoe Hij wil heten
+  titel: Lof aan de HEER, elk volk moet weten
   referenties:
   - bundel: dnp
     nummer: '105'
