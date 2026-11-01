@@ -1,0 +1,28 @@
+datum: '2026-11-01'
+begeleiding: band
+kenmerken: []
+bron: 20261101 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Schrijvers voor Gerechtigheid – Met open armen
+  moment: aanvang
+  lied: svg-met-open-armen
+  herkenning: handmatig
+- ruw: Sela – Geef ons vrede (Dona nobis pacem)
+  lied: sela-geef-ons-vrede
+  herkenning: automatisch
+- ruw: Opwekking 580 (Jezus, Hij kwam om ons leven te geven)
+  lied: opw-580
+  herkenning: automatisch
+- ruw: Opwekking kids 1 (Alle kind’ren mogen komen)
+  moment: kindmoment
+  lied: opwkids-1
+  herkenning: automatisch
+- ruw: Opwekking 689 (Spreek, o Heer, door uw heilig woord)
+  lied: opw-689
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming 146: 3 , 4, 5, 6'
+  lied: dnp-146
+  herkenning: automatisch
+- ruw: Opwekking 569 (Regeer in mij)
+  lied: opw-569
+  herkenning: automatisch
