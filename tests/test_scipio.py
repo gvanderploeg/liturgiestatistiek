@@ -93,5 +93,70 @@ def test_zoek_herhaling_op_id_of_datum():
     assert not is_reeks({})
 
 
+def test_vooruit_dagen_in_config(tmp_path: Path):
+    pad = tmp_path / "scipio.yaml"
+    pad.write_text(VOORBEELD_CONFIG, encoding="utf-8")
+    assert ScipioConfig.laad(pad).vooruit_dagen == 4
+    pad.write_text("community: c\nmodule: m\npagina: p\nvooruit_dagen: 0\n", encoding="utf-8")
+    assert ScipioConfig.laad(pad).vooruit_dagen == 0
+
+
+def test_is_bijgewerkt(tmp_path: Path):
+    import os
+
+    from liturgiestatistiek.scipio import is_bijgewerkt
+
+    doel = tmp_path / "x.pdf"
+    assert not is_bijgewerkt({"modified": "2026-10-30T12:00:00.000Z"}, doel), "geen bestand: niet opnieuw maar gewoon nieuw"
+    doel.write_bytes(b"%PDF")
+    os.utime(doel, (1793000000, 1793000000))
+    assert is_bijgewerkt({"modified": "2026-11-01T12:00:00.000Z"}, doel)
+    assert not is_bijgewerkt({"modified": "2026-10-01T12:00:00.000Z"}, doel)
+    assert not is_bijgewerkt({}, doel)
+
+
+def test_haal_op_kijkt_terug_en_vooruit(tmp_path: Path, monkeypatch):
+    """Zonder server: login, lidmaatschap, de agenda-aanroepen en het downloaden zijn vervangen."""
+    from datetime import datetime, timedelta, timezone
+
+    from liturgiestatistiek import scipio
+
+    vandaag = datetime.now(timezone.utc).date()
+
+    def ev(i, dagen, titel=None, pagina="kerk", modified="2020-01-01T00:00:00.000Z"):
+        d = vandaag + timedelta(days=dagen)
+        files = [{"_id": f"f{i}", "title": titel or f"{d:%Y%m%d} Eredienst Westerkerk.pdf"}]
+        return {"_id": f"e{i}", "page_id": pagina, "beginDate": f"{d}T08:00:00.000Z", "modified": modified, "files": files, "repeat": {"type": "NO_REPEAT"}}
+
+    terug = [ev(1, -7), ev(2, -14, pagina="andere"), ev(3, -400)]
+    vooruit = [ev(4, 0), ev(5, 3), ev(6, 10)]
+    aanroepen = []
+    monkeypatch.setattr(scipio, "login", lambda e, w: "token")
+    monkeypatch.setattr(scipio, "lidmaatschap", lambda t, c: "lid")
+    monkeypatch.setattr(scipio, "events_pagina", lambda t, m, c, skip, tot: aanroepen.append(("terug", tot.date())) or terug)
+    monkeypatch.setattr(scipio, "komende_events_pagina", lambda t, m, c, skip, van: aanroepen.append(("vooruit", van.date())) or vooruit)
+    def nep_download(t, c, b, doel):
+        doel.parent.mkdir(parents=True, exist_ok=True)
+        doel.write_bytes(b"%PDF")
+
+    monkeypatch.setattr(scipio, "download", nep_download)
+    monkeypatch.setattr(scipio.time, "sleep", lambda s: None)
+
+    archief = tmp_path / "archief"
+    config = ScipioConfig("c", "m", "kerk")
+    verslag = scipio.haal_op(config, "e", "w", archief)
+
+    assert aanroepen == [("terug", vandaag), ("vooruit", vandaag)]
+    namen = sorted(verslag.gedownload)
+    assert namen == sorted(f"{vandaag + timedelta(days=d):%Y%m%d} Eredienst Westerkerk.pdf" for d in (-7, 0, 3))
+    assert verslag.kerkdiensten == 4, "de andere pagina telt niet, de dienst over tien dagen valt buiten het venster"
+
+    vooruit[0]["modified"] = (datetime.now(timezone.utc) + timedelta(minutes=5)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    verslag = scipio.haal_op(config, "e", "w", archief)
+    assert verslag.gedownload == []
+    assert verslag.bijgewerkt == [f"{vandaag:%Y%m%d} Eredienst Westerkerk.pdf"]
+    assert verslag.al_aanwezig == 2
+
+
 def test_voorbeeldconfig_is_yaml():
     assert yaml.safe_load(VOORBEELD_CONFIG)["module"] == "5f0f325c00aa224c7bc5fd93"

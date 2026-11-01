@@ -209,9 +209,16 @@
     return `<span class="label label-${KENMERKFAMILIE[k] || "overig"}">${esc(KENMERKNAMEN[k] || k)}</span>`;
   }
 
+  function isGepland(dienst) {
+    const vandaag = new Date();
+    vandaag.setHours(0, 0, 0, 0);
+    return datum(dienst.datum) > vandaag;
+  }
+
   function dienstOmschrijving(dienst) {
     const beg = dienst.begeleiding === "geen" ? "geen begeleiding" : dienst.begeleiding;
-    return esc(beg) + dienst.kenmerken.map((k) => " " + kenmerkLabel(k)).join("");
+    const gepland = isGepland(dienst) ? ` <span class="label label-gepland" title="Deze dienst moet nog plaatsvinden; de liturgie kan nog veranderen">gepland</span>` : "";
+    return esc(beg) + gepland + dienst.kenmerken.map((k) => " " + kenmerkLabel(k)).join("");
   }
 
   function telKlasse(n) {

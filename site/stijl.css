@@ -78,6 +78,7 @@ button:hover { background: var(--vlak); }
 .label-tag, .label-overig { background: var(--vlak); color: var(--tekst-2); border: 1px solid var(--rand); }
 .label-sacrament { background: var(--sacrament-vlak); color: var(--sacrament-tekst); }
 .label-feest { background: var(--feest-vlak); color: var(--feest-tekst); }
+.label-gepland { background: transparent; color: var(--tekst-2); border: 1px dashed var(--tekst-3); }
 
 .tel { display: inline-block; min-width: 3.4em; text-align: center; border-radius: 12px; padding: 0 8px; font-size: 13px; line-height: 1.6; white-space: nowrap; }
 .tel-0 { color: var(--tekst-3); border: 1px solid var(--rand); }

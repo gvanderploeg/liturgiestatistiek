@@ -46,7 +46,9 @@ def test_liederenlijst_bevat_alleen_relevante_liederen(dataset):
     for lied_id, lied in ds["liederen"].items():
         assert lied_id in gebruikt or lied.get("categorieen") or lied.get("status"), f"{lied_id} is nooit gezongen en heeft geen categorie"
         assert lied["titel"]
-    assert len(ds["liederen"]) < 400, "de hele Opwekkingsbundel hoort niet in de dataset"
+    from liturgiestatistiek.catalogus import Catalogus
+
+    assert len(ds["liederen"]) < len(Catalogus.laad(PROJECT / "data").liederen) / 2, "de hele catalogus hoort niet in de dataset"
 
 
 def test_bundels_hebben_afkorting(dataset):

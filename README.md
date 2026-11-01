@@ -44,7 +44,7 @@ De liturgieen staan als bijlage bij de kerkdiensten in de agenda van de Scipio w
 SCIPIO_EMAIL=jij@voorbeeld.nl SCIPIO_WACHTWOORD=geheim .venv/bin/liturgiestatistiek haal-op --log
 ```
 
-De eerste keer schrijft het commando een voorbeeldconfiguratie naar `werk/scipio.yaml` (buiten Git) met de ids van community, module en kerkdienst-pagina en een naamfilter voor de bijlagen; controleer die en draai opnieuw. Standaard kijkt het commando `terugkijk_dagen` (90) terug en een week vooruit, want de liturgie staat er al dagen voor de dienst. Voor het eenmalig inladen van de historie geef je een begindatum mee:
+De eerste keer schrijft het commando een voorbeeldconfiguratie naar `werk/scipio.yaml` (buiten Git) met de ids van community, module en kerkdienst-pagina en een naamfilter voor de bijlagen; controleer die en draai opnieuw. Standaard kijkt het commando `terugkijk_dagen` (90) terug en `vooruit_dagen` (4) vooruit, want de liturgie staat er vaak al op donderdag. Dat zijn twee aanroepen, zoals de web-app ze zelf doet: de afgelopen agenda tot vandaag en de komende vanaf vandaag. Een PDF die al in `archief/` staat wordt opnieuw gedownload als het event in Scipio later gewijzigd is dan het bestand, zodat een bijgewerkte liturgie toch meekomt; het verslag toont die met een tilde. Een dienst die nog moet komen krijgt op de website het label "gepland". Voor het eenmalig inladen van de historie geef je een begindatum mee:
 
 ```bash
 SCIPIO_EMAIL=jij@voorbeeld.nl SCIPIO_WACHTWOORD=geheim .venv/bin/liturgiestatistiek haal-op --vanaf 2024-09-01 --log

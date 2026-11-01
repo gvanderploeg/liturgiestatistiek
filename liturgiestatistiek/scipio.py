@@ -56,6 +56,7 @@ class ScipioConfig:
     pagina: str
     bestandsfilter: str = r"eredienst.*\.pdf$"
     terugkijk_dagen: int = 90
+    vooruit_dagen: int = 4
     per_pagina: int = 10
     lidmaatschap: str | None = None
 
@@ -69,6 +70,7 @@ class ScipioConfig:
             pagina=str(d["pagina"]),
             bestandsfilter=d.get("bestandsfilter", cls.bestandsfilter),
             terugkijk_dagen=int(d.get("terugkijk_dagen", cls.terugkijk_dagen)),
+            vooruit_dagen=int(d.get("vooruit_dagen", cls.vooruit_dagen)),
             per_pagina=int(d.get("per_pagina", cls.per_pagina)),
             lidmaatschap=str(d["lidmaatschap"]) if d.get("lidmaatschap") else None,
         )
@@ -87,6 +89,8 @@ bestandsfilter: 'eredienst.*\\.pdf$'
 # Standaard kijkt haal-op zoveel dagen terug: genoeg voor de wekelijkse routine.
 # Voor het eenmalig inladen van de historie: haal-op --vanaf 2024-09-01
 terugkijk_dagen: 90
+# Ook vandaag en zoveel dagen vooruit, want de liturgie staat er vaak al op donderdag.
+vooruit_dagen: 4
 # Aantal events per opgevraagde pagina (de web-app zelf gebruikt 10).
 per_pagina: 10
 # Het lidmaatschap-id wordt normaal zelf opgezocht. Lukt dat niet, zet hier de
@@ -168,7 +172,18 @@ def lidmaatschap(token: str, config: ScipioConfig) -> str:
 
 
 def events_pagina(token: str, membership: str, config: ScipioConfig, skip: int, tot: datetime) -> list[dict]:
+    """Afgelopen events, nieuwste eerst, tot 'tot' (middernacht), zoals de web-app de afgelopen agenda opvraagt."""
     params = urllib.parse.urlencode({"until": tot.strftime("%Y-%m-%dT00:00:00.000Z"), "sort": "beginDate:desc", "skip": skip, "limit": config.per_pagina}, safe=":")
+    return _events(token, membership, config, params)
+
+
+def komende_events_pagina(token: str, membership: str, config: ScipioConfig, skip: int, van: datetime) -> list[dict]:
+    """Komende events, oudste eerst, vanaf 'van' (middernacht), zoals de web-app de komende agenda opvraagt."""
+    params = urllib.parse.urlencode({"from": van.strftime("%Y-%m-%dT00:00:00.000Z"), "sort": "beginDate:asc", "skip": skip, "limit": config.per_pagina}, safe=":")
+    return _events(token, membership, config, params)
+
+
+def _events(token: str, membership: str, config: ScipioConfig, params: str) -> list[dict]:
     url = f"{API}/v2/app/communities/{config.community}/modules/{config.module}/events?{params}"
     inhoud = json.loads(_verzoek(url, token, membership=membership))
     if not isinstance(inhoud, list):
@@ -223,14 +238,27 @@ def liturgie_bijlagen(event: dict, patroon: re.Pattern) -> list[dict]:
     return [f for f in event.get("files", []) if patroon.search(f.get("title", ""))]
 
 
-def begindatum(event: dict) -> date | None:
-    tekst = event.get("beginDate")
+def _tijdstip(tekst: str | None) -> datetime | None:
     if not tekst:
         return None
     try:
-        return datetime.fromisoformat(tekst.replace("Z", "+00:00")).date()
+        return datetime.fromisoformat(tekst.replace("Z", "+00:00"))
     except ValueError:
         return None
+
+
+def begindatum(event: dict) -> date | None:
+    t = _tijdstip(event.get("beginDate"))
+    return t.date() if t else None
+
+
+def is_bijgewerkt(event: dict, doel: Path) -> bool:
+    """True als het event in Scipio later gewijzigd is dan het lokale bestand.
+    Zo komt een liturgie die na het eerste downloaden nog is aangepast opnieuw mee."""
+    gewijzigd = _tijdstip(event.get("modified"))
+    if gewijzigd is None or not doel.exists():
+        return False
+    return gewijzigd.timestamp() > doel.stat().st_mtime
 
 
 @dataclass
@@ -241,6 +269,7 @@ class OphaalVerslag:
     bijlagen: int = 0
     reeksen: int = 0
     gedownload: list[str] = field(default_factory=list)
+    bijgewerkt: list[str] = field(default_factory=list)
     al_aanwezig: int = 0
     zonder_bijlage: list[str] = field(default_factory=list)
     fouten: list[str] = field(default_factory=list)
@@ -255,87 +284,129 @@ class OphaalVerslag:
             f"  zonder liturgie-PDF:  {len(self.zonder_bijlage)}",
             f"al in archief:          {self.al_aanwezig}",
             f"gedownload:             {len(self.gedownload)}",
+            f"opnieuw gedownload:     {len(self.bijgewerkt)}",
         ]
         regels += [f"  + {naam}" for naam in self.gedownload]
+        regels += [f"  ~ {naam}" for naam in self.bijgewerkt]
         regels += [f"  - {regel}" for regel in self.zonder_bijlage]
         regels += [f"FOUT {f}" for f in self.fouten]
         return "\n".join(regels)
 
 
+@dataclass
+class _Ophaler:
+    """De verwerking van een enkel event, gedeeld door de lus terug en de lus vooruit."""
+
+    config: ScipioConfig
+    token: str
+    membership: str
+    archief: Path
+    vanaf: date
+    verslag: OphaalVerslag
+    patroon: re.Pattern = None
+    reeksen: dict[str, list[dict]] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        self.patroon = re.compile(self.config.bestandsfilter, re.IGNORECASE)
+
+    def behandel(self, event: dict) -> None:
+        self.verslag.events += 1
+        if event.get("page_id") != self.config.pagina:
+            return
+        self.verslag.kerkdiensten += 1
+        datum = begindatum(event)
+        bron, bijlagen = event, liturgie_bijlagen(event, self.patroon)
+        if not bijlagen and is_reeks(event) and not (datum and datum < self.vanaf):
+            herhaling = zoek_herhaling(self._reeks(event, datum), event)
+            if herhaling:
+                bron, bijlagen = herhaling, liturgie_bijlagen(herhaling, self.patroon)
+                if bijlagen:
+                    log.debug("kerkdienst %s: bijlage gevonden via de herhalingen van de reeks", datum)
+        if not bijlagen:
+            alle = [f.get("title", "?") for f in event.get("files", [])]
+            log.info("kerkdienst %s (%s) zonder liturgie-PDF; bijlagen: %s", datum, event.get("name", "?"), ", ".join(alle) if alle else "geen")
+            self.verslag.zonder_bijlage.append(f"{datum}: {', '.join(alle) if alle else 'geen bijlagen'}")
+        for bijlage in bijlagen:
+            self._bijlage(bijlage, bron, datum)
+
+    def _reeks(self, event: dict, datum: date | None) -> list[dict]:
+        sleutel = (event.get("repeat") or {}).get("_id") or event.get("_id")
+        if sleutel not in self.reeksen:
+            try:
+                self.reeksen[sleutel] = herhalingen(self.token, self.membership, self.config, event["_id"])
+                self.verslag.reeksen += 1
+                time.sleep(WACHT_NA_DOWNLOAD)
+            except ScipioFout as fout:
+                self.reeksen[sleutel] = []
+                self.verslag.fouten.append(f"herhalingen van reeks bij {datum}: {fout}")
+        return self.reeksen[sleutel]
+
+    def _bijlage(self, bijlage: dict, bron: dict, datum: date | None) -> None:
+        self.verslag.bijlagen += 1
+        doel = self.archief / veilige_bestandsnaam(bijlage["title"])
+        opnieuw = doel.exists()
+        if opnieuw and not is_bijgewerkt(bron, doel):
+            self.verslag.al_aanwezig += 1
+            return
+        if not opnieuw and datum and datum < self.vanaf:
+            return
+        try:
+            download(self.token, self.config.community, bijlage, doel)
+        except ScipioFout as fout:
+            self.verslag.fouten.append(f"{bijlage['title']}: {fout}")
+            return
+        (self.verslag.bijgewerkt if opnieuw else self.verslag.gedownload).append(doel.name)
+        log.info("%s: %s (%s)", "opnieuw gedownload, gewijzigd in Scipio" if opnieuw else "gedownload", doel.name, datum)
+        time.sleep(WACHT_NA_DOWNLOAD)
+
+
 def haal_op(config: ScipioConfig, email: str, wachtwoord: str, archief: Path, vanaf: date | None = None) -> OphaalVerslag:
     """Downloadt liturgie-PDF's van kerkdiensten vanaf 'vanaf' (standaard:
-    terugkijk_dagen geleden) tot vandaag, zoals de web-app zelf de afgelopen
-    agenda opvraagt. De dienst van vandaag komt bij de volgende run mee.
-    Wat al in het archief staat wordt overgeslagen."""
+    terugkijk_dagen geleden) tot en met vooruit_dagen na vandaag. Dat gaat in
+    twee richtingen, zoals de web-app zelf de agenda opvraagt: de afgelopen
+    agenda tot vandaag middernacht, nieuwste eerst, en de komende agenda vanaf
+    vandaag middernacht, oudste eerst. Wat al in het archief staat wordt
+    overgeslagen, tenzij het event in Scipio later gewijzigd is dan het bestand."""
     verslag = OphaalVerslag()
     token = login(email, wachtwoord)
-    patroon = re.compile(config.bestandsfilter, re.IGNORECASE)
     nu = datetime.now(timezone.utc)
+    vandaag = datetime(nu.year, nu.month, nu.day, tzinfo=timezone.utc)
     if vanaf is None:
-        vanaf = (nu - timedelta(days=config.terugkijk_dagen)).date()
-    tot = nu
+        vanaf = (vandaag - timedelta(days=config.terugkijk_dagen)).date()
+    tot = (vandaag + timedelta(days=config.vooruit_dagen)).date()
     membership = lidmaatschap(token, config)
-    log.info("kerkdiensten van %s tot %s", vanaf, tot.date())
-    reeksen: dict[str, list[dict]] = {}
+    ophaler = _Ophaler(config, token, membership, archief, vanaf, verslag)
+    log.info("kerkdiensten van %s tot en met %s", vanaf, tot)
+
     skip = 0
     while verslag.paginas < MAX_PAGINAS:
-        events = events_pagina(token, membership, config, skip, tot)
+        events = events_pagina(token, membership, config, skip, vandaag)
         verslag.paginas += 1
         if not events:
-            log.debug("lege pagina bij skip=%d, klaar", skip)
+            log.debug("terug: lege pagina bij skip=%d, klaar", skip)
             break
-        oudste = None
         for event in events:
-            verslag.events += 1
-            datum = begindatum(event)
-            if datum and (oudste is None or datum < oudste):
-                oudste = datum
-            if event.get("page_id") != config.pagina:
-                continue
-            verslag.kerkdiensten += 1
-            bijlagen = liturgie_bijlagen(event, patroon)
-            if not bijlagen and is_reeks(event) and not (datum and datum < vanaf):
-                reeks = (event.get("repeat") or {}).get("_id") or event.get("_id")
-                if reeks not in reeksen:
-                    try:
-                        reeksen[reeks] = herhalingen(token, membership, config, event["_id"])
-                        verslag.reeksen += 1
-                        time.sleep(WACHT_NA_DOWNLOAD)
-                    except ScipioFout as fout:
-                        reeksen[reeks] = []
-                        verslag.fouten.append(f"herhalingen van reeks bij {datum}: {fout}")
-                herhaling = zoek_herhaling(reeksen[reeks], event)
-                if herhaling:
-                    bijlagen = liturgie_bijlagen(herhaling, patroon)
-                    if bijlagen:
-                        log.debug("kerkdienst %s: bijlage gevonden via de herhalingen van de reeks", datum)
-            if not bijlagen:
-                alle = [f.get("title", "?") for f in event.get("files", [])]
-                log.info("kerkdienst %s (%s) zonder liturgie-PDF; bijlagen: %s", datum, event.get("name", "?"), ", ".join(alle) if alle else "geen")
-                verslag.zonder_bijlage.append(f"{datum}: {', '.join(alle) if alle else 'geen bijlagen'}")
-            for bijlage in bijlagen:
-                verslag.bijlagen += 1
-                doel = archief / veilige_bestandsnaam(bijlage["title"])
-                if doel.exists():
-                    verslag.al_aanwezig += 1
-                    continue
-                if datum and datum < vanaf:
-                    continue
-                try:
-                    download(token, config.community, bijlage, doel)
-                    verslag.gedownload.append(doel.name)
-                    log.info("gedownload: %s (%s)", doel.name, datum)
-                    time.sleep(WACHT_NA_DOWNLOAD)
-                except ScipioFout as fout:
-                    verslag.fouten.append(f"{bijlage['title']}: {fout}")
-            
-
-        log.debug("pagina %d: %d events, oudste %s", verslag.paginas, len(events), oudste)
+            ophaler.behandel(event)
+        oudste = min((d for d in map(begindatum, events) if d), default=None)
+        log.debug("terug: pagina %d, %d events, oudste %s", verslag.paginas, len(events), oudste)
         if oudste and oudste < vanaf:
-            log.debug("oudste event %s ligt voor %s, klaar", oudste, vanaf)
+            log.debug("terug: oudste event %s ligt voor %s, klaar", oudste, vanaf)
             break
         if len(events) < config.per_pagina:
             break
         skip += len(events)
         time.sleep(WACHT_TUSSEN_PAGINAS)
+
+    skip = 0
+    while config.vooruit_dagen >= 0 and verslag.paginas < MAX_PAGINAS:
+        time.sleep(WACHT_TUSSEN_PAGINAS)
+        events = komende_events_pagina(token, membership, config, skip, vandaag)
+        verslag.paginas += 1
+        binnen = [e for e in events if (begindatum(e) or tot) <= tot]
+        for event in binnen:
+            ophaler.behandel(event)
+        log.debug("vooruit: pagina %d, %d events, %d tot en met %s", verslag.paginas, len(events), len(binnen), tot)
+        if len(binnen) < len(events) or len(events) < config.per_pagina:
+            break
+        skip += len(events)
     return verslag
