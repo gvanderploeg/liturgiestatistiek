@@ -1,3 +1,8 @@
+- id: opwkids-1
+  titel: Alle kind'ren mogen komen
+  referenties:
+  - bundel: opwkids
+    nummer: '1'
 - id: opwkids-13
   titel: Heer, onze Heer, hoe machtig is uw naam op heel de aarde
   referenties:
