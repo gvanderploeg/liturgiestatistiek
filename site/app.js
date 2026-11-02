@@ -27,6 +27,7 @@
   let data = null;
   let vermeldingen = [];
   const filters = { categorie: "", begeleiding: "", bundel: "", zoek: "" };
+  let filtersOpen = false;
   const instellingen = laadInstellingen();
 
   /* ---------- hulpfuncties ---------- */
@@ -88,18 +89,42 @@
     return data.liederen[id] || { titel: id };
   }
 
+  function bundelBijNaam(naam) {
+    for (const code in data.bundels) if (data.bundels[code].naam === naam) return code;
+    return null;
+  }
+
   function bronLabel(id) {
+    /* Korte bron voor in lijsten: afkortingen, en een bron zonder nummer (zoals Sela)
+       alleen als er geen nummer uit diezelfde bundel bij staat. */
     const l = lied(id);
+    const refs = l.referenties || [];
     const delen = [];
-    if (l.artiest && Object.values(data.bundels).some((b) => b.naam === l.artiest)) delen.push(l.artiest);
-    if (l.referenties && l.referenties.length) {
-      const r = l.referenties[0];
-      const b = data.bundels[r.bundel];
-      delen.push(`${b ? b.afkorting : r.bundel} ${r.nummer}`);
-    } else if (l.artiest && !delen.length) {
-      delen.push(l.artiest);
+    if (l.artiest) {
+      const code = bundelBijNaam(l.artiest);
+      if (!code) delen.push(l.artiest);
+      else if (!refs.some((r) => r.bundel === code)) delen.push(data.bundels[code].afkorting);
+    }
+    if (refs.length) {
+      const b = data.bundels[refs[0].bundel];
+      delen.push(`${b ? b.afkorting : refs[0].bundel} ${refs[0].nummer}`);
     }
     return delen.join(" · ");
+  }
+
+  let bundelsOpNaamlengte = null;
+
+  function kortTitel(titel) {
+    /* Een titel die met een volle bundelnaam begint ("De Nieuwe Psalmberijming 146") krijgt de afkorting. */
+    if (!bundelsOpNaamlengte) bundelsOpNaamlengte = Object.values(data.bundels).filter((b) => b.afkorting && b.afkorting !== b.naam).sort((a, b) => b.naam.length - a.naam.length);
+    for (const b of bundelsOpNaamlengte) {
+      if (titel.toLowerCase().startsWith(b.naam.toLowerCase() + " ")) return b.afkorting + titel.slice(b.naam.length);
+    }
+    return titel;
+  }
+
+  function gelijkeTekst(a, b) {
+    return a.toLowerCase().replace(/\s+/g, " ").trim() === b.toLowerCase().replace(/\s+/g, " ").trim();
   }
 
   function bundelsVan(id) {
@@ -191,8 +216,32 @@
 
   /* ---------- weergave: bouwstenen ---------- */
 
-  function liedLink(id, klasse) {
-    return `<a href="#/lied/${encodeURIComponent(id)}" class="${klasse || ""}">${esc(lied(id).titel)}</a>`;
+  function liedLink(id) {
+    const titel = lied(id).titel;
+    return `<a href="#/lied/${encodeURIComponent(id)}" title="${esc(titel)}">${esc(kortTitel(titel))}</a>`;
+  }
+
+  function liedCellen(id, moment) {
+    /* Titel en bron als twee cellen van een lijsttabel. De bron blijft leeg als die
+       gelijk is aan de (verkorte) titel; het moment verdwijnt op smalle schermen. */
+    let bron = bronLabel(id);
+    if (bron && gelijkeTekst(bron, kortTitel(lied(id).titel))) bron = "";
+    if (!bron) {
+      const extra = moment ? `<span class="alleen-breed bron"> · ${MOMENTNAMEN[moment]}</span>` : "";
+      return `<td colspan="2">${liedLink(id)}${extra}</td>`;
+    }
+    const extra = moment ? `<span class="alleen-breed"> · ${MOMENTNAMEN[moment]}</span>` : "";
+    return `<td>${liedLink(id)}</td><td class="bron" title="${esc(bron)}">${esc(bron)}${extra}</td>`;
+  }
+
+  function lijstTabel(kolommen, rijen, klasse) {
+    /* Tabel met vaste kolombreedtes: elke regel blijft een regel, wat niet past wordt afgekapt. */
+    const cols = kolommen.map((k) => `<col class="k-${k}">`).join("");
+    return `<table class="lijst${klasse ? " " + klasse : ""}"><colgroup>${cols}</colgroup>${rijen.join("")}</table>`;
+  }
+
+  function maandJaar(d) {
+    return `${MAANDNAMEN[d.getMonth()]} ${d.getFullYear()}`;
   }
 
   function dienstLink(dienst) {
@@ -226,7 +275,7 @@
   }
 
   function telBadge(n) {
-    const tekst = n === 0 ? "nooit" : n === 1 ? "1e keer" : `${n}x`;
+    const tekst = n === 0 ? "nooit" : `${n}x`;
     return `<span class="tel ${telKlasse(n)}" title="${n === 1 ? "voor het eerst gezongen sinds het begin van de data" : `${n}x gezongen sinds het begin van de data`}">${tekst}</span>`;
   }
 
@@ -244,11 +293,15 @@
     for (const v of vermeldingen) if (v.lied) for (const c of bundelsVan(v.lied)) bundelsInGebruik.add(c);
     const bundels = [...bundelsInGebruik].sort((a, b) => data.bundels[a].naam.localeCompare(data.bundels[b].naam));
     const opt = (lijst, huidig, alles, naam) => `<option value=""${!huidig ? " selected" : ""}>${alles}</option>` + lijst.map((w) => `<option value="${esc(w)}"${w === huidig ? " selected" : ""}>${esc(naam ? naam(w) : w)}</option>`).join("");
-    return `<div class="filters">
-      <span class="label">Filter alle blokken:</span>
-      <select data-filter="categorie"${categorieen.length ? "" : " disabled title='Nog geen liederen met een categorie'"}>${opt(categorieen, filters.categorie, "alle categorieën")}</select>
-      <select data-filter="begeleiding">${opt(begeleidingen, filters.begeleiding, "band en orgel", (w) => (w === "geen" ? "geen begeleiding" : w))}</select>
-      <select data-filter="bundel">${opt(bundels, filters.bundel, "alle bundels", (w) => data.bundels[w].naam)}</select>
+    const actief = [filters.categorie, filters.begeleiding, filters.bundel].filter(Boolean).length;
+    return `<div class="filters${filtersOpen ? " open" : ""}">
+      <button type="button" class="filterknop" data-filterknop aria-expanded="${filtersOpen}">Filters${actief ? ` (${actief})` : ""}</button>
+      <span class="filterkeuze">
+        <span class="label">Filter alle blokken:</span>
+        <select data-filter="categorie"${categorieen.length ? "" : " disabled title='Nog geen liederen met een categorie'"}>${opt(categorieen, filters.categorie, "alle categorieën")}</select>
+        <select data-filter="begeleiding">${opt(begeleidingen, filters.begeleiding, "band en orgel", (w) => (w === "geen" ? "geen begeleiding" : w))}</select>
+        <select data-filter="bundel">${opt(bundels, filters.bundel, "alle bundels", (w) => data.bundels[w].naam)}</select>
+      </span>
       <span class="zoek"><input type="search" data-zoek placeholder="Zoek een lied…" value="${esc(filters.zoek)}" aria-label="Zoek een lied"></span>
     </div>`;
   }
@@ -261,9 +314,9 @@
     if (!treffers.length) return `<div class="blok"><p class="stil">Geen lied gevonden voor "${esc(filters.zoek)}".</p></div>`;
     const rijen = treffers.map(([id]) => {
       const t = ooit.get(id);
-      return `<tr><td>${liedLink(id)}</td><td class="bron">${esc(bronLabel(id))}</td><td class="r stil">${t ? `${t.aantal}x, laatst ${kort(t.laatst)}` : "nooit gezongen"}</td></tr>`;
-    }).join("");
-    return `<div class="blok" style="margin-bottom:14px"><div class="blok-kop"><h2>Zoekresultaat</h2><span class="criterium">${treffers.length} liederen</span></div><table>${rijen}</table></div>`;
+      return `<tr>${liedCellen(id)}<td class="r stil">${t ? `${t.aantal}x · ${maandJaar(t.laatst)}` : "nooit"}</td></tr>`;
+    });
+    return `<div class="blok" style="margin-bottom:14px"><div class="blok-kop"><h2>Zoekresultaat</h2><span class="criterium">${treffers.length} liederen</span></div>${lijstTabel(["titel", "bron", "laatst"], rijen)}</div>`;
   }
 
   function blokRecent(lijst) {
@@ -282,10 +335,10 @@
             continue;
           }
           const t = ooit.get(v.lied);
-          rijen.push(`<tr><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}${v.moment ? ` · ${MOMENTNAMEN[v.moment]}` : ""}</td><td class="r">${telBadge(t.aantal)}</td></tr>`);
+          rijen.push(`<tr>${liedCellen(v.lied, v.moment)}<td class="r">${telBadge(t.aantal)}</td></tr>`);
         }
       }
-      inhoud = `<table>${rijen.join("")}</table><a class="meer" href="#/diensten">alle diensten…</a>`;
+      inhoud = lijstTabel(["titel", "bronmoment", "tel"], rijen) + `<a class="meer" href="#/diensten">alle diensten…</a>`;
     }
     return `<div class="blok"><div class="blok-kop"><h2>Recent gezongen</h2><span class="criterium">afgelopen ${keuze("recentWeken", [2, 3, 4, 6, 8, 13], instellingen.recentWeken, "weken")}</span></div>${inhoud}</div>`;
   }
@@ -295,7 +348,7 @@
     const criterium = `1x in ${keuze("tweedeKort", [1, 2, 3, 4, 6], instellingen.tweedeKort, "mnd")}, 0x in ${keuze("tweedeLang", [6, 12, 18, 24], instellingen.tweedeLang, "mnd ervoor")}`;
     let inhoud;
     if (!items.length) inhoud = `<div class="leeg">Geen liederen die aan dit criterium voldoen.</div>`;
-    else inhoud = `<table>${items.slice(0, 12).map((i) => `<tr><td>${liedLink(i.lied)}</td><td class="bron">${esc(bronLabel(i.lied))}</td><td class="r stil">${kort(i.datum)}</td></tr>`).join("")}</table>` + (items.length > 12 ? `<span class="meer stil">en nog ${items.length - 12} liederen</span>` : "");
+    else inhoud = lijstTabel(["titel", "bron", "datum"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r stil">${kort(i.datum)}</td></tr>`)) + (items.length > 12 ? `<span class="meer stil">en nog ${items.length - 12} liederen</span>` : "");
     return `<div class="blok"><div class="blok-kop"><h2>Tijd voor een tweede keer</h2><span class="criterium">${criterium}</span></div>${inhoud}</div>`;
   }
 
@@ -306,7 +359,7 @@
     if (!items.length) inhoud = `<div class="leeg">Geen lied is zo vaak gezongen in deze periode.</div>`;
     else {
       const max = items[0].aantal;
-      inhoud = `<table>${items.slice(0, 12).map((i) => `<tr><td>${liedLink(i.lied)}</td><td class="bron">${esc(bronLabel(i.lied))}</td><td class="r"><span class="balk" style="width:${Math.round(60 * i.aantal / max)}px"></span>${i.aantal}</td></tr>`).join("")}</table>`;
+      inhoud = lijstTabel(["titel", "bron", "balk"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r"><span class="balk" style="width:${Math.round(45 * i.aantal / max)}px"></span>${i.aantal}</td></tr>`));
     }
     return `<div class="blok"><div class="blok-kop"><h2>Vaak gezongen</h2><span class="criterium">${criterium}</span></div>${inhoud}</div>`;
   }
@@ -319,7 +372,7 @@
     if (!items.length) {
       const toelichting = eerste > maandenTerug(instellingen.vergetenMaanden) ? ` De data begint ${esc(lang(eerste))}, dus dit blok wordt pas zinvol na ${instellingen.vergetenMaanden} maanden historie.` : "";
       inhoud = `<div class="leeg">Geen liederen die aan dit criterium voldoen.${toelichting}</div>`;
-    } else inhoud = `<table>${items.slice(0, 12).map((i) => `<tr><td>${liedLink(i.lied)}</td><td class="bron">${esc(bronLabel(i.lied))}</td><td class="r stil">${i.aantal}x, laatst ${kort(i.laatst)} ${i.laatst.getFullYear()}</td></tr>`).join("")}</table>` + (items.length > 12 ? `<span class="meer stil">en nog ${items.length - 12} liederen</span>` : "");
+    } else inhoud = lijstTabel(["titel", "bron", "laatst"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r stil" title="laatst gezongen ${esc(lang(i.laatst))}">${i.aantal}x · ${maandJaar(i.laatst)}</td></tr>`)) + (items.length > 12 ? `<span class="meer stil">en nog ${items.length - 12} liederen</span>` : "");
     return `<div class="blok"><div class="blok-kop"><h2>Vergeten bekenden</h2><span class="criterium">${criterium}</span></div>${inhoud}</div>`;
   }
 
@@ -334,9 +387,9 @@
     const rijen = dienst.liederen.map((v) => {
       if (!v.lied) return `<tr><td class="moment"></td><td class="stil">nog niet herkend lied</td><td class="bron"></td><td></td></tr>`;
       const t = ooit.get(v.lied);
-      return `<tr><td class="moment">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td><td>${liedLink(v.lied)}</td><td class="bron">${esc(bronLabel(v.lied))}</td><td class="r">${telBadge(t.aantal)}</td></tr>`;
-    }).join("");
-    return `<section class="dienst" id="dienst-${dienst.datum}"><h2>${esc(metDag(datum(dienst.datum)))}</h2><div class="sub">${dienstOmschrijving(dienst)}</div><table class="banden">${rijen}</table></section>`;
+      return `<tr><td class="moment">${v.moment ? MOMENTNAMEN[v.moment] : ""}</td>${liedCellen(v.lied)}<td class="r">${telBadge(t.aantal)}</td></tr>`;
+    });
+    return `<section class="dienst" id="dienst-${dienst.datum}"><h2>${esc(metDag(datum(dienst.datum)))}</h2><div class="sub">${dienstOmschrijving(dienst)}</div>${lijstTabel(["moment", "titel", "bron", "tel"], rijen, "banden")}</section>`;
   }
 
   function diensten(geselecteerd) {
@@ -417,7 +470,7 @@
       </ul>
       <p>Aangepaste criteria worden in je eigen browser bewaard. <button data-reset>Terug naar standaardwaarden</button></p>
       <h2>Kleuren</h2>
-      <p>Het getal achter een lied is hoe vaak het sinds het begin van de data gezongen is, inclusief de dienst waar je naar kijkt. De tint loopt op met het aantal; een eerste keer is apart gemarkeerd:</p>
+      <p>Het getal achter een lied is hoe vaak het sinds het begin van de data gezongen is, inclusief de dienst waar je naar kijkt. De tint loopt op met het aantal; oranje betekent dat het lied in die dienst voor het eerst gezongen werd:</p>
       <p>${[1, 2, 5, 9].map(telBadge).join(" ")} ${telBadge(0)}</p>
       <p>Dienstkenmerken in twee families: ${["doop", "avondmaal", "belijdenis", "bevestiging"].map(kenmerkLabel).join(" ")} en ${["advent", "kerst", "pasen", "pinksteren", "goede-vrijdag"].map(kenmerkLabel).join(" ")}; de overige ${["startzondag", "dankdag", "biddag"].map(kenmerkLabel).join(" ")} zijn neutraal.</p>
       <h2>Zelf rekenen</h2>
@@ -477,6 +530,9 @@
       if ("reset" in e.target.dataset) {
         Object.assign(instellingen, STANDAARD);
         bewaarInstellingen();
+        render();
+      } else if ("filterknop" in e.target.dataset) {
+        filtersOpen = !filtersOpen;
         render();
       }
     });

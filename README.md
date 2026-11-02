@@ -1,3 +1,5 @@
+<p align="center"><img src="logo-liturgiestatistiek.png" alt="Logo Liturgiestatistiek" width="300"></p>
+
 # Liturgiestatistiek Westerkerk
 
 Liedstatistiek uit de liturgieen van de Westerkerk, als hulpmiddel bij de liedkeuze. Het functioneel ontwerp staat in [docs/functioneel-ontwerp.md](docs/functioneel-ontwerp.md).
@@ -16,7 +18,8 @@ data/
   aanvullingen.yaml liederen die de beheerder aan een dienst toevoegt
   diensten/         een YAML-bestand per dienst: de publieke uitkomst
 site/               de website: index.html, app.js, stijl.css
-site/data/          dataset.json en liedvermeldingen.csv, gegenereerd (niet in Git)
+site/data/          dataset.json, liedvermeldingen.csv, logo.png en favicon.png, gegenereerd (niet in Git)
+logo-liturgiestatistiek.png  bron van het logo; publiceer maakt er een kleine, bijgesneden versie met transparante achtergrond van
 liturgiestatistiek/ de verwerking en publicatie (Python)
 tests/
 .github/workflows/  bouwt site/data en publiceert site/ naar GitHub Pages bij elke push

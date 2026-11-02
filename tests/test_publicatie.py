@@ -57,6 +57,28 @@ def test_bundels_hebben_afkorting(dataset):
     assert ds["bundels"]["sela"]["afkorting"] == "Sela"
 
 
+def test_logo_wordt_bijgesneden_en_transparant(tmp_path):
+    from PIL import Image
+
+    from liturgiestatistiek.publicatie import FAVICON_BESTAND, LOGO_BESTAND, LOGO_HOOGTE, maak_logo
+
+    bron = tmp_path / "logo.png"
+    beeld = Image.new("RGB", (600, 400), (255, 255, 255))
+    beeld.paste((11, 45, 99), (200, 100, 400, 300))
+    beeld.save(bron)
+
+    doel = tmp_path / "data"
+    assert maak_logo(bron, doel)
+    logo = Image.open(doel / LOGO_BESTAND)
+    assert logo.mode == "RGBA" and logo.height == LOGO_HOOGTE
+    assert logo.width < LOGO_HOOGTE * 1.3, "witruimte rondom is weggesneden"
+    assert logo.getpixel((0, 0))[3] == 0, "wit is transparant"
+    midden = logo.getpixel((logo.width // 2, logo.height // 2))
+    assert midden[3] == 255 and midden[:3] == (11, 45, 99), "volle kleur blijft volledig dekkend en onveranderd"
+    assert Image.open(doel / FAVICON_BESTAND).size == (64, 64)
+    assert not maak_logo(tmp_path / "bestaat-niet.png", doel)
+
+
 def test_csv_heeft_een_regel_per_vermelding(dataset):
     ds, doel = dataset
     with (doel / "liedvermeldingen.csv").open(encoding="utf-8", newline="") as f:

@@ -36,14 +36,16 @@ td, th { padding: 3px 6px 3px 0; vertical-align: top; text-align: left; }
 th { font-weight: 500; color: var(--tekst-3); font-size: 13px; }
 td.r, th.r { text-align: right; padding-right: 0; white-space: nowrap; }
 select { font: inherit; font-size: 14px; padding: 2px 4px; border: 1px solid var(--rand); border-radius: 6px; background: var(--wit); color: var(--tekst); }
-input[type="search"] { font: inherit; font-size: 14px; padding: 6px 10px; border: 1px solid var(--rand); border-radius: 6px; min-width: 200px; }
-button { font: inherit; font-size: 14px; padding: 4px 10px; border: 1px solid var(--rand); border-radius: 6px; background: var(--wit); cursor: pointer; }
+input[type="search"] { font: inherit; font-size: 14px; padding: 6px 10px; border: 1px solid var(--rand); border-radius: 6px; min-width: 200px; background: var(--wit); color: var(--tekst); }
+button { font: inherit; font-size: 14px; padding: 4px 10px; border: 1px solid var(--rand); border-radius: 6px; background: var(--wit); color: var(--tekst); cursor: pointer; }
 button:hover { background: var(--vlak); }
 
 .kop { border-bottom: 1px solid var(--rand); background: var(--wit); }
 .kop-binnen, .inhoud, .voet { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 .kop-binnen { display: flex; align-items: center; gap: 20px; height: 52px; }
-.merk { font-weight: 600; color: var(--tekst); font-size: 17px; }
+.merk { font-weight: 600; color: var(--tekst); font-size: 17px; display: inline-flex; align-items: center; gap: 8px; }
+.merk:hover { text-decoration: none; }
+.logo { height: 34px; width: auto; display: block; }
 .tabs { display: flex; gap: 16px; }
 .tabs a { color: var(--tekst-2); padding: 14px 0; border-bottom: 2px solid transparent; }
 .tabs a.actief { color: var(--tekst); border-bottom-color: var(--accent); }
@@ -55,6 +57,17 @@ button:hover { background: var(--vlak); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; background: var(--vlak); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 14px; }
 .filters .label { color: var(--tekst-2); font-size: 14px; }
 .filters .zoek { margin-left: auto; }
+.filterknop { display: none; }
+.filterkeuze { display: contents; }
+
+table.lijst { table-layout: fixed; }
+table.lijst td { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; }
+col.k-bron { width: 7.5em; }
+col.k-bronmoment { width: 12em; }
+col.k-tel, col.k-datum { width: 4.4em; }
+col.k-balk { width: 5.5em; }
+col.k-laatst { width: 7.5em; }
+col.k-moment { width: 6.8em; }
 
 .rooster { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 14px; align-items: start; }
 .kolom { display: flex; flex-direction: column; gap: 14px; }
@@ -86,7 +99,7 @@ button:hover { background: var(--vlak); }
 .tel-2 { background: var(--tel2-vlak); color: var(--tel-tekst); }
 .tel-3 { background: var(--tel3-vlak); color: var(--tel-tekst); }
 .tel-4 { background: var(--tel4-vlak); color: var(--tel4-tekst); }
-.moment { color: var(--tekst-3); font-size: 13px; white-space: nowrap; width: 100px; }
+.moment { color: var(--tekst-3); font-size: 13px; white-space: nowrap; }
 
 .dienst { border: 1px solid var(--rand); border-radius: var(--radius); padding: 10px 16px; margin-bottom: 12px; }
 .dienst h2 { margin: 0 0 6px; font-size: 16px; font-weight: 600; }
@@ -126,14 +139,37 @@ button:hover { background: var(--vlak); }
     --feest-vlak: #2b1b4d;
     --feest-tekst: #d2a8ff;
   }
+  .logo { background: #f6f8fa; border-radius: 6px; padding: 2px 4px; }
 }
 
 @media (max-width: 900px) {
-  .kop-binnen { height: auto; flex-wrap: wrap; padding-top: 8px; padding-bottom: 4px; gap: 8px 16px; }
-  .tabs a { padding: 8px 0; }
-  .bijgewerkt { width: 100%; margin-left: 0; margin-bottom: 4px; }
   .rooster { grid-template-columns: minmax(0, 1fr); }
   .filters .zoek { margin-left: 0; width: 100%; }
   .filters .zoek input { width: 100%; }
-  .moment { width: 80px; }
+}
+
+/* Telefoon: kop op twee regels, filters ingeklapt achter een knop, geen momenten, smalle bronkolom. */
+@media (max-width: 640px) {
+  .kop-binnen { height: auto; flex-wrap: wrap; padding-top: 8px; gap: 0 16px; }
+  .merk { order: 0; }
+  .logo { height: 28px; }
+  .bijgewerkt { order: 1; margin-left: auto; }
+  .tabs { order: 2; width: 100%; }
+  .tabs a { padding: 8px 0; }
+
+  .filters { gap: 8px; padding: 8px 10px; }
+  .filterknop { display: inline-block; }
+  .filters.open .filterknop { background: var(--wit); border-color: var(--tekst-3); }
+  .filterkeuze { display: none; }
+  .filters.open .filterkeuze { display: flex; flex-wrap: wrap; gap: 8px; order: 3; width: 100%; }
+  .filters .label { display: none; }
+  .filters .zoek { flex: 1; width: auto; min-width: 0; }
+  .filters .zoek input { min-width: 0; }
+
+  .blok { padding: 10px 12px; }
+  col.k-bron, col.k-bronmoment, col.k-laatst { width: 6.6em; }
+  .alleen-breed { display: none; }
+  col.k-moment { width: 0; }
+  table.lijst td.moment { padding: 0; }
+  .banden td.moment + td { padding-left: 6px; }
 }

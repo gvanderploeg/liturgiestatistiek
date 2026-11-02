@@ -101,10 +101,51 @@ def schrijf_csv(dataset: dict, pad: Path) -> None:
                 )
 
 
+LOGO_BRON = "logo-liturgiestatistiek.png"
+LOGO_BESTAND = "logo.png"
+FAVICON_BESTAND = "favicon.png"
+LOGO_HOOGTE = 96
+FAVICON_ZIJDE = 64
+
+
+def maak_logo(bron: Path, doelmap: Path) -> bool:
+    """Maakt uit het logo in de projectmap een kleine, bijgesneden versie met
+    transparante achtergrond voor de kopregel, en een vierkant favicon.
+    Wit wordt transparant zodat het logo ook in de donkere modus werkt; de
+    volle kleuren blijven volledig dekkend, alleen de randen worden zacht."""
+    if not bron.exists():
+        log.warning("geen logo gevonden op %s; de website toont dan alleen de naam", bron)
+        return False
+    from PIL import Image, ImageChops
+
+    rgb = Image.open(bron).convert("RGB")
+    r, g, b = ImageChops.invert(rgb).split()
+    dekking = ImageChops.lighter(ImageChops.lighter(r, g), b).point(lambda v: min(255, int(v * 1.3)))
+    beeld = rgb.convert("RGBA")
+    beeld.putalpha(dekking)
+
+    kader = dekking.point(lambda v: 255 if v > 24 else 0).getbbox()
+    if kader:
+        marge = round(0.02 * max(beeld.size))
+        links, boven, rechts, onder = kader
+        beeld = beeld.crop((max(0, links - marge), max(0, boven - marge), min(beeld.width, rechts + marge), min(beeld.height, onder + marge)))
+
+    doelmap.mkdir(parents=True, exist_ok=True)
+    breedte = round(beeld.width * LOGO_HOOGTE / beeld.height)
+    beeld.resize((breedte, LOGO_HOOGTE), Image.LANCZOS).save(doelmap / LOGO_BESTAND, optimize=True)
+
+    zijde = max(beeld.size)
+    vierkant = Image.new("RGBA", (zijde, zijde), (255, 255, 255, 0))
+    vierkant.paste(beeld, ((zijde - beeld.width) // 2, (zijde - beeld.height) // 2))
+    vierkant.resize((FAVICON_ZIJDE, FAVICON_ZIJDE), Image.LANCZOS).save(doelmap / FAVICON_BESTAND, optimize=True)
+    return True
+
+
 def publiceer(datamap: Path, doelmap: Path) -> dict:
     dataset = bouw_dataset(datamap)
     doelmap.mkdir(parents=True, exist_ok=True)
     with (doelmap / DATASET_BESTAND).open("w", encoding="utf-8") as f:
         json.dump(dataset, f, ensure_ascii=False, separators=(",", ":"))
     schrijf_csv(dataset, doelmap / CSV_BESTAND)
+    maak_logo(datamap.parent / LOGO_BRON, doelmap)
     return dataset
