@@ -5,6 +5,11 @@
     nummer: '191'
   - bundel: jdh
     nummer: '523'
+- id: elb-327a
+  titel: Als op 's levens zee de stormwind
+  referenties:
+  - bundel: elb
+    nummer: 327a
 - id: elb-413
   titel: Lichtstad met uw paar'len poorten
   referenties:

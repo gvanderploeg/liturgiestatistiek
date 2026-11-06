@@ -1,0 +1,32 @@
+datum: '2026-11-04'
+begeleiding: orgel
+kenmerken: []
+bron: 20261104 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'ELB37: 1, 5, 7, 8 Prijst de Heer met blijde galmen'
+  moment: aanvang
+  lied: opw-221
+  herkenning: handmatig
+- lied: null
+  herkenning: onbekend
+- ruw: LB413 Grote God, wij loven U
+  lied: nlb-413
+  herkenning: automatisch
+- ruw: Opwekking 331 Breng dank aan de Eeuwige
+  lied: opw-331
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+- ruw: Opw. 733 Tienduizend redenen
+  lied: opw-733
+  herkenning: automatisch
+- ruw: ELB 327a Als op ’s levens zee de stormwind . . .
+  lied: elb-327a
+  herkenning: automatisch
+- ruw: Sela Onze hulp en onze verwachting
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: handmatig
+- ruw: Opwekking 436 Onze Vader in de hemel
+  lied: opw-436
+  herkenning: handmatig
