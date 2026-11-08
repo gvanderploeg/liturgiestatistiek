@@ -32,6 +32,8 @@
   - Bij God ben ik geborgen
 - id: blessings
   titel: Blessings
+- id: build-your-kingdom-here
+  titel: Build Your Kingdom Here
 - id: charity-gale-new-name-written-down-in-glory
   titel: Charity Gale - New Name Written Down in Glory
   aliassen:
@@ -90,6 +92,8 @@
   - God regeert in dit huis
 - id: heel-dichtbij-elly-en-rikkert
   titel: Heel dichtbij, Elly en Rikkert
+- id: nlb-712
+  titel: Het jaar neigt zich tot stille groet
 - id: hillsong-oceans
   titel: Hillsong - Oceans
 - id: holy-forever
@@ -100,6 +104,10 @@
   titel: I thank God - Housefire
   aliassen:
   - I thank God
+- id: oke4kids-iedereen-is-anders
+  titel: Iedereen is anders
+  aliassen:
+  - Iedereen is anders IMM vdtTsNfbruVC&index=
 - id: ik-ben-gods-kind-schoollied-van-gbs-de-regenboog
   titel: Ik ben Gods kind - schoollied van GBS De Regenboog
   aliassen:
@@ -110,6 +118,8 @@
   titel: Ik zegen jou in Jezus' naam - Elly & Rikkert
   aliassen:
   - Ik zegen jou in Jezus' naam
+- id: in-christ-alone
+  titel: In Christ alone
 - id: in-de-heer-vind-ik-heel-mijn-sterkte-taize
   titel: In de Heer vind ik heel mijn sterkte - Taizé
   aliassen:

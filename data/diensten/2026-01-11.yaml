@@ -6,15 +6,13 @@ liederen:
 - ruw: Opwekking 847 (‘Onze schuilplaats is God’) Opwekking 680 (‘Mijn Redder’)
   moment: aanvang
   lied: opw-847
-  herkenning: automatisch
+  herkenning: handmatig
 - ruw: ‘Ik wens jou’ (Trinity) via Jannie Meijer https://www.youtube.com/watch?v=QAjBYdGILes
   lied: trinity-ik-wens-jou
   herkenning: automatisch
 - ruw: ‘Living hope’ (Phil Wickham)
   lied: bethel-living-hope
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
 - ruw: Opwekking 661 (‘De Koning in zijn pracht’)
   lied: opw-661
   herkenning: automatisch

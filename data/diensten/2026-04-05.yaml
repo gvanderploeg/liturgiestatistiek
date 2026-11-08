@@ -8,8 +8,9 @@ liederen:
   moment: aanvang
   lied: opw-213
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: In Christ alone, vers 1, 3 en 4 *
+  lied: in-christ-alone
+  herkenning: handmatig
 - ruw: Opwekking 369 (Door uw genade, Vader)
   lied: opw-369
   herkenning: automatisch
