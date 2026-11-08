@@ -1,0 +1,31 @@
+datum: '2026-11-08'
+begeleiding: band
+kenmerken: []
+bron: 20261108 Eredienst Westerkerk.pdf
+liederen:
+- ruw: 'Sela: Votum & Groet'
+  moment: aanvang
+  lied: sela-votum-en-groet
+  herkenning: automatisch
+- ruw: Onze Schuilplaats is God
+  lied: opw-847
+  herkenning: automatisch
+- ruw: 'Psalmen voor Nu 16: Ik val niet uit Zijn hand'
+  lied: pvn-16-ik-val-niet-uit-zijn
+  herkenning: automatisch
+- ruw: 'Marcel Zimmer: Iedereen is anders https://www.youtube.com/watch?v=XWmS4dUlLvk&list=PLl8rShVMMtd5EMLBA IMM8vdtTsNfbruVC&index=7'
+  moment: kindmoment
+  lied: oke4kids-iedereen-is-anders
+  herkenning: handmatig
+- ruw: Build Your Kingdom Here
+  lied: build-your-kingdom-here
+  herkenning: handmatig
+- ruw: 'Opwekking 378: Ik wil jou van harte dienen'
+  lied: opw-378
+  herkenning: automatisch
+- ruw: 'Opwekking 705: Toon Mijn Liefde (aan de maaltijd)'
+  lied: opw-705
+  herkenning: automatisch
+- ruw: 'Liedboek 416: Ga met God en Hij zal met je zijn'
+  lied: ga-met-god-en-hij-zal-met-je-zijn
+  herkenning: automatisch
