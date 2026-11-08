@@ -42,9 +42,9 @@
   naam: Johannes de Heer
   afkorting: JdH
   aliassen: [jdh, johannes de heer, joh. de heer]
-- code: er2
-  naam: E&R liedbundel 2
-  afkorting: E&R 2
+- code: er
+  naam: E&R liedbundel
+  afkorting: E&R
   aliassen: [e&r2, e&r 2, e&r liedbundel 2, e&r bundel 2]
 - code: hh
   naam: Hemelhoog

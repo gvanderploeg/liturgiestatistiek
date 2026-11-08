@@ -1,27 +1,17 @@
 datum: '2024-04-07'
 begeleiding: band
 kenmerken: []
-bron: Eredienst - 7 april 2024 WAK dienst.pdf + Eredienst - 7 april 2024.pdf
+bron: Eredienst - 7 april 2024.pdf
 liederen:
-- ruw: 'Medley: - Opw.17 (“Ja God is goed”) - Opw.32 (“Dit is de dag die de Heer ons geeft”) - Hymn: “I will enter his gates
-    with thanksgiving…”'
-  moment: aanvang
-  lied: opw-17
-  herkenning: handmatig
-- ruw: 'Opw.589 (“Ik wil juichen voor U mijn Heer”) Opw.554 (“Ik weet: Hij heeft mij gered”)'
-  lied: opw-589
-  herkenning: handmatig
-- ruw: Opw.281 (“Als een hert dat verlangt naar water”)
-  lied: opw-281
-  herkenning: automatisch
-- ruw: ELB Lied 466 (“Onze Vader” van Elly en Rikkert)
-  lied: elb-466
-  herkenning: automatisch
 - ruw: Met open armen (Schrijvers voor Gerechtigheid)
+  moment: aanvang
   lied: svg-met-open-armen
   herkenning: handmatig
 - ruw: Ik kijk omhoog naar de hoge bergen (Psalmen voor Nu 121)
   lied: pvn-121-ik-kijk-omhoog-naar-de
+  herkenning: automatisch
+- ruw: Als een hert dat verlangt naar water (Opwekking 281)
+  lied: opw-281
   herkenning: automatisch
 - ruw: Heer onze Heer, psalm 8 (Marcel en Lydia Zimmer)
   moment: kindmoment

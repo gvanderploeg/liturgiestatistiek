@@ -10,9 +10,10 @@ liederen:
 - ruw: Opwekking 720 – God maakt vrij
   lied: opw-720
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: Marcel en Lydia Zimmer – Laat je licht maar schijnen
+  moment: kindmoment
+  lied: oke4kids-18-laat-je-licht-maar-schijnen
+  herkenning: handmatig
 - ruw: Schrijvers voor gerechtigheid - Licht aan
   lied: svg-licht-aan
   herkenning: automatisch

@@ -23,9 +23,8 @@ liederen:
 - ruw: 'GK06 Gezang 142 : 1, 2, 3 en 4 (“Een vaste burcht is onze God”)'
   lied: opw-370
   herkenning: automatisch
-- ruw: 'GK Gezang 176 : 1 (“‘k geloof in God de Vader…”)'
-  lied: opw-347
-  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
 - ruw: 'GK Gezang 176 : 5'
   lied: gkb-176
   herkenning: handmatig

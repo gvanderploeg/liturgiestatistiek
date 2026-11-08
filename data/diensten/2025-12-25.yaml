@@ -12,19 +12,23 @@ liederen:
   moment: zegenlied
   lied: sela-ere-zij-god
   herkenning: automatisch
-- ruw: 'Kinderlied 1 / Lied 4 Lied van Herodes: https://m.youtube.com/watch?v=OgExVkvW8eY'
+- ruw: Lied 8 Sela - Kerstnacht boven Bethlehem
+  lied: sela-kerstnacht-boven-bethlehem
+  herkenning: handmatig
+- ruw: Kinderlied 2 / Lied 5 ⁠Ga je mee op zoek? https://youtu.be/_Uxy4bD54ec?si=LcUbWCjE4Oa1jV7L
   moment: kindmoment
-  lied: lied-van-herodes
+  lied: ga-je-mee-op-zoek
   herkenning: handmatig
 - ruw: Lied 3 Kees Kraayenoord - Komt verwonderd u hier mensen
   lied: komt-verwondert-u-hier-mensen
   herkenning: handmatig
-- ruw: Lied 6 Komt laten wij aanbidden
-  lied: opw-529
+- ruw: 'Kinderlied 1 / Lied 4 Lied van Herodes: https://m.youtube.com/watch?v=OgExVkvW8eY'
+  moment: kindmoment
+  lied: lied-van-herodes
   herkenning: handmatig
 - ruw: Lied 7 Sela - In het licht
   lied: sela-in-het-licht
   herkenning: handmatig
-- ruw: Lied 8 Sela - Kerstnacht boven Bethlehem
-  lied: sela-kerstnacht-boven-bethlehem
+- ruw: Lied 6 Komt laten wij aanbidden
+  lied: opw-529
   herkenning: handmatig

@@ -7,8 +7,9 @@ liederen:
   moment: aanvang
   lied: tpp-146-hoop-op-hem
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Psalm 139 (“Heer die mij ziet zoals ik ben”) 2
+  lied: tpp-139-heer-die-mij-ziet-zoals-ik-ben
+  herkenning: handmatig
 - ruw: Psalm 8 (“Heer onze Heer hoe machtig is Uw naam op heel 3 de aarde”)
   moment: kindmoment
   lied: opwkids-13

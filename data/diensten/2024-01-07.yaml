@@ -14,8 +14,9 @@ liederen:
 - ruw: 'LB Lied 354 : 1, 2, 3, 4 en 5 (“Jouw leven staat aan het begin”)'
   lied: nlb-354
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: 1 “Groot is Uw trouw, o Heer, mijn God en Vader”
+  lied: opw-123
+  herkenning: handmatig
 - ruw: Opw.Kids 76 (“Vrede van God”) – gezongen door Juda
   moment: kindmoment
   lied: opw-602

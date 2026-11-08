@@ -20,6 +20,10 @@
   titel: Als je bidt zal Hij je geven
 - id: amazing-grace
   titel: Amazing Grace
+- id: bethel-music-the-goodness-of-god
+  titel: Bethel Music - The goodness of God
+  aliassen:
+  - The goodness of God
 - id: bij-god-ben-ik-geborgen-taize
   titel: Bij God ben ik geborgen - Taizé
   aliassen:
@@ -64,6 +68,8 @@
   titel: Eline Bakker - Geen afstand
 - id: for-king-and-country-burn-the-ships
   titel: For King + Country - Burn the Ships
+- id: ga-je-mee-op-zoek
+  titel: Ga je mee op zoek
 - id: gebed-voor-mijn-kinderen-remco-hakkert
   titel: Gebed voor mijn kinderen - Remco Hakkert
   aliassen:

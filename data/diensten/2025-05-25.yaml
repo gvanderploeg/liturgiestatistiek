@@ -17,8 +17,9 @@ liederen:
 - ruw: Opwekking 510 (Dit is mijn verlangen)
   lied: opw-510
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Bethel Music - The goodness of God
+  lied: bethel-music-the-goodness-of-god
+  herkenning: handmatig
 - lied: null
   herkenning: onbekend
 - ruw: Turn your eyes upon Jesus

@@ -5,8 +5,8 @@ bron: 20250312 Eredienst Westerkerk Biddag.pdf
 liederen:
 - ruw: Liedboek 705:1 (Ere zij aan God de Vader)
   moment: aanvang
-  lied: opw-320
-  herkenning: automatisch
+  lied: nlb-705
+  herkenning: handmatig
 - lied: null
   herkenning: onbekend
 - ruw: 'Liedboek 1010: 1,2,3,4 (Geef vrede, Heer, geef vrede)'

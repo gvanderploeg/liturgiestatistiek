@@ -19,15 +19,12 @@ liederen:
 - ruw: Opwekking 753 (Symfonie)
   lied: opw-753
   herkenning: automatisch
-- moment: luisterlied
-  lied: null
-  herkenning: onbekend
 - ruw: Jezus’ liefde voor mij – Sela.
   lied: sela-jezus-liefde-voor-mij
   herkenning: automatisch
 - ruw: I speak Jesus (Opwekking 867, Engelse versie)
-  lied: opw-867
-  herkenning: automatisch
+  lied: charity-gayle-i-speak-jesus
+  herkenning: handmatig
 - ruw: Opwekking 720 (God maakt vrij)
   lied: opw-720
   herkenning: automatisch
