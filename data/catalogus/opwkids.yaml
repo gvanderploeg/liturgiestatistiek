@@ -44,6 +44,11 @@
   referenties:
   - bundel: opwkids
     nummer: '150'
+- id: opwkids-211
+  titel: Onder, boven, voor en achter
+  referenties:
+  - bundel: opwkids
+    nummer: '211'
 - id: opwkids-232
   titel: Wij vieren feest
   referenties:
@@ -59,6 +64,11 @@
   referenties:
   - bundel: opwkids
     nummer: '312'
+- id: opwkids-314
+  titel: Vlinder
+  referenties:
+  - bundel: opwkids
+    nummer: '314'
 - id: opwkids-321
   titel: Soms heb je verdriet
   referenties:

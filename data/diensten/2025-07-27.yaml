@@ -3,17 +3,20 @@ begeleiding: orgel
 kenmerken: []
 bron: 20250727 Eredienst Westerkerk.pdf
 liederen:
-- moment: aanvang
-  lied: null
-  herkenning: onbekend
+- ruw: 'Lied 657 : 4 Ons lied wordt steeds gedragen door vleugels van de hoop. Het stijgt de angst te boven om leven dat verloopt.
+    Het zingt van vergezichten, het ademt van uw Geest. In ons gezang mag lichten het komend bruiloftsfeest.'
+  moment: aanvang
+  lied: nlb-657
+  herkenning: handmatig
 - ruw: 'DNP 121: 1, 2'
   lied: dnp-121
   herkenning: automatisch
 - ruw: 'DNP 133: 1, 2'
   lied: dnp-133-wat-is-het-goed
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: LdK 883 “Groot is uw trouw o Heer”
+  lied: nlb-883
+  herkenning: handmatig
 - ruw: 'Psalm 51: 6 (klassieke berijming – “Schep in mij, God, een hart dat leeft in ’t licht”)'
   lied: gkb-51
   herkenning: handmatig

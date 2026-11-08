@@ -13,13 +13,12 @@ liederen:
 - ruw: Opwekking 794 NL versie – Ik ben niet langer een slaaf
   lied: opw-794
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: Mozaiek Worship – God ik kijk naar u
+  lied: mozaiek-worship-god-ik-kijk-naar-u
+  herkenning: handmatig
+- ruw: Hilsong - In u weet ik wie ik ben NL versie
+  lied: hillsong-in-u-weet-ik-wie-ik-ben
+  herkenning: handmatig
 - ruw: Opwekking 795 – Ik geloof in de Zoon ... Amen
   lied: opw-795
   herkenning: handmatig

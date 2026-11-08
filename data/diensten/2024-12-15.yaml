@@ -19,9 +19,8 @@ liederen:
   moment: kindmoment
   lied: een-lichtje-aan-de-horizon
   herkenning: handmatig
-- ruw: 'NPB Psalm 43 : 2 en 3 (“Heer, zend uw licht, laat mij ervaren”)'
-  lied: dnp-43-2
-  herkenning: handmatig
+- lied: null
+  herkenning: onbekend
 - ruw: Opw.464 (“Weest stil voor het aangezicht van God”)
   lied: opw-464
   herkenning: automatisch

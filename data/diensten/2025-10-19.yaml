@@ -7,8 +7,9 @@ liederen:
 - moment: aanvang
   lied: null
   herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: 'NPB – Psalm 25 : 2 4 6'
+  lied: dnp-25-2
+  herkenning: handmatig
 - ruw: Abraham, Abraham, verlaat je land, verlaat je stam
   moment: kindmoment
   lied: abraham-abraham-verlaat-je-land-verlaat-je-stam

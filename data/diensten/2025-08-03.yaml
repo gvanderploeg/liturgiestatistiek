@@ -14,7 +14,7 @@ liederen:
     o=1'
   moment: kindmoment
   lied: weet-je-waar-het-hemels-koninkrijk-op-lijkt-elly-en-rikkert
-  herkenning: handmatig
+  herkenning: automatisch
 - ruw: 'De Nieuwe Psalmberijming, psalm 68: 2 en 9'
   lied: dnp-68
   herkenning: automatisch

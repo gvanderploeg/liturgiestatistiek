@@ -10,8 +10,9 @@ liederen:
 - ruw: Opw. 815 Vul dit huis met uw glorie
   lied: opw-815
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: God van liefde, God van trouw (Psalmproject)
+  lied: tpp-god-van-liefde-god-van-trouw
+  herkenning: handmatig
 - ruw: Opw. 488 Door de kracht van uw liefde
   lied: opw-488
   herkenning: automatisch

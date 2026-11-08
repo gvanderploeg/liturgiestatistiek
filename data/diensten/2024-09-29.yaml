@@ -10,8 +10,9 @@ liederen:
 - ruw: Opwekking 509 - Zo lief had God de vader ons
   lied: opw-509
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Liedboek voor de kerken Gezang 392 - Blijf mij nabij, wanneer het duister daalt - vers 1, 3, 5
+  lied: nlb-392
+  herkenning: handmatig
 - ruw: Liedboek 939 - Op U alleen, mijn licht, mijn kracht
   lied: nlb-939
   herkenning: automatisch

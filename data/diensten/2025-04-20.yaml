@@ -11,8 +11,9 @@ liederen:
 - ruw: 'Weerklank 167: 1 – 4 (Daar juicht een toon, Wegwijzer- versie)'
   lied: sela-daar-juicht-een-toon
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: Turn your eyes upon Jesus - Hillsong
+  lied: hillsong-turn-your-eyes-upon-jesus
+  herkenning: handmatig
 - ruw: Opwekking 799 (In eeuwigheid)
   lied: opw-799
   herkenning: automatisch

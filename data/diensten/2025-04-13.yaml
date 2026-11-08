@@ -7,12 +7,13 @@ liederen:
   moment: aanvang
   lied: opw-715
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: '1 “Naar U gaat mijn verlangen” : 1, 2 en 3 van Ria Borkent'
+  lied: naar-u-gaat-mijn-verlangen-ria-borkent
+  herkenning: handmatig
 - ruw: Opw.298 (“Hosanna, hosanna”)
   moment: kindmoment
   lied: opw-298
-  herkenning: automatisch
+  herkenning: handmatig
 - lied: null
   herkenning: onbekend
 - ruw: 'LB Lied 868 : 1, 2 en 5 (“Lof zij de Heer, de almachtige 4 Koning der ere”)'

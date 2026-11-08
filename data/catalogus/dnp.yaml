@@ -71,6 +71,8 @@
   referenties:
   - bundel: dnp
     nummer: '43'
+  aliassen:
+  - Heer, zend uw licht, laat mij ervaren
 - id: dnp-51
   titel: De Nieuwe Psalmberijming 51
   referenties:
@@ -188,6 +190,8 @@
   referenties:
   - bundel: dnp
     nummer: '139'
+  aliassen:
+  - HEER, U doorgrondt mij, U ontwart al de geheimen van mijn hart
 - id: dnp-145
   titel: De Nieuwe Psalmberijming 145
   referenties:
@@ -205,3 +209,7 @@
   referenties:
   - bundel: dnp
     nummer: '147'
+- id: dnp-118-laat-iedereen-gods-goedheid-prijzen
+  titel: Laat iedereen Gods goedheid prijzen
+  aliassen:
+  - DNP 118 Laat iedereen Gods goedheid prijzen

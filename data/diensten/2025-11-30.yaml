@@ -18,9 +18,10 @@ liederen:
 - ruw: Chris Tomlin - Holy Forever
   lied: holy-forever
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
+- ruw: John Mark McMillan- The Road, The Rocks and the Weeds
+  lied: the-road-the-rocks-and-the-weeds
+  herkenning: handmatig
 - ruw: Opwekking 636 - Prachtige God
   moment: zegenlied
-  lied: opw-636
-  herkenning: automatisch
+  lied: opw-626
+  herkenning: handmatig

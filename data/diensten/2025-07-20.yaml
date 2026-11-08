@@ -2,4 +2,10 @@ datum: '2025-07-20'
 begeleiding: onbekend
 kenmerken: []
 bron: 20250720 Eredienst Westerkerk.pdf
-liederen: []
+liederen:
+- ruw: 'Opwekking 518: U bent altijd bij mij'
+  lied: opw-518
+  herkenning: handmatig
+- ruw: 'Opwekking 334: Heer Uw licht en Uw waarheid schijnen.'
+  lied: opw-334
+  herkenning: handmatig

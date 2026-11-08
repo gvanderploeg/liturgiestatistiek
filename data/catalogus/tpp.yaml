@@ -4,11 +4,12 @@
   - bundel: tpp
     nummer: '1'
   artiest: The Psalm Project
-- id: tpp-2-god-van-liefde-god-van
+- id: tpp-god-van-liefde-god-van-trouw
   titel: God van liefde, God van trouw
   referenties:
   - bundel: tpp
     nummer: '2'
+  artiest: The Psalm Project
 - id: tpp-22-mijn-god-waarom
   titel: Mijn God, Waarom?
   referenties:
@@ -335,7 +336,4 @@
   artiest: The Psalm Project
 - id: tpp-god-of-love-and-faithfulness
   titel: God of love and faithfulness
-  artiest: The Psalm Project
-- id: tpp-god-van-liefde-god-van-trouw
-  titel: God van liefde, God van trouw
   artiest: The Psalm Project

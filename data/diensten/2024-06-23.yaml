@@ -10,9 +10,10 @@ liederen:
 - ruw: 'LB Lied 216 : 1, 2 en 3 (“Dit is een morgen als ooit de eerste”)'
   lied: nlb-216
   herkenning: automatisch
-- moment: kindmoment
-  lied: null
-  herkenning: onbekend
+- ruw: GK Gezang 234 (“Als je bidt zal Hij je geven”)
+  moment: kindmoment
+  lied: gkb-234
+  herkenning: handmatig
 - ruw: Opw. 268 (“Hij kwam bij ons, heel gewoon”)
   lied: opw-268
   herkenning: automatisch

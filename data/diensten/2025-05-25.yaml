@@ -21,9 +21,10 @@ liederen:
   herkenning: onbekend
 - lied: null
   herkenning: onbekend
-- moment: luisterlied
-  lied: null
-  herkenning: onbekend
+- ruw: Turn your eyes upon Jesus
+  moment: luisterlied
+  lied: hillsong-turn-your-eyes-upon-jesus
+  herkenning: automatisch
 - ruw: Toekomst vol van hoop
   moment: zegenlied
   lied: sela-een-toekomst-vol-van-hoop

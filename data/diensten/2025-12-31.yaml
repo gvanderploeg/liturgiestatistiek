@@ -5,8 +5,8 @@ bron: 20251231 Eredienst Westerkerk.pdf
 liederen:
 - ruw: Psalmen voor Nu 121 (Waar komt mijn hulp vandaag?)
   moment: aanvang
-  lied: pvn-121-ik-kijk-omhoog-naar-de
-  herkenning: automatisch
+  lied: tpp-121-waar-komt-mijn-hulp-vandaan
+  herkenning: handmatig
 - ruw: Opwekking 136 (Abba, Vader, U alleen)
   lied: opw-136
   herkenning: automatisch

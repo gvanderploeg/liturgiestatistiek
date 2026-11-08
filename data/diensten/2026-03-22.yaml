@@ -13,10 +13,9 @@ liederen:
 - ruw: Opwekking 580 (Jezus, Hij kwam om ons leven te geven)
   lied: opw-580
   herkenning: automatisch
-- ruw: Als je bidt, zal Hij je geven (Elly en Rikkert)
-  moment: kindmoment
-  lied: elb-466
-  herkenning: automatisch
+- moment: kindmoment
+  lied: null
+  herkenning: onbekend
 - ruw: Way maker - Leeland
   lied: way-maker-leeland
   herkenning: handmatig

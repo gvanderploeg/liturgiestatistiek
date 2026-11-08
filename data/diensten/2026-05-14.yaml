@@ -3,11 +3,13 @@ begeleiding: orgel
 kenmerken: []
 bron: Eredienst Westerkerk - 14 mei 2026 -.pdf
 liederen:
-- moment: aanvang
-  lied: null
-  herkenning: onbekend
-- lied: null
-  herkenning: onbekend
+- ruw: Lof aan Gods Zoon, die als het Lam al onze zonden op zich nam (Kerkboek 218:1,2)
+  moment: aanvang
+  lied: gkb-218
+  herkenning: handmatig
+- ruw: Lof aan het Lam, Gods metgezel uit Davids huis (Kerkboek 218:3,4)
+  lied: lof-aan-het-lam-gods-metgezel
+  herkenning: handmatig
 - ruw: Er gaat geen dag voorbij dat ik niet dankbaar voor God zing (DNP Psalm 34:1,2)
   lied: dnp-34-in-die-volgorde
   herkenning: automatisch

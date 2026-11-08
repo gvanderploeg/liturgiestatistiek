@@ -83,6 +83,11 @@
   referenties:
   - bundel: nlb
     nummer: '415'
+- id: nlb-416
+  titel: Ga met God en Hij zal met je zijn
+  referenties:
+  - bundel: nlb
+    nummer: '416'
 - id: nlb-423
   titel: Nu wij uiteengaan
   referenties:
@@ -258,3 +263,9 @@
   referenties:
   - bundel: nlb
     nummer: '2013'
+- id: nlb-162
+  titel: Barmhartig Vader op uw troon
+- id: nlb-50
+  titel: De Heer die leeft, de God der goden spreekt
+- id: nlb-712
+  titel: Het jaar neigt zich tot stille groet

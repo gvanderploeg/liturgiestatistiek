@@ -13,11 +13,13 @@ liederen:
 - ruw: Opwekking 629 – Als er vergeving is, kan er genezing zijn
   lied: opw-629
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-- moment: luisterlied
-  lied: null
-  herkenning: onbekend
+- ruw: Uw liefde is mijn houvast (InSalvation)
+  lied: uw-liefde-is-mijn-houvast-insalvation
+  herkenning: handmatig
+- ruw: God van liefde, God van trouw (Psalm Project)
+  moment: luisterlied
+  lied: tpp-god-van-liefde-god-van-trouw
+  herkenning: handmatig
 - ruw: Opwekking 618, Jezus hoop van de volken
   lied: opw-618
   herkenning: automatisch
