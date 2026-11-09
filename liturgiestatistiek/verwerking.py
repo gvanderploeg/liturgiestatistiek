@@ -105,18 +105,33 @@ def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
 
     index = Zoekindex(catalogus)
     nieuwe_wachtrij: list[WachtrijItem] = []
+    geschreven: set[str] = set()
     for liturgie in _liturgieen_per_datum(omgeving.archief, omgeving.cache, verslag):
         dienst, items = verwerk_liturgie(liturgie, catalogus, aliassen, aanvullingen, kenmerken, index, verslag)
         if dienst is None:
             continue
-        schrijf_dienst(omgeving.data / DIENSTEN_MAP, dienst)
+        geschreven.add(schrijf_dienst(omgeving.data / DIENSTEN_MAP, dienst).name)
         nieuwe_wachtrij.extend(items)
         verslag.diensten += 1
+    _ruim_diensten_op(omgeving.data / DIENSTEN_MAP, geschreven, verslag)
 
     _behoud_bewerkingen(oude_wachtrij, nieuwe_wachtrij)
     schrijf_wachtrij(omgeving.wachtrij, nieuwe_wachtrij)
     verslag.wachtrij = len(nieuwe_wachtrij)
     return verslag
+
+
+def _ruim_diensten_op(map_: Path, geschreven: set[str], verslag: Verslag) -> None:
+    """Verwijdert dienst-bestanden waarvan de liturgie niet meer in het archief staat,
+    zodat een weggehaalde PDF ook uit de publieke data verdwijnt. Leverde deze run geen
+    enkele dienst op (leeg of ontbrekend archief), dan blijft alles staan."""
+    if not geschreven:
+        verslag.meldingen.append("LET OP: geen liturgieen in archief/ gevonden; bestaande dienst-bestanden zijn niet aangeraakt")
+        return
+    for pad in sorted(map_.glob("*.yaml")):
+        if pad.name not in geschreven:
+            pad.unlink()
+            verslag.meldingen.append(f"VERWIJDERD {pad.stem}: geen liturgie meer in archief/")
 
 
 def _liturgieen_per_datum(archief: Path, cache: Path, verslag: Verslag) -> list[Liturgie]:

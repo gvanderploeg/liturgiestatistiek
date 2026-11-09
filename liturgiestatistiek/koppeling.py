@@ -50,31 +50,51 @@ def titelscore(vraag: str, doel: str, **_: object) -> int:
     return score
 
 
+VOORSELECTIE = 25
+
+
 class Zoekindex:
     def __init__(self, catalogus: Catalogus):
         self.catalogus = catalogus
         termen = catalogus.zoektermen()
         self.teksten = [t for t, _ in termen]
         self.lied_ids = [i for _, i in termen]
+        self._geheugen: dict[tuple, list[Kandidaat]] = {}
 
     def zoek(self, titel: str, voorkeur: list[str] = (), limiet: int = 5) -> list[Kandidaat]:
         """Kandidaten voor een titelfragment. Noemt de regel een bundel zonder
         nummer (voorkeur, bundelcodes), dan krijgen liederen buiten die bundel een
-        klein streepje tegen; zo wint bij gelijke titel de Sela-versie van de Opwekking-versie."""
+        klein streepje tegen; zo wint bij gelijke titel de Sela-versie van de Opwekking-versie.
+
+        Titelscore is in Python geschreven en te traag om tegen de hele catalogus te
+        draaien. Daarom eerst een voorselectie met de snelle vergelijkingen van rapidfuzz:
+        de beste termen op gesorteerde woorden (gelijk aan de basis van titelscore) en op
+        woordverzameling (vangt elk geval dat titelscore ophoogt, want dat vereist dat de
+        woorden van de ene in de andere zitten). Alleen die krijgen de precieze score.
+        Uitkomsten worden per run onthouden, want dezelfde fragmenten komen vaak terug."""
         if not self.teksten:
             return []
         vraag = normaliseer(titel)
-        treffers = process.extract(vraag, self.teksten, scorer=titelscore, limit=limiet * 3, score_cutoff=DREMPEL_KANDIDAAT - 5)
+        sleutel = (vraag, tuple(voorkeur or ()), limiet)
+        if sleutel in self._geheugen:
+            return list(self._geheugen[sleutel])
+        grens = DREMPEL_KANDIDAAT - 5
+        indexen: set[int] = set()
+        for scorer in (fuzz.token_sort_ratio, fuzz.token_set_ratio):
+            for _tekst, _score, index in process.extract(vraag, self.teksten, scorer=scorer, limit=VOORSELECTIE, score_cutoff=grens):
+                indexen.add(index)
+        gescoord = sorted(((titelscore(vraag, self.teksten[i]), i) for i in indexen), key=lambda si: (-si[0], si[1]))
         beste: dict[str, int] = {}
-        for _tekst, score, index in treffers:
+        for score, index in [(s, i) for s, i in gescoord if s >= grens][: limiet * 3]:
             lied_id = self.lied_ids[index]
-            score = int(score)
             if voorkeur and not self._uit_bundel(self.catalogus.liederen[lied_id], voorkeur):
                 score -= 2
             if score > beste.get(lied_id, 0):
                 beste[lied_id] = score
         gesorteerd = sorted(beste.items(), key=lambda kv: -kv[1])[:limiet]
-        return [Kandidaat(lied_id, self.catalogus.liederen[lied_id].titel, score) for lied_id, score in gesorteerd if score >= DREMPEL_KANDIDAAT]
+        uitkomst = [Kandidaat(lied_id, self.catalogus.liederen[lied_id].titel, score) for lied_id, score in gesorteerd if score >= DREMPEL_KANDIDAAT]
+        self._geheugen[sleutel] = uitkomst
+        return list(uitkomst)
 
     def _uit_bundel(self, lied: Lied, codes: list[str]) -> bool:
         namen = {normaliseer(self.catalogus.bundels[c].naam) for c in codes if c in self.catalogus.bundels}

@@ -34,7 +34,10 @@ def omgeving(tmp_path_factory):
         shutil.copy(PROJECT / "data" / "catalogus" / naam, data / "catalogus" / naam)
     (project / "archief").mkdir()
     for pdf in PDFS:
-        shutil.copy(pdf, project / "archief" / pdf.name)
+        shutil.copy2(pdf, project / "archief" / pdf.name)
+    cache = PROJECT / "werk" / "cache"
+    if cache.exists():
+        shutil.copytree(cache, project / "werk" / "cache")
     return Omgeving(project)
 
 
@@ -207,6 +210,28 @@ def test_typefout_in_nummer_wordt_gemeld(omgeving, eerste_run):
     controles = [i for i in items if i.soort == "controle"]
     assert any(i.dienst == "2026-09-13" and i.voorstel == {"lied": "opw-268", "huidig": "opw-286"} for i in controles)
     assert len(controles) <= max(3, len(PDFS) // 5), [i.ruw for i in controles]
+
+
+def test_dienst_zonder_pdf_wordt_opgeruimd(omgeving, eerste_run):
+    verweesd = omgeving.data / "diensten" / "1999-01-03.yaml"
+    verweesd.write_text("datum: '1999-01-03'\nliederen: []\n", encoding="utf-8")
+    verslag = verwerk(omgeving)
+    assert not verweesd.exists()
+    assert "VERWIJDERD 1999-01-03: geen liturgie meer in archief/" in verslag.meldingen
+    assert len(list((omgeving.data / "diensten").glob("*.yaml"))) == verslag.diensten
+
+
+def test_leeg_archief_raakt_diensten_niet_aan(tmp_path):
+    data = tmp_path / "data"
+    (data / "diensten").mkdir(parents=True)
+    for naam in ("bundels.yaml", "kenmerken.yaml"):
+        shutil.copy(PROJECT / "data" / naam, data / naam)
+    bestaand = data / "diensten" / "2024-01-07.yaml"
+    bestaand.write_text("datum: '2024-01-07'\nliederen: []\n", encoding="utf-8")
+    (tmp_path / "archief").mkdir()
+    verslag = verwerk(Omgeving(tmp_path))
+    assert bestaand.exists()
+    assert any(m.startswith("LET OP: geen liturgieen") for m in verslag.meldingen)
 
 
 def test_wachtrij_besluiten_worden_toegepast(omgeving, eerste_run):

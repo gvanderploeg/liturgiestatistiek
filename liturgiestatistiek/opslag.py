@@ -10,6 +10,8 @@ import yaml
 
 from .modellen import Dienst, WachtrijItem
 
+SNELLE_LEZER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
 DIENSTEN_MAP = "diensten"
 ALIASSEN_BESTAND = "aliassen.yaml"
 AANVULLINGEN_BESTAND = "aanvullingen.yaml"
@@ -122,7 +124,7 @@ def _lees(pad: Path):
         return None
     with pad.open(encoding="utf-8") as f:
         try:
-            return yaml.safe_load(f)
+            return yaml.load(f, Loader=SNELLE_LEZER)
         except yaml.YAMLError as fout:
             plek = getattr(fout, "problem_mark", None)
             waar = f" op regel {plek.line + 1}" if plek else ""
