@@ -244,6 +244,10 @@
     return `${MAANDNAMEN[d.getMonth()]} ${d.getFullYear()}`;
   }
 
+  function kortMetJaar(d) {
+    return `${d.getDate()} ${MAANDNAMEN[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
   function dienstLink(dienst) {
     const d = datum(dienst.datum);
     return `<a href="#/diensten/${dienst.datum}">${esc(metDag(d))}</a>`;
@@ -274,19 +278,55 @@
     return n === 0 ? "tel-0" : n === 1 ? "tel-1" : n <= 3 ? "tel-2" : n <= 6 ? "tel-3" : "tel-4";
   }
 
-  function telBadge(n) {
+  function telBadge(n, uitleg) {
     const tekst = n === 0 ? "nooit" : `${n}x`;
-    return `<span class="tel ${telKlasse(n)}" title="${n === 1 ? "voor het eerst gezongen sinds het begin van de data" : `${n}x gezongen sinds het begin van de data`}">${tekst}</span>`;
+    const titel = uitleg || (n === 1 ? "voor het eerst gezongen sinds het begin van de data" : `${n}x gezongen sinds het begin van de data`);
+    return `<span class="tel ${telKlasse(n)}" title="${esc(titel)}">${tekst}</span>`;
   }
 
-  function keuze(naam, waarden, huidig, suffix) {
+  function keuze(naam, waarden, huidig, suffix, soort) {
+    /* Keuzelijst voor een criterium. Op het dashboard (soort "instelling") wordt de keuze
+       in de browser bewaard; op de liederenpagina (soort "param") staat die in de link. */
     const opties = waarden.map((w) => `<option value="${w}"${w === huidig ? " selected" : ""}>${w}</option>`).join("");
-    return `<select data-instelling="${naam}">${opties}</select>${suffix ? " " + suffix : ""}`;
+    return `<select data-${soort || "instelling"}="${naam}">${opties}</select>${suffix ? " " + suffix : ""}`;
+  }
+
+  /* De vragen die de liederenpagina kan beantwoorden. 'params' koppelt de parameters
+     in de link aan de instellingen die het dashboard voor hetzelfde blok gebruikt. */
+  const VRAGEN = {
+    alle: { titel: "Alle gezongen liederen", sort: "laatst", richting: "af", params: {} },
+    tweede: { titel: "Tijd voor een tweede keer", sort: "laatst", richting: "op", params: { kort: "tweedeKort", lang: "tweedeLang" } },
+    vaak: { titel: "Vaak gezongen", sort: "aantal", richting: "af", params: { min: "vaakMinimaal", mnd: "vaakMaanden" } },
+    vergeten: { titel: "Vergeten bekenden", sort: "aantal", richting: "af", params: { min: "vergetenMinimaal", mnd: "vergetenMaanden" } },
+  };
+
+  const FILTERPARAMS = { categorie: "categorie", begeleiding: "begeleiding", bundel: "bundel", zoek: "q" };
+
+  function lijstUrl(vraag, zoek) {
+    /* Link naar de volledige lijst voor een vraag, met de criteria en filters van dit moment. */
+    const p = new URLSearchParams({ vraag });
+    for (const [param, instelling] of Object.entries(VRAGEN[vraag].params)) p.set(param, instellingen[instelling]);
+    for (const f of ["categorie", "begeleiding", "bundel"]) if (filters[f]) p.set(FILTERPARAMS[f], filters[f]);
+    if (zoek) p.set("q", zoek);
+    return "#/liederen?" + p.toString();
+  }
+
+  function urlMet(params, wijzigingen) {
+    const p = new URLSearchParams(params);
+    for (const [k, v] of Object.entries(wijzigingen)) {
+      if (v === "" || v == null) p.delete(k);
+      else p.set(k, v);
+    }
+    return "#/liederen?" + p.toString();
+  }
+
+  function meerLink(vraag, aantal) {
+    return `<a class="meer" href="${lijstUrl(vraag)}">${aantal === 1 ? "als lijst" : `alle ${aantal} liederen`}</a>`;
   }
 
   /* ---------- weergave: dashboard ---------- */
 
-  function filterBalk() {
+  function filterBalk(label) {
     const categorieen = [...new Set(Object.values(data.liederen).flatMap((l) => l.categorieen || []))].sort();
     const begeleidingen = [...new Set(data.diensten.map((d) => d.begeleiding))].sort();
     const bundelsInGebruik = new Set();
@@ -297,7 +337,7 @@
     return `<div class="filters${filtersOpen ? " open" : ""}">
       <button type="button" class="filterknop" data-filterknop aria-expanded="${filtersOpen}">Filters${actief ? ` (${actief})` : ""}</button>
       <span class="filterkeuze">
-        <span class="label">Filter alle blokken:</span>
+        <span class="label">${label || "Filter alle blokken:"}</span>
         <select data-filter="categorie"${categorieen.length ? "" : " disabled title='Nog geen liederen met een categorie'"}>${opt(categorieen, filters.categorie, "alle categorieën")}</select>
         <select data-filter="begeleiding">${opt(begeleidingen, filters.begeleiding, "band en orgel", (w) => (w === "geen" ? "geen begeleiding" : w))}</select>
         <select data-filter="bundel">${opt(bundels, filters.bundel, "alle bundels", (w) => data.bundels[w].naam)}</select>
@@ -310,13 +350,20 @@
     const q = filters.zoek.trim().toLowerCase();
     if (q.length < 2) return "";
     const ooit = telPerLied(vermeldingen);
-    const treffers = Object.entries(data.liederen).filter(([id, l]) => l.titel.toLowerCase().includes(q) || bronLabel(id).toLowerCase().includes(q) || (l.artiest || "").toLowerCase().includes(q)).slice(0, 25);
+    const alleTreffers = Object.entries(data.liederen).filter(([id, l]) => past(id, q) || (l.artiest || "").toLowerCase().includes(q));
+    const treffers = alleTreffers.slice(0, 25);
     if (!treffers.length) return `<div class="blok"><p class="stil">Geen lied gevonden voor "${esc(filters.zoek)}".</p></div>`;
     const rijen = treffers.map(([id]) => {
       const t = ooit.get(id);
       return `<tr>${liedCellen(id)}<td class="r stil">${t ? `${t.aantal}x · ${maandJaar(t.laatst)}` : "nooit"}</td></tr>`;
     });
-    return `<div class="blok" style="margin-bottom:14px"><div class="blok-kop"><h2>Zoekresultaat</h2><span class="criterium">${treffers.length} liederen</span></div>${lijstTabel(["titel", "bron", "laatst"], rijen)}</div>`;
+    const meer = alleTreffers.length > treffers.length ? `<a class="meer" href="${lijstUrl("alle", filters.zoek)}">alle gezongen liederen met "${esc(filters.zoek)}"</a>` : "";
+    return `<div class="blok" style="margin-bottom:14px"><div class="blok-kop"><h2>Zoekresultaat</h2><span class="criterium">${alleTreffers.length} liederen</span></div>${lijstTabel(["titel", "bron", "laatst"], rijen)}${meer}</div>`;
+  }
+
+  function past(id, q) {
+    const l = lied(id);
+    return l.titel.toLowerCase().includes(q) || kortTitel(l.titel).toLowerCase().includes(q) || bronLabel(id).toLowerCase().includes(q);
   }
 
   function blokRecent(lijst) {
@@ -348,7 +395,7 @@
     const criterium = `1x in ${keuze("tweedeKort", [1, 2, 3, 4, 6], instellingen.tweedeKort, "mnd")}, 0x in ${keuze("tweedeLang", [6, 12, 18, 24], instellingen.tweedeLang, "mnd ervoor")}`;
     let inhoud;
     if (!items.length) inhoud = `<div class="leeg">Geen liederen die aan dit criterium voldoen.</div>`;
-    else inhoud = lijstTabel(["titel", "bron", "datum"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r stil">${kort(i.datum)}</td></tr>`)) + (items.length > 12 ? `<span class="meer stil">en nog ${items.length - 12} liederen</span>` : "");
+    else inhoud = lijstTabel(["titel", "bron", "datum"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r stil">${kort(i.datum)}</td></tr>`)) + meerLink("tweede", items.length);
     return `<div class="blok"><div class="blok-kop"><h2>Tijd voor een tweede keer</h2><span class="criterium">${criterium}</span></div>${inhoud}</div>`;
   }
 
@@ -359,7 +406,7 @@
     if (!items.length) inhoud = `<div class="leeg">Geen lied is zo vaak gezongen in deze periode.</div>`;
     else {
       const max = items[0].aantal;
-      inhoud = lijstTabel(["titel", "bron", "balk"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r"><span class="balk" style="width:${Math.round(45 * i.aantal / max)}px"></span>${i.aantal}</td></tr>`));
+      inhoud = lijstTabel(["titel", "bron", "balk"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r"><span class="balk" style="width:${Math.round(45 * i.aantal / max)}px"></span>${i.aantal}</td></tr>`)) + meerLink("vaak", items.length);
     }
     return `<div class="blok"><div class="blok-kop"><h2>Vaak gezongen</h2><span class="criterium">${criterium}</span></div>${inhoud}</div>`;
   }
@@ -372,13 +419,96 @@
     if (!items.length) {
       const toelichting = eerste > maandenTerug(instellingen.vergetenMaanden) ? ` De data begint ${esc(lang(eerste))}, dus dit blok wordt pas zinvol na ${instellingen.vergetenMaanden} maanden historie.` : "";
       inhoud = `<div class="leeg">Geen liederen die aan dit criterium voldoen.${toelichting}</div>`;
-    } else inhoud = lijstTabel(["titel", "bron", "laatst"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r stil" title="laatst gezongen ${esc(lang(i.laatst))}">${i.aantal}x · ${maandJaar(i.laatst)}</td></tr>`)) + (items.length > 12 ? `<span class="meer stil">en nog ${items.length - 12} liederen</span>` : "");
+    } else inhoud = lijstTabel(["titel", "bron", "laatst"], items.slice(0, 12).map((i) => `<tr>${liedCellen(i.lied)}<td class="r stil" title="laatst gezongen ${esc(lang(i.laatst))}">${i.aantal}x · ${maandJaar(i.laatst)}</td></tr>`)) + meerLink("vergeten", items.length);
     return `<div class="blok"><div class="blok-kop"><h2>Vergeten bekenden</h2><span class="criterium">${criterium}</span></div>${inhoud}</div>`;
   }
 
   function dashboard() {
     const lijst = gefilterd();
     return filterBalk() + zoekResultaten() + `<div class="rooster">${blokRecent(lijst)}<div class="kolom">${blokTweedeKeer(lijst)}${blokVaak(lijst)}${blokVergeten(lijst)}</div></div>`;
+  }
+
+  /* ---------- weergave: liederen (volledige lijsten) ---------- */
+
+  const KOLOMMEN = {
+    titel: { kop: "titel", standaard: "op", sleutel: (r) => kortTitel(lied(r.lied).titel).toLowerCase() },
+    bron: { kop: "bron", standaard: "op", sleutel: (r) => bronLabel(r.lied).toLowerCase() },
+    aantal: { kop: "aantal", standaard: "af", sleutel: (r) => r.aantal },
+    eerst: { kop: "eerste keer", standaard: "af", sleutel: (r) => r.eerst.getTime() },
+    laatst: { kop: "laatst", standaard: "af", sleutel: (r) => r.laatst.getTime() },
+  };
+
+  function liederenPagina(params) {
+    /* Een volledige, sorteerbare lijst voor een van de vragen. Alles wat de lijst bepaalt
+       (vraag, criterium, filters, zoekterm, sortering) staat in de link, zodat die te delen is. */
+    const vraag = VRAGEN[params.get("vraag")] ? params.get("vraag") : "alle";
+    const def = VRAGEN[vraag];
+    for (const [filter, param] of Object.entries(FILTERPARAMS)) filters[filter] = params.get(param) || "";
+    const waarde = (param) => {
+      const v = Number(params.get(param));
+      return Number.isFinite(v) && v > 0 ? v : instellingen[def.params[param]];
+    };
+
+    const lijst = gefilterd();
+    const ooit = telPerLied(lijst);
+    const metStats = (id, aantal) => ({ lied: id, aantal: aantal == null ? ooit.get(id).aantal : aantal, eerst: ooit.get(id).eerst, laatst: ooit.get(id).laatst });
+    let rijen;
+    let criterium = "";
+    let aantalUitleg = null;
+    if (vraag === "tweede") {
+      const k = waarde("kort"), l = waarde("lang");
+      rijen = tijdVoorTweedeKeer(lijst, k, l).map((i) => metStats(i.lied));
+      criterium = `1x in ${keuze("kort", [1, 2, 3, 4, 6], k, "mnd", "param")}, 0x in ${keuze("lang", [6, 12, 18, 24], l, "mnd ervoor", "param")}`;
+    } else if (vraag === "vaak") {
+      const min = waarde("min"), mnd = waarde("mnd");
+      rijen = vaakGezongen(lijst, mnd, min).map((i) => metStats(i.lied, i.aantal));
+      criterium = `minstens ${keuze("min", [2, 3, 4, 5, 6, 8, 10], min, "x", "param")} in ${keuze("mnd", [3, 6, 12, 24], mnd, "mnd", "param")}`;
+      aantalUitleg = `in de afgelopen ${mnd} maanden`;
+    } else if (vraag === "vergeten") {
+      const min = waarde("min"), mnd = waarde("mnd");
+      rijen = vergetenBekenden(lijst, min, mnd).map((i) => metStats(i.lied));
+      criterium = `minstens ${keuze("min", [2, 3, 4, 5], min, "x ooit", "param")}, 0x in ${keuze("mnd", [6, 9, 12, 18, 24], mnd, "mnd", "param")}`;
+    } else {
+      rijen = [...ooit.keys()].map((id) => metStats(id));
+    }
+
+    const q = filters.zoek.trim().toLowerCase();
+    if (q) rijen = rijen.filter((r) => past(r.lied, q));
+
+    const gevraagd = params.get("sort");
+    const sort = KOLOMMEN[gevraagd] ? gevraagd : def.sort;
+    const richting = ["op", "af"].includes(params.get("richting")) ? params.get("richting") : KOLOMMEN[gevraagd] ? KOLOMMEN[sort].standaard : def.richting;
+    const sleutel = KOLOMMEN[sort].sleutel;
+    const titelSleutel = KOLOMMEN.titel.sleutel;
+    rijen.sort((a, b) => {
+      const x = sleutel(a), y = sleutel(b);
+      const verschil = typeof x === "string" ? x.localeCompare(y, "nl") : x - y;
+      return (richting === "op" ? verschil : -verschil) || titelSleutel(a).localeCompare(titelSleutel(b), "nl");
+    });
+
+    const kop = (k) => {
+      const actief = k === sort;
+      const nieuw = actief ? (richting === "op" ? "af" : "op") : KOLOMMEN[k].standaard;
+      const tekst = k === "aantal" && aantalUitleg ? `in ${waarde("mnd")} mnd` : KOLOMMEN[k].kop;
+      const klassen = ["sorteer", k === "eerst" ? "kol-eerst" : "", k === "bron" ? "kol-bron" : "", k === "aantal" || k === "eerst" || k === "laatst" ? "r" : "", actief ? `gesorteerd ${richting}` : ""].filter(Boolean).join(" ");
+      return `<th class="${klassen}"><a href="${urlMet(params, { sort: k, richting: nieuw })}">${tekst}</a></th>`;
+    };
+    const regels = rijen.map((r) => `<tr>${liedCellen(r.lied)}<td class="r">${telBadge(r.aantal, aantalUitleg ? `${r.aantal}x ${aantalUitleg}` : null)}</td><td class="r stil datumcel kol-eerst">${kortMetJaar(r.eerst)}</td><td class="r stil datumcel">${kortMetJaar(r.laatst)}</td></tr>`);
+    const vraagKeuze = `<select data-vraag aria-label="Welke lijst">${Object.entries(VRAGEN).map(([k, v]) => `<option value="${k}"${k === vraag ? " selected" : ""}>${v.titel}</option>`).join("")}</select>`;
+    const tabel = rijen.length
+      ? `<table class="lijst banden volledig"><colgroup><col class="k-titel"><col class="k-bron"><col class="k-tel"><col class="k-eerst"><col class="k-datumjaar"></colgroup><thead><tr>${["titel", "bron", "aantal", "eerst", "laatst"].map(kop).join("")}</tr></thead><tbody>${regels.join("")}</tbody></table>`
+      : `<div class="leeg">Geen liederen die hieraan voldoen.</div>`;
+    return `<div class="pagina">
+      <div class="lijstkop"><h1>${vraagKeuze}</h1>${criterium ? `<span class="criterium">${criterium}</span>` : ""}</div>
+      ${filterBalk("Filter:")}
+      <p class="stil">${rijen.length} ${rijen.length === 1 ? "lied" : "liederen"}${q ? ` met "${esc(filters.zoek)}"` : ""}. Klik op een kolomkop om te sorteren; deze link bevat de lijst zoals je hem nu ziet.</p>
+      ${tabel}
+    </div>`;
+  }
+
+  function zetParam(wijzigingen) {
+    history.replaceState(null, "", urlMet(route().params, wijzigingen));
+    render();
   }
 
   /* ---------- weergave: diensten ---------- */
@@ -469,6 +599,7 @@
         <li><strong>Vergeten bekenden</strong>: minstens ${STANDAARD.vergetenMinimaal} keer gezongen sinds het begin van de data, maar niet in de afgelopen ${STANDAARD.vergetenMaanden} maanden.</li>
       </ul>
       <p>Aangepaste criteria worden in je eigen browser bewaard. <button data-reset>Terug naar standaardwaarden</button></p>
+      <p>Elk blok linkt naar de volledige lijst op de pagina Liederen. Daar is de lijst te sorteren, en de link bevat vraag, criterium, filters en sortering. Stuur je die door, dan ziet de ander precies dezelfde lijst, los van diens eigen bewaarde criteria.</p>
       <h2>Kleuren</h2>
       <p>Het getal achter een lied is hoe vaak het sinds het begin van de data gezongen is, inclusief de dienst waar je naar kijkt. De tint loopt op met het aantal; oranje betekent dat het lied in die dienst voor het eerst gezongen werd:</p>
       <p>${[1, 2, 5, 9].map(telBadge).join(" ")} ${telBadge(0)}</p>
@@ -484,9 +615,12 @@
 
   function route() {
     const hash = location.hash.replace(/^#\/?/, "");
-    const [pad, ...rest] = hash.split("/");
-    return { pad: pad || "dashboard", rest: rest.map(decodeURIComponent) };
+    const [padDeel, query] = hash.split("?");
+    const [pad, ...rest] = padDeel.split("/");
+    return { pad: pad || "dashboard", rest: rest.map(decodeURIComponent), params: new URLSearchParams(query || "") };
   }
+
+  let vorigePagina = null;
 
   function render() {
     const r = route();
@@ -494,34 +628,49 @@
     let naam = r.pad;
     if (r.pad === "dashboard" || r.pad === "") el.innerHTML = dashboard();
     else if (r.pad === "diensten") el.innerHTML = diensten(r.rest[0]);
-    else if (r.pad === "lied") { el.innerHTML = liedPagina(r.rest[0]); naam = "dashboard"; }
+    else if (r.pad === "liederen") el.innerHTML = liederenPagina(r.params);
+    else if (r.pad === "lied") { el.innerHTML = liedPagina(r.rest[0]); naam = "liederen"; }
     else if (r.pad === "over") el.innerHTML = over();
     else el.innerHTML = dashboard();
     document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("actief", a.dataset.route === naam));
-    if (r.pad !== "dashboard" && r.pad !== "") window.scrollTo(0, 0);
+    const pagina = r.pad + "/" + r.rest.join("/");
+    if (pagina !== vorigePagina && r.pad !== "dashboard" && r.pad !== "") window.scrollTo(0, 0);
+    vorigePagina = pagina;
   }
 
   function koppelEvents() {
     const el = document.getElementById("inhoud");
+    const opLiederen = () => route().pad === "liederen";
     el.addEventListener("change", (e) => {
       const t = e.target;
       if (t.dataset.instelling) {
         instellingen[t.dataset.instelling] = Number(t.value);
         bewaarInstellingen();
         render();
-      } else if (t.dataset.filter) {
-        filters[t.dataset.filter] = t.value;
+      } else if (t.dataset.param) {
+        zetParam({ [t.dataset.param]: t.value });
+      } else if ("vraag" in t.dataset) {
+        const p = new URLSearchParams(lijstUrl(t.value, filters.zoek).split("?")[1]);
+        history.replaceState(null, "", "#/liederen?" + p.toString());
         render();
+      } else if (t.dataset.filter) {
+        if (opLiederen()) zetParam({ [FILTERPARAMS[t.dataset.filter]]: t.value });
+        else {
+          filters[t.dataset.filter] = t.value;
+          render();
+        }
       }
     });
     let timer = null;
     el.addEventListener("input", (e) => {
       if (!("zoek" in e.target.dataset)) return;
-      filters.zoek = e.target.value;
+      const tekst = e.target.value;
+      filters.zoek = tekst;
       clearTimeout(timer);
       timer = setTimeout(() => {
         const positie = e.target.selectionStart;
-        render();
+        if (opLiederen()) zetParam({ q: tekst });
+        else render();
         const veld = el.querySelector("[data-zoek]");
         if (veld) { veld.focus(); veld.setSelectionRange(positie, positie); }
       }, 200);

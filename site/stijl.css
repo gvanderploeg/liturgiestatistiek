@@ -68,6 +68,18 @@ col.k-tel, col.k-datum { width: 4.4em; }
 col.k-balk { width: 5.5em; }
 col.k-laatst { width: 7.5em; }
 col.k-moment { width: 6.8em; }
+col.k-eerst, col.k-datumjaar { width: 6.4em; }
+td.datumcel { font-size: 13px; }
+table.lijst th { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 6px; }
+th.sorteer a { color: var(--tekst-3); }
+th.sorteer.gesorteerd a { color: var(--tekst); }
+th.gesorteerd a::after { content: ""; display: inline-block; margin-left: 5px; vertical-align: 2px; border-left: 4px solid transparent; border-right: 4px solid transparent; }
+th.gesorteerd.op a::after { border-bottom: 5px solid currentColor; }
+th.gesorteerd.af a::after { border-top: 5px solid currentColor; }
+
+.lijstkop { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin: 8px 0 12px; }
+.lijstkop h1 { margin: 0; }
+.lijstkop h1 select { font-size: 20px; font-weight: 600; padding: 2px 6px; }
 
 .rooster { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 14px; align-items: start; }
 .kolom { display: flex; flex-direction: column; gap: 14px; }
@@ -169,7 +181,9 @@ col.k-moment { width: 6.8em; }
   .blok { padding: 10px 12px; }
   col.k-bron, col.k-bronmoment, col.k-laatst { width: 6.6em; }
   .alleen-breed { display: none; }
-  col.k-moment { width: 0; }
-  table.lijst td.moment { padding: 0; }
+  col.k-moment, col.k-eerst, table.volledig col.k-bron { width: 0; }
+  table.lijst td.moment, table.lijst .kol-eerst, table.volledig td.bron, table.volledig .kol-bron { padding: 0; }
+  col.k-datumjaar { width: 5.6em; }
+  .lijstkop h1 select { font-size: 17px; max-width: 100%; }
   .banden td.moment + td { padding-left: 6px; }
 }
