@@ -695,12 +695,35 @@
     document.getElementById("bijgewerkt").textContent = `t/m ${metDag(datum(data.laatste_dienst))}`;
   }
 
+  const VERSIESLEUTEL = "liturgiestatistiek.versie";
+
+  async function verversBijNieuweVersie(versie) {
+    /* Na een nieuwe publicatie kan de browser nog een oude app.js, stijl.css of index.html
+       uit zijn cache gebruiken. De dataset wordt altijd vers opgehaald en draagt de versie
+       van die bestanden. Wijkt die af van wat deze browser het laatst laadde, dan worden de
+       bestanden langs de cache opnieuw opgehaald en wordt de pagina een keer herladen.
+       Geeft true terug als er herladen wordt. */
+    if (!versie) return false;
+    let vorige;
+    try {
+      vorige = localStorage.getItem(VERSIESLEUTEL);
+      localStorage.setItem(VERSIESLEUTEL, versie);
+    } catch (e) {
+      return false;
+    }
+    if (vorige === null || vorige === versie) return false;
+    await Promise.all([location.pathname, "app.js", "stijl.css"].map((url) => fetch(url, { cache: "reload" }).catch(() => null)));
+    location.reload();
+    return true;
+  }
+
   fetch("data/dataset.json", { cache: "no-cache" })
     .then((r) => {
       if (!r.ok) throw new Error(`dataset niet gevonden (${r.status})`);
       return r.json();
     })
-    .then((d) => {
+    .then(async (d) => {
+      if (await verversBijNieuweVersie(d.versie)) return;
       data = d;
       bouwVermeldingen();
       voettekst();

@@ -57,6 +57,22 @@ def test_bundels_hebben_afkorting(dataset):
     assert ds["bundels"]["sela"]["afkorting"] == "Sela"
 
 
+def test_site_versie(dataset, tmp_path):
+    from liturgiestatistiek.publicatie import SITE_BESTANDEN, site_versie
+
+    ds, doel = dataset
+    assert ds["versie"] == site_versie(doel.parent)
+    assert len(site_versie(PROJECT / "site")) == 12
+    for naam in SITE_BESTANDEN:
+        (tmp_path / naam).write_text(naam, encoding="utf-8")
+    eerste = site_versie(tmp_path)
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "dataset.json").write_text("{}", encoding="utf-8")
+    assert site_versie(tmp_path) == eerste, "nieuwe data alleen geeft geen nieuwe versie"
+    (tmp_path / "app.js").write_text("gewijzigd", encoding="utf-8")
+    assert site_versie(tmp_path) != eerste
+
+
 def test_logo_wordt_bijgesneden_en_transparant(tmp_path):
     from PIL import Image
 

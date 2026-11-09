@@ -102,6 +102,8 @@ python3 -m http.server 8765 --directory site
 
 Daarna staat de site op http://localhost:8765. Op GitHub bouwt de workflow in `.github/workflows/publiceer.yml` de dataset bij elke push naar `main` en zet `site/` op GitHub Pages. Eenmalig instellen: in de repository onder Settings, Pages, de bron op "GitHub Actions" zetten.
 
+Browsers houden `index.html`, `app.js` en `stijl.css` een tijd in hun cache; GitHub Pages staat tien minuten toe. Om te voorkomen dat iemand na een nieuwe publicatie nog de oude app ziet, zet `publiceer` een versie (een hash over die drie bestanden) in `dataset.json`, dat altijd vers wordt opgehaald. Wijkt die af van de versie die de browser het laatst laadde, dan haalt de app de drie bestanden langs de cache opnieuw op en herlaadt de pagina een keer. Alleen nieuwe data geeft geen herlaadbeurt. Lokaal werkt het net zo, mits je na een wijziging aan de site opnieuw `publiceer` draait.
+
 De dashboardblokken tonen hun criterium in de kopregel; wie de drempels aanpast, krijgt die in de eigen browser bewaard. De pagina "Over" legt de criteria uit en linkt naar de CSV. De voettekst noemt de begindatum van de gegevens, omdat "voor het eerst" en "nooit" altijd relatief zijn aan die datum.
 
 ## Catalogus onderhouden

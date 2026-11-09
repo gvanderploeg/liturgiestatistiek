@@ -6,6 +6,7 @@ verzameld en compact weggeschreven."""
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import logging
 from datetime import datetime, timezone
@@ -141,8 +142,24 @@ def maak_logo(bron: Path, doelmap: Path) -> bool:
     return True
 
 
+SITE_BESTANDEN = ("index.html", "app.js", "stijl.css")
+
+
+def site_versie(sitemap: Path) -> str:
+    """Korte hash over de bestanden van de website. De app vergelijkt die met de versie
+    die de browser het laatst laadde, om na een nieuwe publicatie zijn cache te verversen."""
+    h = hashlib.sha256()
+    for naam in SITE_BESTANDEN:
+        pad = sitemap / naam
+        if pad.exists():
+            h.update(naam.encode("utf-8"))
+            h.update(pad.read_bytes())
+    return h.hexdigest()[:12]
+
+
 def publiceer(datamap: Path, doelmap: Path) -> dict:
     dataset = bouw_dataset(datamap)
+    dataset["versie"] = site_versie(doelmap.parent)
     doelmap.mkdir(parents=True, exist_ok=True)
     with (doelmap / DATASET_BESTAND).open("w", encoding="utf-8") as f:
         json.dump(dataset, f, ensure_ascii=False, separators=(",", ":"))
