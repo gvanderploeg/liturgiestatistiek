@@ -1,0 +1,31 @@
+datum: '2026-11-15'
+begeleiding: band
+kenmerken: []
+bron: 20261115 Eredienst Westerkerk.pdf
+liederen:
+- ruw: Grote God wij loven U (Lev)
+  moment: aanvang
+  lied: nlb-413
+  herkenning: automatisch
+- ruw: Opwekking 595 (Licht van de wereld)
+  lied: opw-595
+  herkenning: automatisch
+- ruw: Opwekking 580 (Jezus, Hij kwam om ons leven te geven)
+  lied: opw-580
+  herkenning: automatisch
+- ruw: Opwekking kids 241 (Van A tot Z bent U de hoogste Heer)
+  moment: kindmoment
+  lied: opwkids-241
+  herkenning: automatisch
+- ruw: Opwekking 802 (Hier is mijn hart, Heer)
+  lied: opw-802
+  herkenning: automatisch
+- ruw: Psalmen voor Nu 130 (Uit de diepten roep ik U)
+  lied: pvn-130-uit-de-diepten-roep-ik
+  herkenning: automatisch
+- ruw: Thank you Jesus for the blood, Charity Gayle.
+  lied: charity-gayle-thank-you-jesus-for-the-blood
+  herkenning: handmatig
+- ruw: Opwekking 820 (Feest van genade)
+  lied: opw-820
+  herkenning: automatisch
