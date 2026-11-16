@@ -2,6 +2,7 @@ datum: '2024-01-14'
 begeleiding: orgel
 kenmerken: []
 bron: Eredienst 14 januari 2024.pdf
+vingerafdruk: ffc6bc8295b76fe7
 liederen:
 - ruw: 'NPB Psalm 145 : 1, 3 en 4 (“Mijn God en koning, ik wil 1 toegewijd”)'
   moment: aanvang
@@ -25,6 +26,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 6790ca5da915
 - ruw: 'GK Gezang 176 : 5'
   lied: gkb-176
   herkenning: handmatig

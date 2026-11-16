@@ -4,6 +4,7 @@ kenmerken:
 - avondmaal
 - advent
 bron: 20241215 Eredienst Westerkerk.pdf
+vingerafdruk: f1b58765f6de9cec
 liederen:
 - ruw: 'LB Lied 444 : 1, 2, 3, 4 en 5 (“Nu daagt het in het oosten”)'
   moment: aanvang
@@ -21,6 +22,7 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: 0a84d523dc92
 - ruw: Opw.464 (“Weest stil voor het aangezicht van God”)
   lied: opw-464
   herkenning: automatisch

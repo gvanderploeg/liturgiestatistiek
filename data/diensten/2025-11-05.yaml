@@ -2,6 +2,7 @@ datum: '2025-11-05'
 begeleiding: piano
 kenmerken: []
 bron: 20251105 Eredienst Westerkerk.pdf
+vingerafdruk: 0ef76a17b41d7988
 liederen:
 - ruw: Opwekking 331 (Breng dank aan de Eeuwige)
   moment: aanvang
@@ -9,6 +10,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 888799f46073
 - ruw: 'GK Psalm 24: 1, 2, 3 (De aarde is met al wat leeft)'
   lied: dnp-24-de-aarde-is-met-al
   herkenning: automatisch

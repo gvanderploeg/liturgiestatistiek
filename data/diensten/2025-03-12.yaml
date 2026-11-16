@@ -2,6 +2,7 @@ datum: '2025-03-12'
 begeleiding: orgel piano
 kenmerken: []
 bron: 20250312 Eredienst Westerkerk Biddag.pdf
+vingerafdruk: 551dea92e29994bb
 liederen:
 - ruw: Liedboek 705:1 (Ere zij aan God de Vader)
   moment: aanvang
@@ -9,6 +10,7 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: be73e1dbf4ad
 - ruw: 'Liedboek 1010: 1,2,3,4 (Geef vrede, Heer, geef vrede)'
   lied: nlb-1010
   herkenning: automatisch
@@ -20,3 +22,4 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 1bf9f5103d5d

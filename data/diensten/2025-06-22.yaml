@@ -3,6 +3,7 @@ begeleiding: orgel piano
 kenmerken:
 - avondmaal
 bron: 20250622 Eredienst Westerkerk.pdf
+vingerafdruk: d867cff3007f9462
 liederen:
 - ruw: 'Liedboek 216: 1,2,3 (Dit is een morgen als ooit de eerste)'
   moment: aanvang
@@ -14,6 +15,7 @@ liederen:
 - moment: kindmoment
   lied: null
   herkenning: onbekend
+  wachtrij: 034492c9f34d
 - ruw: Opwekking 126 (Jezus vol liefde) 2x
   lied: opw-126
   herkenning: automatisch

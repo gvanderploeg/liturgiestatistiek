@@ -3,6 +3,7 @@ begeleiding: band
 kenmerken:
 - doop
 bron: 20250706 Eredienst Westerkerk.pdf
+vingerafdruk: 4cd504f34e84a6e8
 liederen:
 - ruw: Opwekking 720 (God maakt vrij)
   moment: aanvang
@@ -19,6 +20,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 43919c373323
 - ruw: Zegenlied – Sela (Gods zegen voor jou)
   lied: sela-gods-zegen-voor-jou
   herkenning: automatisch

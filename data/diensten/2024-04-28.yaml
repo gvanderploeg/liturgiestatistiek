@@ -2,6 +2,7 @@ datum: '2024-04-28'
 begeleiding: orgel
 kenmerken: []
 bron: Eredienst Westerkerk 28 April 2024.pdf
+vingerafdruk: 1e58865860013096
 liederen:
 - ruw: LB 641 (‘Jezus leeft en ik met Hem’)
   moment: aanvang
@@ -12,6 +13,7 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: b64cd44f5191
 - ruw: GK 218 (‘Lof aan Gods Zoon, die als het Lam’)
   moment: zegenlied
   lied: gkb-218

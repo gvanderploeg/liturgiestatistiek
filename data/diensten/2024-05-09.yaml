@@ -2,6 +2,7 @@ datum: '2024-05-09'
 begeleiding: orgel
 kenmerken: []
 bron: Eredienst Westerkerk 9 mei 2024.pdf
+vingerafdruk: 405718706b201234
 liederen:
 - ruw: 'Gez 215: 1, 3 , 4 Christus, onze Heer verrees…'
   moment: aanvang
@@ -12,7 +13,10 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: 03da08036c69
 - lied: null
   herkenning: onbekend
+  wachtrij: a22b9f8fb38e
 - lied: null
   herkenning: onbekend
+  wachtrij: b72f474e96fd

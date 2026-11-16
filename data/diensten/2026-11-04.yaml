@@ -2,6 +2,7 @@ datum: '2026-11-04'
 begeleiding: orgel
 kenmerken: []
 bron: 20261104 Eredienst Westerkerk.pdf
+vingerafdruk: 7aa50ab74f629005
 liederen:
 - ruw: 'ELB37: 1, 5, 7, 8 Prijst de Heer met blijde galmen'
   moment: aanvang
@@ -18,6 +19,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 231a4c089d90
 - ruw: Opw. 733 Tienduizend redenen
   lied: opw-733
   herkenning: automatisch

@@ -2,6 +2,7 @@ datum: '2025-03-09'
 begeleiding: band
 kenmerken: []
 bron: 20250309 Eredienst Westerkerk.pdf
+vingerafdruk: 5085202fa1671f66
 liederen:
 - ruw: Opwekking 464:1 (Wees stil voor het aangezicht van God)
   moment: aanvang
@@ -16,6 +17,7 @@ liederen:
 - moment: kindmoment
   lied: null
   herkenning: onbekend
+  wachtrij: 8276a8f44832
 - ruw: Opwekking 753 (Symfonie)
   lied: opw-753
   herkenning: automatisch

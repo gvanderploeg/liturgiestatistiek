@@ -2,6 +2,7 @@ datum: '2025-04-13'
 begeleiding: orgel piano
 kenmerken: []
 bron: 20250413 Eredienst Westerkerk.pdf
+vingerafdruk: 3c9bfa4c0b3b6d5c
 liederen:
 - ruw: 'LB Psalm 84a : 1, 2, 3, 4 en 5 (“Wat hou ik van uw huis”)'
   moment: aanvang
@@ -16,6 +17,7 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: 9d6c913b9a71
 - ruw: 'LB Lied 868 : 1, 2 en 5 (“Lof zij de Heer, de almachtige 4 Koning der ere”)'
   lied: opw-386
   herkenning: automatisch

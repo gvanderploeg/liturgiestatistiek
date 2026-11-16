@@ -3,10 +3,12 @@ begeleiding: orgel piano
 kenmerken:
 - avondmaal
 bron: 20251019 Eredienst Westerkerk.pdf
+vingerafdruk: 44053c48b930e99a
 liederen:
 - moment: aanvang
   lied: null
   herkenning: onbekend
+  wachtrij: 554e90b846e6
 - ruw: 'NPB – Psalm 25 : 2 4 6'
   lied: dnp-25-2
   herkenning: handmatig
@@ -22,3 +24,4 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: a3e4b3d14e44

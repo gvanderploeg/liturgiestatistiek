@@ -2,6 +2,7 @@ datum: '2024-12-31'
 begeleiding: orgel
 kenmerken: []
 bron: 20241231 Eredienst Westerkerk.pdf
+vingerafdruk: b8e65d7c1e7ce7e1
 liederen:
 - ruw: Opw.640 (“Mijn hulp is van U, Heer”)
   moment: aanvang
@@ -12,8 +13,10 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 77a00b67fe8a
 - lied: null
   herkenning: onbekend
+  wachtrij: 10021eee277f
 - ruw: 'NPB Psalm 139 : 1 en 8 (“HEER, U doorgrondt mij, U ontwart al de geheimen van mijn hart.”)'
   lied: dnp-139
   herkenning: handmatig

@@ -2,6 +2,7 @@ datum: '2025-01-26'
 begeleiding: band
 kenmerken: []
 bron: 20250126 Eredienst Westerkerk.pdf
+vingerafdruk: 5d75a85fcf3b5c2f
 liederen:
 - ruw: Psalm Project – Psalm 103 + Psalmen voor Nu 13
   moment: aanvang
@@ -12,6 +13,7 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: 5035ef763506
 - ruw: Sela – Gebed voor de werkdag
   lied: sela-gebed-voor-de-werkdag
   herkenning: automatisch

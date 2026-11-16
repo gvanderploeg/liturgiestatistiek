@@ -2,6 +2,7 @@ datum: '2025-05-29'
 begeleiding: orgel
 kenmerken: []
 bron: 20250529 Eredienst Westerkerk.pdf
+vingerafdruk: a614f17a73bc21f9
 liederen:
 - ruw: Opwekking 4 (Zijn naam is wonderbaar) 2x
   moment: aanvang
@@ -9,6 +10,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 8b1cd84ef23f
 - ruw: 'De Nieuwe Psalmberijming, Psalm 89: 2, 4, 5'
   lied: dnp-89
   herkenning: automatisch

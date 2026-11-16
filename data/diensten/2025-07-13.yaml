@@ -2,10 +2,12 @@ datum: '2025-07-13'
 begeleiding: orgel piano
 kenmerken: []
 bron: 20250713 Eredienst Westerkerk.pdf
+vingerafdruk: 493e40068ecc8f49
 liederen:
 - moment: aanvang
   lied: null
   herkenning: onbekend
+  wachtrij: bdc37c878d17
 - ruw: Wij moeten Gode zingen (LB 713:1,2,5)
   lied: nlb-713
   herkenning: automatisch
@@ -14,6 +16,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 44e618b71ab9
 - ruw: Wanneer wordt het waar (Sela)
   moment: zegenlied
   lied: sela-wanneer-wordt-het-waar

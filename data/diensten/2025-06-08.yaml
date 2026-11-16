@@ -3,6 +3,7 @@ begeleiding: orgel piano
 kenmerken:
 - pinksteren
 bron: 20250608 Eredienst Westerkerk.pdf
+vingerafdruk: cdf089fcd84d9c02
 liederen:
 - ruw: Opwekking 383 (Geest van hierboven)
   moment: aanvang
@@ -17,6 +18,7 @@ liederen:
 - moment: kindmoment
   lied: null
   herkenning: onbekend
+  wachtrij: a68064032592
 - ruw: 'Liedboek 670: 1, 3, 6, 7 (Kom Schepper God, o heilige Geest)'
   lied: nlb-670
   herkenning: automatisch

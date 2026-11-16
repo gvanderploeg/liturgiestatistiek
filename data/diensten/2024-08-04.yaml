@@ -2,6 +2,7 @@ datum: '2024-08-04'
 begeleiding: orgel
 kenmerken: []
 bron: Eredienst Westerkerk 4 augustus 2024.pdf
+vingerafdruk: 4909b1053219f24a
 liederen:
 - ruw: Opwekking 121 (De Here is mijn herder)
   moment: aanvang
@@ -18,6 +19,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 06f255a434d2
 - ruw: Liedboek 425 (Vervuld van uw zegen)
   moment: zegenlied
   lied: nlb-425

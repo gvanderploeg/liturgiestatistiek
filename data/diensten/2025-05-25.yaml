@@ -2,6 +2,7 @@ datum: '2025-05-25'
 begeleiding: band
 kenmerken: []
 bron: 20250525 Eredienst Westerkerk.pdf
+vingerafdruk: 3daa8d66abf2795f
 liederen:
 - ruw: Opwekking 815 (Vul dit huis met uw glorie)
   moment: aanvang
@@ -22,6 +23,7 @@ liederen:
   herkenning: handmatig
 - lied: null
   herkenning: onbekend
+  wachtrij: 0896f00c7791
 - ruw: Turn your eyes upon Jesus
   moment: luisterlied
   lied: hillsong-turn-your-eyes-upon-jesus

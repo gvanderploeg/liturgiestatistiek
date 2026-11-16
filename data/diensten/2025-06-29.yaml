@@ -2,6 +2,7 @@ datum: '2025-06-29'
 begeleiding: band
 kenmerken: []
 bron: 20250629 Eredienst Westerkerk.pdf
+vingerafdruk: 7182016f5f42b4d4
 liederen:
 - ruw: ‘Miljoenen stemmen’ (Schrijvers voor Gerechtigheid)
   moment: aanvang
@@ -17,6 +18,7 @@ liederen:
 - moment: luisterlied
   lied: null
   herkenning: onbekend
+  wachtrij: d7867ef70b65
 - ruw: ‘Mag ik jou tot zegen zijn?’ (Sela)
   lied: sela-mag-ik-jou-tot-zegen-zijn
   herkenning: automatisch

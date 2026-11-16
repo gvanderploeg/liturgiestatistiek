@@ -2,6 +2,7 @@ datum: '2025-03-02'
 begeleiding: band
 kenmerken: []
 bron: 20250302 Eredienst Westerkerk.pdf
+vingerafdruk: b4a845bfd89f6567
 liederen:
 - ruw: 1,2 “De bron van ons bestaan” van Marcel en Lydia Zimmer
   moment: aanvang
@@ -9,6 +10,7 @@ liederen:
   herkenning: automatisch
 - lied: null
   herkenning: onbekend
+  wachtrij: 040506a67aa0
 - ruw: Psalm 51 (“Witter dan sneeuw”) van The Psalm Project (=Opw.811)
   lied: tpp-51-witter-dan-sneeuw
   herkenning: automatisch
