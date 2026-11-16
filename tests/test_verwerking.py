@@ -14,6 +14,7 @@ from liturgiestatistiek.extractie import ALGEMEEN_VELDEN, lees_liturgie
 from liturgiestatistiek.koppeling import Zoekindex, koppel
 from liturgiestatistiek.ontleding import is_liedrij, ontleed
 from liturgiestatistiek.opslag import Aliassen, laad_wachtrij, schrijf_wachtrij
+from liturgiestatistiek.tekst import normaliseer
 from liturgiestatistiek.verwerking import Omgeving, verwerk
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -67,10 +68,11 @@ def test_elke_datum_wordt_een_dienst(omgeving, eerste_run):
     leeg_gemeld = {m.split()[1] for m in eerste_run.meldingen if m.startswith("LEEG ")}
     for pad in diensten:
         d = yaml.safe_load(pad.open(encoding="utf-8"))
-        assert set(d) == {"datum", "begeleiding", "kenmerken", "bron", "liederen"}
+        assert set(d) == {"datum", "begeleiding", "kenmerken", "bron", "vingerafdruk", "liederen"}
         assert d["liederen"] or pad.stem in leeg_gemeld, f"{pad.name} heeft geen liederen en is niet gemeld"
         for v in d["liederen"]:
-            assert set(v) <= {"ruw", "moment", "lied", "herkenning"}
+            assert set(v) <= {"ruw", "moment", "lied", "herkenning", "wachtrij"}
+            assert ("wachtrij" in v) == (v["lied"] is None), "alleen een open plek verwijst naar de wachtrij"
             assert v["herkenning"] in ("automatisch", "handmatig", "onbekend")
             assert (v["lied"] is None) == (v["herkenning"] == "onbekend")
             assert ("ruw" in v) == (v["lied"] is not None), "ruwe tekst alleen bij een herkend lied"
@@ -212,13 +214,34 @@ def test_typefout_in_nummer_wordt_gemeld(omgeving, eerste_run):
     assert len(controles) <= max(3, len(PDFS) // 5), [i.ruw for i in controles]
 
 
-def test_dienst_zonder_pdf_wordt_opgeruimd(omgeving, eerste_run):
-    verweesd = omgeving.data / "diensten" / "1999-01-03.yaml"
-    verweesd.write_text("datum: '1999-01-03'\nliederen: []\n", encoding="utf-8")
+def lees(omgeving, dienst_id):
+    return yaml.safe_load((omgeving.data / "diensten" / f"{dienst_id}.yaml").open(encoding="utf-8"))
+
+
+def schrijf(omgeving, dienst_id, inhoud):
+    with (omgeving.data / "diensten" / f"{dienst_id}.yaml").open("w", encoding="utf-8") as f:
+        yaml.safe_dump(inhoud, f, allow_unicode=True, sort_keys=False)
+
+
+def open_plekken(omgeving) -> int:
+    return sum(1 for p in (omgeving.data / "diensten").glob("*.yaml") for v in yaml.safe_load(p.open(encoding="utf-8"))["liederen"] if v["lied"] is None)
+
+
+def test_tweede_run_laat_diensten_ongemoeid(omgeving, eerste_run):
+    voor = {p.name: p.read_bytes() for p in (omgeving.data / "diensten").glob("*.yaml")}
     verslag = verwerk(omgeving)
-    assert not verweesd.exists()
-    assert "VERWIJDERD 1999-01-03: geen liturgie meer in archief/" in verslag.meldingen
-    assert len(list((omgeving.data / "diensten").glob("*.yaml"))) == verslag.diensten
+    assert verslag.diensten == 0
+    assert verslag.ongewijzigd == len(voor)
+    assert {p.name: p.read_bytes() for p in (omgeving.data / "diensten").glob("*.yaml")} == voor
+    assert verslag.wachtrij == eerste_run.wachtrij, "open items blijven in de wachtrij staan"
+
+
+def test_dienst_zonder_pdf_blijft_staan(omgeving, eerste_run):
+    los = omgeving.data / "diensten" / "1999-01-03.yaml"
+    los.write_text("datum: '1999-01-03'\nbegeleiding: band\nkenmerken: []\nbron: handmatig\nliederen: []\n", encoding="utf-8")
+    verwerk(omgeving)
+    assert los.exists()
+    los.unlink()
 
 
 def test_leeg_archief_raakt_diensten_niet_aan(tmp_path):
@@ -229,9 +252,52 @@ def test_leeg_archief_raakt_diensten_niet_aan(tmp_path):
     bestaand = data / "diensten" / "2024-01-07.yaml"
     bestaand.write_text("datum: '2024-01-07'\nliederen: []\n", encoding="utf-8")
     (tmp_path / "archief").mkdir()
-    verslag = verwerk(Omgeving(tmp_path))
+    verwerk(Omgeving(tmp_path))
     assert bestaand.exists()
-    assert any(m.startswith("LET OP: geen liturgieen") for m in verslag.meldingen)
+
+
+def test_handmatige_correctie_blijft_staan(omgeving, eerste_run):
+    dienst_id = sorted(p.stem for p in (omgeving.data / "diensten").glob("*.yaml"))[5]
+    inhoud = lees(omgeving, dienst_id)
+    inhoud["begeleiding"] = "cantorij"
+    schrijf(omgeving, dienst_id, inhoud)
+    verwerk(omgeving)
+    assert lees(omgeving, dienst_id)["begeleiding"] == "cantorij"
+
+
+def test_gewijzigde_pdf_wordt_opnieuw_verwerkt(omgeving, eerste_run):
+    dienst_id = sorted(p.stem for p in (omgeving.data / "diensten").glob("*.yaml"))[6]
+    origineel = lees(omgeving, dienst_id)
+    inhoud = dict(origineel, vingerafdruk="0000000000000000", begeleiding="cantorij")
+    schrijf(omgeving, dienst_id, inhoud)
+    verslag = verwerk(omgeving)
+    assert f"OPNIEUW {dienst_id}: de liturgie is gewijzigd, dienst opnieuw verwerkt" in verslag.meldingen
+    assert verslag.diensten == 1
+    assert lees(omgeving, dienst_id) == origineel
+
+
+def test_opnieuw_op_verzoek(omgeving, eerste_run):
+    dienst_id = sorted(p.stem for p in (omgeving.data / "diensten").glob("*.yaml"))[7]
+    verslag = verwerk(omgeving, opnieuw={dienst_id})
+    assert verslag.diensten == 1
+    assert f"OPNIEUW {dienst_id}: op verzoek opnieuw uit de PDF opgebouwd" in verslag.meldingen
+
+
+def test_alias_vult_open_plekken_in_oude_diensten(omgeving, eerste_run):
+    items = [i for i in laad_wachtrij(omgeving.wachtrij) if i.soort == "lied" and not i.heeft_besluit]
+    item = items[0]
+    lied_id = next(iter(Catalogus.laad(omgeving.data).liederen))
+    aliassen = Aliassen.laad(omgeving.data / "aliassen.yaml")
+    aliassen.vermeldingen[normaliseer(item.ruw)] = lied_id
+    aliassen.schrijf(omgeving.data / "aliassen.yaml")
+
+    verslag = verwerk(omgeving)
+    assert verslag.open_ingevuld >= 1
+    assert verslag.diensten == 0, "geen dienst opnieuw uit zijn PDF opgebouwd"
+    liederen = lees(omgeving, item.dienst)["liederen"]
+    assert not any(v.get("wachtrij") == item.sleutel for v in liederen)
+    assert any(v["lied"] == lied_id for v in liederen)
+    assert not any(i.dienst == item.dienst and i.sleutel == item.sleutel for i in laad_wachtrij(omgeving.wachtrij))
 
 
 def test_wachtrij_besluiten_worden_toegepast(omgeving, eerste_run):
@@ -243,10 +309,11 @@ def test_wachtrij_besluiten_worden_toegepast(omgeving, eerste_run):
     bijz = next(i for i in items if i.soort == "bijzonderheden")
     bijz.kenmerken = ["startzondag"]
     schrijf_wachtrij(omgeving.wachtrij, items)
+    open_voor = open_plekken(omgeving)
 
     verslag = verwerk(omgeving, accepteer_referenties=True)
     assert verslag.besluiten_toegepast >= 3
-    assert verslag.onbekend < eerste_run.onbekend
+    assert open_plekken(omgeving) < open_voor
 
     catalogus = Catalogus.laad(omgeving.data)
     assert nieuw.voorstel["nieuw"]["id"] in catalogus.liederen
@@ -258,7 +325,7 @@ def test_wachtrij_besluiten_worden_toegepast(omgeving, eerste_run):
     assert dienst["kenmerken"] == ["startzondag"]
     dienst = yaml.safe_load((omgeving.data / "diensten" / f"{nieuw.dienst}.yaml").open(encoding="utf-8"))
     assert any(v.get("ruw") == nieuw.ruw and v["herkenning"] == "handmatig" for v in dienst["liederen"])
-    assert all(v.get("ruw") != negeer.ruw for v in yaml.safe_load((omgeving.data / "diensten" / f"{negeer.dienst}.yaml").open(encoding="utf-8"))["liederen"])
+    assert all(v.get("wachtrij") != negeer.sleutel for v in lees(omgeving, negeer.dienst)["liederen"])
 
     resterend = laad_wachtrij(omgeving.wachtrij)
     assert not any(i.ruw == nieuw.ruw and i.dienst == nieuw.dienst for i in resterend)

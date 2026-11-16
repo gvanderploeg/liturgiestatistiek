@@ -67,12 +67,14 @@ class Lied:
 class Vermelding:
     """Een liedregel uit een dienst. De volgorde in de dienst is de volgorde in de lijst.
     De ruwe tekst gaat alleen mee als het lied herkend is; van een niet-herkende regel
-    staat de tekst in de lokale wachtrij, niet in de publieke data."""
+    staat de tekst in de lokale wachtrij, niet in de publieke data. Zo'n open plek
+    draagt de sleutel van zijn wachtrij-item, zodat een besluit precies die plek vult."""
 
     ruw: str
     lied: str | None
     herkenning: str
     moment: str | None = None
+    wachtrij: str | None = None
 
     def as_dict(self) -> dict:
         d: dict = {"ruw": self.ruw} if self.lied else {}
@@ -80,6 +82,8 @@ class Vermelding:
             d["moment"] = self.moment
         d["lied"] = self.lied
         d["herkenning"] = self.herkenning
+        if not self.lied and self.wachtrij:
+            d["wachtrij"] = self.wachtrij
         return d
 
 
@@ -90,15 +94,19 @@ class Dienst:
     kenmerken: list[str]
     bron: str
     liederen: list[Vermelding] = field(default_factory=list)
+    vingerafdruk: str | None = None
 
     def as_dict(self) -> dict:
-        return {
+        d = {
             "datum": self.datum.isoformat(),
             "begeleiding": self.begeleiding,
             "kenmerken": list(self.kenmerken),
             "bron": self.bron,
-            "liederen": [v.as_dict() for v in self.liederen],
         }
+        if self.vingerafdruk:
+            d["vingerafdruk"] = self.vingerafdruk
+        d["liederen"] = [v.as_dict() for v in self.liederen]
+        return d
 
 
 @dataclass

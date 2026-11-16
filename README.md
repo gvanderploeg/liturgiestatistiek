@@ -25,7 +25,13 @@ tests/
 .github/workflows/  bouwt site/data en publiceert site/ naar GitHub Pages bij elke push
 ```
 
-De dienst-bestanden worden bij elke verwerking opnieuw opgebouwd uit de PDF's plus de besluiten in `aliassen.yaml`, `aanvullingen.yaml` en de catalogus. Correcties horen dus in die bestanden, niet in `data/diensten/`.
+De dienst-bestanden in `data/diensten/` zijn de bron van waarheid. Een PDF in `archief/` is alleen nieuwe invoer: `verwerk` maakt er een dienst van als er voor die datum nog geen is, en verwerkt hem opnieuw als de PDF veranderd is (een concept dat later is bijgewerkt). Elke dienst onthoudt daarvoor een `vingerafdruk` van zijn PDF. Bestaande diensten worden verder niet aangeraakt en nooit verwijderd. Je mag een dienst dus rechtstreeks corrigeren, en een leeg of onvolledig archief kan geen kwaad. Wil je een dienst weg, verwijder dan het bestand zelf. Een niet-herkend lied staat in de dienst als open plek met een `wachtrij`-sleutel die naar het bijbehorende wachtrij-item wijst.
+
+Bewust opnieuw opbouwen uit de PDF, bijvoorbeeld na een verbetering in de ontleding, kan per dienst of voor alles; handmatige wijzigingen in die diensten vervallen dan, behalve wat in aliassen en aanvullingen is vastgelegd:
+
+```bash
+.venv/bin/liturgiestatistiek verwerk --opnieuw 2025-09-14 2025-09-28
+```
 
 ## Installatie
 
@@ -72,9 +78,9 @@ De uitvoer meldt hoeveel liederen herkend zijn en hoeveel twijfelgevallen in `we
 - `negeer: true` markeert de regel als geen lied, of het Bijzonderheden-veld als zonder kenmerk.
 - `kenmerken: [doop, avondmaal]` kiest bij soort `bijzonderheden` zelf de kenmerken.
 
-Bij items van soort `kandidaat` (een rij zonder liedlabel die toch naar een lied verwijst) mag je `ruw` inkorten tot alleen de liedtekst; die tekst komt in de dienst. Items van soort `controle` melden dat een lied via zijn bundelnummer gekoppeld is terwijl de titel beter bij een ander lied past, meestal een typefout in het nummer: `negeer: true` bevestigt de huidige koppeling, `accepteer: true` kiest het andere lied. Draai daarna opnieuw `verwerk`: de besluiten landen in `aliassen.yaml`, `aanvullingen.yaml` en `data/catalogus/overig.yaml`, de diensten worden bijgewerkt en de wachtrij krimpt. Items zonder besluit blijven staan. Commit vervolgens `data/`.
+Bij items van soort `kandidaat` (een rij zonder liedlabel die toch naar een lied verwijst) mag je `ruw` inkorten tot alleen de liedtekst; die tekst komt in de dienst. Items van soort `controle` melden dat een lied via zijn bundelnummer gekoppeld is terwijl de titel beter bij een ander lied past, meestal een typefout in het nummer: `negeer: true` bevestigt de huidige koppeling, `accepteer: true` kiest het andere lied. Draai daarna opnieuw `verwerk`: een besluit landt rechtstreeks in de betreffende dienst, en daarnaast in `aliassen.yaml`, `aanvullingen.yaml` of de catalogus zodat het ook voor toekomstige liturgieen geldt. Items zonder besluit blijven staan; de wachtrij is blijvend en wordt niet elke run opnieuw opgebouwd. Commit vervolgens `data/`.
 
-Elke `verwerk` bouwt alle diensten opnieuw op uit de PDF's plus je besluiten, zodat een alias of catalogus-correctie met terugwerkende kracht geldt. Het lezen van de PDF's wordt gecached in `werk/cache/` (buiten Git), dus een herhaalde run duurt seconden; de cache ververst zichzelf als een PDF verandert. Werk een grote wachtrij in porties af: een reeks besluiten invullen, `verwerk`, en verder met wat overblijft.
+Elke `verwerk` bekijkt de open wachtrij-items opnieuw tegen de aliassen en de catalogus. Wat nu wel herkend wordt, komt in de dienst te staan, ook als het een oude dienst is; zo werkt een besluit door naar andere diensten met dezelfde regel. Werk een grote wachtrij in porties af: een reeks besluiten invullen, `verwerk`, en verder met wat overblijft.
 
 Voorstellen die op een bundelverwijzing berusten (bijvoorbeeld "NLB 216" dat nog niet in de catalogus staat) zijn eenduidig en kun je in een keer overnemen:
 

@@ -1,8 +1,19 @@
-"""De verwerkingsstap: besluiten uit de wachtrij toepassen, alle PDF's in het
-archief verwerken tot dienst-bestanden, en een nieuwe wachtrij schrijven."""
+"""De verwerkingsstap.
+
+De dienst-bestanden in data/diensten zijn de bron van waarheid. Een liturgie-PDF
+is alleen nieuwe invoer: hij wordt verwerkt als er voor zijn datum nog geen dienst
+is, of als de PDF sinds de vorige keer veranderd is (de vingerafdruk wijkt af).
+Bestaande diensten worden verder niet overschreven en nooit verwijderd, zodat
+handmatige correcties blijven staan en een leeg of onvolledig archief geen kwaad kan.
+
+Besluiten uit de wachtrij worden vastgelegd als alias of catalogusregel (voor
+toekomstige liturgieen) en tegelijk rechtstreeks in de betreffende dienst. Open
+plekken in diensten worden bij elke run opnieuw bekeken tegen de aliassen en de
+catalogus, zodat een nieuw besluit ook oudere diensten met dezelfde regel aanvult."""
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -31,8 +42,10 @@ from .opslag import (
     laad_aanvullingen,
     laad_kenmerken,
     laad_wachtrij,
+    lees_dienst,
     schrijf_aanvullingen,
     schrijf_dienst,
+    schrijf_dienst_dict,
     schrijf_wachtrij,
 )
 from .tekst import normaliseer, sleutel
@@ -41,26 +54,33 @@ from .tekst import normaliseer, sleutel
 @dataclass
 class Verslag:
     diensten: int = 0
+    ongewijzigd: int = 0
+    vingerafdruk_toegevoegd: int = 0
     vermeldingen: int = 0
     automatisch: int = 0
     handmatig: int = 0
     onbekend: int = 0
     wachtrij: int = 0
     besluiten_toegepast: int = 0
+    open_ingevuld: int = 0
     referenties_geleerd: int = 0
     meldingen: list[str] = field(default_factory=list)
 
     def tekst(self) -> str:
         regels = [
             f"diensten verwerkt:      {self.diensten}",
-            f"liedvermeldingen:       {self.vermeldingen}",
+            f"diensten ongewijzigd:   {self.ongewijzigd}",
+            f"liedvermeldingen:       {self.vermeldingen}  (in de verwerkte diensten)",
             f"  automatisch herkend:  {self.automatisch}",
             f"  handmatig (alias):    {self.handmatig}",
             f"  onbekend:             {self.onbekend}",
             f"besluiten toegepast:    {self.besluiten_toegepast}",
+            f"open plekken ingevuld:  {self.open_ingevuld}",
             f"referenties geleerd:    {self.referenties_geleerd}",
             f"wachtrij-items:         {self.wachtrij}",
         ]
+        if self.vingerafdruk_toegevoegd:
+            regels.append(f"eenmalig opnieuw opgebouwd (nog zonder vingerafdruk): {self.vingerafdruk_toegevoegd}")
         return "\n".join(regels + self.meldingen)
 
 
@@ -89,61 +109,85 @@ class Omgeving:
         return self.project / "werk" / "cache"
 
 
-def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False) -> Verslag:
+def verwerk(omgeving: Omgeving, accepteer_referenties: bool = False, opnieuw: set[str] | None = None, alles_opnieuw: bool = False) -> Verslag:
+    """Verwerkt nieuwe en gewijzigde liturgieen en past besluiten uit de wachtrij toe.
+    Met 'opnieuw' (datums als JJJJ-MM-DD) of 'alles_opnieuw' worden bestaande diensten
+    bewust opnieuw uit hun PDF opgebouwd; handmatige wijzigingen in die diensten gaan
+    dan verloren, behalve wat via aliassen en aanvullingen is vastgelegd."""
     verslag = Verslag()
+    opnieuw = opnieuw or set()
+    diensten_map = omgeving.data / DIENSTEN_MAP
     catalogus = Catalogus.laad(omgeving.data)
     aliassen = Aliassen.laad(omgeving.data / ALIASSEN_BESTAND)
     aanvullingen = laad_aanvullingen(omgeving.data / AANVULLINGEN_BESTAND)
     kenmerken = laad_kenmerken(omgeving.data / KENMERKEN_BESTAND)
 
     oude_wachtrij = laad_wachtrij(omgeving.wachtrij)
-    verslag.besluiten_toegepast = _pas_besluiten_toe(oude_wachtrij, catalogus, aliassen, aanvullingen, accepteer_referenties, verslag)
-    if verslag.besluiten_toegepast:
+    toegepast = _pas_besluiten_toe(oude_wachtrij, catalogus, aliassen, aanvullingen, diensten_map, accepteer_referenties, verslag)
+    verslag.besluiten_toegepast = len(toegepast)
+    if toegepast:
         catalogus.schrijf()
         aliassen.schrijf(omgeving.data / ALIASSEN_BESTAND)
         schrijf_aanvullingen(omgeving.data / AANVULLINGEN_BESTAND, aanvullingen)
 
     index = Zoekindex(catalogus)
+    open_items = [i for i in oude_wachtrij if id(i) not in toegepast]
+    open_items = _herbeoordeel(open_items, catalogus, aliassen, aanvullingen, index, diensten_map, verslag)
+
     nieuwe_wachtrij: list[WachtrijItem] = []
-    geschreven: set[str] = set()
-    for liturgie in _liturgieen_per_datum(omgeving.archief, omgeving.cache, verslag):
+    verwerkt: set[str] = set()
+    for dienst_id, liturgie, vingerafdruk in _liturgieen_per_datum(omgeving.archief, omgeving.cache, verslag):
+        bestaand = lees_dienst(diensten_map, dienst_id)
+        vorige = (bestaand or {}).get("vingerafdruk")
+        bewust = alles_opnieuw or dienst_id in opnieuw
+        if bestaand is not None and vorige == vingerafdruk and not bewust:
+            verslag.ongewijzigd += 1
+            continue
         dienst, items = verwerk_liturgie(liturgie, catalogus, aliassen, aanvullingen, kenmerken, index, verslag)
         if dienst is None:
             continue
-        geschreven.add(schrijf_dienst(omgeving.data / DIENSTEN_MAP, dienst).name)
+        dienst.vingerafdruk = vingerafdruk
+        schrijf_dienst(diensten_map, dienst)
+        if bestaand is not None:
+            if bewust:
+                verslag.meldingen.append(f"OPNIEUW {dienst_id}: op verzoek opnieuw uit de PDF opgebouwd")
+            elif vorige is None:
+                verslag.vingerafdruk_toegevoegd += 1
+            else:
+                verslag.meldingen.append(f"OPNIEUW {dienst_id}: de liturgie is gewijzigd, dienst opnieuw verwerkt")
+        verwerkt.add(dienst_id)
         nieuwe_wachtrij.extend(items)
         verslag.diensten += 1
-    _ruim_diensten_op(omgeving.data / DIENSTEN_MAP, geschreven, verslag)
 
-    _behoud_bewerkingen(oude_wachtrij, nieuwe_wachtrij)
-    schrijf_wachtrij(omgeving.wachtrij, nieuwe_wachtrij)
-    verslag.wachtrij = len(nieuwe_wachtrij)
+    _behoud_bewerkingen(open_items, nieuwe_wachtrij)
+    wachtrij = [i for i in open_items if i.dienst not in verwerkt] + nieuwe_wachtrij
+    wachtrij.sort(key=lambda i: i.dienst)
+    schrijf_wachtrij(omgeving.wachtrij, wachtrij)
+    verslag.wachtrij = len(wachtrij)
     return verslag
 
 
-def _ruim_diensten_op(map_: Path, geschreven: set[str], verslag: Verslag) -> None:
-    """Verwijdert dienst-bestanden waarvan de liturgie niet meer in het archief staat,
-    zodat een weggehaalde PDF ook uit de publieke data verdwijnt. Leverde deze run geen
-    enkele dienst op (leeg of ontbrekend archief), dan blijft alles staan."""
-    if not geschreven:
-        verslag.meldingen.append("LET OP: geen liturgieen in archief/ gevonden; bestaande dienst-bestanden zijn niet aangeraakt")
-        return
-    for pad in sorted(map_.glob("*.yaml")):
-        if pad.name not in geschreven:
-            pad.unlink()
-            verslag.meldingen.append(f"VERWIJDERD {pad.stem}: geen liturgie meer in archief/")
+def vingerafdruk_van(paden: list[Path]) -> str:
+    """Vingerafdruk van de PDF('s) van een dienst: verandert als de inhoud verandert."""
+    h = hashlib.sha256()
+    for pad in sorted(paden):
+        h.update(hashlib.sha256(pad.read_bytes()).digest())
+    return h.hexdigest()[:16]
 
 
-def _liturgieen_per_datum(archief: Path, cache: Path, verslag: Verslag) -> list[Liturgie]:
+def _liturgieen_per_datum(archief: Path, cache: Path, verslag: Verslag) -> list[tuple[str, Liturgie, str]]:
     """Leest alle PDF's (met cache) en voegt liturgieën van dezelfde datum samen
     tot één, want er is één dienst per datum: de rijen worden achter elkaar
-    gezet en de dubbele liederen vallen later weg."""
+    gezet en de dubbele liederen vallen later weg. Geeft per datum de liturgie
+    en de vingerafdruk van de bijbehorende PDF's."""
     per_datum: dict[str, Liturgie] = {}
+    paden: dict[str, list[Path]] = {}
     for pad in sorted(archief.glob("*.pdf")):
         liturgie = lees_liturgie_gecached(pad, cache)
         uit_document, uit_bestand = bepaal_datum(liturgie.datum_tekst, liturgie.bestand)
         datum = uit_document or uit_bestand
         sleutel_datum = datum.isoformat() if datum else liturgie.bestand
+        paden.setdefault(sleutel_datum, []).append(pad)
         eerder = per_datum.get(sleutel_datum)
         if eerder is None:
             per_datum[sleutel_datum] = liturgie
@@ -154,7 +198,7 @@ def _liturgieen_per_datum(archief: Path, cache: Path, verslag: Verslag) -> list[
         eerder.bijzonderheden = ", ".join(b for b in (eerder.bijzonderheden, liturgie.bijzonderheden) if b and b != "-")
         eerder.begeleiding = eerder.begeleiding or liturgie.begeleiding
         eerder.rijen.extend(liturgie.rijen)
-    return list(per_datum.values())
+    return [(d, l, vingerafdruk_van(paden[d])) for d, l in per_datum.items()]
 
 
 def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], kenmerken: dict[str, list[str]], index: Zoekindex, verslag: Verslag) -> tuple[Dienst | None, list[WachtrijItem]]:
@@ -188,10 +232,11 @@ def verwerk_liturgie(liturgie: Liturgie, catalogus: Catalogus, aliassen: Aliasse
                 continue
             if k.lied:
                 gezien.add(k.lied)
-            dienst.liederen.append(Vermelding(rij.inhoud, k.lied, k.herkenning, moment))
+            plek = sleutel(dienst_id, rij.label, rij.inhoud) if k.herkenning == "onbekend" else None
+            dienst.liederen.append(Vermelding(rij.inhoud, k.lied, k.herkenning, moment, plek))
             _tel(verslag, k.herkenning)
-            if k.herkenning == "onbekend":
-                items.append(_item_lied(dienst_id, rij.label, rij.inhoud, k))
+            if plek:
+                items.append(_item_lied(dienst_id, rij.label, rij.inhoud, k, plek))
             elif MEERDERE_LABEL.search(rij.label):
                 sl = sleutel(rij.label, rij.inhoud)
                 if sl not in aliassen.negeer_rijen and not any(a.dienst == dienst_id and a.sleutel == sl for a in aanvullingen):
@@ -266,8 +311,8 @@ def _kenmerken_van_dienst(liturgie: Liturgie, kenmerken: dict[str, list[str]], a
     return codes
 
 
-def _item_lied(dienst_id: str, label: str, ruw: str, k: Koppeling) -> WachtrijItem:
-    return WachtrijItem(dienst_id, "lied", ruw, k.reden, label=label, kandidaten=k.kandidaten, voorstel=k.voorstel)
+def _item_lied(dienst_id: str, label: str, ruw: str, k: Koppeling, plek: str) -> WachtrijItem:
+    return WachtrijItem(dienst_id, "lied", ruw, k.reden, label=label, sleutel=plek, kandidaten=k.kandidaten, voorstel=k.voorstel)
 
 
 def _tel(verslag: Verslag, herkenning: str) -> None:
@@ -275,8 +320,10 @@ def _tel(verslag: Verslag, herkenning: str) -> None:
     setattr(verslag, herkenning, getattr(verslag, herkenning) + 1)
 
 
-def _pas_besluiten_toe(wachtrij: list[WachtrijItem], catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], accepteer_referenties: bool, verslag: Verslag) -> int:
-    aantal = 0
+def _pas_besluiten_toe(wachtrij: list[WachtrijItem], catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], diensten_map: Path, accepteer_referenties: bool, verslag: Verslag) -> set[int]:
+    """Past de besluiten uit de wachtrij toe; geeft de id's van de toegepaste items terug.
+    Een besluit dat niet lukt blijft met zijn invulling in de wachtrij staan."""
+    toegepast: set[int] = set()
     for item in wachtrij:
         if accepteer_referenties and not item.heeft_besluit and item.soort == "lied" and item.voorstel.get("bron") == "referentie" and "twijfel" not in item.voorstel:
             item.accepteer = True
@@ -284,20 +331,131 @@ def _pas_besluiten_toe(wachtrij: list[WachtrijItem], catalogus: Catalogus, alias
             continue
         try:
             if item.soort == "bijzonderheden":
-                _besluit_bijzonderheden(item, aliassen)
+                _besluit_bijzonderheden(item, aliassen, diensten_map)
             elif item.soort == "kandidaat":
-                _besluit_kandidaat(item, catalogus, aliassen, aanvullingen)
+                _besluit_kandidaat(item, catalogus, aliassen, aanvullingen, diensten_map)
             elif item.soort == "controle":
-                _besluit_controle(item, catalogus, aliassen)
+                _besluit_controle(item, catalogus, aliassen, diensten_map)
             else:
-                verslag.referenties_geleerd += _besluit_lied(item, catalogus, aliassen)
-            aantal += 1
+                verslag.referenties_geleerd += _besluit_lied(item, catalogus, aliassen, diensten_map)
+            toegepast.add(id(item))
         except ValueError as fout:
             verslag.meldingen.append(f"BESLUIT NIET TOEGEPAST ({item.dienst}, {item.ruw[:40]}): {fout}")
-    return aantal
+    return toegepast
 
 
-def _besluit_bijzonderheden(item: WachtrijItem, aliassen: Aliassen) -> None:
+def _herbeoordeel(items: list[WachtrijItem], catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], index: Zoekindex, diensten_map: Path, verslag: Verslag) -> list[WachtrijItem]:
+    """Bekijkt open wachtrij-items opnieuw tegen de huidige aliassen en catalogus. Wat nu
+    wel herkend wordt, komt in de dienst te staan en verdwijnt uit de wachtrij. Zo krijgt
+    een besluit over een regel ook effect op oudere diensten met dezelfde regel."""
+    blijvend = []
+    for item in items:
+        if item.heeft_besluit:
+            blijvend.append(item)
+            continue
+        if item.soort == "lied":
+            k = koppel(item.ruw, ontleed(item.ruw, catalogus), catalogus, aliassen, index)
+            if k.genegeerd:
+                _verwijder_plek(diensten_map, item.dienst, item.sleutel)
+                continue
+            if k.lied:
+                _vul_plek(diensten_map, item.dienst, item.sleutel, item.ruw, k.lied, k.herkenning)
+                verslag.open_ingevuld += 1
+                continue
+        elif item.soort == "bijzonderheden":
+            if item.sleutel in aliassen.bijzonderheden:
+                _zet_kenmerken(diensten_map, item.dienst, aliassen.bijzonderheden[item.sleutel])
+                continue
+        elif item.soort == "kandidaat":
+            if item.sleutel in aliassen.negeer_rijen or any(a.dienst == item.dienst and a.sleutel == item.sleutel for a in aanvullingen):
+                continue
+        elif item.soort == "controle":
+            lied_id = aliassen.vermeldingen.get(normaliseer(item.ruw))
+            if lied_id and lied_id in catalogus.liederen:
+                _vervang_op_ruw(diensten_map, item.dienst, item.ruw, lied_id)
+                continue
+        blijvend.append(item)
+    return blijvend
+
+
+def _bewerk_dienst(map_: Path, dienst_id: str, bewerking) -> None:
+    """Leest een dienst-bestand, past 'bewerking' toe op de inhoud en schrijft het terug
+    als de bewerking True teruggeeft. Een ontbrekende dienst wordt overgeslagen."""
+    inhoud = lees_dienst(map_, dienst_id)
+    if inhoud is not None and bewerking(inhoud):
+        schrijf_dienst_dict(map_, dienst_id, inhoud)
+
+
+def _vul_plek(map_: Path, dienst_id: str, plek: str | None, ruw: str, lied_id: str, herkenning: str = "handmatig") -> None:
+    """Vult de open plek van een niet-herkend lied. Staat het lied al elders in die
+    dienst, dan vervalt de plek, want een lied telt een keer per dienst."""
+    if not plek:
+        return
+
+    def bewerking(inhoud: dict) -> bool:
+        liederen = inhoud.get("liederen") or []
+        al_aanwezig = any(v.get("lied") == lied_id for v in liederen)
+        nieuw, gewijzigd = [], False
+        for v in liederen:
+            if v.get("wachtrij") == plek and not v.get("lied"):
+                gewijzigd = True
+                if al_aanwezig:
+                    continue
+                v = Vermelding(ruw, lied_id, herkenning, v.get("moment")).as_dict()
+                al_aanwezig = True
+            nieuw.append(v)
+        inhoud["liederen"] = nieuw
+        return gewijzigd
+
+    _bewerk_dienst(map_, dienst_id, bewerking)
+
+
+def _verwijder_plek(map_: Path, dienst_id: str, plek: str | None) -> None:
+    if not plek:
+        return
+
+    def bewerking(inhoud: dict) -> bool:
+        voor = inhoud.get("liederen") or []
+        inhoud["liederen"] = [v for v in voor if v.get("wachtrij") != plek]
+        return len(inhoud["liederen"]) != len(voor)
+
+    _bewerk_dienst(map_, dienst_id, bewerking)
+
+
+def _voeg_lied_toe(map_: Path, dienst_id: str, ruw: str, lied_id: str, moment: str | None) -> None:
+    def bewerking(inhoud: dict) -> bool:
+        liederen = inhoud.setdefault("liederen", [])
+        if any(v.get("lied") == lied_id for v in liederen):
+            return False
+        liederen.append(Vermelding(ruw, lied_id, "handmatig", moment).as_dict())
+        return True
+
+    _bewerk_dienst(map_, dienst_id, bewerking)
+
+
+def _vervang_op_ruw(map_: Path, dienst_id: str, ruw: str, lied_id: str) -> None:
+    def bewerking(inhoud: dict) -> bool:
+        gewijzigd = False
+        for i, v in enumerate(inhoud.get("liederen") or []):
+            if v.get("ruw") == ruw and v.get("lied") != lied_id:
+                inhoud["liederen"][i] = Vermelding(ruw, lied_id, "handmatig", v.get("moment")).as_dict()
+                gewijzigd = True
+        return gewijzigd
+
+    _bewerk_dienst(map_, dienst_id, bewerking)
+
+
+def _zet_kenmerken(map_: Path, dienst_id: str, codes: list[str]) -> None:
+    def bewerking(inhoud: dict) -> bool:
+        if inhoud.get("kenmerken") == list(codes):
+            return False
+        inhoud["kenmerken"] = list(codes)
+        return True
+
+    _bewerk_dienst(map_, dienst_id, bewerking)
+
+
+def _besluit_bijzonderheden(item: WachtrijItem, aliassen: Aliassen, diensten_map: Path) -> None:
     if item.negeer:
         codes: list[str] = []
     elif item.kenmerken is not None:
@@ -305,15 +463,17 @@ def _besluit_bijzonderheden(item: WachtrijItem, aliassen: Aliassen) -> None:
     else:
         codes = list(item.voorstel.get("kenmerken", []))
     aliassen.bijzonderheden[item.sleutel or sleutel(item.ruw)] = codes
+    _zet_kenmerken(diensten_map, item.dienst, codes)
 
 
-def _besluit_lied(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen) -> int:
+def _besluit_lied(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen, diensten_map: Path) -> int:
     """Past een besluit op een liedregel toe; geeft terug hoeveel bundelverwijzingen
     de catalogus erbij leerde. Kiest de beheerder 'lied: X' voor een regel met een
     onbekend bundelnummer, dan krijgt X dat nummer als verwijzing."""
     norm = normaliseer(item.ruw)
     if item.negeer:
         aliassen.vermeldingen[norm] = "negeer"
+        _verwijder_plek(diensten_map, item.dienst, item.sleutel)
         return 0
     lied_id = _lied_uit_besluit(item, catalogus)
     geleerd = 0
@@ -322,6 +482,7 @@ def _besluit_lied(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen) 
         geleerd = _leer_referenties(catalogus, lied_id, refs)
     if item.lied or item.voorstel.get("bron") != "referentie":
         aliassen.vermeldingen[norm] = lied_id
+    _vul_plek(diensten_map, item.dienst, item.sleutel, item.ruw, lied_id)
     return geleerd
 
 
@@ -330,7 +491,7 @@ def _leer_referenties(catalogus: Catalogus, lied_id: str, referenties: list[Refe
     return sum(1 for r in referenties if catalogus.voeg_referentie_toe(lied_id, r))
 
 
-def _besluit_controle(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen) -> None:
+def _besluit_controle(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen, diensten_map: Path) -> None:
     """negeer bevestigt de huidige koppeling; lied of accepteer kiest het andere lied."""
     if item.negeer:
         lied_id = item.voorstel.get("huidig")
@@ -341,9 +502,12 @@ def _besluit_controle(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliass
     if not lied_id or lied_id not in catalogus.liederen:
         raise ValueError(f"lied {lied_id} bestaat niet in de catalogus")
     aliassen.vermeldingen[normaliseer(item.ruw)] = lied_id
+    _vervang_op_ruw(diensten_map, item.dienst, item.ruw, lied_id)
 
 
-def _besluit_kandidaat(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling]) -> None:
+def _besluit_kandidaat(item: WachtrijItem, catalogus: Catalogus, aliassen: Aliassen, aanvullingen: list[Aanvulling], diensten_map: Path) -> None:
+    """Een aanvulling komt meteen in de dienst te staan, en wordt ook bewaard in
+    aanvullingen.yaml zodat hij terugkomt als de dienst ooit opnieuw verwerkt wordt."""
     sl = item.sleutel or sleutel(item.label, item.ruw)
     if item.negeer:
         aliassen.negeer_rijen.append(sl)
@@ -355,6 +519,7 @@ def _besluit_kandidaat(item: WachtrijItem, catalogus: Catalogus, aliassen: Alias
     else:
         lied_id = _lied_uit_besluit(item, catalogus)
     aanvullingen.append(Aanvulling(item.dienst, sl, item.ruw, lied_id, item.voorstel.get("moment")))
+    _voeg_lied_toe(diensten_map, item.dienst, item.ruw, lied_id, item.voorstel.get("moment"))
 
 
 def _lied_uit_besluit(item: WachtrijItem, catalogus: Catalogus) -> str:

@@ -28,8 +28,10 @@ def main(argv: list[str] | None = None) -> int:
     p_import = sub.add_parser("importeer-catalogus", help="lees de catalogus-tabbladen uit het stamgegevens-sheet")
     p_import.add_argument("xlsx", type=Path)
 
-    p_verwerk = sub.add_parser("verwerk", help="pas wachtrij-besluiten toe en verwerk alle PDF's in archief/")
+    p_verwerk = sub.add_parser("verwerk", help="pas wachtrij-besluiten toe en verwerk nieuwe en gewijzigde PDF's in archief/")
     p_verwerk.add_argument("--accepteer-referenties", action="store_true", help="neem voorstellen over die op een bundelverwijzing berusten")
+    p_verwerk.add_argument("--opnieuw", nargs="+", metavar="JJJJ-MM-DD", default=[], help="bouw deze diensten bewust opnieuw op uit hun PDF (handmatige wijzigingen in die diensten vervallen)")
+    p_verwerk.add_argument("--alles-opnieuw", action="store_true", help="bouw alle diensten met een PDF in archief/ opnieuw op")
 
     p_toon = sub.add_parser("toon", help="laat zien wat de extractie en ontleding van een PDF maken")
     p_toon.add_argument("pdf", type=Path)
@@ -67,7 +69,7 @@ def _voer_uit(args, omgeving: Omgeving) -> int:
         return 0
 
     if args.commando == "verwerk":
-        print(verwerk(omgeving, accepteer_referenties=args.accepteer_referenties).tekst())
+        print(verwerk(omgeving, accepteer_referenties=args.accepteer_referenties, opnieuw=set(args.opnieuw), alles_opnieuw=args.alles_opnieuw).tekst())
         return 0
 
     if args.commando == "toon":

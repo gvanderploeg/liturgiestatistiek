@@ -268,7 +268,7 @@ flowchart LR
 
 Alle publieke data staat als leesbare bestanden in de repository:
 
-- Elke dienst is één YAML-bestand (`data/diensten/2026-09-20.yaml`). Deze bestanden worden bij elke verwerking opnieuw opgebouwd uit de PDF's plus de besluiten van de beheerder; ze zijn de publieke uitkomst, geen invoer. Correcties gaan via `aliassen.yaml`, `aanvullingen.yaml` en de catalogus, en hun geschiedenis staat in Git.
+- Elke dienst is één YAML-bestand (`data/diensten/2026-09-20.yaml`), en die bestanden zijn de bron van waarheid. Aanvankelijk werden ze bij elke verwerking opnieuw opgebouwd uit alle PDF's; toen het model eenmaal compleet was (meer dan duizend herkende vermeldingen, enkele tientallen open items) is dat omgedraaid. Een PDF is nu alleen nieuwe invoer: hij wordt verwerkt als er voor zijn datum nog geen dienst is, of opnieuw als de PDF veranderd is (vingerafdruk in het dienst-bestand). Bestaande diensten worden niet overschreven en nooit automatisch verwijderd, zodat handmatige correcties blijven staan en het archief een reservekopie is in plaats van een voorwaarde. Besluiten uit de wachtrij landen rechtstreeks in de dienst en daarnaast als alias of catalogusregel voor toekomstige liturgieen; open plekken worden elke run opnieuw beoordeeld, zodat een nieuw besluit ook oudere diensten aanvult. Bewust herverwerken kan per dienst of voor alles.
 - Catalogus (een bestand per bundelcode, zoals `opw.yaml` en `nlb.yaml`; nieuwe liederen met een bundelverwijzing komen automatisch in het bestand van hun bundel, liederen zonder verwijzing in `overig.yaml`), bundels, kenmerken, aliassen en aanvullingen zijn losse YAML-bestanden die de beheerder bewerkt.
 - `archief/` (PDF's), `werk/` (wachtrij) en `.tmp/` staan in `.gitignore`.
 

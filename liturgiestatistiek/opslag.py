@@ -88,6 +88,15 @@ def schrijf_dienst(map_: Path, dienst: Dienst) -> Path:
     return pad
 
 
+def lees_dienst(map_: Path, dienst_id: str) -> dict | None:
+    """Een dienst-bestand als dict, of None als het niet bestaat."""
+    return _lees(map_ / f"{dienst_id}.yaml")
+
+
+def schrijf_dienst_dict(map_: Path, dienst_id: str, inhoud: dict) -> None:
+    _schrijf(map_ / f"{dienst_id}.yaml", inhoud)
+
+
 def laad_wachtrij(pad: Path) -> list[WachtrijItem]:
     return [WachtrijItem.from_dict(d) for d in (_lees(pad) or [])]
 
