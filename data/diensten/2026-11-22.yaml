@@ -20,22 +20,28 @@ liederen:
   herkenning: automatisch
 - ruw: Opwekking 281 (Als een hert dat verlangt)
   lied: opw-281
+  moment: herdenken
   herkenning: automatisch
 - ruw: Opwekking 520 (Wees mijn verlangen)
   lied: opw-520
   herkenning: automatisch
+  moment: herdenken
 - ruw: Opwekking 790 (God is mijn Herder die mij weidt) *
   lied: opw-790
   herkenning: automatisch
+  moment: herdenken
 - ruw: Opwekking 717 (Stil, mijn ziel wees stil en wees niet bang) *
   lied: opw-717
   herkenning: automatisch
+  moment: herdenken
 - ruw: Psalmen voor Nu 16 (Ik val niet uit zijn hand) *
   lied: pvn-16-ik-val-niet-uit-zijn
   herkenning: automatisch
+  moment: herdenken
 - ruw: Opwekking 585 (Er is een dag)
   lied: opw-585
   herkenning: automatisch
+  moment: herdenken
 - ruw: Opwekking kids 150 (Vertrouw maar op God)
   moment: kindmoment
   lied: opwkids-150
@@ -43,3 +49,4 @@ liederen:
 - ruw: Opwekking 770 (Ik zal er zijn)
   lied: opw-770
   herkenning: automatisch
+  moment: zegenlied
