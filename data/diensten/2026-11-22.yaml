@@ -1,0 +1,44 @@
+datum: '2026-11-22'
+begeleiding: band
+kenmerken: []
+bron: 20261122 Eredienst Westerkerk.pdf
+vingerafdruk: 948088f4d41123d0
+liederen:
+- ruw: Opwekking 733 (Tienduizend redenen)
+  moment: aanvang
+  lied: opw-733
+  herkenning: automatisch
+- ruw: 'De Nieuwe Psalmberijming 98: 1 en 2 (Zing voor de Heer om Hem te eren)'
+  lied: dnp-98
+  herkenning: automatisch
+- lied: null
+  herkenning: onbekend
+  wachtrij: 4975b769c01d
+- ruw: Opwekking 618 (Jezus, hoop van de volken)
+  lied: opw-618
+  herkenning: automatisch
+- ruw: Opwekking 281 (Als een hert dat verlangt)
+  lied: opw-281
+  herkenning: automatisch
+- ruw: Opwekking 520 (Wees mijn verlangen)
+  lied: opw-520
+  herkenning: automatisch
+- ruw: Opwekking 790 (God is mijn Herder die mij weidt) *
+  lied: opw-790
+  herkenning: automatisch
+- ruw: Opwekking 717 (Stil, mijn ziel wees stil en wees niet bang) *
+  lied: opw-717
+  herkenning: automatisch
+- ruw: Psalmen voor Nu 16 (Ik val niet uit zijn hand) *
+  lied: pvn-16-ik-val-niet-uit-zijn
+  herkenning: automatisch
+- ruw: Opwekking 585 (Er is een dag)
+  lied: opw-585
+  herkenning: automatisch
+- ruw: Opwekking kids 150 (Vertrouw maar op God)
+  moment: kindmoment
+  lied: opwkids-150
+  herkenning: automatisch
+- ruw: Opwekking 770 (Ik zal er zijn)
+  lied: opw-770
+  herkenning: automatisch
