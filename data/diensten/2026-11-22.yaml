@@ -11,9 +11,9 @@ liederen:
 - ruw: 'De Nieuwe Psalmberijming 98: 1 en 2 (Zing voor de Heer om Hem te eren)'
   lied: dnp-98
   herkenning: automatisch
-- lied: null
-  herkenning: onbekend
-  wachtrij: 4975b769c01d
+- ruw: 'E&R 73: 1, 2, 3 (Al zou de vijgeboom niet bloeien)'
+  lied: er-73
+  herkenning: handmatig
 - ruw: Opwekking 618 (Jezus, hoop van de volken)
   lied: opw-618
   herkenning: automatisch
