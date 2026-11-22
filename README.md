@@ -45,6 +45,10 @@ Eenmalig de catalogus vullen uit het stamgegevens-sheet:
 .venv/bin/liturgiestatistiek importeer-catalogus import/Liturgiestatistiek.xlsx
 ```
 
+## Ophalen en verwerken in GitHub Actions
+
+Ophalen en verwerken draaien ook automatisch, vanuit de privé repository `liturgiestatistiek-werk`. Lokaal is dat de map `werk/`. Die workflow haalt op zaterdagavond en maandagochtend de liturgieen van de afgelopen twee weken op, verwerkt ze, pusht de wijzigingen in `data/` naar deze repository en gooit de PDF's daarna weg. Zie de README van die repository. Lokaal werken blijft mogelijk; doe dan eerst een `git pull` in beide repositories.
+
 ## PDF's ophalen uit Scipio
 
 De liturgieen staan als bijlage bij de kerkdiensten in de agenda van de Scipio web-app (web.scipio-app.nl). Het commando `haal-op` logt in met je eigen account, loopt de agenda van de module pagina voor pagina terug in de tijd, neemt alleen de events van de kerkdienst-pagina, en downloadt elke liturgie-PDF die nog niet in `archief/` staat. Van de eventgegevens wordt niets bewaard.

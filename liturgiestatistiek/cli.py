@@ -42,6 +42,7 @@ def main(argv: list[str] | None = None) -> int:
     p_haal = sub.add_parser("haal-op", help="download nieuwe liturgie-PDF's uit de Scipio web-app naar archief/ (instellingen in werk/scipio.yaml, inlog via SCIPIO_EMAIL en SCIPIO_WACHTWOORD)")
     p_haal.add_argument("--log", action="store_true", help="toon elk verzoek met status, duur en omvang (zonder token)")
     p_haal.add_argument("--vanaf", type=date.fromisoformat, help="kijk terug tot deze datum (JJJJ-MM-DD) in plaats van de standaard terugkijkperiode; voor het inladen van historie")
+    p_haal.add_argument("--dagen", type=int, help="kijk zoveel dagen terug in plaats van terugkijk_dagen uit de configuratie")
 
     args = parser.parse_args(argv)
     omgeving = Omgeving(args.project)
@@ -55,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
 def _voer_uit(args, omgeving: Omgeving) -> int:
     if args.commando == "haal-op":
         logging.basicConfig(level=logging.DEBUG if args.log else logging.INFO, format="%(levelname)s %(message)s", stream=sys.stderr)
-        return _haal_op(omgeving, args.vanaf)
+        return _haal_op(omgeving, args.vanaf, args.dagen)
 
     if args.commando == "publiceer":
         dataset = publiceer(omgeving.data, omgeving.site_data)
@@ -78,7 +79,7 @@ def _voer_uit(args, omgeving: Omgeving) -> int:
     return 1
 
 
-def _haal_op(omgeving: Omgeving, vanaf) -> int:
+def _haal_op(omgeving: Omgeving, vanaf, dagen: int | None = None) -> int:
     configpad = omgeving.project / "werk" / CONFIG_BESTAND
     if not configpad.exists():
         configpad.parent.mkdir(parents=True, exist_ok=True)
@@ -90,7 +91,10 @@ def _haal_op(omgeving: Omgeving, vanaf) -> int:
         print("Zet SCIPIO_EMAIL en SCIPIO_WACHTWOORD als omgevingsvariabelen.")
         return 1
     try:
-        verslag = haal_op(ScipioConfig.laad(configpad), email, wachtwoord, omgeving.archief, vanaf)
+        config = ScipioConfig.laad(configpad)
+        if dagen:
+            config.terugkijk_dagen = dagen
+        verslag = haal_op(config, email, wachtwoord, omgeving.archief, vanaf)
     except ScipioFout as fout:
         print(f"Ophalen mislukt: {fout}")
         return 1
